@@ -112,7 +112,7 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
       <div id='google_sign_in' class="g-signin2 " data-onsuccess="onSignIn" data-theme="dark"></div>
       <br><button id='google._sign_out' class="align-items-start">google sign out</button>
     </div class="d-flex justify-content-center">
-      <form  action ='html_login_template.php' method = 'post'>
+      <form  action ='index.php' method = 'post'>
       <div class="d-flex justify-content-center">
         <label id='echo1'>ユーザー名</label>
         <input type='text' name='user_name' required >

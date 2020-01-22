@@ -19,6 +19,25 @@
 				}
 			}
 		},
+		"index":{
+			"language":{
+				"japanese":{
+					"echo1":"ユーサー名",
+					"echo2":"パスワード",
+					"echo3":"新しいアカウントを作る"
+				},
+				"chinese":{
+					"echo1":"用戶名",
+					"echo2":"密碼",
+					"echo3":"創建新帳號"
+				},
+				"english":{
+					"echo1":"username",
+					"echo2":"password",
+					"echo3":"create new account"
+				}
+			}
+		},
 		"filename":{
 			"language":{
 				"japanese":{
