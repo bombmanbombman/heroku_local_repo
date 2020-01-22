@@ -52,8 +52,8 @@ if($_COOKIE!=null){
 
 <html !DOCTYPE>
 <head><title>20200113</title></head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<style>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding"><style>
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
