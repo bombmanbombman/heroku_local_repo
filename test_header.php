@@ -20,7 +20,7 @@
       exit();
       break;
     case 'https://bombmanbombman-project1.herokuapp.com/#':
-      header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/20200113.php");
+      header("refresh:$wait_time;url=20200113.php");
       exit();
       break;
     case 'html_searchproduct_template.php':
