@@ -54,7 +54,9 @@ if($_COOKIE!=null){
 echo <<<_HEREDOC
 <html !DOCTYPE
 ><head><title>20191231</title></head
-><body>
+>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<body>
 <nav>
 <a href='20191229.php' id='thislink'>go to 20191229.php</a>
 <br><a href='20191230.php' id='thislink2'>go to 20191230.php</a>

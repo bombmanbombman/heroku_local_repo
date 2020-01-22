@@ -51,7 +51,11 @@ if($_COOKIE!=null){
 
 echo <<<_HEREDOC
 <html !DOCTYPE>
-<head><title>20200110</title></head>
+<head>
+<title>20200110</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
 <body>
 <section id='a_content' class='current'>
 <div id='test_ajax'>
