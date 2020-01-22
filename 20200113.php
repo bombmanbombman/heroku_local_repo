@@ -8,8 +8,8 @@
 // ];
 $string = 'male';
 // $json_encode = json_encode($array);
-$json_encode = json_encode($string);
-setcookie('php_to_js', $json_encode,time()+86400,'/');
+// $json_encode = json_encode($string);
+// setcookie('php_to_js', $json_encode,time()+86400,'/');
 // echo $_COOKIE['php_to_js'].'<br>';
 // $_COOKIE['php_to_js'] ='take this';
 
