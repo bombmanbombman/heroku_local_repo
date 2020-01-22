@@ -307,9 +307,9 @@ $(function(){
 /**(8) 語言轉換 load html_language_template.json */
 $(function(){
   let current_file = location.pathname;
-  // console.log(current_file);
+  console.log(current_file);
   let suffix = current_file.search('.php');
-  // console.log(suffix);
+  console.log(suffix);
   current_file=current_file.substr(1,suffix-1);
   console.log(current_file);
   $("#japanese").on('click',function(e){
