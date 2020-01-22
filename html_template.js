@@ -311,7 +311,7 @@ $(function(){
   let suffix = current_file.search('.php');
   // console.log(suffix);
   current_file=current_file.substr(1,suffix-1);
-  // console.log(current_file);
+  console.log(current_file);
   $("#japanese").on('click',function(e){
     $('a.actived-language').removeClass('active');
     $('a.actived-language').removeClass('actived-language');
