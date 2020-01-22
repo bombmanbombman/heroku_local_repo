@@ -8,18 +8,18 @@
 // ];
 $string = 'male';
 // $json_encode = json_encode($array);
-// $json_encode = json_encode($string);
-// setcookie('php_to_js', $json_encode,time()+86400,'/');
+$json_encode = json_encode($string);
+setcookie('php_to_js', $json_encode,time()+86400,'/');
 // echo $_COOKIE['php_to_js'].'<br>';
 // $_COOKIE['php_to_js'] ='take this';
 
 // /**js json send to php */
 // header('Content-type: application/json');
-header('content-type','application/x-www-form-urlencoded');
+// header('content-type','application/x-www-form-urlencoded');
 // echo filter_input_array(INPUT_POST);
-echo file_get_contents('php://input');
-$data = json_decode( file_get_contents( 'php://input' ), true );
-$str_json = file_get_contents('php://input');
+// echo file_get_contents('php://input');
+// $data = json_decode( file_get_contents( 'php://input' ), true );
+// $str_json = file_get_contents('php://input');
 // var_dump($str_json);
 // var_dump($data);
 // var_dump($HTTP_RAW_POST_DATA);
