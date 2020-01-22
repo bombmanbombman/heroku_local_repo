@@ -310,7 +310,9 @@ $(function(){
   console.log(current_file);
   let suffix = current_file.search('.php');
   console.log(suffix);
-  current_file=current_file.substr(1,suffix-1);
+  if(suffix !=-1){
+    current_file=current_file.substr(1,suffix-1);
+  }
   console.log(current_file);
   $("#japanese").on('click',function(e){
     $('a.actived-language').removeClass('active');
