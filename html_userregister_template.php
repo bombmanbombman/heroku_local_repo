@@ -13,7 +13,7 @@ if(isset($_POST["user_name"]) && isset($_POST["user_password"])){
   $stmt->bind_param('ss',$user_name,$user_password);
   if(!$stmt->execute()){
   echo "這個用戶名，已經被其他人註冊了。<br>";
-  $redirect='html_login_template.php';
+  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
   require_once ('test_header.php');
   exit();
   }

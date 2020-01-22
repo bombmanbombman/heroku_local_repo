@@ -19,7 +19,7 @@
       header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/#/html_databasemanagement_template.php");
       exit();
       break;
-    case 'html_login_template.php':
+    case 'https://bombmanbombman-project1.herokuapp.com/#':
       header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/#");
       exit();
       break;

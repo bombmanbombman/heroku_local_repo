@@ -5,7 +5,7 @@ var_dump($_POST);
 require_once('html_navibar_template.php');
 if(!isset($_SESSION['user_id'])){
   echo "session 傳送失敗<br>";
-  $redirect='html_login_template.php';
+  $redirect='index.php';
   require_once ('test_header.php');
   exit();
 }

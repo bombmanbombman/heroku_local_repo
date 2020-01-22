@@ -32,7 +32,7 @@ require_once('css_dropupbutton_template.php');
 
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo17'>session 傳送失敗</div>";
-  $redirect='html_login_template.php';
+  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
   require_once ('test_header.php');
   exit();
 }else{

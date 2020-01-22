@@ -162,7 +162,7 @@ if(isset($_POST['image_data'])){
     $stmt->send_long_data(4,$image_data);
     if(!$stmt->execute()){
       echo "插入数据有问题，回到选择画面";
-      header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php");
+      header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/#");
       exit();
     }
     $conn->close();

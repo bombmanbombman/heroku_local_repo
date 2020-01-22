@@ -213,7 +213,7 @@ $(function(){
   // }
   //（6）添加各種 <nav><a></a></nav>對應下面的（4）ajax page load機能
   // nav_anchor=`<nav>
-  // <a href='html_login_template.php' id='thislink'>go to html_login_template.php</a>
+  // <a href='https://bombmanbombman-project1.herokuapp.com/#' id='thislink'>go to https://bombmanbombman-project1.herokuapp.com/#</a>
   // <br><a href='20191229.php' id='thislink'>go to 20191229.php</a>
   // <br><a href='20191230.php' id='thislink2'>go to 20191230.php</a>
   // <br><a href='20191224.php' id='thislink3'>go to 20191224.php</a>
