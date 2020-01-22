@@ -1,0 +1,313 @@
+{
+	"page":{
+		"html_login_template":{
+			"language":{
+				"japanese":{
+					"echo1":"ユーサー名",
+					"echo2":"パスワード",
+					"echo3":"新しいアカウントを作る"
+				},
+				"chinese":{
+					"echo1":"用戶名",
+					"echo2":"密碼",
+					"echo3":"創建新帳號"
+				},
+				"english":{
+					"echo1":"username",
+					"echo2":"password",
+					"echo3":"create new account"
+				}
+			}
+		},
+		"filename":{
+			"language":{
+				"japanese":{
+					"echo1":"",
+					"echo2":"",
+					"echo3":""
+				},
+				"chinese":{
+					"echo1":"",
+					"echo2":"",
+					"echo3":""
+				},
+				"english":{
+					"echo1":"",
+					"echo2":"",
+					"echo3":""
+				}
+			}
+		},
+		"html_userdetail_template" :{
+			"language":{
+				"japanese":{
+					"echo1":"ユーザー名：",
+					"echo2":"、本サイトへようこそ。",
+					"echo3":"デフォルトのアイコン",
+					"echo4":"あなたの電話番号は：",
+					"echo5":"まだ電話番号を入力していません",
+					"echo6":"あなたのメールボックスは：",
+					"echo7":"まだメールボックスを入力していません",
+					"echo8":"ユーザーの詳細情報を記入する",
+					"echo9":"新しい仕入れ商品と仕入先を作成する",
+					"echo10":"今まで仕入れた商品の統計管理ページ"
+				},
+				"chinese":{
+					"echo1":"歡迎用戶",
+					"echo2":"回到本站",
+					"echo3":"默認的頭像",
+					"echo4":"您的電話是",
+					"echo5":"您還未輸入電話",
+					"echo6":"您的郵箱是",
+					"echo7":"您還未輸入郵箱",
+					"echo8":"補充修改用戶的詳細信息",
+					"echo9":"添加新的貨品，輸入貨品的名稱，購買地點，貨品描述",
+					"echo10":"進入全貨號管理頁面"
+				},
+				"english":{
+					"echo1":"welcome ",
+					"echo2":",back to my site",
+					"echo3":"default avatar",
+					"echo4":"your phone number:",
+					"echo5":"you have not input phone number ",
+					"echo6":"your mail-box address:",
+					"echo7":"you have not input mail-box address",
+					"echo8":"Adding individual detail information",
+					"echo9":"Adding new purchased item name,purchased location,and description",
+					"echo10":"all purchased items statistic page"
+				}
+			}
+		},
+		"html_adduserdetail_template":{
+			"language":{
+				"japanese":{
+					"echo1":"電話番号とメールボックスはパスワードが忘れたとき、パスワードをリセットすることに使います。",
+					"echo2":"あなたのメールボックスを入力してください、＠のマークは必ずつけてください。",
+					"echo3":"あなたの電話番号を入力してください、ハイフンは入れないでください。",
+					"echo4":"アバター画像をアップロード、または更新する。",
+					"value1":"アップロードする"
+				},
+				"chinese":{
+					"echo1":"電話號碼，郵箱，可以幫助您找回並重設密碼",
+					"echo2":"請輸入您的郵箱，中間必須帶有@的符號",
+					"echo3":"請輸入數字，不要自己添加‘-’來隔開",
+					"echo4":"創建或修改頭像",
+					"value1":"上傳"
+				},
+				"english":{
+					"echo1":"When you forgot your password,your phone number and mail-box address can help you reset password",
+					"echo2":"please input you mail-box address,there need be @ mark in the middle of address",
+					"echo3":"please input your phone number,there is no need to add hiphen in the middle of number",
+					"echo4":"upload your first avatar image,or change current avatar image",
+					"value1":"submit"
+				}
+			}
+		},
+		"html_newproduct_template":{
+			"language":{
+				"japanese":{
+					"echo1":"仕入れ場所を入力してください",
+					"echo2":"仕入れ商品の簡略情報を入力してください",
+					"echo3":"仕入れ商品の詳細情報を入力してください",
+					"value1":"新しい仕入れナンバーを作成する",
+					"echo4":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
+					"echo5":"データベース：",
+					"echo6":"に接続が失敗しました、ログイン画面に戻ります",
+					"echo7":"仕入れナンバーの作成が失敗しました、ログイン画面に戻ります"
+				},
+				"chinese":{
+					"echo1":"請輸入進貨的地點",
+					"echo2":"請輸入貨品的簡要信息",
+					"echo3":"請輸入貨品的詳細信息",
+					"value1":"創建新貨號",
+					"echo4":"session傳送失敗",
+					"echo5":"無法連接數據庫：",
+					"echo6":"回到註冊頁面",
+					"echo7":"添加新貨號失敗，回到註冊頁面"
+				},
+				"english":{
+					"echo1":"please input purchasing address for this item",
+					"echo2":"please input brief info for this item",
+					"echo3":"please input detail info for this item",
+					"value1":"creating new purchase ID",
+					"echo4":"seesion retrieve error",
+					"echo5":"unable to access database:",
+					"echo6":",back to login page.",
+					"echo7":"unable to create new purchase ID,back to login page."
+				}
+			}
+		},
+		"html_showallproduct_template":{
+			"language":{
+				"japanese":{
+									"echo1":"データベース：",
+					"echo2":"に接続が失敗しました、ログイン画面に戻ります",
+					"echo3":"仕入れ記録がありません、はじめの仕入れ記録を作成してください",
+					"echo4":"仕入れ記録がありません、はじめの仕入れ記録を作成してください",
+					"echo5":"仕入れナンバー",
+					"echo6":"仕入れナンバー",
+					"echo7":"仕入れ場所",
+					"echo8":"商品名",
+					"echo9":"詳細情報",
+					"echo10":"仕入れナンバー",
+					"echo11":"仕入れ場所",
+					"echo12":"商品名",
+					"echo13":"仕入れ時間",
+					"echo14":"仕入れ価格",
+					"echo15":"仕入れ数",
+					"echo16":"仕入れサイズ",
+					"echo17":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
+					"echo18":"仕入れ記録がありません、はじめの仕入れ記録を作成してください",
+					"echo19":"ページング",
+					"echo20":"第",
+					"echo21":"　ページ",
+					"echo22":"新しい仕入れ商品と仕入先を作成する",
+					"echo23":"特定の仕入れナンバーを入力して、その商品の詳細情報を見る",
+					"echo24":"すべての仕入れた商品の画像集合、ギャラリー",
+					"value1":"特定の仕入れナンバーを入力して、その商品をもう一度仕入れする",
+					"value2":"特定の仕入れナンバーを入力して、その商品の販売記録を作る",
+					"value3":"特定の仕入れナンバーを入力して、その商品の画像ファイルを添付する、又は削除する"
+				},
+				"chinese":{
+					"echo1":"無法連接數據庫：",
+					"echo2":" ",
+					"echo3":"您還沒有入貨記錄，請先添加新的貨品，10秒後回到用戶頁面",
+					"echo4":"您還沒有入貨記錄，請先添加新的貨品，10秒後回到用戶頁面",
+					"echo5":"貨號",
+					"echo6":"貨號",
+					"echo7":"購買地址",
+					"echo8":"貨品名稱，簡介",
+					"echo9":"貨品詳細",
+					"echo10":"貨號",
+					"echo11":"購買地址",
+					"echo12":"貨品名稱，簡介",
+					"echo13":"進貨日期",
+					"echo14":"進貨價格",
+					"echo15":"進貨件數",
+					"echo16":"進貨尺寸",
+					"echo17":"session傳送失敗",
+					"echo18":"您還沒有入貨記錄，請先添加新的貨品",
+					"echo19":"翻頁",
+					"echo20":"第",
+					"echo21":"頁",
+					"echo22":"添加新的貨品，輸入貨品的基本信息",
+					"echo23":"輸入貨號，添加進貨記錄，出售記錄，商品圖片",
+					"echo24":"進入商品圖片庫",
+					"value1":"為這個貨號添加新的進貨記錄",
+					"value2":"為這個貨號添加出售記錄",
+					"value3":"為這個貨號添加圖片或刪除圖片"
+				},
+				"english":{
+					"echo1":"unable to access database:",
+					"echo2":",back to login page.",
+					"echo3":"you have not input any purchasing record,please create one record at least",
+					"echo4":"you have not input any purchasing record,please create one record at least",
+					"echo5":"purchase ID",
+					"echo6":"purchase ID",
+					"echo7":"purchase location",
+					"echo8":"item name",
+					"echo9":"item detail",
+					"echo10":"purchase ID",
+					"echo11":"purchase location",
+					"echo12":"item name",
+					"echo13":"purchase date",
+					"echo14":"purchase cost",
+					"echo15":"purchased number",
+					"echo16":"item size",
+					"echo17":"session retrieve error",
+					"echo18":"you have not input any purchasing record,please create one record at least",
+					"echo19":"pagination",
+					"echo20":"page:",
+					"echo21":" ",
+					"echo22":"Adding new purchased item name,purchased location,and description",
+					"echo23":"input purchasing ID to enter all information page for specific item",
+					"echo24":"enter gallery of all purchased items",
+					"value1":"input purchasing ID to repeat purchasing the same item again",
+					"value2":"input purchasing ID to adding selling record for specific item",
+					"value3":"input purchasing ID to adding or delete picture for specific item"
+				}
+			}
+		},
+		"login":{
+			"language":{
+				"japanese":{
+					"echo1":"データベース：",
+					"echo2":"に接続が失敗しました、ログイン画面に戻ります",
+					"echo3":"仕入れ記録がありません、はじめの仕入れ記録を作成してください",
+					"echo4":"仕入れ記録がありません、はじめの仕入れ記録を作成してください",
+					"echo5":"仕入れナンバー",
+					"echo6":"仕入れナンバー",
+					"echo7":"仕入れ場所",
+					"echo8":"商品名",
+					"echo9":"詳細情報",
+					"echo10":"仕入れナンバー",
+					"echo11":"仕入れ場所",
+					"echo12":"商品名",
+					"echo13":"仕入れ時間",
+					"echo14":"仕入れ価格",
+					"echo15":"仕入れ数",
+					"echo16":"仕入れサイズ"
+				},
+				"chinese":{
+					"echo1":"無法連接數據庫：",
+					"echo2":" ",
+					"echo3":"您還沒有入貨記錄，請先添加新的貨品，10秒後回到用戶頁面",
+					"echo4":"您還沒有入貨記錄，請先添加新的貨品，10秒後回到用戶頁面",
+					"echo5":"貨號",
+					"echo6":"貨號",
+					"echo7":"購買地址",
+					"echo8":"貨品名稱，簡介",
+					"echo9":"貨品詳細",
+					"echo10":"貨號",
+					"echo11":"購買地址",
+					"echo12":"貨品名稱，簡介",
+					"echo13":"進貨日期",
+					"echo14":"進貨價格",
+					"echo15":"進貨件數",
+					"echo16":"進貨尺寸"
+				},
+				"english":{
+					"echo1":"unable to access database:",
+					"echo2":",back to login page.",
+					"echo3":"you have not input any purchasing record,please create one record at least",
+					"echo4":"you have not input any purchasing record,please create one record at least",
+					"echo5":"purchase ID",
+					"echo6":"purchase ID",
+					"echo7":"purchase location",
+					"echo8":"item name",
+					"echo9":"item detail",
+					"echo10":"purchase ID",
+					"echo11":"purchase location",
+					"echo12":"item name",
+					"echo13":"purchase date",
+					"echo14":"purchase cost",
+					"echo15":"purchased number",
+					"echo16":"item size"
+				}
+			}
+		},
+		"html_newsale_template":{
+			"language":{
+				"japanese":{
+					"echo1":"",
+					"echo2":"",
+					"echo3":""
+				},
+				"chinese":{
+					"echo1":"",
+					"echo2":"",
+					"echo3":""
+				},
+				"english":{
+					"echo1":"",
+					"echo2":"",
+					"echo3":""
+				}
+			}
+		}
+	}
+}
+
+
+
+
