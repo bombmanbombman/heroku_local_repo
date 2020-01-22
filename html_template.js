@@ -313,6 +313,7 @@ $(function(){
   if(suffix !=-1){
     current_file=current_file.substr(1,suffix-1);
   }
+  console.log($('*'));
   console.log(current_file);
   $("#japanese").on('click',function(e){
     $('a.actived-language').removeClass('active');
