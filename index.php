@@ -94,6 +94,7 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
 </head>
 <body >
   <div id='background'></div>
+  <!-- <div>test live server ne</div> -->
   <section id='content'>
     <div class="dropdown"> 
       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" 
@@ -130,7 +131,7 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
       </form>
     </section>
     <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
-    <script id='js' defer async type=text/javascript src="html_login_template.js"></script>
+    <script id='js' defer async type=text/javascript src="index.js"></script>
 
 
     <noscript>please do not turn off javascript</noscript>
