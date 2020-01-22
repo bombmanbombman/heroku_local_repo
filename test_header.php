@@ -40,7 +40,7 @@
       exit();
       break;
     default:
-    header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/#/html_userdetail_template.php");
+    header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/#");
   }
 })();
 exit();

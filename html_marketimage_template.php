@@ -52,7 +52,7 @@ if(!in_array($_SESSION['product_id_for_image'],$COLID)){
   require_once ("test_header.php");
 }
 if($conn->connect_error){
-  echo "無法連接數據庫，$databasename ， 回到用戶頁面","<br>";
+  echo "無法連接數據庫，$databasename ， 回到login畫面","<br>";
   require_once ('test_header.php');
   exit();
 }

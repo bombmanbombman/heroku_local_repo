@@ -64,7 +64,10 @@ if(isset($_FILES['image_data'])){
   }
   require_once ('login.php');
   $conn=new mysqli($host,$username,$password,$databasename);
-  if($conn->connect_error)die('無法連接數據庫，請聯繫管理員');
+  if($conn->connect_error){echo(
+    '<div>無法連接數據庫，請聯繫管理員</div>');
+    require_once ("test_header.php");
+  }  
   $query=('insert into image values(?,?,?,?,?,?)');
   $stmt=$conn->prepare($query);
   if(!$stmt)echo($conn->error);
@@ -78,7 +81,10 @@ if(isset($_FILES['image_data'])){
   $null=null;
   $stmt->bind_param('iissbs',$product_id,$image_id,$date_image,$image_info,$null,$image_type);
   $stmt->send_long_data(4,$image_data);
-  if(!$stmt->execute())die("插入圖片失敗，請聯繫管理員");
+  if(!$stmt->execute()){
+    echo"<div>插入圖片失敗，請聯繫管理員</div>";
+    require_once("test_header.php");
+  }
     header('location:html_displayimage_template.php');
     exit();
 }
