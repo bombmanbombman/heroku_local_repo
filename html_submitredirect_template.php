@@ -66,9 +66,6 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
 
 #對應html_newsale.php的submit 一共24 line
 if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_info'])&&isset($_POST['sold_size'])){
-  if(isset($_POST['time_sold'])){
-    $_POST['date_sold']=$_POST['date_sold']."T".$_POST['time_sold'];
-  }
   require_once('login.php');
   $query='insert into sale values(?,?,?,?,?,?,?)';
   $stmt=$conn->prepare($query);
@@ -83,14 +80,18 @@ if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_in
     $current_time=date('Y-m-d H:i:s');
     $_POST['date_sold']=$current_time;
     // echo "<div>var_dump($_POST[date_sold]) null</div>";
-  }else{
+  }elseif(isset($_POST['date_sold'])&&$_POST['date_sold']!=null){
     if(isset($_POST['time_sold'])&&$_POST['time_sold']!=null){
       $_POST['date_sold']=$_POST['date_sold']." ".$_POST['time_sold'].":00";
-    }else{
+    }
+    if(isset($_POST['time_sold'])&&$_POST['time_sold']==null){
       date_default_timezone_set('Asia/Shanghai');
       $current_time=date('Y-m-d H:i:s');
       $_POST['date_sold']=$current_time;
     // echo "<div>var_dump($_POST[date_sold]) notnull</div>";
+    }
+    if(!isset($_POST["time_sold"])){
+
     }
   // echo "<div>$_POST[date_sold]</div>";
   // echo var_dump($_POST['date_sold']);
