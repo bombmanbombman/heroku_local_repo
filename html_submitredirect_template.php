@@ -29,13 +29,27 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
     date_default_timezone_set('Asia/Shanghai');
     $current_time=date('Y-m-d H:i:s');
     $_POST['date_purchase']=$current_time;
+    // echo "<div>var_dump($_POST[date_purchase]) null</div>";
   }else{
-    $_POST['date_purchase']=str_replace('T',' ',$_POST['date_purchase']).':00';
+    if(isset($_POST['time_sold'])&&$_POST['time_sold']!=null){
+      $_POST['date_purchase']=$_POST['date_purchase']." ".$_POST['time_sold'].":00";
+    }else{
+      date_default_timezone_set('Asia/Shanghai');
+      $current_time=date('Y-m-d H:i:s');
+      $_POST['date_purchase']=$current_time;
+    // echo "<div>var_dump($_POST[date_purchase]) notnull</div>";
+    }
+  // echo "<div>$_POST[date_purchase]</div>";
+  // echo var_dump($_POST['date_purchase']);
   }
+  // echo var_dump($_POST['date_purchase']);
   $date_purchase = $_POST['date_purchase'];
   $purchase_cost=double_check_input($conn,$_POST['purchase_cost']);
   $purchase_number=double_check_input($conn,$_POST['purchase_number']);
   $purchase_size=double_check_input($conn,double_check_input($conn,$_POST['purchase_size']));
+  if($purchase_size!='XXXS'||$purchase_size!='XXS'||$purchase_size!='XS'||$purchase_size!='S'||$purchase_size!='M'||$purchase_size!='L'||$purchase_size!='XL'||$purchase_size!='XXL'){
+    $purchase_size='';
+  }
   $user_id=$_SESSION['user_id'];
   $stmt->bind_param('iisiisi',$product_id,$purchase_id,$date_purchase,$purchase_cost,$purchase_number,$purchase_size,$user_id);
   if(!$stmt->execute()){
@@ -64,18 +78,31 @@ if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_in
   // var_dump($_POST['date_sold']);
   # 修改为 database datetime的适合的格式；
   // var_dump($date_sold);
-  if(isset($_POST['date_sold'])&&$_POST['date_sold']!='0'){
+  if(isset($_POST['date_sold'])&&$_POST['date_sold']==null){
     date_default_timezone_set('Asia/Shanghai');
     $current_time=date('Y-m-d H:i:s');
     $_POST['date_sold']=$current_time;
+    // echo "<div>var_dump($_POST[date_sold]) null</div>";
   }else{
-    $_POST['date_sold']=str_replace('T',' ',$_POST['date_sold']).':00';
+    if(isset($_POST['time_sold'])&&$_POST['time_sold']!=null){
+      $_POST['date_sold']=$_POST['date_sold']." ".$_POST['time_sold'].":00";
+    }else{
+      date_default_timezone_set('Asia/Shanghai');
+      $current_time=date('Y-m-d H:i:s');
+      $_POST['date_sold']=$current_time;
+    // echo "<div>var_dump($_POST[date_sold]) notnull</div>";
+    }
+  // echo "<div>$_POST[date_sold]</div>";
+  // echo var_dump($_POST['date_sold']);
   }
   $date_sold =$_POST['date_sold'];
   $price=double_check_input($conn,$_POST['price']);
   $customer_info=double_check_input($conn,$_POST['customer_info']);
   $user_id=$_SESSION['user_id'];
   $sold_size=double_check_input($conn,$_POST['sold_size']);
+  if($sold_size!='XXXS'||$sold_size!='XXS'||$sold_size!='XS'||$sold_size!='S'||$sold_size!='M'||$sold_size!='L'||$sold_size!='XL'||$sold_size!='XXL'){
+    $sold_size='';
+  }
   $stmt->bind_param('iisisis',$product_id,$sale_id,$date_sold,$price,$customer_info,$user_id,$sold_size);
   if(!$stmt->execute()){
     echo "插入数据有问题，回到选择画面";

@@ -7,6 +7,23 @@ if(strpos($URL,'herokuapp.com')){
 }
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
+  if(isset($_POST['date_sold'])&&$_POST['date_sold']==null){
+    date_default_timezone_set('Asia/Shanghai');
+    $current_time=date('Y-m-d H:i:s');
+    $_POST['date_sold']=$current_time;
+    echo "<div>var_dump($_POST[date_sold]) null</div>";
+  }else{
+    if(isset($_POST['time_sold'])&&$_POST['time_sold']!=null){
+      $_POST['date_sold']=$_POST['date_sold']." ".$_POST['time_sold'].":00";
+    }else{
+      date_default_timezone_set('Asia/Shanghai');
+      $current_time=date('Y-m-d H:i:s');
+      $_POST['date_sold']=$current_time;
+    echo "<div>var_dump($_POST[date_sold]) notnull</div>";
+  }
+  echo "<div>$_POST[date_sold]</div>";
+  echo var_dump($_POST['date_sold']);
+  }
   echo "post <br>";
 }
 if(isset($_COOKIE)){
@@ -219,8 +236,8 @@ $current_time=date('Y-m-d/TH:i:s');
 <br>
 <br>
 
-<form method="post" action="html_submitredirect_template.php">
-<!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>"> -->
+<!-- <form method="post" action="html_submitredirect_template.php"> -->
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 
 <label id='echo23'>出售的具體時間,如果為空，自動載入當前時間</label><br>
 <!-- firefox date support plugin -->
@@ -236,7 +253,7 @@ $current_time=date('Y-m-d/TH:i:s');
 <input type="hidden" name='product_id_for_sale' value='0'>
 <label id='echo25'>出售尺碼（選填）</label>
 <select name='sold_size'>
-<option id='value1' value='未填寫'></option>
+<option id='echo28' value='' >請選擇</option>
 <option value='XXXS'>XXXS</option>
 <option value='XXS'>XXS</option>
 <option value='XS'>XS</option>

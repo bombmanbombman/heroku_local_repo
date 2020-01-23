@@ -3,13 +3,15 @@
 #(function([$para_alias]){code})()
 (function(){ 
   global $redirect;
+  // echo $redirect;
   if(!isset($redirect)){$redirect=null;}
   global $wait_time;
-  if(!isset($wait_time)){$wait_time=10;}
+  if(!isset($wait_time)){$wait_time=4;}
   // if(strpos($domain,'herokuapp.com')){
   $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
     //檢查 URL中是否有herokuapp.com
-
+  // echo $URL;
+  // echo strpos($URL,'localhost:3000');
   if(strpos($URL,'herokuapp.com')){
     //heroku用
     switch($redirect){
@@ -48,8 +50,8 @@
       default:
       header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
     }
-  }else if(strpos($URL,'localhost:8012')){
-    //local 用
+  }else if(strpos($URL,'host:8012')){
+    //xampp 用
     switch($redirect){
       case 'root_directory':
         header("refresh:$wait_time;url=http://localhost:8012/laravelFolder/resources/views/learning_php/");
@@ -84,11 +86,11 @@
         exit();
         break;
       default:
-      header("refresh:$wait_time;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php");
+      header("refresh:$wait_time;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php");
     }
   }
-  else if(strpos($URL,'localhost:3000')){
-    //local 用
+  else if(strpos($URL,'host:3000')){
+    //localhost:3000 用
     switch($redirect){
       case 'root_directory':
         header("refresh:$wait_time;url=http://localhost:3000/");
@@ -123,7 +125,7 @@
         exit();
         break;
       default:
-      header("refresh:$wait_time;url=http://localhost:3000/html_userdetail_template.php");
+      header("refresh:$wait_time;url=http://localhost:3000/html_login_template.php");
     }
   }
 })();
