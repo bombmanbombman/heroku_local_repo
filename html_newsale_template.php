@@ -236,8 +236,8 @@ $current_time=date('Y-m-d/TH:i:s');
 <br>
 <br>
 
-<!-- <form method="post" action="html_submitredirect_template.php"> -->
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+<form method="post" action="html_submitredirect_template.php">
+<!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>"> -->
 
 <label id='echo23'>出售的具體時間,如果為空，自動載入當前時間</label><br>
 <!-- firefox date support plugin -->
