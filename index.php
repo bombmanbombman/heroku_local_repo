@@ -1,4 +1,5 @@
 <?php
+echo "<div>$_SERVER[REQUEST_URI]</div>";
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
   echo "post <br>";
