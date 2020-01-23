@@ -1,4 +1,10 @@
 <?php
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+if(strpos($URL,'herokuapp.com')){
+  echo "<div>$URL</div>";
+}else{
+  echo "<div>$URL</div>";
+}
 require_once("html_navibar_template.php");
 require_once("html_dropup_button_template.php");
 require_once("jumpback.php");
@@ -13,6 +19,7 @@ chdir("c:/xampp/mysql");
 // foreach($output as $line) echo htmlspecialchars("$line\n"); 
 // echo "</pre>";
 // }
+
 $backup_file_name="project1".date('Y-m-d-H-i-s').".sql";
 $cmd='mysqldump -f -u root project1 > c:/xampp/htdocs/laravelFolder/resources/views/learning_php/mysql_back/'.$backup_file_name;
 // $result = exec(escapeshellcmd($cmd),$output,$status);

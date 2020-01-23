@@ -1,4 +1,10 @@
 <?php
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+if(strpos($URL,'herokuapp.com')){
+  echo "<div>$URL</div>";
+}else{
+  echo "<div>$URL</div>";
+}
 session_start();
 var_dump($_POST);
 // var_dump($_SESSION);
