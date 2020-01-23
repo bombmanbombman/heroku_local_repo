@@ -15,7 +15,7 @@ setcookie('php_to_js', $json_encode,time()+86400,'/');
 
 // /**js json send to php */
 // header('Content-type: application/json');
-header('content-type','application/x-www-form-urlencoded');
+// header('content-type','application/x-www-form-urlencoded');
 // echo filter_input_array(INPUT_POST);
 echo file_get_contents('php://input');
 $data = json_decode( file_get_contents( 'php://input' ), true );
