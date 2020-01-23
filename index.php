@@ -2,6 +2,14 @@
 echo "<div>$_SERVER[REQUEST_URI]</div>";
 echo "<div>$_SERVER[HTTP_HOST]</div>";
 echo "<div>$_SERVER[SERVER_NAME]</div>";
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+echo "<div>$URL</div>";
+$domain =$_SERVER['HTTP_HOST'];
+if(strpos($domain,'herokuapp.com')){
+  echo "<div>".strpos($domain,'herokuapp.com')."</div>";
+}else{
+  echo "<div>$URL</div>";
+}
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
   echo "post <br>";

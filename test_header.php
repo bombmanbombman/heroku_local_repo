@@ -2,12 +2,12 @@
 # anynoumous function 無名自我執行function 
 #(function([$para_alias]){code})()
 (function(){ 
-  $domain =$_SERVER['HTTP_HOST'];
   global $redirect;
   if(!isset($redirect)){$redirect=null;}
   global $wait_time;
   if(!isset($wait_time)){$wait_time=10;}
   // if(strpos($domain,'herokuapp.com')){
+  $domain =$_SERVER['HTTP_HOST'];
   echo "<div>".strpos($domain,'herokuapp.com')."</div>";
     switch($redirect){
       case 'root_directory':
