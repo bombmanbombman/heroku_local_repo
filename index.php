@@ -9,7 +9,7 @@ if(isset($_POST) && $_POST != false){
   var_dump($_POST);
   echo "post <br>";
 }
-if(isset($_COOKIE)){
+if(isset($_COOKIE) && $_COOKIE != false){
   var_dump($_COOKIE);
   echo 'cookie <br>';
 }

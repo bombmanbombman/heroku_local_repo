@@ -21,7 +21,7 @@ if(isset($_SESSION)){
 require_once("html_navibar_template.php");
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo4'>session 傳送失敗</div>";
-  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+  $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
 }

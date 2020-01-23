@@ -6,11 +6,22 @@ if(strpos($URL,'herokuapp.com')){
   echo "<div>$URL</div>";
 }
 session_start();
-var_dump($_SESSION);
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE) && $_COOKIE != false){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
+if(isset($_SESSION)  && $_SESSION != false){
+  var_dump($_SESSION);
+  echo 'cookie <br>';
+}
 require_once("html_navibar_template.php");
 if(!isset($_SESSION['user_id'])){
   echo "session 傳送失敗<br>";
-  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+  $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
 }

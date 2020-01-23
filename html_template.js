@@ -213,7 +213,7 @@ $(function(){
   // }
   //（6）添加各種 <nav><a></a></nav>對應下面的（4）ajax page load機能
   // nav_anchor=`<nav>
-  // <a href='https://bombmanbombman-project1.herokuapp.com/#' id='thislink'>go to https://bombmanbombman-project1.herokuapp.com/#</a>
+  // <a href='https://bombmanbombman-project1.herokuapp.com/' id='thislink'>go to https://bombmanbombman-project1.herokuapp.com/</a>
   // <br><a href='20191229.php' id='thislink'>go to 20191229.php</a>
   // <br><a href='20191230.php' id='thislink2'>go to 20191230.php</a>
   // <br><a href='20191224.php' id='thislink3'>go to 20191224.php</a>
@@ -487,9 +487,47 @@ $(function(){
     $('#'+$.cookie('language')).trigger('click');
   }
 });
+// (9) 檢測 user使用的browser，因為firefox 不支持 input type="time" 要使用插件
 $(function(){
-  //(99)
-  //global ajax event 任何ajax event 結束後都會執行一次。
+    // Opera 8.0+
+  var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+  // Firefox 1.0+
+  var isFirefox = typeof InstallTrigger !== 'undefined';
+  // Safari 3.0+ "[object HTMLElementConstructor]" 
+  var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+  // Internet Explorer 6-11
+  var isIE = /*@cc_on!@*/false || !!document.documentMode;
+  // Edge 20+
+  var isEdge = !isIE && !!window.StyleMedia;
+  // Chrome 1 - 71
+  var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+  // Blink engine detection
+  var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+  if(isOpera){
+    browser="opera";
+  }else if(isFirefox){
+    browser="firefox";
+  }else if(isSafari){
+    browser="safari";
+  }else if(isIE){
+    browser="ie";
+  }else if(isEdge){
+    browser="edge";
+  }else if(isChrome){
+    browser="chrome";
+  }else if(isBlink){
+    browser="blink";
+  }
+  console.log(browser);
+  if(browser =='firefox'){
+    $('#datetime-local').attr('type','date');
+    $('#datetime-local').after(`<input name=time_sold type=time>`);
+  }
+})
+//(99)
+//global ajax event 任何ajax event 結束後都會執行一次。
+$(function(){
   $(document).ajaxComplete(function(event,jqXHR,data){
     console.log($('*'));
   });

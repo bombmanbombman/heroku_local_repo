@@ -6,7 +6,7 @@
   $conn = new mysqli($host,$username,$password,$databasename);
   if($conn->connect_error){
     echo "無法連接數據庫，$databasename","<br>";
-    $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+    $redirect='html_login_template.php';
     require_once ('test_header.php');
     exit();
   }

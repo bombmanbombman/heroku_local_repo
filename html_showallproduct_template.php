@@ -38,7 +38,7 @@ require_once('css_dropupbutton_template.php');
 
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo17'>session 傳送失敗</div>";
-  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+  $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
 }else{
@@ -133,27 +133,29 @@ if(!isset($_SESSION['user_id'])){
 </head>
 
 <body>
-  <br><br><br>
+  <br><hr><hr>
   <a href="html_newproduct_template.php" class="button">
     <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4>
   </a>
   <br><br><br>
   <label id='echo23'>輸入上面顯示的貨號，添加進貨記錄，出售記錄，圖片</label><br>
   <form method="post" action='html_newpurchase_template.php'>
+    <label id="echo25">為這個貨號添加進貨記錄</label><br>
     <input type='number' min='1' max='9999999999' name='product_id_for_purchase' required>
-    <input type='submit' id='value1' value='為這個貨號添加進貨記錄'>
-
+    <input type='submit' id='value1' value='添加進貨記錄'>
   </form>
-  <br><br><br>
+  <br><hr>
   <form method="post" action='html_newsale_template.php'>
+    <label id="echo26">為這個貨號添加出售記錄</label><br>
     <input type='number' min='1' max='9999999999' name='product_id_for_sale' required>
-    <input type='submit' id='value2' value='為這個貨號添加出售記錄'>
+    <input type='submit' id='value2' value='添加出售記錄'>
   </form>
 
-  <br><br><br>
+  <br><hr>
+  <label id="echo27">為這個貨號添加圖片或刪除圖片</label><br>
   <form method="post" action='html_marketimage_template.php'>
     <input type='number' min='1' max='9999999999' name='product_id_for_image' required>
-    <input type='submit' id='value3' value='為這個貨號添加圖片或刪除圖片'>
+    <input type='submit' id='value3' value='添加圖片或刪除圖片'>
   </form>
 
   <a href='html_displayimage_template.php' class='button'>

@@ -5,7 +5,7 @@ require_once("html_navibar_template.php");
 
 if(!isset($_SESSION['user_id'])){
   echo "session 傳送失敗<br>";
-  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+  $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
 }
@@ -18,7 +18,7 @@ $user_id=$_SESSION['user_id'];
 $stmt->bind_param('i',$user_id);
 if(!$stmt->execute()){
   echo "select query failed 回到login頁面。<br>";
-  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+  $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
 }

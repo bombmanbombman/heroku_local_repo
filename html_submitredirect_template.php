@@ -1,9 +1,18 @@
 <?php
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 session_start();
-var_dump($_SESSION);
-echo "<br>";
-var_dump($_POST);
-echo "<br>";
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE) && $_COOKIE != false){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
+if(isset($_SESSION)  && $_SESSION != false){
+  var_dump($_SESSION);
+  echo 'cookie <br>';
+}
 
 # 對應html_newpurchase.php的submit 一共22 line
 if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST['purchase_number'])){
@@ -31,7 +40,11 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
   $stmt->bind_param('iisiisi',$product_id,$purchase_id,$date_purchase,$purchase_cost,$purchase_number,$purchase_size,$user_id);
   if(!$stmt->execute()){
     echo "插入数据有问题，回到选择画面";
-    // header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_newentry_template.php");
+    if(strpos($URL,'herokuapp.com')){
+      header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/html_newentry_template.php");
+    }else{
+      header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_newentry_template.php");
+    }
     exit();
   }
   header('location:html_newpurchase_template.php');
@@ -39,6 +52,9 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
 
 #對應html_newsale.php的submit 一共24 line
 if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_info'])&&isset($_POST['sold_size'])){
+  if(isset($_POST['time_sold'])){
+    $_POST['date_sold']=$_POST['date_sold']."T".$_POST['time_sold'];
+  }
   require_once('login.php');
   $query='insert into sale values(?,?,?,?,?,?,?)';
   $stmt=$conn->prepare($query);
@@ -48,7 +64,7 @@ if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_in
   // var_dump($_POST['date_sold']);
   # 修改为 database datetime的适合的格式；
   // var_dump($date_sold);
-  if(isset($_POST['date_sold'])&&$_POST['date_sold']==null){
+  if(isset($_POST['date_sold'])&&$_POST['date_sold']!='0'){
     date_default_timezone_set('Asia/Shanghai');
     $current_time=date('Y-m-d H:i:s');
     $_POST['date_sold']=$current_time;
@@ -63,7 +79,11 @@ if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_in
   $stmt->bind_param('iisisis',$product_id,$sale_id,$date_sold,$price,$customer_info,$user_id,$sold_size);
   if(!$stmt->execute()){
     echo "插入数据有问题，回到选择画面";
-    header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_newentry_template.php");
+    if(strpos($URL,'herokuapp.com')){
+      header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/html_newentry_template.php");
+    }else{
+      header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_newentry_template.php");
+    }
     exit();
   }
   header('location:html_newsale_template.php');
@@ -137,7 +157,11 @@ if(isset($_POST['image_data'])){
     if(isset($response['message'])){
       print_r( $response['message']);
       echo"<br>請重新在上傳<br>";
+      if(strpos($URL,'herokuapp.com')){
+        header("refresh:3;url=https://bombmanbombman-project1.herokuapp.com/html_marketimage_template.php");
+      }else{
       header("refresh:3;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_marketimage_template.php");
+      }
       exit();
     }
   }
@@ -162,7 +186,11 @@ if(isset($_POST['image_data'])){
     $stmt->send_long_data(4,$image_data);
     if(!$stmt->execute()){
       echo "插入数据有问题，回到选择画面";
-      header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/#");
+      if(strpos($URL,'herokuapp.com')){
+        header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/html_marketimage_template.php");
+      }else{
+        header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_marketimage_template.php");
+      }
       exit();
     }
     $conn->close();

@@ -5,12 +5,23 @@ if(strpos($URL,'herokuapp.com')){
 }else{
   echo "<div>$URL</div>";
 }
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE)){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
 session_start();
-var_dump($_SESSION);
+if(isset($_SESSION)){
+  var_dump($_SESSION);
+  echo 'session <br>';
+}
 require_once("html_navibar_template.php");
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo1'>session 傳送失敗</div>";
-  $redirect='https://bombmanbombman-project1.herokuapp.com/#';
+  $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
 }
@@ -43,29 +54,45 @@ $query='select product_id,buy_place,product_info,product_detail from product
   where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_sale'];
 $stmt=$conn->query($query);
 if(!$stmt)echo($conn->error);
-echo '
+?>
+
+
 <html>
   <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+    <meta content='utf-8' http-equiv='encoding'>
+    <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
     <title>login page</title>
-    <script id="jquery" src="jquery-3.4.1.js"></script>
+    <script id='jquery' src='jquery-3.4.1.js'></script>
     <!-- ripple effect library -->
-    <script src="jquery.ripples.js"></script>
-    <script id="bootstrap_js" src="/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script> 
-    <script id="jquery_ui" src="jquery-ui-1.12.min.js"></script>
-    <script id="jquery_cookie" src="/jquery-cookie-master/src/jquery.cookie.js"></script>
-    <script id="vue" src="vue.min.js"></script>
-    <link id="bootstrap" type="text/css" rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-
-
-
+    <script src='jquery.ripples.js'></script>
+    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+    <script id='vue' src='vue.min.js'></script>
+    <!-- firefox date support plugin -->
+    <script src='//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js'></script>
+    <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
   </head>
   <body>
-  ';
+<?php
 
-echo "<table><tr><th><span id='echo3'>貨號</span></th><th><span id='echo4'>進貨地點</span></th><th><span id='echo5'>貨品簡介</span></th><th><span id='echo6'>貨品詳細</span></th></tr>";
+echo "
+<table>
+  <tr>
+    <th>
+      <span id='echo3'>貨號</span>
+    </th>
+    <th>
+      <span id='echo4'>進貨地點</span>
+    </th>
+    <th>
+      <span id='echo5'>貨品簡介</span>
+    </th>
+    <th>
+      <span id='echo6'>貨品詳細</span>
+      </th>
+  </tr>";
 while($row=$stmt->fetch_assoc()){
   echo"
   <tr>
@@ -90,7 +117,7 @@ foreach($rows as $subarray1){
 }
 // var_dump($all_product_id_in_purchase);
 if(in_array($_SESSION['product_id_for_sale'],$all_product_id_in_purchase)){
-  echo"<div id='echo7'>已經對這個貨號進過貨</div>";
+  echo"<div id='echo7'>貨號存在進貨記錄</div>";
   $progress1=true;
 }else{
   echo "<h4 id='echo8'>還沒有對這個貨號進過貨,只有先進貨後才能填寫出售記錄</h4><br>";
@@ -113,7 +140,7 @@ foreach($rows as $subarray1){
 }
 // var_dump($all_product_id_in_sale);
 if(in_array($_SESSION['product_id_for_sale'],$all_product_id_in_sale)){
-  echo"<div id='echo9'>這個貨號有出售記錄。</div><br>";
+  echo"<div id='echo9'>貨號存在出售記錄。</div><br>";
   $progress2=true;
 }else{
   echo "<div id='echo10'>這個貨號還沒有成交過。</div>";
@@ -133,10 +160,14 @@ if(isset($progress1)&&$progress1===true){
   if(!$stmt)echo($conn->error);
   echo "<br>
   <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
-  <table><tr><th><span id='echo12'>進貨編號</span></th>
+  <table>
+    <tr>
+    <th>
+    <span id='echo12'>進貨編號</span>
+    </th>
   <th><span id='echo13'>進貨日期</span></th><th><span id='echo14'>進貨價格</span></th><th><span id='echo15'>進貨數量</span></th><th><span id='echo16'>進貨尺碼</span></th></tr>";
   while($row=$stmt->fetch_assoc()){
-    echo <<<_HEREDOC
+    echo "
     <tr>
     <th>$row[purchase_id]</th>
     <th>$row[date_purchase]</th>
@@ -144,7 +175,7 @@ if(isset($progress1)&&$progress1===true){
     <th>$row[purchase_number]</th>
     <th>$row[purchase_size]</th>
     </tr>
-_HEREDOC;
+    ";
   }
   #如果已經出售過，顯示最近10筆交易記錄   27 line
   echo "</table>";
@@ -163,7 +194,7 @@ _HEREDOC;
     <table><tr><th><span id='echo18'>出售編號</span></th>
     <th><span id='echo19'>出售日期</span></th><th><span id='echo20'>出售價格</span></th><th><span id='echo21'>客戶描述</span></th><th><span id='echo22'>售出尺碼</span></th></tr>";
     while($row=$stmt->fetch_assoc()){
-      echo <<<_HEREDOC
+      echo"
       <tr>
       <th>$row[sale_id]</th>
       <th>$row[date_sold]</th>
@@ -171,7 +202,7 @@ _HEREDOC;
       <th>$row[customer_info]</th>
       <th>$row[sold_size]</th>
       </tr>
-_HEREDOC;
+      ";
     }
     echo "</table>";
   }
@@ -179,7 +210,7 @@ _HEREDOC;
 
 date_default_timezone_set('Asia/Shanghai');
 $current_time=date('Y-m-d/TH:i:s');
-
+// echo "<div>$current_time</div>"
 
 
 
@@ -189,15 +220,23 @@ $current_time=date('Y-m-d/TH:i:s');
 <br>
 
 <form method="post" action="html_submitredirect_template.php">
+<!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>"> -->
 
 <label id='echo23'>出售的具體時間,如果為空，自動載入當前時間</label><br>
-<input type="datetime-local" name="date_sold" size="40" value=''><br>
+<!-- firefox date support plugin -->
+<script>
+  webshims.setOptions("forms-ext", {types: "date"});
+  webshims.polyfill("forms forms-ext");
+</script>
+<!-- <input type="datetime-local" name="date_sold" size="40" value=""><br> -->
+<input id='datetime-local' type="datetime-local" name="date_sold" size="40" value=""><br>
+<!-- <input type="date" name="date_sold" ><br> -->
 <label id='echo24'>一件的售出價格</label><br>
-<input type="number" name="price" min='1' max="99999999" size="40" required>元/件<br>
+<input type="number" name="price" min='1' max="99999999" size="40" required><span id='echo26'>元/件</span><br>
 <input type="hidden" name='product_id_for_sale' value='0'>
 <label id='echo25'>出售尺碼（選填）</label>
 <select name='sold_size'>
-<option id='value1' value='未填寫'><span id='echo26'>請選擇</span></option>
+<option id='value1' value='未填寫'></option>
 <option value='XXXS'>XXXS</option>
 <option value='XXS'>XXS</option>
 <option value='XS'>XS</option>

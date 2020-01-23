@@ -42,7 +42,7 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
   if($_SESSION['user_id']==null){
     echo '用戶名不存在，或密碼錯誤，請先註冊。<br>';
   }else{
-    echo '<meta http-equiv="refresh" content="0; url=https://bombmanbombman-project1.herokuapp.com/#" />';
+    echo '<meta http-equiv="refresh" content="0; url=https://bombmanbombman-project1.herokuapp.com/" />';
     $conn->close();
   }
 }
@@ -55,7 +55,7 @@ echo <<<_HEREDOC
 </style>
 </head>
 <body>
-<form action ='https://bombmanbombman-project1.herokuapp.com/#' method = 'post'>
+<form action ='https://bombmanbombman-project1.herokuapp.com/' method = 'post'>
 <input type='text' name='user_name' required placeholder='請輸入姓名'>
 <input type='password' maxlength='12' name = 'user_password' required placeholder='請輸入密碼'>
 <input type='submit' value='LOG IN'>

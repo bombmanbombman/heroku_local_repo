@@ -37,7 +37,7 @@ li a:hover {   /* hover時的style */
     </div> 
 </div> 
 <ul>
-  <li><a class='navi' href="https://bombmanbombman-project1.herokuapp.com/#">Home</a></li>
+  <li><a class='navi' href="https://bombmanbombman-project1.herokuapp.com/">Home</a></li>
   <li><a class='navi' href="#news">google sign out</a></li>
   <li><a class='navi' href="20200113.php">map</a></li>
   <!--float:right 取消display block，成為一條線 且擠在右邊-->
@@ -45,7 +45,7 @@ li a:hover {   /* hover時的style */
     <select name='forma' onchange="location = this.value">
       <option value="select">select page</option>
       <option value ="backup_sql_exec.php">備份database</option>
-      <option value ="https://bombmanbombman-project1.herokuapp.com/#">LOGIN</option>
+      <option value ="https://bombmanbombman-project1.herokuapp.com/">LOGIN</option>
       <option value ="html_login_desktop.php">LOGIN desktop</option>
       <option value="html_userdetail_template.php">用戶頁面</option>
       <option value="html_adduserdetail_template.php">修復用戶添加資料頁面bug</option>
@@ -53,7 +53,7 @@ li a:hover {   /* hover時的style */
       <option class="active" value="html_newproduct_template.php">添加新貨品</option>
       <option class="active" value="html_showallproduct_template.php">顯示用戶所有貨號</option>
       <option value='html_adduserdetail_template.php'>改變user信息</option>
-      <option value="https://bombmanbombman-project1.herokuapp.com/#">root directory</option>
+      <option value="https://bombmanbombman-project1.herokuapp.com/">root directory</option>
     </select>
   </li>
 </ul>
