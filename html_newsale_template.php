@@ -43,16 +43,37 @@ $query='select product_id,buy_place,product_info,product_detail from product
   where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_sale'];
 $stmt=$conn->query($query);
 if(!$stmt)echo($conn->error);
+echo '
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>login page</title>
+    <script id="jquery" src="jquery-3.4.1.js"></script>
+    <!-- ripple effect library -->
+    <script src="jquery.ripples.js"></script>
+    <script id="bootstrap_js" src="/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script> 
+    <script id="jquery_ui" src="jquery-ui-1.12.min.js"></script>
+    <script id="jquery_cookie" src="/jquery-cookie-master/src/jquery.cookie.js"></script>
+    <script id="vue" src="vue.min.js"></script>
+    <link id="bootstrap" type="text/css" rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+
+
+
+  </head>
+  <body>
+  ';
+
 echo "<table><tr><th><span id='echo3'>貨號</span></th><th><span id='echo4'>進貨地點</span></th><th><span id='echo5'>貨品簡介</span></th><th><span id='echo6'>貨品詳細</span></th></tr>";
 while($row=$stmt->fetch_assoc()){
-  echo<<<_HEREDOC
+  echo"
   <tr>
     <td>$row[product_id]</td>
     <td>$row[buy_place]</td>
     <td>$row[product_info]</td>
     <td>$row[product_detail]</td>
-  </tr>
-_HEREDOC;
+  </tr>";
 }
 echo "</table>";
 #尋找product_id_for_sale是否也存在與purchase table中  一共18行 
@@ -197,4 +218,9 @@ $current_time=date('Y-m-d/TH:i:s');
   <input type="submit" id='value3' value="回到所有貨號頁面" 
   name="unset_product_id_for_sale">
 </form>
+  <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+  <script id='js' defer async type=text/javascript src="html_newsale_template.js"></script>
+
+</body>
+</html>
 

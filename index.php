@@ -65,6 +65,9 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
 
 <html>
 <head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="480318055682-j8ceeor3okjafa9bo1uvllmrkdoibi8b.apps.googleusercontent.com 
 ">
