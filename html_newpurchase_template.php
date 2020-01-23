@@ -42,6 +42,25 @@ foreach($rows as $subarray1){
     $all_product_id_in_product[]=$value;
   }
 }
+?>
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>new purchase page</title>
+<script id='jquery' src="jquery-3.4.1.js"></script>
+<!-- ripple effect library -->
+<script src="jquery.ripples.js"></script>
+<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+<script id='vue' src="vue.min.js"></script>
+<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+<?php
 // var_dump($all_product_id_in_product);
 if(!in_array($_SESSION['product_id_for_purchase'],$all_product_id_in_product)){
   echo"這個貨號不存在，請輸入有效的貨號<br>";
@@ -56,14 +75,14 @@ $stmt=$conn->query($query);
 if(!$stmt)echo($conn->error);
 echo "<table><tr><th>貨號</th><th>進貨地點</th><th>貨品簡介</th><th>貨品詳細</th></tr>";
 while($row=$stmt->fetch_assoc()){
-  echo<<<_HEREDOC
+  echo"
   <tr>
     <td>$row[product_id]</td>
     <td>$row[buy_place]</td>
     <td>$row[product_info]</td>
     <td>$row[product_detail]</td>
   </tr>
-_HEREDOC;
+  ";
 }
 echo "</table>";
 #尋找product_id_for_purchase是否也存在與purchase table中  一共18行 
@@ -122,15 +141,15 @@ if(isset($progress1)&&$progress1===true){
   <table><tr><th>進貨編號</th>
   <th>進貨日期</th><th>進貨價格</th><th>進貨數量</th><th>進貨尺碼</th></tr>";
   while($row=$stmt->fetch_assoc()){
-    echo <<<_HEREDOC
+    echo "
     <tr>
-    <th>$row[purchase_id]</th>
-    <th>$row[date_purchase]</th>
-    <th>$row[purchase_cost]</th>
-    <th>$row[purchase_number]</th>
-    <th>$row[purchase_size]</th>
+      <th>$row[purchase_id]</th>
+      <th>$row[date_purchase]</th>
+      <th>$row[purchase_cost]</th>
+      <th>$row[purchase_number]</th>
+      <th>$row[purchase_size]</th>
     </tr>
-_HEREDOC;
+    ";
   }
   #如果已經出售過，顯示最近10筆交易記錄   27 line
   echo "</table>";
@@ -149,21 +168,22 @@ _HEREDOC;
     <table><tr><th>出售編號</th>
     <th>出售日期</th><th>出售價格</th><th>客戶描述</th><th>售出尺碼</th></tr>";
     while($row=$stmt->fetch_assoc()){
-      echo <<<_HEREDOC
+      echo"
       <tr>
-      <th>$row[sale_id]</th>
-      <th>$row[date_sold]</th>
-      <th>$row[price]</th>
-      <th>$row[customer_info]</th>
-      <th>$row[sold_size]</th>
+        <th>$row[sale_id]</th>
+        <th>$row[date_sold]</th>
+        <th>$row[price]</th>
+        <th>$row[customer_info]</th>
+        <th>$row[sold_size]</th>
+        <th>$row[sold_size]</th>
       </tr>
-_HEREDOC;
+      ";
     }
     echo "</table>";
   }
 }
+?>
 
-echo <<<_HEREDOC
 <br>
 <br>
 <br>
@@ -195,7 +215,9 @@ echo <<<_HEREDOC
   <input type="submit" value="回到所有貨號頁面" 
   name="unset_product_id_for_purchase">
 </form>
+<script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+<script id='js' defer async type=text/javascript src="html_newpurchase_template.js"></script>
+<noscript>please do not turn off javascript</noscript>
+</body>
+</html>
 
-_HEREDOC;
-
-?>

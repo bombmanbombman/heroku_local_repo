@@ -48,7 +48,7 @@
       default:
       header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
     }
-  }else{
+  }else if(strpos($URL,'localhost:8012')){
     //local 用
     switch($redirect){
       case 'root_directory':
@@ -85,6 +85,45 @@
         break;
       default:
       header("refresh:$wait_time;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php");
+    }
+  }
+  else if(strpos($URL,'localhost:3000')){
+    //local 用
+    switch($redirect){
+      case 'root_directory':
+        header("refresh:$wait_time;url=http://localhost:3000/");
+        exit();
+        break;
+      case 'html_userdetail_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_userdetail_template.php");
+        exit();
+        break;
+      case 'html_databasemanagement_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_databasemanagement_template.php");
+        exit();
+        break;
+      case 'html_login_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_login_template.php");
+        exit();
+        break;
+      case 'html_searchproduct_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_searchproduct.php");
+        exit();
+        break;
+      case 'html_userregister_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_userregister_template.php");
+        exit();
+        break;
+      case 'html_showallproduct_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_showallproduct_template.php");
+        exit();
+        break;
+      case 'html_marketimage_template.php':
+        header("refresh:$wait_time;url=http://localhost:3000/html_marketimage_template.php");
+        exit();
+        break;
+      default:
+      header("refresh:$wait_time;url=http://localhost:3000/html_userdetail_template.php");
     }
   }
 })();
