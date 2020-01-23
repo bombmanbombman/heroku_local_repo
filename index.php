@@ -1,5 +1,7 @@
 <?php
 echo "<div>$_SERVER[REQUEST_URI]</div>";
+echo "<div>$_SERVER[HTTP_HOST]</div>";
+echo "<div>$_SERVER[SERVER_NAME]</div>";
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
   echo "post <br>";
