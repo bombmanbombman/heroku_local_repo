@@ -121,19 +121,23 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
       <div id='google_sign_in' class="g-signin2 " data-onsuccess="onSignIn" data-theme="dark"></div>
       <br><button id='google._sign_out' class="align-items-start">google sign out</button>
     </div class="d-flex justify-content-center">
-      <form  action ='index.php' method = 'post'>
+      <!-- <form  action ='index.php' method = 'post'> -->
+      <form id='index_submit' action ='index_submit.php' method = 'post'>
       <div class="d-flex justify-content-center">
         <label id='echo1'>ユーザー名</label>
-        <input type='text' name='user_name' required >
+        <input id='user_name'type='text' name='user_name' required >
       </div>
       <div class="d-flex justify-content-center">
         <label id='echo2'>パスワード</label>
-        <input type='password' maxlength='12' name = 'user_password' required>
+        <input id='user_password' type='password' maxlength='12' name = 'user_password' required>
       </div>
       <div class="d-flex justify-content-center" >
         <input id='log_in_button' class='btn btn-dark' type='submit' style="width:190px;" value='LOG IN'>
       </div>
       </form>
+      <div class="d-flex justify-content-center">
+        <div id='error_message' style='color:red'></div>
+      </div>
       <form class="d-flex justify-content-center" action ='html_userregister_template.php' method = 'post'>
         <label id='echo3'>新しいユーザーを作る</label>
         <input class='btn btn-dark' type='submit' name='jump' value="sign up" required>

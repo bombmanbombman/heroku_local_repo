@@ -16,6 +16,39 @@ $(function(){
   $('#content').css({
     "position":"relative"
   })
+  if($('a#japanese').hasClass('active')){
+    $("#log_in_button").css({
+      "margin-right":"-75px"
+    })
+  }
+  $("a#japanese").on('click',function(e){
+    console.log(e.target);
+    $("#log_in_button").css({
+      "margin-right":"-75px"
+    })
+  })
+  if($('a#chinese').hasClass('active')){
+    $("#log_in_button").css({
+      "margin-right":"-45px"
+    })
+  }
+  $("a#chinese").on('click',function(e){
+    console.log(e.target);
+    $("#log_in_button").css({
+      "margin-right":"-45px"
+    })
+  })
+  if($('a#enlgish').hasClass('active')){
+    $("#log_in_button").css({
+      "margin-right":"-60px"
+    })
+  }
+  $("a#english").on('click',function(e){
+    console.log(e.target);
+    $("#log_in_button").css({
+      "margin-right":"-60px"
+    })
+  })
   // event resize() to adjust to browser 包括拖动console 的窗口 都会触发
   $(window).resize(function(){ 
       $('#background').css({
@@ -88,4 +121,51 @@ $(function(){
   //     console.log('User signed out.');
   //   }); 
   // })
+  $('#index_submit').on('submit',function(e){
+    e.preventDefault();
+    let user_name=$('#user_name').val();
+    console.log(user_name)
+    let user_password=$('#user_password').val();
+    console.log(user_password)
+    $.ajax({
+      type: "POST",
+      url: "index_submit.php",
+      data: {
+        user_name:user_name,
+        user_password:user_password
+      },
+      dataType: "",
+      // success: function (data) {
+      //   console.log(data);
+      //   if(data =='1'){
+      //     window.location.href='html_userdetail_template.php';
+      //   }else if(data == '0'){
+      //     if($('a#chinese').hasClass('active')){
+      //     $('#error_message').text('用戶名或密碼錯誤');
+      //     }else if($('a#japanese').hasClass('active')){
+      //     $('#error_message').text('ユーザー名又はパスワードが間違っています');
+      //     }else if($('a#english').hasClass('active')){
+      //       $('#error_message').text('username or password is not corrent');
+      //     }
+      //   }
+      // }
+    }).done(function(data){
+      console.log('結果是:'+data);
+      if(data !='error0'){
+        $.cookie('user_id',data);
+        console.log($.cookie());
+        window.location.href='html_userdetail_template.php';
+      }else if(data == 'error0'){
+        if($('a#chinese').hasClass('active')){
+        $('#error_message').text('用戶名或密碼錯誤');
+        }else if($('a#japanese').hasClass('active')){
+        $('#error_message').text('ユーザー名又はパスワードが間違っています');
+        }else if($('a#english').hasClass('active')){
+          $('#error_message').text('username or password is not corrent');
+        }
+      }
+    }).fail(function(error){
+      console.log(error);
+    });
+  })
 });

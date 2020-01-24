@@ -1,5 +1,6 @@
 <?php
-
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+echo "<div>$URL</div>";
 session_start();
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
@@ -7,7 +8,17 @@ if(isset($_POST) && $_POST != false){
 }
 if(isset($_COOKIE)){
   var_dump($_COOKIE);
+  if(isset($_COOKIE['user_id'])){
+  $_SESSION['user_id']=$_COOKIE['user_id'];
   echo 'cookie <br>';
+  }else{
+    if(strpos($URL,'herokuapp.com')){
+      header("Location:https://bombmanbombman-project1.herokuapp.com");
+    }elseif(strpos($URL,'host:3000'){
+      header("Location:http://localhost:3000/index.php");
+    }elseif(strpos($URL,'host:8012'){
+    header("Location:http://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php");
+    }
 }
 if(isset($_SESSION)){
   var_dump($_SESSION);
@@ -76,7 +87,7 @@ if($num_rows!==0){
 
 // if(isset($progress1)&&$progress1===true){
 ?>
-
+<html>
 <head>
 <style>
 a.button {
@@ -142,7 +153,7 @@ if(isset($progress2)&&$progress2===true){
   <script id='js' defer async type=text/javascript src="html_userdetail_template.js"></script>
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
 </body>
-
+</html>
 
 
 

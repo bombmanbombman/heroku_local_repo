@@ -313,7 +313,6 @@ $(function(){
   if(suffix !=-1){
     current_file=current_file.substr(1,suffix-1);
   }
-  console.log($('*'));
   console.log(current_file);
   $("#japanese").on('click',function(e){
     $('a.actived-language').removeClass('active');
@@ -349,6 +348,7 @@ $(function(){
       $('body').fadeOut(1);
       for(prop in language_object){
         console.log(prop);
+        console.log(prop.search('value'));
         if(prop.search("value"!=-1)){
           $('#'+prop).val(language_object[prop]);
         }
@@ -364,6 +364,7 @@ $(function(){
       $.cookie('language','japanese',{path:'/'});
       console.log($.cookie());
       // location.reload();
+      console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
       console.log(jqXHR);
@@ -419,6 +420,7 @@ $(function(){
       $.removeCookie('language',{path: '/'});
       $.cookie('language','chinese',{path:'/'});
       console.log($.cookie());
+      console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
       console.log(jqXHR);
@@ -459,6 +461,7 @@ $(function(){
       $('body').fadeOut(1);
       for(prop in language_object){
         console.log(prop);
+        console.log(prop.search('value'));
         if(prop.search("value"!=-1)){
           $('#'+prop).val(language_object[prop]);
         }
@@ -473,6 +476,7 @@ $(function(){
       console.log($.removeCookie('language',{path: '/'}));
       $.cookie('language','english',{path:'/'});
       console.log($.cookie());
+      console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
       console.log(jqXHR);

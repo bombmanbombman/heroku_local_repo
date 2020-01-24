@@ -141,7 +141,6 @@ function fetch_product_table($conn,$user_id,$offset='',$order='asc',$show_col_nu
   $stmt->execute();
   if(!$stmt)die('select query failed');
   // var_dump($stmt);
-  echo "<br>";
   $result_stmt=$stmt->get_result();
   // var_dump($result_stmt);
   $product_table=array();
