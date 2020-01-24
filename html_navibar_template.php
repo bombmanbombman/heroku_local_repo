@@ -37,8 +37,18 @@ li a:hover {   /* hover時的style */
     </div> 
 </div> 
 <ul>
-  <li><a class='navi' href="https://bombmanbombman-project1.herokuapp.com/">Home</a></li>
-  <li><a class='navi' href="#news">google sign out</a></li>
+<a href="html_adduserdetail_template.php" ><h4 id='echo8'>補充修改用戶詳細信息</h1></a>
+<?php 
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+if(strpos($URL,'herokuapp.com')){
+  echo '<li><a class="navi" href="https://bombmanbombman-project1.herokuapp.com/html_userdetail_template.php">user detail page</a></li>';
+  echo '<li><a class="navi" href="https://bombmanbombman-project1.herokuapp.com/">sign out</a></li>';
+}else{
+  echo '<li><a class="navi" href="html_userdetail_template.php">user detail page</a></li>';
+  echo '<li><a class="navi" href="index.php">sign out</a></li>';
+}
+?>
+  <!-- <li><a class='navi' href="">sign out</a></li> -->
   <li><a class='navi' href="20200113.php">map</a></li>
   <!--float:right 取消display block，成為一條線 且擠在右邊-->
   <li style="float:right">

@@ -248,7 +248,7 @@ if(isset($progress1)&&$progress1===true){
 <input type="hidden" name='product_id_for_purchase' value='0'>
 <label id='echo28'>尺碼（選填）</label>
 <select name='purchase_size'>
-<option id='value1' value='未填寫'></option>
+<option id='value1' value=''>新選擇尺碼</option>
 <option value='XXXS'>XXXS</option>
 <option value='XXS'>XXS</option>
 <option value='XS'>XS</option>

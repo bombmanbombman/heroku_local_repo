@@ -79,7 +79,7 @@ if(!$stmt)echo($conn->error);
     <meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
     <meta content='utf-8' http-equiv='encoding'>
     <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
-    <title>login page</title>
+    <title>new sale page</title>
     <script id='jquery' src='jquery-3.4.1.js'></script>
     <!-- ripple effect library -->
     <script src='jquery.ripples.js'></script>
@@ -253,7 +253,7 @@ $current_time=date('Y-m-d/TH:i:s');
 <input type="hidden" name='product_id_for_sale' value='0'>
 <label id='echo25'>出售尺碼（選填）</label>
 <select name='sold_size'>
-<option id='echo28' value='' >請選擇</option>
+<option id='echo28' value='' >請選擇尺碼</option>
 <option value='XXXS'>XXXS</option>
 <option value='XXS'>XXS</option>
 <option value='XS'>XS</option>

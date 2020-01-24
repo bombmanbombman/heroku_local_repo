@@ -19,7 +19,14 @@
       printf('current character set : %s',$conn->character_set_name());
     }
   }
-  $conn->query("SET NAMES utf8 COLLATE  utf8mb4_unicode_ci");
+  $conn->query("SET NAMES utf8mb4 COLLATE  utf8mb4_general_ci");
+  /** 設定各種character 避免亂碼 文字化け　grable*/
+  // $conn->query("SET character_set_results = utf8mb4");
+  // $conn->query("SET character_set_database = utf8mb4");
+  // $conn->query("SET character_set_client = utf8mb4");
+  // $conn->query("SET character_set_connection = utf8mb4");
+  // $conn->query("SET character_set_server = utf8mb4");
+  
 
 
 /*用 mysqli中的method  mysqli->real_escape_string(string$input)來過濾 

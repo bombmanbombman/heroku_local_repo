@@ -27,7 +27,7 @@ if(isset($_SESSION['accident_disconnect'])){
 }
 if(isset($_SESSION)&&$_SESSION!=null){
   var_dump($_SESSION);
-  echo '<br>';
+  echo 'session<br>';
   session_destroy();
   session_regenerate_id(true);
 }
@@ -131,7 +131,7 @@ if(isset($_POST['user_name']) && isset($_POST['user_password'])){
         <input type='password' maxlength='12' name = 'user_password' required>
       </div>
       <div class="d-flex justify-content-center" >
-        <input class='btn btn-dark' type='submit' style="width:42%;" value='LOG IN'>
+        <input id='log_in_button' class='btn btn-dark' type='submit' style="width:190px;" value='LOG IN'>
       </div>
       </form>
       <form class="d-flex justify-content-center" action ='html_userregister_template.php' method = 'post'>
