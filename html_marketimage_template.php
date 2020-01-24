@@ -5,9 +5,25 @@ if(strpos($URL,'herokuapp.com')){
 }else{
   echo "<div>$URL</div>";
 }
+$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+if(strpos($URL,'herokuapp.com')){
+  echo "<div>$URL</div>";
+}else{
+  echo "<div>$URL</div>";
+}
 session_start();
-var_dump($_POST);
-// var_dump($_SESSION);
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE)){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
+if(isset($_SESSION)){
+  var_dump($_SESSION);
+  echo 'session <br>';
+}
 require_once("html_navibar_template.php");
 if(!isset($_SESSION['user_id'])){
   echo "session 傳送失敗<br>";
@@ -76,26 +92,35 @@ if(!$stmt->execute()){
 }
 $result_stmt=$stmt->get_result();
 while($row=$result_stmt->fetch_assoc()){
-  echo <<<_HEREDOC
-  <head>
-  <style>
-  table.float_left{
-    float:left;
-  }
-  span.clear_float{
-    clear:both;
-  }
-  </style>
-  </head>
-  <table><tr><th>貨號  </th><th>進貨地點</th><th>貨品簡介</th><th>貨品詳細</th></tr>
-  <tr>
-  <th>$row[product_id]</th>
-  <th>$row[buy_place]</th>
-  <th>$row[product_info]</th>
-  <th>$row[product_detail]</th>
-  </tr>
-  </table>
-_HEREDOC;
+  echo "
+    <head>
+    <style>
+    table.float_left{
+      float:left;
+    }
+    span.clear_float{
+      clear:both;
+    }
+    </style>
+    <script id='jquery' src='jquery-3.4.1.js'></script>
+    <!-- ripple effect library -->
+    <script src='jquery.ripples.js'></script>
+    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
+    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+    <script id='vue' src='vue.min.js'></script>
+    <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
+    </head>
+    <body>
+    <table><tr><th>貨號  </th><th>進貨地點</th><th>貨品簡介</th><th>貨品詳細</th></tr>
+    <tr>
+    <th>$row[product_id]</th>
+    <th>$row[buy_place]</th>
+    <th>$row[product_info]</th>
+    <th>$row[product_detail]</th>
+    </tr>
+    </table>
+  "
 }
 echo "<form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>";
 for($i=0;$i<$image_number_of_this_product;$i++){
@@ -140,3 +165,6 @@ name="unset_product_id_for_image">
 
 
 ?>
+  <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+  <script id='js' defer async type=text/javascript src="html_showallproduct_template.js"></script>
+</body>

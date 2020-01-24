@@ -37,7 +37,6 @@ li a:hover {   /* hover時的style */
     </div> 
 </div> 
 <ul>
-<a href="html_adduserdetail_template.php" ><h4 id='echo8'>補充修改用戶詳細信息</h1></a>
 <?php 
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){

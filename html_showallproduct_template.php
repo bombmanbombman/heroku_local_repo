@@ -133,11 +133,19 @@ if(!isset($_SESSION['user_id'])){
 </head>
 
 <body>
-  <br><hr><hr>
-  <a href="html_newproduct_template.php" class="button">
-    <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4>
-  </a>
-  <br><br><br>
+  <br><hr>
+  <button>
+    <a href="html_newproduct_template.php" class="button">
+      <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4>
+    </a>
+  </button>
+  <hr>
+  <button>
+    <a href='html_displayimage_template.php' class='button'>
+      <h3 id='echo24'>進入圖庫</h3>
+    </a>
+  </button>
+  <br><hr><br>
   <label id='echo23'>輸入上面顯示的貨號，添加進貨記錄，出售記錄，圖片</label><br>
   <form method="post" action='html_newpurchase_template.php'>
     <label id="echo25">為這個貨號添加進貨記錄</label><br>
@@ -157,10 +165,6 @@ if(!isset($_SESSION['user_id'])){
     <input type='number' min='1' max='9999999999' name='product_id_for_image' required>
     <input type='submit' id='value3' value='添加圖片或刪除圖片'>
   </form>
-
-  <a href='html_displayimage_template.php' class='button'>
-    <h3 id='echo24'>進入圖庫</h3>
-  </a>
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
   <script id='js' defer async type=text/javascript src="html_showallproduct_template.js"></script>
 </body>

@@ -263,7 +263,7 @@
 					"echo19":"pagination",
 					"echo20":"page:",
 					"echo21":" ",
-					"echo22":"Adding new purchased item name,purchased location,and description",
+					"echo22":"Adding new purchased itemID",
 					"echo23":"input purchasing ID to enter all information page for specific item",
 					"echo24":"enter gallery of all purchased items",
 					"echo25":"input purchasing ID to repeat purchasing the same item again",
