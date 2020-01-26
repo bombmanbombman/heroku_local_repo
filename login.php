@@ -1,11 +1,11 @@
 <?php  //保存為login.php
   //檢測是否是在 localhost 或是 heroku
   $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-  if(strpos($URL,'herokuapp.com')){
+  if(strpos($URL,'herokuapp.com')!=-1){
     $host="pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
     $username="htweygmu8eaddu1u";
     $password="cldfpmlakd4l25em";
-    $databasename="auq3vlwpr69eknn1 ";
+    $databasename="auq3vlwpr69eknn1";
   }
   if(strpos($URL,'host:3000')!=-1){
     $host="localhost";
