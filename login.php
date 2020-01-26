@@ -8,15 +8,13 @@
     $databasename="auq3vlwpr69eknn1";
     $port=3306;
     echo 'your are in heroku';
-  }
-  if(strpos($URL,'host:3000')!=-1){
+  }elseif(strpos($URL,'host:3000')!=-1){
     $host="localhost";
     $username="root";
     $password="";
     $databasename="project1";
     $port=3307;
-  }
-  if(strpos($URL,'host:8012')!=-1){
+  }elseif(strpos($URL,'host:8012')!=-1){
     $host="localhost";
     $username="root";
     $password="";
