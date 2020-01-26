@@ -12,14 +12,14 @@
     $password="";
     $databasename="project1";
   }
-  
+
   $host="localhost";
   $username="root";
   $password="";
   $databasename="project1";
   $conn = new mysqli($host,$username,$password,$databasename);
   if($conn->connect_error){
-    echo "<div><span id='echo1'>無法連接數據庫，</span>$databasename<span id='echo2'></span></div>";
+    echo "<div><span id='echo101'>無法連接數據庫，</span>$databasename<span id='echo102'></span></div>";
     $redirect='html_login_template.php';
     require_once ('test_header.php');
     exit();
@@ -103,7 +103,7 @@ function check_product_table_exist($conn,$user_id){
   // var_dump($num_rows===0);
   // echo '<br>';
   if($num_rows===0){
-    echo "<br><br><div id='echo3'>您還沒有輸入任何的貨品數據，10秒後自動回到用戶頁面。</div>";
+    echo "<br><br><div id='echo103'>您還沒有輸入任何的貨品數據，10秒後自動回到用戶頁面。</div>";
     $wait_time=10;
     require_once ('test_header.php');
     $conn->close();
@@ -122,7 +122,7 @@ function fetch_product_id($conn,$user_id){
   // var_dump($num_rows===0);
   // echo '<br>';
   if($num_rows===0){
-    echo "<br><br><div id='echo4'>您還沒有輸入任何的貨品數據，10秒後自動回到用戶頁面。</div>";
+    echo "<br><br><div id='echo104'>您還沒有輸入任何的貨品數據，10秒後自動回到用戶頁面。</div>";
     $wait_time=10;
     require_once ('test_header.php');
     $conn->close();
@@ -134,7 +134,7 @@ function fetch_product_id($conn,$user_id){
     $all_product_id[]=$row;
     // var_dump($row);
   }
-  echo "<table><tr><th><span id='echo5'>貨號</span></th></tr>";
+  echo "<table><tr><th><span id='echo105'>貨號</span></th></tr>";
   foreach($all_product_id as $key0 => $subarray1){
     echo "<tr><th>";
     foreach($subarray1 as $key1 => $value1){
@@ -162,7 +162,7 @@ function fetch_product_table($conn,$user_id,$offset='',$order='asc',$show_col_nu
   // $all_product_id[$row['product_id']]=$row;
   $product_table[]=$row;
   }
-  echo "<table><tr><th><span id='echo6'>貨號</span></th><th><span id='echo7'>購買地址</span></th><th><span id='echo8'>貨品簡介</span></th><th><span id='echo9'>貨品詳細</span></th></tr>";
+  echo "<table><tr><th><span id='echo106'>貨號</span></th><th><span id='echo107'>購買地址</span></th><th><span id='echo108'>貨品簡介</span></th><th><span id='echo109'>貨品詳細</span></th></tr>";
   foreach($product_table as $key0 => $subarray1){
     echo "<tr>";
     foreach($subarray1 as $key1 => $value1){
@@ -189,8 +189,8 @@ function fetch_product_purchase_table($conn,$user_id){
   while($rows=$result_stmt->fetch_assoc()){
     $product_purchase_table[]=$rows;
   }
-  echo "<table><tr><th><span id='echo10'>貨號</span></th><th><span id='echo11'>購買地址</span></th><th><span id='echo12'>貨品簡介</span></th>
-  <th><span id='echo13'>進貨日期</span></th><th><span id='echo14'>進貨價格（元）</span></th><th><span id='echo15'>進貨件數</span></th><th><span id='echo16'>商品尺寸</span></th><th></tr>";
+  echo "<table><tr><th><span id='echo110'>貨號</span></th><th><span id='echo111'>購買地址</span></th><th><span id='echo112'>貨品簡介</span></th>
+  <th><span id='echo113'>進貨日期</span></th><th><span id='echo114'>進貨價格（元）</span></th><th><span id='echo115'>進貨件數</span></th><th><span id='echo116'>商品尺寸</span></th><th></tr>";
   foreach($product_purchase_table as $key0 => $subarray1){
     echo "<tr>";
     foreach($subarray1 as $key1 => $value1){
