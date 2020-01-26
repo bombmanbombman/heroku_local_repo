@@ -52,10 +52,10 @@ echo "<br>";
   // }
   // $result_stmt=$stmt->get_result();
   // $_SESSION['user_id']=$result_stmt->fetch_assoc()['user_id'];
-  var_dump($_SESSION['user_id']);
+  // var_dump($_SESSION['user_id']);
   // if($_SESSION['user_id']==null){
   // }else{
-    echo '<meta http-equiv="refresh" content="0; url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php" />';
+    // echo '<meta http-equiv="refresh" content="0; url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php" />';
     // echo '<meta http-equiv="refresh" content="0; url=html_userdetail_template.php" />';
     // $conn->close();
   // }
