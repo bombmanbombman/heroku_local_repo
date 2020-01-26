@@ -6,25 +6,23 @@
     $username="htweygmu8eaddu1u";
     $password="cldfpmlakd4l25em";
     $databasename="auq3vlwpr69eknn1";
+    $port=3306;
   }
   if(strpos($URL,'host:3000')!=-1){
     $host="localhost";
     $username="root";
     $password="";
     $databasename="project1";
+    $port=3307;
   }
   if(strpos($URL,'host:8012')!=-1){
     $host="localhost";
     $username="root";
     $password="";
     $databasename="project1";
+    $port=3307;
   }
-
-  $host="localhost";
-  $username="root";
-  $password="";
-  $databasename="project1";
-  $conn = new mysqli($host,$username,$password,$databasename);
+  $conn = new mysqli($host,$username,$password,$databasename,$port);
   if($conn->connect_error){
     echo "<div><span id='echo101'>無法連接數據庫，</span>$databasename<span id='echo102'></span></div>";
     $redirect='html_login_template.php';
