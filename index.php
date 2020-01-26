@@ -32,33 +32,33 @@ if(isset($_SESSION)&&$_SESSION!=null){
   session_regenerate_id(true);
 }
 echo "<br>";
-if(isset($_POST['user_name']) && isset($_POST['user_password'])){
-  session_start();
-  require_once ('login.php');
-  $query = "select user_id from user 
-              where user_name = ? and user_password =?";
-  $stmt=$conn->prepare($query);
-  if(!$stmt){
-    echo "prepare stmt failed";
-    require_once('test_header.php');
-    exit();
-  }
-  $user_name=double_check_input($conn,$_POST['user_name']);
-  $user_password=double_check_input($conn,$_POST['user_password']);
-  $stmt->bind_param('ss',$user_name,$user_password);
-  if(!$stmt->execute()){
-    require_once('test_header.php');
-    exit();
-  }
-  $result_stmt=$stmt->get_result();
-  $_SESSION['user_id']=$result_stmt->fetch_assoc()['user_id'];
-  // var_dump($_SESSION['user_id']);
-  if($_SESSION['user_id']==null){
-  }else{
-    // echo '<meta http-equiv="refresh" content="0; url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php" />';
-    echo '<meta http-equiv="refresh" content="0; url=html_userdetail_template.php" />';
-    $conn->close();
-  }
+// if(isset($_POST['user_name']) && isset($_POST['user_password'])){
+//   session_start();
+//   require_once ('login.php');
+//   $query = "select user_id from user 
+//               where user_name = ? and user_password =?";
+//   $stmt=$conn->prepare($query);
+//   if(!$stmt){
+//     echo "prepare stmt failed";
+//     require_once('test_header.php');
+//     exit();
+//   }
+//   $user_name=double_check_input($conn,$_POST['user_name']);
+//   $user_password=double_check_input($conn,$_POST['user_password']);
+//   $stmt->bind_param('ss',$user_name,$user_password);
+//   if(!$stmt->execute()){
+//     require_once('test_header.php');
+//     exit();
+//   }
+//   $result_stmt=$stmt->get_result();
+//   $_SESSION['user_id']=$result_stmt->fetch_assoc()['user_id'];
+//   // var_dump($_SESSION['user_id']);
+//   if($_SESSION['user_id']==null){
+//   }else{
+//     // echo '<meta http-equiv="refresh" content="0; url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php" />';
+//     echo '<meta http-equiv="refresh" content="0; url=html_userdetail_template.php" />';
+//     $conn->close();
+//   }
 }
 ?>
 
