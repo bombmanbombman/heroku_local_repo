@@ -1,4 +1,5 @@
 <?php  //保存為login.php
+  //檢測是否是在 localhost 或是 heroku
   $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
   if(strpos($URL,'herokuapp.com')){
     $host="pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
@@ -11,6 +12,7 @@
     $password="";
     $databasename="project1";
   }
+  
   $host="localhost";
   $username="root";
   $password="";
