@@ -6,7 +6,14 @@
     $username="htweygmu8eaddu1u";
     $password="cldfpmlakd4l25em";
     $databasename="auq3vlwpr69eknn1 ";
-  }else{
+  }
+  if(strpos($URL,'host:3000')!=-1){
+    $host="localhost";
+    $username="root";
+    $password="";
+    $databasename="project1";
+  }
+  if(strpos($URL,'host:8012')!=-1){
     $host="localhost";
     $username="root";
     $password="";

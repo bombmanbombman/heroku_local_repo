@@ -105,7 +105,7 @@
         exit();
         break;
       case 'html_login_template.php':
-        header("refresh:$wait_time;url=http://localhost:3000/html_login_template.php");
+        header("refresh:$wait_time;url=http://localhost:3000/index.php");
         exit();
         break;
       case 'html_searchproduct_template.php':
@@ -125,7 +125,7 @@
         exit();
         break;
       default:
-      header("refresh:$wait_time;url=http://localhost:3000/html_login_template.php");
+      header("refresh:$wait_time;url=http://localhost:3000/index.php");
     }
   }
 })();
