@@ -1,4 +1,16 @@
 <?php  //保存為login.php
+  $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+  if(strpos($URL,'herokuapp.com')){
+    $host="pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    $username="htweygmu8eaddu1u";
+    $password="cldfpmlakd4l25em";
+    $databasename="auq3vlwpr69eknn1 ";
+  }else{
+    $host="localhost";
+    $username="root";
+    $password="";
+    $databasename="project1";
+  }
   $host="localhost";
   $username="root";
   $password="";

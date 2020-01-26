@@ -111,7 +111,7 @@ while($row=$result_stmt->fetch_assoc()){
     <script id='vue' src='vue.min.js'></script>
     <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
     </head>
-    <body>
+    <body> 
     <table><tr><th>貨號  </th><th>進貨地點</th><th>貨品簡介</th><th>貨品詳細</th></tr>
     <tr>
     <th>$row[product_id]</th>
