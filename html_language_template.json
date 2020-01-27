@@ -535,7 +535,44 @@
 					"value3":"back to itemID page"
 				}
 			}
-		}
+		},
+		"html_displayimage_template":{
+			"language":{
+				"japanese":{
+					"echo1":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
+					"echo2":"データベース接続エラー、前のページに戻ります",
+					"echo3":"サムネをクリックすると、拡大画像が表示できます",
+					"echo4":"商品番号",
+					"echo5":"画像番号",
+					"echo6":"アップロード時間",
+					"echo7":"画像説明",
+					"echo8":"画像ファイルタイプ",
+					"echo9":"商品番号ページに戻ります"
+				},
+				"chinese":{
+					"echo1":"session傳送失敗",
+					"echo2":"query 執行錯誤",
+					"echo3":"點擊小圖，可以查看原圖的大小",
+					"echo4":"對應貨號",
+					"echo5":"圖片編號",
+					"echo6":"上傳時間",
+					"echo7":"圖片說明",
+					"echo8":"圖片類型",
+					"echo9":"回到全貨號頁面"
+				},
+				"english":{
+					"echo1":"session error,back to login page",
+					"echo2":"query error,back to previous page",
+					"echo3":"click the thumbnail,then you can view original image size",
+					"echo4":"item ID",
+					"echo5":"image ID",
+					"echo6":"upload timne",
+					"echo7":"image comment",
+					"echo8":"image file type",
+					"echo9":"back to all itemID page"
+				}
+			}
+		},
 	}
 }
 
