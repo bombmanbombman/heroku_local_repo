@@ -138,7 +138,7 @@ $(function(){
       // success: function (data) {
       //   console.log(data);
       //   if(data =='1'){
-      //     window.location.href='html_userdetail_template.php';
+          // window.location.href='html_userdetail_template.php';
       //   }else if(data == '0'){
       //     if($('a#chinese').hasClass('active')){
       //     $('#error_message').text('用戶名或密碼錯誤');
