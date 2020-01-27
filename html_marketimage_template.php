@@ -123,11 +123,13 @@ echo "
   <form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>
   ";
 for($i=0;$i<$image_number_of_this_product;$i++){
+  $echo = "echo".($i+20);
+  $value = "value".($i+20);
   echo "
   <table class='float_left'>
     <tr>
       <th>
-        <span id='echo".($i+20).">圖片編號</span> $all_image_id_of_this_product[$i]
+        <span id='$echo'>圖片編號</span> $all_image_id_of_this_product[$i]
       </th>
     </tr>
     <tr>
@@ -138,7 +140,7 @@ for($i=0;$i<$image_number_of_this_product;$i++){
     </tr>
     <tr>
       <td>
-        <input type='submit' id='value".($i+20)."' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
+        <input type='submit' id='$value' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
       </td>
     </tr>
   </table>

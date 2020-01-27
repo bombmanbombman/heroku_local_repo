@@ -594,7 +594,19 @@
 					"echo16":"写真の説明を入力してください（オプション）",
 					"value1":"削除",
 					"value2":"写真をアップロードする",
-					"value3":"商品番号ページに戻ります"
+					"value3":"商品番号ページに戻ります",
+					"echo20":"画像番号",
+					"echo21":"画像番号",
+					"echo22":"画像番号",
+					"echo23":"画像番号",
+					"echo24":"画像番号",
+					"echo25":"画像番号",
+					"value20":"削除",
+					"value21":"削除",
+					"value22":"削除",
+					"value23":"削除",
+					"value24":"削除",
+					"value25":"削除"
 				},
 				"chinese":{
 					"echo1":"session傳送失敗",
@@ -615,7 +627,19 @@
 					"echo16":"照片描述（選填） 在market上顯示",
 					"value1":"刪除圖片",
 					"value2":"上傳照片",
-					"value3":"回到所有貨號頁面"
+					"value3":"回到所有貨號頁面",
+					"echo20":"圖片編號",
+					"echo21":"圖片編號",
+					"echo22":"圖片編號",
+					"echo23":"圖片編號",
+					"echo24":"圖片編號",
+					"echo25":"圖片編號",
+					"value20":"刪除圖片",
+					"value21":"刪除圖片",
+					"value22":"刪除圖片",
+					"value23":"刪除圖片",
+					"value24":"刪除圖片",
+					"value25":"刪除圖片"
 				},
 				"english":{
 					"echo1":"session error,back to login page",
@@ -636,7 +660,19 @@
 					"echo16":"optional,image description",
 					"value1":"delete",
 					"value2":"upload",
-					"value3":"back to itemID page"
+					"value3":"back to itemID page",
+					"echo20":"imageID",
+					"echo21":"imageID",
+					"echo22":"imageID",
+					"echo23":"imageID",
+					"echo24":"imageID",
+					"echo25":"imageID",
+					"value20":"delete",
+					"value21":"delete",
+					"value22":"delete",
+					"value23":"delete",
+					"value24":"delete",
+					"value25":"delete"
 				}
 			}
 		}
