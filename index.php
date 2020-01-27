@@ -32,6 +32,7 @@ if(isset($_SESSION)&&$_SESSION!=null){
   session_regenerate_id(true);
 }
 echo "<br>";
+
 // if(isset($_POST['user_name']) && isset($_POST['user_password'])){
   // session_start();
   // require_once ('login.php');
@@ -136,14 +137,14 @@ echo "<br>";
       </div>
       </form>
       <div class="d-flex justify-content-center">
-        <div id='error_message' style='color:red'></div>
+        <div id='error_message'></div>
       </div>
       <form class="d-flex justify-content-center" action ='html_userregister_template.php' method = 'post'>
         <label id='echo3'>新しいユーザーを作る</label>
         <input class='btn btn-dark' type='submit' name='jump' value="sign up" required>
       </form>
     </section>
-    <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+    <script id='ref' defer async type='text/javascript' src='html_template_index.js'></script>
     <script id='js' defer async type=text/javascript src="index.js"></script>
 
 

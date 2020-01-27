@@ -37,11 +37,14 @@ if(isset($_POST['user_name'])&&isset($_POST['user_password'])){
   }
   $result_stmt=$stmt->get_result();
   $_SESSION['user_id']=$result_stmt->fetch_assoc()['user_id'];
+  $_SESSION['user_name']=$_POST['user_name'];
   if($_SESSION['user_id']==null){
     echo "error0";
   }else{
     // echo '<meta http-equiv="refresh" content="0; url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_userdetail_template.php" />';
     echo $_SESSION['user_id'];
+    echo '||';
+    echo $_SESSION['user_name'];
   }
 }
 

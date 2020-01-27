@@ -1,3 +1,15 @@
+<html>
+<head>
+<script id='jquery' src="jquery-3.4.1.js"></script>
+<!-- ripple effect library -->
+<script src="jquery.ripples.js"></script>
+<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+<script id='vue' src="vue.min.js"></script>
+<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
@@ -5,8 +17,19 @@ if(strpos($URL,'herokuapp.com')){
 }else{
   echo "<div>$URL</div>";
 }
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE) && $_COOKIE != false){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
 session_start();
-var_dump($_SESSION);
+if(isset($_SESSION)){
+  var_dump($_SESSION);
+  echo 'session <br>';
+}
 require_once("html_navibar_template.php");
 require_once ('login.php');
 if(!isset($_SESSION['user_id'])){
@@ -45,26 +68,8 @@ echo "<a href='html_showallproduct_template.php'>回到全貨號頁面</a>";
 $conn->close();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
+<script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+<script id='js' defer async type=text/javascript src='html_displayimage_template.js'></script>
+</body>
+</html>
