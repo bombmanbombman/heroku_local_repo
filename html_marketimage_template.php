@@ -139,24 +139,21 @@ if($image_number_of_this_product>=6){
   echo "<h3 id='echo12'>已經到達上傳圖片的數量限制，請刪除一些圖片</h3>";
 }elseif($image_number_of_this_product<6){
   echo "<h4><span id='echo13'>您已經為這個貨號上傳了</span> $image_number_of_this_product <span id='echo14'>張圖片，請不要超過6張。</span></h4>";
-  echo <<<_HEREDOC
-  <form method="post" action="html_submitredirect_template.php" enctype='multipart/form-data'>
+  echo "
+  <form method='post' action='html_submitredirect_template.php' enctype='multipart/form-data'>
   <label id='echo15'>請選擇上傳圖片，格式為jpg或png，每張20mb以下，解析度小於3000*3000</label><br>
-  <input type="hidden" name="date_image"  value='' >
-  <input type="hidden" name='product_id_for_image' value=$product_id>
+  <input type='hidden' name='date_image'  value='' >
+  <input type='hidden' name='product_id_for_image' value=$product_id>
   <input type='file' name='image_data' required><br>
   <label id='echo16'>照片描述（選填）在market上顯示</label><br>
   <textarea name='image_info' maxlength='255' rows='4' cols='40' value=''></textarea><br>
-  <input type="submit" id='value2' name='image_data' value="上傳這張圖片。">
+  <input type='submit' id='value2' name='image_data' value='上傳這張圖片。'>
   </form>
-
-
-
-_HEREDOC;
+  ";
 }echo '
 <!--用於刪除session 中的 product_id_for_image-->
 <form action="html_showallproduct_template.php" method="post">
-<input type="submit" value="回到所有貨號頁面" 
+<input type="submit" id="value3" value="回到所有貨號頁面" 
 name="unset_product_id_for_image">
 </form>';
 
