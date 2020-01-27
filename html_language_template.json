@@ -572,6 +572,73 @@
 					"echo9":"back to all itemID page"
 				}
 			}
+		},
+		"html_marketimage_template":{
+			"language":{
+				"japanese":{
+					"echo1":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
+					"echo2":"商品番号が存在しないため、前のページに戻ります",
+					"echo3":"データベース：",
+					"echo4":"接続エラー、ログイン画面に戻ります",
+					"echo5":"ユーザーIDの取得が失敗しました、前のページに戻ります",
+					"echo6":"商品番号",
+					"echo7":"仕入先",
+					"echo8":"商品名",
+					"echo9":"商品詳細",
+					"echo10":"画像番号",
+					"echo11":"一番左端の画像はこの商品番号のカバーサムネとして使われています",
+					"echo12":"この商品番号のアップロード画像数の上限に達するため、画像を削除してから、アップロードしましょう",
+					"echo13":"今、この商品番号の画像数は",
+					"echo14":"枚です、アップロード上限6枚までです",
+					"echo15":"ファイルタイプはJPEG、またはPNG、一枚は２０ｍｂ以下、解像度は3000*3000以下です",
+					"echo16":"写真の説明を入力してください（オプション）",
+					"value1":"削除",
+					"value2":"写真をアップロードする",
+					"value3":"商品番号ページに戻ります"
+				},
+				"chinese":{
+					"echo1":"session傳送失敗",
+					"echo2":"這個貨號不存在，請輸入有效的貨號",
+					"echo3":"無法連接數據庫：",
+					"echo4":"回到註冊頁面",
+					"echo5":"尋找用戶號碼失敗，回到全貨號頁面",
+					"echo6":"貨號",
+					"echo7":"進貨地址",
+					"echo8":"貨品名稱",
+					"echo9":"貨品詳細",
+					"echo10":"圖片編號",
+					"echo11":"最左邊的圖片會作為縮略圖在 市場中顯示",
+					"echo12":"已經到達上傳圖片數量限制，請刪除一些圖片",
+					"echo13":"您已經為這個貨號上傳了",
+					"echo14":"張照片，請不要超過6張",
+					"echo15":"請選擇上傳圖片，格式為jpg或png，每張20mb以下，解析度小於3000*3000",
+					"echo16":"照片描述（選填） 在market上顯示",
+					"value1":"刪除圖片",
+					"value2":"上傳照片",
+					"value3":"回到所有貨號頁面"
+				},
+				"english":{
+					"echo1":"session error,back to login page",
+					"echo2":"this itemID is not existed,please input valid itemID",
+					"echo3":"cannot access database:",
+					"echo4":"back to login page",
+					"echo5":"failed to retrieve userID,back to previous page",
+					"echo6":"itemID",
+					"echo7":"item purchase location",
+					"echo8":"item name",
+					"echo9":"item detail",
+					"echo10":"imageID",
+					"echo11":"the first image will be the thumbnail for this itemID",
+					"echo12":"you have reach upload limit,please delete some image and upload again",
+					"echo13":"you have upload ",
+					"echo14":" images for this itemID,upload limit is six images",
+					"echo15":"image type is jpg or png ,under 20mb,maximum resolution is 3000*3000",
+					"echo16":"optional,image description",
+					"value1":"delete",
+					"value2":"upload",
+					"value3":"back to itemID page"
+				}
+			}
 		}
 	}
 }
