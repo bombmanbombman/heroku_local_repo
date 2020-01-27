@@ -127,7 +127,7 @@ for($i=0;$i<$image_number_of_this_product;$i++){
   <table class='float_left'>
     <tr>
       <th>
-        <span id='echo10'>圖片編號</span> $all_image_id_of_this_product[$i]
+        <span id='echo".($i+20).">圖片編號</span> $all_image_id_of_this_product[$i]
       </th>
     </tr>
     <tr>
@@ -138,7 +138,7 @@ for($i=0;$i<$image_number_of_this_product;$i++){
     </tr>
     <tr>
       <td>
-        <input type='submit' id='value1' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
+        <input type='submit' id='value".($i+20)."' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
       </td>
     </tr>
   </table>
