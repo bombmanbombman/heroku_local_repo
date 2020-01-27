@@ -58,6 +58,7 @@ require_once('css_dropupbutton_template.php');
 
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo17'>session 傳送失敗</div>";
+  header("refresh:4;url=https://bombmanbombman-project1.herokuapp.com");
   $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
