@@ -1,3 +1,25 @@
+<html>
+<head>
+  <style>
+  a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+  }
+  </style>
+  <script id='jquery' src="jquery-3.4.1.js"></script>
+  <!-- ripple effect library -->
+  <script src="jquery.ripples.js"></script>
+  <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
+  <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+  <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+  <script id='vue' src="vue.min.js"></script>
+  <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
@@ -33,8 +55,6 @@ if(isset($_POST['unset_product_id_for_image'])){
 // var_dump($_GET);
 require_once("html_navibar_template.php");
 require_once('css_dropupbutton_template.php');
-
-
 
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo17'>session 傳送失敗</div>";
@@ -98,52 +118,23 @@ if(!isset($_SESSION['user_id'])){
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<head>
-  <style>
-  a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    color: initial;
-  }
-  </style>
-  <script id='jquery' src="jquery-3.4.1.js"></script>
-  <!-- ripple effect library -->
-  <script src="jquery.ripples.js"></script>
-  <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
-  <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-  <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-  <script id='vue' src="vue.min.js"></script>
-  <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-</head>
-
-<body>
   <br><hr>
-  <button>
-    <a href="html_newproduct_template.php" class="button">
-      <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4>
-    </a>
+  <!-- <button id='button1'> -->
+    <!-- <a href="html_newproduct_template.php" class="button"> -->
+      <!-- <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4> -->
+    <!-- </a> -->
+  <!-- </button> -->
+  <button id='button1'>
+    <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4>
   </button>
   <hr>
-  <button>
+  <!-- <button id='button2'>
     <a href='html_displayimage_template.php' class='button'>
       <h3 id='echo24'>進入圖庫</h3>
     </a>
+  </button> -->
+  <button id='button2'>
+    <h3 id='echo24'>進入圖庫</h3>
   </button>
   <br><hr><br>
   <label id='echo23'>輸入上面顯示的貨號，添加進貨記錄，出售記錄，圖片</label><br>
@@ -168,3 +159,4 @@ if(!isset($_SESSION['user_id'])){
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
   <script id='js' defer async type=text/javascript src="html_showallproduct_template.js"></script>
 </body>
+</html>
