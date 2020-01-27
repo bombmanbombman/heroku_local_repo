@@ -5,12 +5,6 @@ if(strpos($URL,'herokuapp.com')){
 }else{
   echo "<div>$URL</div>";
 }
-$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-if(strpos($URL,'herokuapp.com')){
-  echo "<div>$URL</div>";
-}else{
-  echo "<div>$URL</div>";
-}
 session_start();
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
