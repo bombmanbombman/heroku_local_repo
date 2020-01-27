@@ -157,11 +157,11 @@ $(function(){
         window.location.href='html_userdetail_template.php';
       }else if(data == 'error0'){
         if($('a#chinese').hasClass('active')){
-        $('#error_message').text('用戶名或密碼錯誤');
+        $('#error_message').text('用戶名或密碼錯誤').fadeToggle(2000).hide(2000);
         }else if($('a#japanese').hasClass('active')){
-        $('#error_message').text('ユーザー名又はパスワードが間違っています');
+        $('#error_message').text('ユーザー名又はパスワードが間違っています').fadeToggle(2000).hide(2000);
         }else if($('a#english').hasClass('active')){
-          $('#error_message').text('username or password is not corrent');
+          $('#error_message').text('username or password is not corrent').fadeToggle(2000).hide(2000);
         }
       }
     }).fail(function(error){
