@@ -411,6 +411,7 @@ $(function(){
       console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
+      console.log('ページ:'+window.location.href+' まだ翻訳されていない、またはjson読み込み失敗した。');
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -467,6 +468,7 @@ $(function(){
       console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
+      console.log('這個頁面:'+window.location.href+' 還沒有翻譯或language.json載入失敗');
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
@@ -523,7 +525,7 @@ $(function(){
       console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
-      console.log('這個頁面:'+window.location.href+' 還沒有翻譯或language.json載入失敗')
+      console.log('page:'+window.location.href+'has not translated yet or failed to load language.json');
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
