@@ -22,11 +22,28 @@
     $port=3308;
   }
   $conn = new mysqli($host,$username,$password,$databasename,$port);
+  //备用的第二个real mysql port3307
   if($conn->connect_error){
-    echo "<div><span id='echo101'>無法連接數據庫，</span>$databasename<span id='echo102'></span></div>";
-    $redirect='html_login_template.php';
-    require_once ('test_header.php');
-    exit();
+    if(strpos($URL,'host:3000')!=-1){
+      $host="localhost";
+      $username="root";
+      $password="";
+      $databasename="project1";
+      $port=3307;
+    }elseif(strpos($URL,'host:8012')!=-1){
+      $host="localhost";
+      $username="root";
+      $password="";
+      $databasename="project1";
+      $port=3307;
+    }
+    $conn = new mysqli($host,$username,$password,$databasename,$port);
+    if($conn->connect_error){
+      echo "<div><span id='echo101'>無法連接數據庫3306||3308||3307，</span>$databasename<span id='echo102'></span></div>";
+      $redirect='html_login_template.php';
+      require_once ('test_header.php');
+      exit();
+    }
   }
   //set mysql的文字集 character set
   if(!$conn->set_charset("utf8mb4")){
