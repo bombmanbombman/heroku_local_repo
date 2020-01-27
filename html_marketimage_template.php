@@ -114,7 +114,7 @@ while($row=$result_stmt->fetch_assoc()){
     <th>$row[product_detail]</th>
     </tr>
     </table>
-  "
+  ";
 }
 echo "<form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>";
 for($i=0;$i<$image_number_of_this_product;$i++){
