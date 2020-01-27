@@ -33,7 +33,7 @@ if(isset($_SESSION)){
 require_once("html_navibar_template.php");
 require_once ('login.php');
 if(!isset($_SESSION['user_id'])){
-  echo "session 傳送失敗<br>";
+  echo "<div id='echo1'>session 傳送失敗</div>";
   $redirect='index.php';
   $conn->close();
   require_once ('test_header.php');
@@ -45,11 +45,17 @@ $stmt=$conn->prepare($query);
 if(!$stmt)echo($conn->error);
 $user_id=$_SESSION['user_id'];
 $stmt->bind_param('i',$user_id);
-if(!$stmt->execute())die('query 執行錯誤');
+if(!$stmt->execute()){
+  echo "<div id='echo2'>query 執行錯誤</div>";
+  $redirect='html_showallproduct_template.php';
+  $conn->close();
+  require_once ('test_header.php');
+  exit();
+}
 $result_stmt=$stmt->get_result();
 echo "<br><br><br>";
-echo "<h1>點擊小圖，可以查看原圖大小</h1>";
-echo "<table><tr><th>對應貨號</th><th>圖片編號</th><th>上傳時間</th><th>圖片說明</th><th>圖片類型</th></tr>";
+echo "<h1 id='echo3'>點擊小圖，可以查看原圖大小</h1>";
+echo "<table><tr><th><span>對應貨號</span></th><th><span>圖片編號</span></th><th><span>上傳時間</span></th><th><span>圖片說明</span></th><th><span>圖片類型</span></th></tr>";
 while($row=$result_stmt->fetch_assoc()){
   echo "<tr>";
   echo "<th>".$row['product_id']."</th>";
@@ -64,7 +70,7 @@ while($row=$result_stmt->fetch_assoc()){
 
 }
 echo "</table>";
-echo "<a href='html_showallproduct_template.php'>回到全貨號頁面</a>";
+echo "<button><a href='html_showallproduct_template.php'><span>回到全貨號頁面</span></a></button>";
 $conn->close();
 
 
