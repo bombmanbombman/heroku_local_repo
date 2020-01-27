@@ -11,7 +11,7 @@ $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 // if(isset($_COOKIE['user_id'])){
   // $_SESSION['user_id']=$_COOKIE['user_id'];
 // // echo 'cookie <br>';
-if(isset($_SESSION['user_id'])){
+if(!isset($_SESSION['user_id'])){
 }else{
   if(strpos($URL,'herokuapp.com')){
     header("Location: https://bombmanbombman-project1.herokuapp.com");
