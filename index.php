@@ -1,40 +1,40 @@
 <html>
-<head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="480318055682-j8ceeor3okjafa9bo1uvllmrkdoibi8b.apps.googleusercontent.com 
-">
-<title>login page</title>
-<!-- google sign in api -->
-<!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script> -->
-<script id='jquery' src="/jquery-3.4.1.js"></script>
-<!-- ripple effect library -->
-<script src="/jquery.ripples.js"></script>
-<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-<script id='vue' src="vue.min.js"></script>
-<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  <head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="480318055682-j8ceeor3okjafa9bo1uvllmrkdoibi8b.apps.googleusercontent.com 
+  ">
+  <title>login page</title>
+  <!-- google sign in api -->
+  <!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script> -->
+  <script id='jquery' src="/jquery-3.4.1.js"></script>
+  <!-- ripple effect library -->
+  <script src="/jquery.ripples.js"></script>
+  <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+  <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+  <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+  <script id='vue' src="vue.min.js"></script>
+  <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
 
-<style type="text/css">
-/* body{ */
-  /* width:100%; */
-  /* height:100%; */
-  /* background: url("/upload_compress/background_rainbow1.png"); */
-  /* -webkit-background-size: 100%; */
-  /* -moz-background-size: 100%; */
-  /* -o-background-size: 100%; */
-  /* background-size: 100% 100%; */
-  /* background-repeat:no-repeat; */
-/* } */
-/* #background{
-  background :url("/upload_compress/background_water5.jpg");
-  width:100%;
-  height:auto;
-} */
-</style>
+  <style type="text/css">
+  /* body{ */
+    /* width:100%; */
+    /* height:100%; */
+    /* background: url("/upload_compress/background_rainbow1.png"); */
+    /* -webkit-background-size: 100%; */
+    /* -moz-background-size: 100%; */
+    /* -o-background-size: 100%; */
+    /* background-size: 100% 100%; */
+    /* background-repeat:no-repeat; */
+  /* } */
+  /* #background{
+    background :url("/upload_compress/background_water5.jpg");
+    width:100%;
+    height:auto;
+  } */
+  </style>
 </head>
 <body >
 <?php

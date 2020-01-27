@@ -1,3 +1,25 @@
+<html>
+<head>
+<style>
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+}
+</style>
+<title>user detail page</title>
+<script id='jquery' src="jquery-3.4.1.js"></script>
+<!-- ripple effect library -->
+<script src="jquery.ripples.js"></script>
+<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+<script id='vue' src="vue.min.js"></script>
+<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+</head>
+<body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 // echo "<div>$URL</div>";
@@ -102,28 +124,7 @@ if($num_rows!==0){
 
 // if(isset($progress1)&&$progress1===true){
 ?>
-<html>
-<head>
-<style>
-a.button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  text-decoration: none;
-  color: initial;
-}
-</style>
-<title>user detail page</title>
-<script id='jquery' src="jquery-3.4.1.js"></script>
-<!-- ripple effect library -->
-<script src="jquery.ripples.js"></script>
-<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-<script id='vue' src="vue.min.js"></script>
-<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-</head>
-<body>
+
 <button id='button1'><h4 id='echo8'>補充修改用戶詳細信息</h1></button>
 <br>
 <br>
