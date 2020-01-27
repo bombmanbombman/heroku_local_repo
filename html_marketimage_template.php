@@ -133,7 +133,7 @@ for($i=0;$i<$image_number_of_this_product;$i++){
     <tr>
       <td>
         <img height='80' width='80 'src='data:image/jpeg;base64,"
-  .base64_encode($all_image_data_of_this_product[$i])."/>
+  .base64_encode($all_image_data_of_this_product[$i])."'/>
       </td>
     </tr>
     <tr>
