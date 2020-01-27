@@ -1,3 +1,23 @@
+<html>
+<head>
+    <style>
+    table.float_left{
+      float:left;
+    }
+    span.clear_float{
+      clear:both;
+    }
+    </style>
+    <script id='jquery' src='jquery-3.4.1.js'></script>
+    <!-- ripple effect library -->
+    <script src='jquery.ripples.js'></script>
+    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
+    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+    <script id='vue' src='vue.min.js'></script>
+    <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
+</head>
+<body> 
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
@@ -87,25 +107,7 @@ if(!$stmt->execute()){
 $result_stmt=$stmt->get_result();
 while($row=$result_stmt->fetch_assoc()){
   echo "
-    <head>
-    <style>
-    table.float_left{
-      float:left;
-    }
-    span.clear_float{
-      clear:both;
-    }
-    </style>
-    <script id='jquery' src='jquery-3.4.1.js'></script>
-    <!-- ripple effect library -->
-    <script src='jquery.ripples.js'></script>
-    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
-    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-    <script id='vue' src='vue.min.js'></script>
-    <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
-    </head>
-    <body> 
+    
     <table><tr><th>貨號  </th><th>進貨地點</th><th>貨品簡介</th><th>貨品詳細</th></tr>
     <tr>
     <th>$row[product_id]</th>
@@ -160,5 +162,6 @@ name="unset_product_id_for_image">
 
 ?>
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
-  <script id='js' defer async type=text/javascript src="html_showallproduct_template.js"></script>
+  <script id='js' defer async type=text/javascript src="html_marketimage_template.js"></script>
 </body>
+</html>

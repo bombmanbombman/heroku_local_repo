@@ -523,6 +523,7 @@ $(function(){
       console.log($('*'));
     })
     .fail(function(jqXHR,textStatus,errorThrown){
+      console.log('這個頁面:'+window.location.href+' 還沒有翻譯或language.json載入失敗')
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);
