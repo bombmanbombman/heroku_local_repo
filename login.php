@@ -13,13 +13,13 @@
     $username="root";
     $password="";
     $databasename="project1";
-    $port=3307;
+    $port=3308;
   }elseif(strpos($URL,'host:8012')!=-1){
     $host="localhost";
     $username="root";
     $password="";
     $databasename="project1";
-    $port=3307;
+    $port=3308;
   }
   $conn = new mysqli($host,$username,$password,$databasename,$port);
   if($conn->connect_error){
