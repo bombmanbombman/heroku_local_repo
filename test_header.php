@@ -28,7 +28,7 @@
         exit();
         break;
       case 'html_login_template.php':
-        echo 'backto login page'
+        echo 'backto login page';
         header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
         exit();
         break;

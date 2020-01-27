@@ -34,7 +34,7 @@ require_once("html_navibar_template.php");
 require_once ('login.php');
 if(!isset($_SESSION['user_id'])){
   echo "<div id='echo1'>session 傳送失敗</div>";
-  $redirect='index.php';
+  $redirect='html_login_template.php';
   $conn->close();
   require_once ('test_header.php');
   exit();
