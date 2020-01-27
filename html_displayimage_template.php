@@ -1,14 +1,14 @@
 <html>
-<head>
-<script id='jquery' src="jquery-3.4.1.js"></script>
-<!-- ripple effect library -->
-<script src="jquery.ripples.js"></script>
-<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-<script id='vue' src="vue.min.js"></script>
-<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-</head>
+  <head>
+  <script id='jquery' src="jquery-3.4.1.js"></script>
+  <!-- ripple effect library -->
+  <script src="jquery.ripples.js"></script>
+  <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/  bootstrap.bundle.min.js'></script> 
+  <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+  <script id='jquery_cookie' src='/jquery-cookie-master/src/  jquery.cookie.js'></script>
+  <script id='vue' src="vue.min.js"></script>
+  <link id='bootstrap' type='text/css' rel="stylesheet" href="/ bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  </head>
 <body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
@@ -67,12 +67,10 @@ while($row=$result_stmt->fetch_assoc()){
   $image_id=$row['image_id'];
   # 要想用 anchor tag <a></a> pass value 用來顯示原圖
   echo "<a target='_blank' rel='noopener noreferrer' href='html_originalimage_template.php?image_id=",urlencode($image_id),"'><img height='80' width='80 'src='data:image/jpeg;base64,".base64_encode($row["image_data"])."'/></a>";
-
 }
 echo "</table>";
 echo "<button id='button1'><span id='echo9'>回到全貨號頁面</span></button>";
 $conn->close();
-
 
 ?>
 <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
