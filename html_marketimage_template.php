@@ -119,20 +119,40 @@ while($row=$result_stmt->fetch_assoc()){
     </table>
   ";
 }
-echo "<form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>";
+echo "
+<form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>
+  <table class='float_left'>";
 for($i=0;$i<$image_number_of_this_product;$i++){
-  echo "<table class='float_left'>";
-  echo " <tr ><th><span id='echo10'>圖片編號</span> $all_image_id_of_this_product[$i]</th></tr>";
-  echo "<td><img height='80' width='80 'src='data:image/jpeg;base64,"
-  .base64_encode($all_image_data_of_this_product[$i])."'/></td></<td>";
-  echo " <tr ><td><input type='submit' id='value1' name='$all_image_id_of_this_product[$i]' value='刪除圖片'></td></tr>";
-
-echo "</table>";
+  echo "
+    <tr >
+      <th>
+        <span id='echo10'>圖片編號</span> $all_image_id_of_this_product[$i]
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <img height='80' width='80 'src='data:image/jpeg;base64,"
+  .base64_encode($all_image_data_of_this_product[$i])."'/>
+      </td>
+    </tr>
+    <tr >
+      <td>
+        <input type='submit' id='value1' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
+      </td>
+    </tr>
+  ";
 }
-echo "</form>";
-echo "<span class='clear_float'></span>";
-echo "  <br><br><br><br><br><br><br>";
-
+echo "
+  </table>
+</form>
+<span class='clear_float'></span>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>";
 
 echo "<div id='echo11'>最左邊的圖片會作為縮略圖在 市場中顯示。</div>";
 if($image_number_of_this_product>=6){
