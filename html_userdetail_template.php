@@ -37,6 +37,7 @@ if(isset($_SESSION)){
   var_dump($_SESSION);
   echo 'session <br>';
 }
+
 require_once("html_navibar_template.php");
 
 if(!isset($_SESSION['user_id'])){

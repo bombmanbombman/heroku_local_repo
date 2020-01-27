@@ -152,16 +152,31 @@ $(function(){
     }).done(function(data){
       console.log('結果是:'+data);
       if(data !='error0'){
-        $.cookie('user_id',data);
+        let array=data.split('||');
+        // $.cookie('user_id',array[0]);
+        // console.log(array);
+        $('#error_message').css({
+          "color":"#ff4000"
+        });
+        if($('a#chinese').hasClass('active')){
+          $('#error_message').text('歡迎回來 '+array[1]).show(0);
+          }else if($('a#japanese').hasClass('active')){
+            $('#error_message').text('おかえり、'+array[1]+'さん').show(0);
+          }else if($('a#english').hasClass('active')){
+            $('#error_message').text('welcome back '+array[1]).show(0);
+          }
         console.log($.cookie());
         window.location.href='html_userdetail_template.php';
       }else if(data == 'error0'){
+        $('#error_message').css({
+          "color":"red"
+        });
         if($('a#chinese').hasClass('active')){
-        $('#error_message').text('用戶名或密碼錯誤').fadeToggle(2000).hide(2000);
+        $('#error_message').text('用戶名或密碼錯誤').show(0).hide(5000);
         }else if($('a#japanese').hasClass('active')){
-        $('#error_message').text('ユーザー名又はパスワードが間違っています').fadeToggle(2000).hide(2000);
+        $('#error_message').text('ユーザー名又はパスワードが間違っています').show(0).hide(5000);
         }else if($('a#english').hasClass('active')){
-          $('#error_message').text('username or password is not corrent').fadeToggle(2000).hide(2000);
+          $('#error_message').text('username or password is not corrent').show(0).hide(5000);
         }
       }
     }).fail(function(error){
