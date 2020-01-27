@@ -124,11 +124,13 @@ a.button {
 <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
 </head>
 <body>
-<button id='button1'><a href="html_adduserdetail_template.php" ><h4 id='echo8'>補充修改用戶詳細信息</h1></a></button>
+<!-- <button id='button1'><a href="html_adduserdetail_template.php" ><h4 id='echo8'>補充修改用戶詳細信息</h1></a></button> -->
+<button id='button1'><h4 id='echo8'>補充修改用戶詳細信息</h1></button>
 <br>
 <br>
 <br>
-<button id='button2'><a href="html_newproduct_template.php" ><h4 id='echo9'>添加新的貨品，輸入貨品基本信息</h1></a></button>
+<!-- <button id='button2'><a href="html_newproduct_template.php" ><h4 id='echo9'>添加新的貨品，輸入貨品基本信息</h1></a></button> -->
+<button id='button2'><h4 id='echo9'>添加新的貨品，輸入貨品基本信息</h1></button>
 <br>
 <br>
 <br>
@@ -136,7 +138,9 @@ a.button {
 if(isset($progress2)&&$progress2===true){
   // var_dump($progress2);
   // var_dump($_SESSION['user_id']);
-  echo "<button id='button3'><a href='html_showallproduct_template.php' ><h4 id='echo10'>進入全貨號管理頁面</h1></a></button>";
+  // echo "<button id='button3'><a href='html_showallproduct_template.php' ><h4 id='echo10'>進入全貨號管理頁面</h1></a></button>";
+  echo "<button id='button3'><h4 id='echo10'>進入全貨號管理頁面</h1></button>";
+
 }
 // }
 // if($progress2===true){
