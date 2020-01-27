@@ -136,7 +136,7 @@ echo "<br>";
       </div>
       </form>
       <div class="d-flex justify-content-center">
-        <div id='error_message' style='color:red'></div>
+        <div id='error_message'></div>
       </div>
       <form class="d-flex justify-content-center" action ='html_userregister_template.php' method = 'post'>
         <label id='echo3'>新しいユーザーを作る</label>
