@@ -70,7 +70,7 @@ while($row=$result_stmt->fetch_assoc()){
 
 }
 echo "</table>";
-echo "<button><a href='html_showallproduct_template.php'><span id='echo9'>回到全貨號頁面</span></a></button>";
+echo "<button id='button1'><span id='echo9'>回到全貨號頁面</span></button>";
 $conn->close();
 
 
