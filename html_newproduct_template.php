@@ -125,9 +125,6 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
 }
 ?>
 
-  <br>
-  <br>
-  <br>
   <!-- google map 显示的element -->
   <section id='google_map'>
     <div id="app" class="container">
