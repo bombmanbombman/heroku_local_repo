@@ -171,7 +171,7 @@ $(function(){
     $('#time_table').html(`
       <h4 id='clock' class='border border-warning rounded-pill rounded-lg bg-secondary text-center  text-white'></h4>
     `).css({
-      "background-size":"cover"
+      "font-size":"14px"
     })
     clock();
     function foo(x) { return (x < 10) ? '0' + x : x; }
