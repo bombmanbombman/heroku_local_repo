@@ -5,11 +5,15 @@ $(function(){
     if($('.active').attr('id')=='japanese'){
       if(confirm('この写真を削除しますか？')){
         console.log(e.target);
-        console.log(e.target.name);
-        console.log(e.target.attr('name'));
-        let element=e.target;
-        // let image_id = ;
-        // $.cookie('image_id')
+        let image_id =e.target.name;
+        console.log('货号是||'+$('#product_id').html());
+        $.ajax({
+          type:"POST",
+          url:"html_deleteimage_template.php",
+          data:{
+            image_id:image_id
+          }
+        })
       };
     }
     if($('.active').attr('id')=='chinese'){
