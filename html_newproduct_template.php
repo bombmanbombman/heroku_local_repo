@@ -175,7 +175,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <label id='echo2'>請輸入貨品的簡要信息</label><br>
   <input type='text' name='product_info' size='40'required><br>
   <label id='echo3'>請輸入貨品的詳細信息</label><br>
-  <textarea name='product_detail' maxlength='255' rows='8' cols='50'></textarea>
+  <textarea name='product_detail' maxlength='255' rows='4' cols='50'></textarea>
   <br><br>
   <input id='value1' type='submit' value='創建新貨號'>
   </form>
