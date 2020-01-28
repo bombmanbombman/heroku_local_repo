@@ -160,9 +160,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
   <script id='js' defer async type=text/javascript src='html_newproduct_template.js'></script>
   <section id='google_map_js'>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap"
-        async defer></script>
-    <script async defer src='google_map.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap"async defer></script>
   </section>
   </body>
 </html>
