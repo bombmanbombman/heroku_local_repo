@@ -36,7 +36,9 @@ const googleMap = new Vue({
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(map);
-          map.setCenter(new google.maps.LatLng(lat,lng));
+          var latlng = new google.maps.LatLng(results[0].geometry.location.lat, results[0].geometry.location.lng); 
+          map.setCenter(latlng);
+          // map.setCenter(new google.maps.LatLng(lat,lng));
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
