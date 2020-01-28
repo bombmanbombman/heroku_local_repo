@@ -9,7 +9,7 @@ const googleMap = new Vue({
   methods: {
     // init google map
     initMap() {
-
+      console.log(Navigator.geolocation);
       let location = {
         lat: 35.059823,
         lng: 135.749073
