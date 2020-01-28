@@ -1,4 +1,4 @@
-<html>
+<html !DOCTYPE>
   <head>
     <title>new product ID</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
