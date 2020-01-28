@@ -39,7 +39,7 @@ const googleMap = new Vue({
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(this.map);
-          map.setZoom(8);
+          map.setZoom(15);
           map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
