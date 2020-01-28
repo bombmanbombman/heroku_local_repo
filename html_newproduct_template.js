@@ -14,7 +14,7 @@ const googleMap = new Vue({
         lng: 135.749073
       };
       this.map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 35.059823, lng: 135.749073},
+        center: geo_loc,
         zoom: 16,
         scaleControl:true
       });
@@ -31,17 +31,17 @@ const googleMap = new Vue({
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          var lat= position.coords.latitude;
-          var lng= position.coords.longitude;
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(this.map);
-          // this.map.setCenter(pos);
+          this.map.setZoom(10);
+          this.map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
       }
     },
+    
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
 
