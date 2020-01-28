@@ -37,7 +37,7 @@ const googleMap = new Vue({
           infoWindow.setContent('現在地');
           infoWindow.open(map);
           var latlng = new google.maps.LatLng(results[0].geometry.location.lat, results[0].geometry.location.lng); 
-          map.setCenter(latlng);
+          map.setCenter();
           // map.setCenter(new google.maps.LatLng(lat,lng));
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -47,8 +47,6 @@ const googleMap = new Vue({
         handleLocationError(false, infoWindow, map.getCenter());
       }
     },
-
-
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
 
