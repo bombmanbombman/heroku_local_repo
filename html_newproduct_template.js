@@ -24,11 +24,6 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
-        map = new google.maps.Map(document.getElementById ('map'), {
-          center: geo_loc,
-          zoom: 16,
-          scaleControl:true
-        });
         infoWindow = new google.maps.InfoWindow;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -37,11 +32,20 @@ const googleMap = new Vue({
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('現在地');
-            infoWindow.open(this.map);
-            map.setZoom(15);
-            map.setCenter(pos);
+            this.map = new google.maps.Map(document.getElementById ('map'), {
+              center: pos,
+              zoom: 16,
+              scaleControl:true
+            });
+            let marker1= new google.maps.Marker({
+              position:pos,
+              map:this.map
+            });
+            // infoWindow.setPosition(pos);
+            // infoWindow.setContent('現在地');
+            // infoWindow.open(this.map);
+            // map.setZoom(15);
+            // map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter ());
           });
