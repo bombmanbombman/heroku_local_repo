@@ -296,7 +296,7 @@ $(function(){
         second=foo(second);
         var millisecond = now.getMilliseconds();
         // var time =year+'年 '+month+'月 '+day+'日 '+weekday+'   '+hour+'時'+minute+'分'+second+'秒' +millisecond;
-        var time ='TIME: '+year+' '+month+' '+day+' '+weekday+' '  +hour+':'+minute+':'+second;
+        var time ='CURRENT TIME: '+year+' '+month+' '+day+' '+weekday+' '  +hour+':'+minute+':'+second;
         // console.log(time);
         var t = foo(hour) + ':' + foo(minute) + ':' + foo (second);
         document.getElementById('clock').innerText = time;
