@@ -288,6 +288,60 @@ $(function(){
           default:
             break;
         }
+        switch (day) {
+          case 1:
+            day = day+'st'
+            break;
+          case 2:
+            day = day+'nd'
+            break;
+          case 3:
+            day = day+'rd'
+            break;                             
+          default:
+            day = day+'th'
+            break;
+        }
+        switch (month) {
+          case 1:
+            month='january'
+            break;
+          case 2:
+            month='february'
+            break;
+          case 3:
+            month='march'
+            break;
+          case 4:
+            month='april'
+            break;
+          case 5:
+            month='may'
+            break;
+          case 6:
+            month='june'
+            break;
+          case 7:
+            month='july'
+            break;
+          case 8:
+            month='august'
+            break;      
+          case 9:
+            month='september'
+            break;      
+          case 10:
+            month='october'
+            break;      
+          case 11:
+            month='november'
+            break;      
+          case 12:
+            month='december'
+            break;      
+          default:
+            break;
+        }
         var hour = now.getHours();
         hour=foo(hour);
         var minute = now.getMinutes();
@@ -296,7 +350,7 @@ $(function(){
         second=foo(second);
         var millisecond = now.getMilliseconds();
         // var time =year+'年 '+month+'月 '+day+'日 '+weekday+'   '+hour+'時'+minute+'分'+second+'秒' +millisecond;
-        var time ='CURRENT TIME: '+year+' '+month+' '+day+' '+weekday+' '  +hour+':'+minute+':'+second;
+        var time =month+' '+day+' day '+year+' '+weekday+' '  +hour+':'+minute+':'+second;
         // console.log(time);
         var t = foo(hour) + ':' + foo(minute) + ':' + foo (second);
         document.getElementById('clock').innerText = time;
