@@ -21,7 +21,7 @@ $(function(){
     dataType:'jsonp',
     // 為了crossdomain request
     crossDomain:'true',
-    url:"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyA1_8F9VSj4orU5N-_A-7Pb_y6BU0ajHso",
+    url:"maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyA1_8F9VSj4orU5N-_A-7Pb_y6BU0ajHso",
   }).done(function(data){
     console.log(JSON.parse(data));
     // datastring=JSON.stringify(data);
