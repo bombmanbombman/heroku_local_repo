@@ -27,4 +27,4 @@ $(function(){
   }).fail(function(error){
     console.log(error);
   })
-});https://developers.google.com/places/web-service/place-id?hl=en_US#find-id
+});
