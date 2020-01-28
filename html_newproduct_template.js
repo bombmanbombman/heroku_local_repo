@@ -9,27 +9,43 @@ const googleMap = new Vue({
   methods: {
     // init google map
     initMap() {
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(function(position){
-        console.log(lat=position.coords.latitude);
-        console.log(lng=position.coords.longitude);
-        location ={
-          lat: lat,
-          lng: lng
-        }
-        });
-      }else{
-        location = {
-          lat: 35.059823,
-          lng: 135.749073
-        };
-      }
-
+      let location = {
+        lat: 35.059823,
+        lng: 135.749073
+      };
       this.map = new google.maps.Map(document.getElementById('map'), {
-        center: location,
-        zoom: 16
+        center: {lat: 35.059823, lng: 135.749073},
+        zoom: 16,
+        scaleControl:true
       });
+      let marker1= new google.maps.Marker({
+        position:geo_loc,
+        map:map
+      });
+      infoWindow = new google.maps.InfoWindow;
+    
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+    
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('現在地');
+          infoWindow.open(map);
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
     },
+
+
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
 
