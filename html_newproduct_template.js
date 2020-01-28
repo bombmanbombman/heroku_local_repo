@@ -1,37 +1,67 @@
 $(function(){
-  var map;
-  var service;
-  var infowindow;
+      // This sample uses the Place Autocomplete widget to allow the user to search
+      // for and select a place. The sample then displays an info window containing
+      // the place ID and other information about the place that the user has
+      // selected.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
   function initMap() {
-    infowindow = new google.maps.Infowindow();
-    map = new google.maps.Map(document.getElementById('map'), {
-      // 京都市的location
-      center: {lat: 35.116, lng: 135.768},
-      zoom: 10
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -33.8688, lng: 151.2195},
+      zoom: 13
     });
-    let geo_loc={
-      //我住的地方
-      lat: 35.31940,
-      lng: 135.748047
-    };
-    let marker1= new google.maps.Marker({
-      position: geo_loc,
-      map: map
+
+    var input = document.getElementById('pac-input');
+
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+
+    // Specify just the place data fields that you need.
+    autocomplete.setFields(['place_id', 'geometry', 'name']);
+
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    var infowindow = new google.maps.InfoWindow();
+    var infowindowContent = document.getElementById('infowindow-content');
+    infowindow.setContent(infowindowContent);
+
+    var marker = new google.maps.Marker({map: map});
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
     });
-  };
-  // $.ajax({
-  //   type:"GET",
-  //   dataType:'jsonp',
-  //   // 為了crossdomain request
-  //   crossDomain:'true',
-  //   url:"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyA1_8F9VSj4orU5N-_A-7Pb_y6BU0ajHso",
-  // }).done(function(data){
-  //   console.log(JSON.parse(data));
-  //   // datastring=JSON.stringify(data);
-  //   // dataparse=JSON.parse(data);
-  //   // console.log(datastring);
-  //   // console.log(dataparse);
-  // }).fail(function(error){
-  //   console.log(error);
-  // })
+
+    autocomplete.addListener('place_changed', function() {
+      infowindow.close();
+
+      var place = autocomplete.getPlace();
+
+      if (!place.geometry) {
+        return;
+      }
+
+      if (place.geometry.viewport) {
+        map.fitBounds(place.geometry.viewport);
+      } else {
+        map.setCenter(place.geometry.location);
+        map.setZoom(17);
+      }
+
+      // Set the position of the marker using the place ID and location.
+      marker.setPlace({
+        placeId: place.place_id,
+        location: place.geometry.location
+      });
+
+      marker.setVisible(true);
+
+      infowindowContent.children['place-name'].textContent = place.name;
+      infowindowContent.children['place-id'].textContent = place.place_id;
+      infowindowContent.children['place-address'].textContent =
+          place.formatted_address;
+      infowindow.open(map, marker);
+    });
+  }
 });
