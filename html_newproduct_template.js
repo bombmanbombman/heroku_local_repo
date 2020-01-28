@@ -20,7 +20,7 @@ const googleMap = new Vue({
       });
       let marker1= new google.maps.Marker({
         position:geo_loc,
-        map:map
+        map:this.map
       });
       infoWindow = new google.maps.InfoWindow;
     
@@ -35,8 +35,8 @@ const googleMap = new Vue({
           var lng= position.coords.longitude;
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
-          infoWindow.open(map);
-          map.setCenter(pos);
+          infoWindow.open(this.map);
+          this.map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
