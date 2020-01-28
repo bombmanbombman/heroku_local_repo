@@ -111,7 +111,7 @@ while($row=$result_stmt->fetch_assoc()){
     
     <table><tr><th><span id='echo6'>貨號</span></th><th><span id='echo7'>進貨地點</span></th><th><span id='echo8'>貨品簡介</span></th><th><span id='echo9'>貨品詳細</span></th></tr>
     <tr>
-    <th>$row[product_id]</th>
+    <th id='product_id'>$row[product_id]</th>
     <th>$row[buy_place]</th>
     <th>$row[product_info]</th>
     <th>$row[product_detail]</th>
