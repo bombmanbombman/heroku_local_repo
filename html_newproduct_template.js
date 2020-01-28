@@ -27,14 +27,12 @@ const googleMap = new Vue({
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-    
+          var lat= position.coords.latitude;
+          var lng= position.coords.longitude;
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(map);
+          map.setCenter(new google.maps.LatLng(lat, lng));
           map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
