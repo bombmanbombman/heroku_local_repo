@@ -5,9 +5,9 @@ $(function(){
     if($('.active').attr('id')=='japanese'){
       if(confirm('この写真を削除しますか？')){
         console.log(e.target);
-        console.log(e.target.offsetParent());
-        console.log(e.target.offsetParent().offsetParent());
-        console.log(e.target.offsetParent().offsetParent().offsetParent());
+        console.log(e.target.parentElement);
+        console.log(e.target.parentElement.parentElement);
+        console.log(e.target.parentElement.parentElement.parentElement);
         let image_id =e.target.name;
         let product_id = $('#product_id').html();
         console.log('image_id:'+image_id);
