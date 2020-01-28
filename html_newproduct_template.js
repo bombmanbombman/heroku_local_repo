@@ -11,8 +11,8 @@ const googleMap = new Vue({
     initMap() {
 
       let location = {
-        lat: 25.0374865,
-        lng: 121.5647688
+        lat: 35.059823,
+        lng: 135.749073
       };
 
       this.map = new google.maps.Map(document.getElementById('map'), {
@@ -24,7 +24,7 @@ const googleMap = new Vue({
     siteAuto() {
 
       let options = {
-        componentRestrictions: { country: 'tw' } // 限制在台灣範圍
+        componentRestrictions: { country: 'jp' } // 限制在日本範圍
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
