@@ -18,6 +18,11 @@ const googleMap = new Vue({
         zoom: 16,
         scaleControl:true
       });
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: geo_loc,
+        zoom: 16,
+        scaleControl:true
+      });
       let marker1= new google.maps.Marker({
         position:geo_loc,
         map:this.map
@@ -34,8 +39,8 @@ const googleMap = new Vue({
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(this.map);
-          this.map.setZoom(10);
-          this.map.setCenter(pos);
+          map.setZoom(10);
+          map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
