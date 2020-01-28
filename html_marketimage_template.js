@@ -1,6 +1,6 @@
 $(function(){
   $('.delete').on('click',function(e){
-    preventDefault();
+    e.preventDefault();
     console.log(alert());
   })
 })
