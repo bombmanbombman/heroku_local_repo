@@ -163,7 +163,6 @@ echo "<div id='echo11'>最左邊的圖片會作為縮略圖在 市場中顯示�
 if($image_number_of_this_product>=6){
   echo "<h3 id='echo12'>已經到達上傳圖片的數量限制，請刪除一些圖片</h3>";
 }elseif($image_number_of_this_product<6){
-  echo "<h4><span id='echo13'>您已經為這個貨號上傳了</span> $image_number_of_this_product <span id='echo14'>張圖片，請不要超過6張。</span></h4>";
   echo "
   <form method='post' action='html_submitredirect_template.php' enctype='multipart/form-data'>
   <label id='echo15'>請選擇上傳圖片，格式為jpg或png，每張20mb以下，解析度小於3000*3000</label><br>
@@ -175,12 +174,13 @@ if($image_number_of_this_product>=6){
   <input type='submit' id='value2' name='image_data' value='上傳這張圖片。'>
   </form>
   ";
-}echo '
+}
+echo "
 <!--用於刪除session 中的 product_id_for_image-->
-<form action="html_showallproduct_template.php" method="post">
-<input type="submit" id="value3" value="回到所有貨號頁面" 
-name="unset_product_id_for_image">
-</form>';
+<form action='html_showallproduct_template.php' method='post'>
+<input type='submit' id='value3' value='回到所有貨號頁面' 
+name='unset_product_id_for_image'>
+</form>";
 
 
 ?>
