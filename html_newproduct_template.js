@@ -18,13 +18,16 @@ const googleMap = new Vue({
         var lat =35.059823;
         var lng =135749073;
       }
-      let location = {
-        lat: lat,
-        lng: lng
-      };
+      // let location = {
+      //   lat: lat,
+      //   lng: lng
+      // };
 
       this.map = new google.maps.Map(document.getElementById('map'), {
-        center: location,
+        center: {
+          lat: lat,
+          lng: lng
+        },
         zoom: 16
       });
     },
