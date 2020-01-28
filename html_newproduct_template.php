@@ -1,3 +1,16 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;     charset=utf-8" />
+    <script id='jquery' src="jquery-3.4.1.js"></script>
+    <!-- ripple effect library -->
+    <script src="jquery.ripples.js"></script>
+    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/    bootstrap.bundle.min.js'></script> 
+    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+    <script id='vue' src="vue.min.js"></script>
+    <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  </head>
+  <body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
@@ -64,21 +77,12 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   exit();
 }
 ?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script id='jquery' src="jquery-3.4.1.js"></script>
-<!-- ripple effect library -->
-<script src="jquery.ripples.js"></script>
-<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-<script id='vue' src="vue.min.js"></script>
-<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-<body>
+
   <br>
   <br>
   <br>
   <section id='google_map'>
-  <div id="map"></div>
+    <div id="map"></div>
   </section>
   <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'>
   <label id='echo1'>請輸入進貨的地點</label><br>
@@ -94,12 +98,13 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   //翻頁button
     require_once("html_dropup_button_template.php");
   ?>
+
   <section id='google_map_js'>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap"
-  async defer></script>
-<script async defer src='google_map.js'></script>
-</section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap" async defer></script>
+    <script async defer src='google_map.js'></script>
+  </section>
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
   <script id='js' defer async type=text/javascript src='html_newproduct_template.js'></script>
-</body>
+  </body>
+</html>
 
