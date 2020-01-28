@@ -27,7 +27,7 @@ const googleMap = new Vue({
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          pos = {
+          var pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
@@ -36,13 +36,10 @@ const googleMap = new Vue({
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(this.map);
-          this.map.setCenter(pos);
+          // this.map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
-      } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
       }
     },
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
