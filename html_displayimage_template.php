@@ -1,13 +1,13 @@
 <html>
   <head>
-  <script id='jquery' src="jquery-3.4.1.js"></script>
-  <!-- ripple effect library -->
-  <script src="jquery.ripples.js"></script>
-  <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/  bootstrap.bundle.min.js'></script> 
-  <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-  <script id='jquery_cookie' src='/jquery-cookie-master/src/  jquery.cookie.js'></script>
-  <script id='vue' src="vue.min.js"></script>
-  <link id='bootstrap' type='text/css' rel="stylesheet" href="/ bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script id='jquery' src="jquery-3.4.1.js"></script>
+    <!-- ripple effect library -->
+    <script src="jquery.ripples.js"></script>
+    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/  bootstrap.bundle.min.js'></script> 
+    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+    <script id='jquery_cookie' src='/jquery-cookie-master/src/  jquery.cookie.js'></script>
+    <script id='vue' src="vue.min.js"></script>
+    <link id='bootstrap' type='text/css' rel="stylesheet" href="/ bootstrap-4.4.1-dist/css/bootstrap.min.css">
   </head>
 <body>
 <?php
@@ -73,6 +73,7 @@ echo "<button id='button1'><span id='echo9'>回到全貨號頁面</span></button
 $conn->close();
 
 ?>
+<script id='jquery_cookie' src='/jquery-cookie-master/src/  jquery.cookie.js'></script>
 <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
 <script id='js' defer async type=text/javascript src='html_displayimage_template.js'></script>
 </body>
