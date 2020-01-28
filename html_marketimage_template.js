@@ -5,10 +5,11 @@ $(function(){
     if($('.active').attr('id')=='japanese'){
       if(confirm('この写真を削除しますか？')){
         console.log(e.target);
-        console.log(e.target.parentElement);
-        console.log(e.target.parentElement.parentElement);
-        console.log(e.target.parentElement.parentElement.parentElement);
-        console.log(e.target.parentElement.parentElement.parentElement.parentElement);
+        // console.log(e.target.parentElement);
+        // console.log(e.target.parentElement.parentElement);
+        // console.log(e.target.parentElement.parentElement.parentElement);
+        // console.log(e.target.parentElement.parentElement.parentElement.parentElement);
+        let parent=e.target.parentElement.parentElement.parentElement.parentElement;
         let image_id =e.target.name;
         let product_id = $('#product_id').html();
         console.log('image_id:'+image_id);
@@ -34,7 +35,7 @@ $(function(){
               }else if($('a#english').hasClass('active')){
                 $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
-            
+            parent.slideUp(500);
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
@@ -91,6 +92,7 @@ $(function(){
               }else if($('a#english').hasClass('active')){
                 $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
+            parent.slideUp(500);
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
@@ -148,6 +150,7 @@ $(function(){
               }else if($('a#english').hasClass('active')){
                 $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
+            parent.slideUp(500);
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
