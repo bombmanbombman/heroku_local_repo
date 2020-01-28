@@ -1,3 +1,21 @@
+<html>
+  <head>
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+    <meta content='utf-8' http-equiv='encoding'>
+    <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+    <title>new sale page</title>
+    <script id='jquery' src='jquery-3.4.1.js'></script>
+    <!-- ripple effect library -->
+    <script src='jquery.ripples.js'></script>
+    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+    <script id='vue' src='vue.min.js'></script>
+    <!-- firefox date support plugin -->
+    <script src='//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js'></script>
+    <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
+  </head>
+  <body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
@@ -71,28 +89,6 @@ $query='select product_id,buy_place,product_info,product_detail from product
   where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_sale'];
 $stmt=$conn->query($query);
 if(!$stmt)echo($conn->error);
-?>
-
-
-<html>
-  <head>
-    <meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
-    <meta content='utf-8' http-equiv='encoding'>
-    <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
-    <title>new sale page</title>
-    <script id='jquery' src='jquery-3.4.1.js'></script>
-    <!-- ripple effect library -->
-    <script src='jquery.ripples.js'></script>
-    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-    <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-    <script id='vue' src='vue.min.js'></script>
-    <!-- firefox date support plugin -->
-    <script src='//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js'></script>
-    <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
-  </head>
-  <body>
-<?php
 
 echo "
 <table>
