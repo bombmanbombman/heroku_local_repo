@@ -15,8 +15,8 @@ const googleMap = new Vue({
         lng=position.coords.longitude;
         });
       }else{
-        var lat =35.059823;
-        var lng =135749073;
+        lat =35.059823;
+        lng =135.749073;
       }
       // let location = {
       //   lat: lat,
