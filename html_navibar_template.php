@@ -67,3 +67,4 @@ if(strpos($URL,'herokuapp.com')){
     </select>
   </li>
 </ul>
+<hr>
