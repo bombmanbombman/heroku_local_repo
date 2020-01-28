@@ -18,40 +18,37 @@ $(function(){
         }).done(function(data){
           console.log('結果是:'+data);
           if(data !='error0'||data !='error1'){
-            let array=data.split('||');
-            // $.cookie('user_id',array[0]);
-            // console.log(array);
             $('#error_message').css({
               "color":"#ff4000"
             });
             if($('a#chinese').hasClass('active')){
-              $('#error_message').text('成功删除图片').show(0).hide(5000);
+              $('#error_message').text('成功删除图片').show(0).hide(8000);
               }else if($('a#japanese').hasClass('active')){
-                $('#error_message').text('写真を削除しました').show(0).hide(5000);
+                $('#error_message').text('写真を削除しました').show(0).hide(8000);
               }else if($('a#english').hasClass('active')){
-                $('#error_message').text('this image has been deleted').show(0).hide(5000);
+                $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('网络不稳定').show(0).hide(5000);
+            $('#error_message').text('网络不稳定').show(0).hide(8000);
             }else if($('a#japanese').hasClass('active')){
-            $('#error_message').text('ネットの接続が不安定').show(0).hide(5000);
+            $('#error_message').text('ネットの接続が不安定').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
-              $('#error_message').text('unstable connection').show(0).hide(5000);
+              $('#error_message').text('unstable connection').show(0).hide(8000);
             }
           }else if(data == 'error1'){
             $('#error_message').css({
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('database有问题').show(0).hide(5000);
+            $('#error_message').text('database有问题').show(0).hide(8000);
             }else if($('a#japanese').hasClass('active')){
-            $('#error_message').text('データベースに問題あり').show(0).hide(5000);
+            $('#error_message').text('データベースに問題あり').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
-              $('#error_message').text('sth wrong with database').show(0).hide(5000);
+              $('#error_message').text('sth wrong with database').show(0).hide(8000);
             }
           }
         }).fail(function(error){
@@ -81,33 +78,33 @@ $(function(){
               "color":"#ff4000"
             });
             if($('a#chinese').hasClass('active')){
-              $('#error_message').text('成功删除图片').show(0).hide(5000);
+              $('#error_message').text('成功删除图片').show(0).hide(8000);
               }else if($('a#japanese').hasClass('active')){
-                $('#error_message').text('写真を削除しました').show(0).hide(5000);
+                $('#error_message').text('写真を削除しました').show(0).hide(8000);
               }else if($('a#english').hasClass('active')){
-                $('#error_message').text('this image has been deleted').show(0).hide(5000);
+                $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('网络不稳定').show(0).hide(5000);
+            $('#error_message').text('网络不稳定').show(0).hide(8 000);
             }else if($('a#japanese').hasClass('active')){
-            $('#error_message').text('ネットの接続が不安定').show(0).hide(5000);
+            $('#error_message').text('ネットの接続が不安定').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
-              $('#error_message').text('unstable connection').show(0).hide(5000);
+              $('#error_message').text('unstable connection').show(0).hide(8000);
             }
           }else if(data == 'error1'){
             $('#error_message').css({
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('database有问题').show(0).hide(5000);
+            $('#error_message').text('database有问题').show(0).hide(8000);
             }else if($('a#japanese').hasClass('active')){
-            $('#error_message').text('データベースに問題あり').show(0).hide(5000);
+            $('#error_message').text('データベースに問題あり').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
-              $('#error_message').text('sth wrong with database').show(0).hide(5000);
+              $('#error_message').text('sth wrong with database').show(0).hide(8000);
             }
           }
         }).fail(function(error){
@@ -138,33 +135,33 @@ $(function(){
               "color":"#ff4000"
             });
             if($('a#chinese').hasClass('active')){
-              $('#error_message').text('成功删除图片').show(0).hide(5000);
+              $('#error_message').text('成功删除图片').show(0).hide(8000);
               }else if($('a#japanese').hasClass('active')){
-                $('#error_message').text('写真を削除しました').show(0).hide(5000);
+                $('#error_message').text('写真を削除しました').show(0).hide(8000);
               }else if($('a#english').hasClass('active')){
-                $('#error_message').text('this image has been deleted').show(0).hide(5000);
+                $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('网络不稳定').show(0).hide(5000);
+            $('#error_message').text('网络不稳定').show(0).hide(8000);
             }else if($('a#japanese').hasClass('active')){
-            $('#error_message').text('ネットの接続が不安定').show(0).hide(5000);
+            $('#error_message').text('ネットの接続が不安定').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
-              $('#error_message').text('unstable connection').show(0).hide(5000);
+              $('#error_message').text('unstable connection').show(0).hide(8000);
             }
           }else if(data == 'error1'){
             $('#error_message').css({
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('database有问题').show(0).hide(5000);
+            $('#error_message').text('database有问题').show(0).hide(8000);
             }else if($('a#japanese').hasClass('active')){
-            $('#error_message').text('データベースに問題あり').show(0).hide(5000);
+            $('#error_message').text('データベースに問題あり').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
-              $('#error_message').text('sth wrong with database').show(0).hide(5000);
+              $('#error_message').text('sth wrong with database').show(0).hide(8000);
             }
           }
         }).fail(function(error){

@@ -125,20 +125,21 @@ echo "
 for($i=0;$i<$image_number_of_this_product;$i++){
   $echo = "echo".($i+20);
   $value = "value".($i+20);
+  $class="class".($i+20);
   echo "
-  <table class='float_left'>
-    <tr>
+  <table class='float_left ".$class."'>
+    <tr class='$class'>
       <th>
         <span id='$echo'>圖片編號</span> $all_image_id_of_this_product[$i]
       </th>
     </tr>
-    <tr>
+    <tr class='$class'>
       <td>
         <img height='80' width='80 'src='data:image/jpeg;base64,"
   .base64_encode($all_image_data_of_this_product[$i])."'/>
       </td>
     </tr>
-    <tr>
+    <tr class='$class'>
       <td>
         <input type='submit' id='$value' class='delete' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
       </td>
