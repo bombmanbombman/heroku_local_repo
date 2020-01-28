@@ -130,17 +130,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <br>
   <!-- google map 显示的element -->
   <section id='google_map'>
-  <div class="row fixed-bottom">
-      <div class="col">
-        <div class="alert alert-info" role="alert">
-          Let's Write 筆記文：<br/>
-          <a href="https://letswrite.tw/google-map-api-place-api/" target="_blank">Google Maps API學習筆記-4</a>
-        </div>
-      </div>
-    </div>
-
     <div id="app" class="container">
-
       <!-- 搜尋框 -->
       <div class="row">
         <div class="col google-map">
@@ -150,7 +140,6 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
           </div>
         </div>
       </div>
-
       <!-- 放google map的div -->
       <div class="row">
         <div class="col google-map">
@@ -158,9 +147,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
           <div id="map" class="embed-responsive embed-responsive-16by9"></div>
         </div>
       </div>
-
       <hr>
-
       <!-- 放評論摘要的div -->
       <div class="row" v-if="place != null">
         <div class="col" v-if="place.reviews != null">
@@ -183,7 +170,6 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
           </div>
         </div>
       </div>
-
     </div>
   </section>
   <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'>
