@@ -347,7 +347,7 @@ $(function(){
         var second = now.getSeconds();
         second=foo(second);
         var millisecond = now.getMilliseconds();
-        var time =' '+month+' '+day+' '+year+' '+weekday+' '  +hour+':'+minute+':'+second;
+        var time ='current time: '+month+' '+day+' '+year+' '+weekday+' '  +hour+':'+minute+':'+second;
         // console.log(time);
         var t = foo(hour) + ':' + foo(minute) + ':' + foo (second);
         document.getElementById('clock').innerText = time;
