@@ -11,13 +11,16 @@ const googleMap = new Vue({
     initMap() {
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
+        var lat=position.coords.latitude;
+        var lng=position.coords.longitude;
         });
+      }else{
+        var lat =35.059823;
+        var lng =135749073;
       }
       let location = {
-        lat: 35.059823,
-        lng: 135.749073
+        lat: lat,
+        lng: lng
       };
 
       this.map = new google.maps.Map(document.getElementById('map'), {
