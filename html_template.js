@@ -165,7 +165,7 @@ $(function(){
     }
   }
   //(2)時間表插入 
-  console.log($('a.active').attr('id'))
+  // console.log($('a.active').attr('id'));
   if($('section#a_content').length||$('#time_table').length){
     $('#time_table').html(`
       <h4 id='clock' class='border border-warning rounded-pill rounded-lg bg-secondary text-center  text-white'></h4>
@@ -180,46 +180,130 @@ $(function(){
       var month=now.getMonth()+1;
       var day=now.getDate();
       var weekday=now.getDay();
-      switch (weekday) {
-        case 0:
-          weekday='日曜日'
-          break;
-        case 1:
-          weekday='月曜日'
-          break;
-        case 2:
-          weekday='火曜日'
-          break;
-        case 3:
-          weekday='水曜日'
-          break;
-        case 4:
-          weekday='木曜日'
-          break;
-        case 5:
-          weekday='金曜日'
-          break;
-        case 6:
-          weekday='土曜日'
-          break;                                
-        default:
-          break;
+      if($('a.active').attr('id')=='japanese'){
+        switch (weekday) {
+          case 0:
+            weekday='日曜日'
+            break;
+          case 1:
+            weekday='月曜日'
+            break;
+          case 2:
+            weekday='火曜日'
+            break;
+          case 3:
+            weekday='水曜日'
+            break;
+          case 4:
+            weekday='木曜日'
+            break;
+          case 5:
+            weekday='金曜日'
+            break;
+          case 6:
+            weekday='土曜日'
+            break;                                
+          default:
+            break;
+        }
+        var hour = now.getHours();
+        hour=foo(hour);
+        var minute = now.getMinutes();
+        minute=foo(minute);
+        var second = now.getSeconds();
+        second=foo(second);
+        var millisecond = now.getMilliseconds();
+        // var time =year+'年 '+month+'月 '+day+'日 '+weekday+'   '+hour+'時'+minute+'分'+second+'秒' +millisecond;
+        var time =year+'年 '+month+'月 '+day+'日 '+weekday+' '  +hour+'時'+minute+'分'+second+'秒';
+        // console.log(time);
+        var t = foo(hour) + ':' + foo(minute) + ':' + foo (second);
+        document.getElementById('clock').innerText = time;
+        setTimeout(() => {
+          clock();
+        }, 980);
+      }else if($('a.active').attr('id')=='chinese'){
+        switch (weekday) {
+          case 0:
+            weekday='星期天'
+            break;
+          case 1:
+            weekday='星期一'
+            break;
+          case 2:
+            weekday='星期二'
+            break;
+          case 3:
+            weekday='星期三'
+            break;
+          case 4:
+            weekday='星期四'
+            break;
+          case 5:
+            weekday='星期五'
+            break;
+          case 6:
+            weekday='星期六'
+            break;                                
+          default:
+            break;
+        }
+        var hour = now.getHours();
+        hour=foo(hour);
+        var minute = now.getMinutes();
+        minute=foo(minute);
+        var second = now.getSeconds();
+        second=foo(second);
+        var millisecond = now.getMilliseconds();
+        // var time =year+'年 '+month+'月 '+day+'日 '+weekday+'   '+hour+'時'+minute+'分'+second+'秒' +millisecond;
+        var time =year+'年 '+month+'月 '+day+'日 '+weekday+' '  +hour+'時'+minute+'分'+second+'秒';
+        // console.log(time);
+        var t = foo(hour) + ':' + foo(minute) + ':' + foo (second);
+        document.getElementById('clock').innerText = time;
+        setTimeout(() => {
+          clock();
+        }, 980);
+      }else if($('a.active').attr('id')=='english'){
+        switch (weekday) {
+          case 0:
+            weekday='sunday'
+            break;
+          case 1:
+            weekday='monday'
+            break;
+          case 2:
+            weekday='tuesday'
+            break;
+          case 3:
+            weekday='wednesday'
+            break;
+          case 4:
+            weekday='thursday'
+            break;
+          case 5:
+            weekday='friday'
+            break;
+          case 6:
+            weekday='saturday'
+            break;                                
+          default:
+            break;
+        }
+        var hour = now.getHours();
+        hour=foo(hour);
+        var minute = now.getMinutes();
+        minute=foo(minute);
+        var second = now.getSeconds();
+        second=foo(second);
+        var millisecond = now.getMilliseconds();
+        // var time =year+'年 '+month+'月 '+day+'日 '+weekday+'   '+hour+'時'+minute+'分'+second+'秒' +millisecond;
+        var time =year+' '+month+' '+day+' '+weekday+' '  +hour+':'+minute+':'+second;
+        // console.log(time);
+        var t = foo(hour) + ':' + foo(minute) + ':' + foo (second);
+        document.getElementById('clock').innerText = time;
+        setTimeout(() => {
+          clock();
+        }, 980);
       }
-      var hour = now.getHours();
-      hour=foo(hour);
-      var minute = now.getMinutes();
-      minute=foo(minute);
-      var second = now.getSeconds();
-      second=foo(second);
-      var millisecond = now.getMilliseconds();
-      // var time =year+'年 '+month+'月 '+day+'日 '+weekday+' '+hour+'時'+minute+'分'+second+'秒' +millisecond;
-      var time =year+'年 '+month+'月 '+day+'日 '+weekday+' '+hour+'時'+minute+'分'+second+'秒';
-      // console.log(time);
-      var t = foo(hour) + ':' + foo(minute) + ':' + foo(second);
-      document.getElementById('clock').innerText = time;
-      setTimeout(() => {
-        clock();
-      }, 980);
     }
   }
 });
