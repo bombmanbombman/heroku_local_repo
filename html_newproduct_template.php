@@ -116,7 +116,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <!-- 必须载入的js包含api key -->
   <section id='google_map_js'>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyA1_8F9VSj4orU5N-_A-7Pb_y6BU0ajHso" async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyA1_8F9VSj4orU5N-_A-7Pb_y6BU0ajHso" async defer></script> -->
     <script async defer src='google_map.js'></script>
   </section>
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
