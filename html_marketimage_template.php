@@ -153,8 +153,7 @@ echo "
   <br>
   <br>
   <br>
-  <br>
-  <br>
+  <div id='error_message'></div>
   <br>
 ";
 
