@@ -10,9 +10,10 @@ const googleMap = new Vue({
     // init google map
     initMap() {
       if(navigator.geolocation){
-        let location=navigator.geolocation.getCurrentPosition(location);
-        console.log(location.coords.latitude);
-        console.log(location.coords.longitude);
+        navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+        });
       }
       let location = {
         lat: 35.059823,
