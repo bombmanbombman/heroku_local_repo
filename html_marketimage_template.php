@@ -154,9 +154,9 @@ echo "
   <br>
   <br>
   <br>
+  <br>
+  <br>
   <div id='error_message'></div>
-  <br>
-  <br>
 ";
 
 echo "<div id='echo11'>最左邊的圖片會作為縮略圖在 市場中顯示。</div>";
