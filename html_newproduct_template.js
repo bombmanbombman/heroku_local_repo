@@ -27,7 +27,7 @@ const googleMap = new Vue({
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
+          pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
@@ -36,9 +36,7 @@ const googleMap = new Vue({
           infoWindow.setPosition(pos);
           infoWindow.setContent('現在地');
           infoWindow.open(map);
-          var latlng = new google.maps.LatLng(results[0].geometry.location.lat, results[0].geometry.location.lng); 
-          map.setCenter();
-          // map.setCenter(new google.maps.LatLng(lat,lng));
+          map.setCenter(pos);
         }, function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
