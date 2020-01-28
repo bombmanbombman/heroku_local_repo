@@ -49,6 +49,7 @@ if(strpos($URL,'herokuapp.com')){
 ?>
   <!-- <li><a class='navi' href="">sign out</a></li> -->
   <li><a class='navi' href="20200113.php">map</a></li>
+  <li id='time_table'></li>
   <!--float:right 取消display block，成為一條線 且擠在右邊-->
   <li style="float:right">
     <select name='forma' onchange="location = this.value">
