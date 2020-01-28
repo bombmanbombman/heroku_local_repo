@@ -12,7 +12,7 @@
     <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
     <script id='vue' src='vue.min.js'></script>
     <!-- firefox date support plugin -->
-    <script src='//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js'></script>
+    <script id='polyfiller'src='polyfiller.js'></script>
     <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
   </head>
   <body>
