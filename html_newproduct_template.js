@@ -20,10 +20,10 @@ $(function(){
     type:"GET",
     url:"https://developers.google.com/places/web-service/place-id?hl=en_US#find-id"
   }).done(function(data){
-    datastring=JSON.stringify(data);
-    dataparse=JSON.parse(data);
-    console.log(datastring);
-    console.log(dataparse);
+    // datastring=JSON.stringify(data);
+    // dataparse=JSON.parse(data);
+    // console.log(datastring);
+    // console.log(dataparse);
   }).fail(function(error){
     console.log(error);
   })
