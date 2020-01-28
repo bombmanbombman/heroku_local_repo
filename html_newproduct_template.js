@@ -55,12 +55,17 @@ const googleMap = new Vue({
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
-
+      this.map = new google.maps.Map(document.getElementById('map'), {
+        center: geo_loc,
+        zoom: 16,
+        scaleControl:true
+      });
       let options = {
         componentRestrictions: { country: 'jp' } // 限制在日本範圍
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
+
         this.place = this.autocomplete.getPlace();
         
         if(this.place.geometry) {
