@@ -23,7 +23,7 @@ const googleMap = new Vue({
         position:geo_loc,
         map:this.map
       });
-      $('#echo4').on('click',function(){
+      $('#echo8').on('click',function(){
         map = new google.maps.Map(document.getElementById ('map'), {
           center: geo_loc,
           zoom: 16,
