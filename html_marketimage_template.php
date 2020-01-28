@@ -140,7 +140,7 @@ for($i=0;$i<$image_number_of_this_product;$i++){
     </tr>
     <tr>
       <td>
-        <input type='submit' id='$value' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
+        <input type='submit' id='$value' class='delete' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
       </td>
     </tr>
   </table>
