@@ -1,67 +1,72 @@
 $(function(){
-      // This sample uses the Place Autocomplete widget to allow the user to search
-      // for and select a place. The sample then displays an info window containing
-      // the place ID and other information about the place that the user has
-      // selected.
-
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -33.8688, lng: 151.2195},
-      zoom: 13
-    });
-
-    var input = document.getElementById('pac-input');
-
-    var autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.bindTo('bounds', map);
-
-    // Specify just the place data fields that you need.
-    autocomplete.setFields(['place_id', 'geometry', 'name']);
-
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    var infowindow = new google.maps.InfoWindow();
-    var infowindowContent = document.getElementById('infowindow-content');
-    infowindow.setContent(infowindowContent);
-
-    var marker = new google.maps.Marker({map: map});
-
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-
-    autocomplete.addListener('place_changed', function() {
-      infowindow.close();
-
-      var place = autocomplete.getPlace();
-
-      if (!place.geometry) {
-        return;
+  const googleMap = new Vue({
+    el: '#app',
+    data: {
+      map: null,
+      autocomplete: null, // google map Autocomplete method
+      site: '', // place API要綁定的搜尋框
+      place: null // 存place確定後回傳的資料
+    },
+    methods: {
+      // init google map
+      initMap() {
+  
+        let location = {
+          lat: 25.0374865,
+          lng: 121.5647688
+        };
+  
+        this.map = new google.maps.Map(document.getElementById('map'), {
+          center: location,
+          zoom: 16
+        });
+        
+      },
+      // 地址自動完成 + 地圖的中心移到輸入結果的地址上
+      siteAuto() {
+  
+        let options = {
+          componentRestrictions: { country: 'tw' } // 限制在台灣範圍
+        };
+        this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
+        
+        // 地址的輸入框，值有變動時執行
+        this.autocomplete.addListener('place_changed', () => {
+          this.place = this.autocomplete.getPlace(); // 地點資料存進place
+          
+          // 確認回來的資料有經緯度
+          if(this.place.geometry) {
+            
+            // 改變map的中心點
+            let searchCenter = this.place.geometry.location;
+            
+            // panTo是平滑移動、setCenter是直接改變地圖中心
+            this.map.panTo(searchCenter);
+  
+            // 在搜尋結果的地點上放置標記
+            let marker = new google.maps.Marker({
+              position: searchCenter,
+              map: this.map
+            });
+  
+            // info window
+            let infowindow = new google.maps.InfoWindow({
+              content: this.place.formatted_address
+            });
+            infowindow.open(this.map, marker);
+  
+          }
+          
+        });
       }
-
-      if (place.geometry.viewport) {
-        map.fitBounds(place.geometry.viewport);
-      } else {
-        map.setCenter(place.geometry.location);
-        map.setZoom(17);
-      }
-
-      // Set the position of the marker using the place ID and location.
-      marker.setPlace({
-        placeId: place.place_id,
-        location: place.geometry.location
+    },
+    mounted() {
+      window.addEventListener('load', () => {
+  
+        this.initMap();
+        this.siteAuto();
+  
       });
-
-      marker.setVisible(true);
-
-      infowindowContent.children['place-name'].textContent = place.name;
-      infowindowContent.children['place-id'].textContent = place.place_id;
-      infowindowContent.children['place-address'].textContent =
-          place.formatted_address;
-      infowindow.open(map, marker);
-    });
-  }
+    }
+  })
 });

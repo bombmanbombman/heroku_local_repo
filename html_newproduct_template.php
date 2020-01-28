@@ -131,14 +131,28 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <br>
   <!-- google map 显示的element -->
   <section id='google_map'>
-    <div style="display: none">
-      <input id="pac-input" class="controls" type="text"  placeholder="Enter a location">
-    </div>
-    <div id="map"></div>
-    <div id="infowindow-content">
-      <span id="place-name" class="title"></span><br>
-      <strong>Place ID:</strong> <span id="place-id"></span><br>
-      <span id="place-address"></span>
+    <div id="app">
+      <!-- 搜尋框 -->
+      <div>
+        <input type="text" ref="site" v-model="site">
+      </div>
+      <!-- 放google map的div -->
+      <div>
+        <div id="map"></div>
+      </div>
+      <!-- 放評論摘要的div -->
+      <div>
+        <ul>
+          <li>
+            <img :src="p.profile_photo_url">
+            <div>
+              <h5><a target="_blank" :href="p.author_url">{{ p.author_name }}</a></h5>
+              <p>{{ p.text }}</p>
+              <h6>{{ p.relative_time_description }}</h6>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
   <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'>
@@ -160,7 +174,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
   <script id='js' defer async type=text/javascript src='html_newproduct_template.js'></script>
   <section id='google_map_js'>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap"async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap" async defer></script>
   </section>
   </body>
 </html>
