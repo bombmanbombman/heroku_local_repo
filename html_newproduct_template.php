@@ -10,6 +10,7 @@
     <script id='vue' src="vue.min.js"></script>
     <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   </head>
+  <!-- map 必须要的css -->
   <style>
     /* Always set the map height explicitly to define the   size  of the div
      * element that contains the map. */
@@ -94,6 +95,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <br>
   <br>
   <br>
+  <!-- google map 显示的element -->
   <section id='google_map'>
     <div id="map"></div>
   </section>
@@ -111,7 +113,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   //翻頁button
     require_once("html_dropup_button_template.php");
   ?>
-
+  <!-- 必须载入的js包含api key -->
   <section id='google_map_js'>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap" async defer></script>
     <script async defer src='google_map.js'></script>
