@@ -1,6 +1,53 @@
 <html>
   <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html;     charset=utf-8" />
+      <!-- map 必须要的css -->
+  <style>
+    /* Always set the map height explicitly to define the   size  of the div
+     * element that contains the map. */
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .controls {
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        height: 29px;
+        margin-left: 17px;
+        margin-top: 10px;
+        outline: none;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      .controls:focus {
+        border-color: #4d90fe;
+      }
+      .title {
+        font-weight: bold;
+      }
+      #infowindow-content {
+        display: none;
+      }
+      #map #infowindow-content {
+        display: inline;
+      }
+  </style>
     <script id='jquery' src="jquery-3.4.1.js"></script>
     <!-- ripple effect library -->
     <script src="jquery.ripples.js"></script>
@@ -10,20 +57,7 @@
     <script id='vue' src="vue.min.js"></script>
     <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
   </head>
-  <!-- map 必须要的css -->
-  <style>
-    /* Always set the map height explicitly to define the   size  of the div
-     * element that contains the map. */
-    #map {
-      height: 100%;
-    }
-    /* Optional: Makes the sample page fill the window. */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+
   <body>
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
@@ -97,7 +131,15 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   <br>
   <!-- google map 显示的element -->
   <section id='google_map'>
+    <div style="display: none">
+      <input id="pac-input" class="controls" type="text"  placeholder="Enter a location">
+    </div>
     <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br>
+      <strong>Place ID:</strong> <span id="place-id"></span><br>
+      <span id="place-address"></span>
+    </div>
   </section>
   <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'>
   <label id='echo1'>請輸入進貨的地點</label><br>
@@ -115,8 +157,8 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   ?>
   <!-- 必须载入的js包含api key -->
   <section id='google_map_js'>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap"
+        async defer></script>
 
     <script async defer src='google_map.js'></script>
   </section>
