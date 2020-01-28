@@ -168,7 +168,7 @@ $(function(){
   // console.log($('a.active').attr('id'));
   if($('section#a_content').length||$('#time_table').length){
     $('#time_table').html(`
-      <h5 id='clock' class='border border-warning rounded-pill rounded-lg bg-secondary text-center  text-white'></h5>
+      <h5 id='clock' class='border border-warning rounded rounded-lg bg-secondary text-center  text-white'></h5>
     `)
     clock();
     function foo(x) { return (x < 10) ? '0' + x : x; }
