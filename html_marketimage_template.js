@@ -8,6 +8,7 @@ $(function(){
         console.log(e.target.parentElement);
         console.log(e.target.parentElement.parentElement);
         console.log(e.target.parentElement.parentElement.parentElement);
+        console.log(e.target.parentElement.parentElement.parentElement.parentElement);
         let image_id =e.target.name;
         let product_id = $('#product_id').html();
         console.log('image_id:'+image_id);
