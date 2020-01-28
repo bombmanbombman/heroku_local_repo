@@ -169,7 +169,7 @@ if($image_number_of_this_product>=6){
   <input type='hidden' name='date_image'  value='' >
   <input type='hidden' name='product_id_for_image' value=$product_id>
   <input type='file' name='image_data' required><br>
-  <label id='echo16'>照片描述（選填）在market上顯示</label><br>
+  <h4><label id='echo16'>照片描述（選填）在market上顯示</label></h4>
   <textarea name='image_info' maxlength='255' rows='4' cols='40' value=''></textarea><br>
   <input type='submit' id='value2' name='image_data' value='上傳這張圖片。'>
   </form>
