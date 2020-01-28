@@ -14,9 +14,8 @@ $(function(){
   $('body').css({
     "background-image": `url("/upload_compress/background_water4.jpg")`,
     //device 的全屏 desktop 是整个显示器的解析度
-    // "height": '110vh',
-    // "width": "100%",
-    "background-size":"cover",
+    "height": '110vh',
+    "width": "100%",
     "position":"absolute",
     "z-index":"-1",
     "background-repeat":"no-repeat"
@@ -169,10 +168,8 @@ $(function(){
   // console.log($('a.active').attr('id'));
   if($('section#a_content').length||$('#time_table').length){
     $('#time_table').html(`
-      <h4 id='clock' class='border border-warning rounded-pill rounded-lg bg-secondary text-center  text-white'></h4>
-    `).css({
-      "font-size":"14px"
-    })
+      <h5 id='clock' class='border border-warning rounded-pill rounded-lg bg-secondary text-center  text-white'></h5>
+    `)
     clock();
     function foo(x) { return (x < 10) ? '0' + x : x; }
     function clock() {
