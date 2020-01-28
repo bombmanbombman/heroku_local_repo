@@ -18,33 +18,35 @@ const googleMap = new Vue({
         zoom: 16,
         scaleControl:true
       });
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: geo_loc,
-        zoom: 16,
-        scaleControl:true
-      });
+      
       let marker1= new google.maps.Marker({
         position:geo_loc,
         map:this.map
       });
-      infoWindow = new google.maps.InfoWindow;
-    
-      // Try HTML5 geolocation.
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('現在地');
-          infoWindow.open(this.map);
-          map.setZoom(15);
-          map.setCenter(pos);
-        }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
+      $('#echo4').on('click',function(){
+        map = new google.maps.Map(document.getElementById ('map'), {
+          center: geo_loc,
+          zoom: 16,
+          scaleControl:true
         });
-      }
+        infoWindow = new google.maps.InfoWindow;
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('現在地');
+            infoWindow.open(this.map);
+            map.setZoom(15);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter ());
+          });
+        }
+      })
     },
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上

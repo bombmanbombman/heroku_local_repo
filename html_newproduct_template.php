@@ -134,6 +134,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
           <h5>Search：</h5>
           <div class="form-group">
             <input type="text" class="form-control" ref="site" v-model="site">
+            <button id='echo4'>取得現在地</button>
           </div>
         </div>
       </div>
