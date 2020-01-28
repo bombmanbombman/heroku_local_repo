@@ -1,5 +1,5 @@
 $(function(){
-  $('.delete').on('click',function(e){
+  $('input.delete').on('click',function(e){
     e.preventDefault();
     console.log($('.active').attr('id'));
     if($('.active').attr('id')=='japanese'){
@@ -92,7 +92,7 @@ $(function(){
               "color":"red"
             });
             if($('a#chinese').hasClass('active')){
-            $('#error_message').text('网络不稳定').show(0).hide(8 000);
+            $('#error_message').text('网络不稳定').show(0).hide(8000);
             }else if($('a#japanese').hasClass('active')){
             $('#error_message').text('ネットの接続が不安定').show(0).hide(8000);
             }else if($('a#english').hasClass('active')){
