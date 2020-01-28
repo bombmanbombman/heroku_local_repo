@@ -119,7 +119,7 @@ echo "<br>";
     <section id='flex_container' class='d-flex flex-column'style="color:white;font:bold;font-size:15px;">
     <div class="d-flex justify-content-center">
       <div id='google_sign_in' class="g-signin2 " data-onsuccess="onSignIn" data-theme="dark"></div>
-      <br><button id='google._sign_out' class="align-items-start">google sign out</button>
+      <br><button id='admin' class="align-items-start">login as admin</button>
     </div class="d-flex justify-content-center">
       <!-- <form  action ='index.php' method = 'post'> -->
       <form id='index_submit' action ='index_submit.php' method = 'post'>

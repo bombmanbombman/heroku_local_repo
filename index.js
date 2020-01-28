@@ -183,4 +183,67 @@ $(function(){
       console.log(error);
     });
   })
+
+  $('#admin').on('click',function(e){
+    e.preventDefault();
+    let user_name='admin';
+    console.log(user_name)
+    let user_password='63079861';
+    console.log(user_password)
+    $.ajax({
+      type: "POST",
+      url: "index_submit.php",
+      data: {
+        user_name:user_name,
+        user_password:user_password
+      },
+      dataType: "",
+      // success: function (data) {
+      //   console.log(data);
+      //   if(data =='1'){
+          // window.location.href='html_userdetail_template.php';
+      //   }else if(data == '0'){
+      //     if($('a#chinese').hasClass('active')){
+      //     $('#error_message').text('用戶名或密碼錯誤');
+      //     }else if($('a#japanese').hasClass('active')){
+      //     $('#error_message').text('ユーザー名又はパスワードが間違っています');
+      //     }else if($('a#english').hasClass('active')){
+      //       $('#error_message').text('username or password is not corrent');
+      //     }
+      //   }
+      // }
+    }).done(function(data){
+      console.log('結果是:'+data);
+      if(data !='error0'){
+        let array=data.split('||');
+        // $.cookie('user_id',array[0]);
+        // console.log(array);
+        $('#error_message').css({
+          "color":"#ff4000"
+        });
+        if($('a#chinese').hasClass('active')){
+          $('#error_message').text('歡迎回來 '+array[1]).show(0);
+          }else if($('a#japanese').hasClass('active')){
+            $('#error_message').text('おかえり、'+array[1]+'さん').show(0);
+          }else if($('a#english').hasClass('active')){
+            $('#error_message').text('welcome back '+array[1]).show(0);
+          }
+        console.log($.cookie());
+        window.location.href='html_userdetail_template.php';
+      }else if(data == 'error0'){
+        $('#error_message').css({
+          "color":"red"
+        });
+        if($('a#chinese').hasClass('active')){
+        $('#error_message').text('用戶名或密碼錯誤').show(0).hide(5000);
+        }else if($('a#japanese').hasClass('active')){
+        $('#error_message').text('ユーザー名又はパスワードが間違っています').show(0).hide(5000);
+        }else if($('a#english').hasClass('active')){
+          $('#error_message').text('username or password is not corrent').show(0).hide(5000);
+        }
+      }
+    }).fail(function(error){
+      console.log(error);
+    });
+  })
 });

@@ -62,9 +62,10 @@ const googleMap = new Vue({
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
         this.place = this.autocomplete.getPlace();
-        console.log(this.place);
+        
         if(this.place.geometry) {
           let searchCenter = this.place.geometry.location;
+          console.log(this.place.geometry.location);
           this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
           
           // 放置標記
