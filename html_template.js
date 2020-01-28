@@ -166,7 +166,7 @@ $(function(){
   }
   //(2)時間表插入 
   if($('section#a_content').length||$('#time_table').length){
-    $('body').prepend(`
+    $('#time_table').html(`
       <h4 id='clock' class='border border-warning rounded-pill rounded-lg bg-secondary text-center  text-white'></h4>
     `)
     clock();

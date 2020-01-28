@@ -26,6 +26,7 @@ html, body {
 <script id='vue' src="vue.min.js"></script>
 <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
 <body>
+  <div id='time_table'></div>
 <?php
 // header("Content-Type: application/json; charset=UTF-8"); 
 // $array=[
