@@ -1,3 +1,31 @@
+<html !DOCTYPE>
+<head><title>20200113</title></head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<style>
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>
+<script id='jquery' src="jquery-3.4.1.js"></script>
+<!-- ripple effect library -->
+<script src="jquery.ripples.js"></script>
+<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+<script id='vue' src="vue.min.js"></script>
+<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+<body>
 <?php
 // header("Content-Type: application/json; charset=UTF-8"); 
 // $array=[
@@ -50,35 +78,6 @@ if($_COOKIE!=null){
 // echo $ajax;
 ?>
 
-
-<html !DOCTYPE>
-<head><title>20200113</title></head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<style>
-
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#map {
-  height: 100%;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-</style>
-<script id='jquery' src="jquery-3.4.1.js"></script>
-<!-- ripple effect library -->
-<script src="jquery.ripples.js"></script>
-<script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-<script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-<script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-<script id='vue' src="vue.min.js"></script>
-<link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-<body>
 <section id='google_map'>
   <div id="map"></div>
 </section>
@@ -155,7 +154,5 @@ var_dump($str_json);
 // var_dump($_POST);
 echo ' js json<br>';
 
-
-// <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
 
 ?>
