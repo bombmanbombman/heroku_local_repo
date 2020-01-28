@@ -7,6 +7,8 @@ $(function(){
         console.log(e.target);
         let image_id =e.target.name;
         let product_id = $('#product_id').html();
+        console.log('image_id:'+image_id);
+        console.log('product_id:'+product_id);
         $.ajax({
           type:"POST",
           url:"html_deleteimage_template.php",
@@ -28,6 +30,7 @@ $(function(){
               }else if($('a#english').hasClass('active')){
                 $('#error_message').text('this image has been deleted').show(0).hide(8000);
               }
+            
           }else if(data == 'error0'){
             $('#error_message').css({
               "color":"red"
