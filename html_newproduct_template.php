@@ -131,10 +131,13 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
       <!-- 搜尋框 -->
       <div class="row">
         <div class="col google-map">
-          <h5>Search：</h5>
+          <h5>
+            Search：
+            <button id='echo8'>取得現在地</button>
+          </h5>
           <div class="form-group">
             <input type="text" class="form-control" ref="site" v-model="site">
-            <button id='echo8'>取得現在地</button>
+            
           </div>
         </div>
       </div>

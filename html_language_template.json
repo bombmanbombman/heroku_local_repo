@@ -151,7 +151,8 @@
 					"echo4":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
 					"echo5":"データベース：",
 					"echo6":"に接続が失敗しました、ログイン画面に戻ります",
-					"echo7":"商品番号の作成が失敗しました、ログイン画面に戻ります"
+					"echo7":"商品番号の作成が失敗しました、ログイン画面に戻ります",
+					"echo8":"現在地"
 				},
 				"chinese":{
 					"echo1":"請輸入進貨的地點",
@@ -161,7 +162,8 @@
 					"echo4":"session傳送失敗",
 					"echo5":"無法連接數據庫：",
 					"echo6":"回到註冊頁面",
-					"echo7":"添加新貨號失敗，回到註冊頁面"
+					"echo7":"添加新貨號失敗，回到註冊頁面",
+					"echo8":"取得現在地"
 				},
 				"english":{
 					"echo1":"please input purchasing address for this item",
@@ -171,7 +173,8 @@
 					"echo4":"seesion retrieve error",
 					"echo5":"unable to access database:",
 					"echo6":",back to login page.",
-					"echo7":"unable to create new purchase ID,back to login page."
+					"echo7":"unable to create new purchase ID,back to login page.",
+					"echo8":"current place"
 				}
 			}
 		},
