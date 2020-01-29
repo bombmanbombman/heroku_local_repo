@@ -29,7 +29,7 @@
         break;
       case 'html_login_template.php':
         echo 'back to login page';
-        header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
+        header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/");
         exit();
         break;
       case 'html_searchproduct_template.php':
