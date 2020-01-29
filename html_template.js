@@ -472,8 +472,8 @@ $(function(){
                 // console.log(start=jqXHR.responseText.search('<section'));
                 // console.log(end=jqXHR.responseText.search(`</section>`));
                 // console.log(part = jqXHR.responseText.substr(start,end));
-                console.log(typeof(data));
-                console.log(data.find('section#a_content'));
+                // console.log(typeof(data));
+                // console.log(data.find('section#a_content'));
                 // console.log(htmlstring);
                 // console.log(start=htmlstring.search('<section'));
                 // console.log(end=htmlstring.search(`</section>`));
