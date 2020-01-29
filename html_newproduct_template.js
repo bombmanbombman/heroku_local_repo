@@ -69,6 +69,8 @@ const googleMap = new Vue({
           url:"html_newproduct_template2.php"
         }).done(function(data){
           console.log(data);
+          console.log(typeof(data));
+          $("#google_map").html(data);
         }).fail(function(error){
           console.log(error);
         });
