@@ -59,6 +59,7 @@ const googleMap = new Vue({
             handleLocationError(true, infoWindow, map.getCenter ());
           });
         }
+        this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       })
     },
     
