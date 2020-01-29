@@ -86,6 +86,11 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
+        this.map = new google.maps.Map(document.getElementById('map'), {
+          center: geo_loc,
+          zoom: 16,
+          scaleControl:true
+        });
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
