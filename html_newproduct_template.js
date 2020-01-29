@@ -95,6 +95,15 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
+          this.map = new google.maps.Map(document.getElementById('map'), {
+            center: geo_loc,
+            zoom: 16,
+            scaleControl:true
+          });
+          let options = {
+            componentRestrictions: { country: 'jp' } // 限制在日本範圍
+          };
+          this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
           // location.reload();
           $("#map2").attr('display','none');
           $("#map1").removeAttr('display');
