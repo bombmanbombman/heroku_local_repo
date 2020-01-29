@@ -148,7 +148,7 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
         </div>
       </div>
       <hr>
-      <div id="map2"class="row">
+      <div id="map2"class="row" style="display:none">
         <div class="col google-map">
             <h5>Google Map：</h5>
           <div id="map" class="embed-responsive embed-responsive-16by9"></div>
