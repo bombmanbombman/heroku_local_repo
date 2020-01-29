@@ -35,7 +35,7 @@ const googleMap = new Vue({
         //   console.log(error);
         // });
         if(typeof(change_switch)==='undefined'){change_switch=false;}
-        else if(chnage_switch==true){
+        else if(change_switch==true){
           $("#map1").fadeToggle(0);
           $("#map2").fadeToggle(1000);
           change_switch = false;
@@ -83,7 +83,7 @@ const googleMap = new Vue({
       this.autocomplete.addListener('place_changed', () => {
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
-        else if(chnage_switch==true){
+        else if(click_switch==true){
           $("#map2").fadeToggle(0);
           $("#map1").fadeToggle(1000);
           click_switch = false;
