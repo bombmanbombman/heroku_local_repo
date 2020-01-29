@@ -13,7 +13,7 @@ const googleMap = new Vue({
         lat: 35.059823,
         lng: 135.749073
       };
-      this.map = new google.maps.Map(document.getElementById('map'), {
+      this.map = new google.maps.Map(document.getElementById('map4'), {
         center: geo_loc,
         zoom: 16,
         scaleControl:true
@@ -48,7 +48,7 @@ const googleMap = new Vue({
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            this.map = new google.maps.Map(document.getElementById ('map'), {
+            this.map = new google.maps.Map(document.getElementById ('map4'), {
               center: geo_loc,
               zoom: 16,
               scaleControl:true
@@ -71,7 +71,7 @@ const googleMap = new Vue({
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
-      this.map = new google.maps.Map(document.getElementById('map'), {
+      this.map = new google.maps.Map(document.getElementById('map3'), {
         center: geo_loc,
         zoom: 16,
         scaleControl:true
@@ -88,7 +88,7 @@ const googleMap = new Vue({
           $("#map1").fadeToggle(1000);
           click_switch = false;
         }
-        this.map = new google.maps.Map(document.getElementById('map'), {
+        this.map = new google.maps.Map(document.getElementById('map3'), {
           center: geo_loc,
           zoom: 16,
           scaleControl:true
