@@ -24,6 +24,7 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
+        initMap();
         click_switch = true;
         // $.ajax({
         //   url:"html_newproduct_template2.php"
