@@ -105,6 +105,7 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
+          location.reload();
           // $.ajax({
           //   url:"html_newproduct_template3.php"
           // }).done(function(data){
@@ -125,7 +126,7 @@ const googleMap = new Vue({
           this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
           console.log(this.autocomplete);
           this.place = this.autocomplete.getPlace();
-          // location.reload();
+          location.reload();
           // $("#map2").attr('display','none');
           // $("#map1").removeAttr('display');
           // $("#map2").fadeToggle(0);
@@ -140,19 +141,13 @@ const googleMap = new Vue({
         let options = {
           componentRestrictions: { country: 'jp' } // 限制在日本範圍
         };
-        // $.ajax({
-        //   url:"html_newproduct_template2.php"
-        // }).done(function(data){
-        //   console.log(data);
-        //   console.log(typeof(data));
-        //   $("#google_map").html(data);
-        // }).fail(function(error){
-        //   console.log(error);
-        // });
-        console.log(this.autocomplete);
+        console.log(this.autocomplete.__e3__);
+        console.log(this.autocomplete.__ob__);
+        console.log(this.autocomplete.gm_accessors_);
+        console.log(this.autocomplete.gm_bindings_);
         this.place = this.autocomplete.getPlace();
         console.log(this.place);
-        console.log(this.place.address_components);
+        console.log("order array||"+this.place.address_components);
         console.log(this.place.adr_address);
         console.log(this.place.formatted_address);
         console.log(this.place.geometry);
@@ -160,12 +155,14 @@ const googleMap = new Vue({
         console.log(this.place.icon);
         console.log(this.place.id);
         console.log(this.place.name);
-        console.log(this.place.photos);
+        console.log("order array||"+this.place.photos);
         console.log(this.place.place_id);
-        console.log(this.place.plus_code);
+        console.log("assoc object||"+this.place.plus_code);
+        console.log("assoc object||"+this.place.plus_code.compound_code);
+        console.log("assoc object||"+this.place.plus_code.global_code);
         console.log(this.place.rateing);
         console.log(this.place.reference);
-        console.log(this.place.reviews);
+        console.log("order array||"+this.place.reviews);
         console.log(this.place.scope);
         console.log(this.place.opening_hours);
         console.log(this.place.website);
@@ -174,6 +171,7 @@ const googleMap = new Vue({
         if(this.place.geometry) {
           console.log(this.place.geometry);
           let searchCenter = this.place.geometry.location;
+          console.log(this.place.geometry.viewport);
           console.log(this.place.geometry.location);
           console.log(this.place.geometry.location.lat());
           console.log(this.place.geometry.location.lng());
@@ -190,7 +188,11 @@ const googleMap = new Vue({
             content: this.place.formatted_address
           });
           infowindow.open(this.map, marker);
-
+          //獲得坐標，名稱
+          console.log(this.place.name);
+          $('#place_name').val(this.place.name);
+          $('#latitude').val(this.place.geometry.location.lat());
+          $('#longitude').val(this.place.geometry.location.lat());
         }
       });
     },

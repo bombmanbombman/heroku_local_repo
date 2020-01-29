@@ -185,7 +185,9 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   </section>
   <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'>
   <label id='echo1'>請輸入進貨的地點</label><br>
-  <input type='text' name='buy_place' size='40'required><br>
+  <input id='place_name' type='text' name='buy_place' size='40'required><br>
+  <input id='latitude' type='hidden' name='latitude'>
+  <input id='longitude' type='hidden' name='longitude'>
   <label id='echo2'>請輸入貨品的簡要信息</label><br>
   <input type='text' name='product_info' size='40'required><br>
   <label id='echo3'>請輸入貨品的詳細信息</label><br>
