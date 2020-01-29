@@ -80,7 +80,9 @@ const googleMap = new Vue({
     siteAuto() {
       $('#search').on('focus',function(e){
         console.log(e.target);
-        if(click_switch==true){
+        if(typeof(click_switch)==='undefined'){
+          click_switch=false;
+        }else if(click_switch==true){
           $('#google_map_js').remove('#google_api_js');
           $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
         }
