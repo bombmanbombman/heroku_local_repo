@@ -74,6 +74,7 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
+        this.siteAuto();
         // $.ajax({
           // url:"html_newproduct_template2.php"
         // }).done(function(data){
