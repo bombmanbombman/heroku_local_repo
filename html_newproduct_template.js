@@ -39,13 +39,13 @@ const googleMap = new Vue({
         }).fail(function(error){
           console.log(error);
         });
-        if(typeof(change_switch)==='undefined'){change_switch=false;}
-        else if(change_switch==true){
-          // location.reload();
-          $("#map1").attr('display','none');
-          $("#map2").removeAttr('display');
-          change_switch = false;
-        }
+        // if(typeof(change_switch)==='undefined'){change_switch=false;}
+        // else if(change_switch==true){
+        //   // location.reload();
+        //   $("#map1").attr('display','none');
+        //   $("#map2").removeAttr('display');
+        //   change_switch = false;
+        // }
         infoWindow = new google.maps.InfoWindow;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -106,6 +106,15 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
+          $.ajax({
+            url:"html_newproduct_template3.php"
+          }).done(function(data){
+            console.log(data);
+            console.log(typeof(data));
+            $("#google_map").html(data);
+          }).fail(function(error){
+            console.log(error);
+          });
           this.map = new google.maps.Map(document.getElementById('map'), {
             center: geo_loc,
             zoom: 16,
