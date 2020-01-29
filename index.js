@@ -1,6 +1,6 @@
 $(function(){
     $('#background').css({
-        "background-image": `url("/upload_compress/background_water4.jpg")`,
+        "background-image": `url("upload_compress/background_water4.jpg")`,
         //device 的全屏 desktop 是整个显示器的解析度
         "height": '100vh',
         "width": "100%",

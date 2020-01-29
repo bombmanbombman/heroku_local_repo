@@ -9,14 +9,14 @@
         <title>login page</title>
         <!-- google sign in api -->
         <!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script> -->
-        <script type="text/javascript" id='jquery' src="/jquery-3.4.1.js"></script>
+        <script type="text/javascript" id='jquery' src="jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
-        <script type="text/javascript" src="/jquery.ripples.js"></script>
-        <script type="text/javascript" id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+        <script type="text/javascript" src="jquery.ripples.js"></script>
+        <script type="text/javascript" id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
         <script type="text/javascript" id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-        <script type="text/javascript" id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+        <script type="text/javascript" id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
         <script type="text/javascript" id='vue' src="vue.min.js"></script>
-        <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+        <link id='bootstrap' type='text/css' rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <style type="text/css">
             /* body{ */
                 /* width:100%; */
@@ -37,6 +37,7 @@
     </head>
     <body >
         <?php
+            echo $_SERVER["DOCUMENT_ROOT"];
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             if(strpos($URL,'herokuapp.com')){
                 echo "<div>$URL</div>";
@@ -109,7 +110,7 @@
                 data-toggle="dropdown" aria-haspopup="true"   aria-expanded="false"> language toggle </button> 
                 <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton"> 
                     <a id='japanese' class="dropdown-item active  actived-language" href="#">日本語</a> 
-                    <a id='chinese' class="dropdown-item" href="#">繁體中 文</a> 
+                    <a id='chinese' class="dropdown-item" href="#">繁體中文</a> 
                     <a id='english' class="dropdown-item"   href="#">english</a> 
                 </div> 
             </div>
