@@ -24,7 +24,11 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
-        initMap();
+        this.map = new google.maps.Map(document.getElementById('map'), {
+          center: geo_loc,
+          zoom: 16,
+          scaleControl:true
+        });
         click_switch = true;
         // $.ajax({
         //   url:"html_newproduct_template2.php"
