@@ -36,14 +36,14 @@
             if(!isset($_SESSION['user_id'])){
             }else{
                 if(strpos($URL,'herokuapp.com')){
-                    header("Location: https://      bombmanbombman-project1.herokuapp.com");
-                    // echo '<meta http-equiv="refresh" content="0;       url=https://bombmanbombman-project1.herokuapp.com/" />';
+                    header("Location: https://bombmanbombman-project1.herokuapp.com");
+                    // echo '<meta http-equiv="refresh" content="0; url=https://bombmanbombman-project1.herokuapp.com/" />';
                 }elseif(strpos($URL,'host:3000')){
                     header("Location: https://localhost:3000/index.php");
-                    // echo '<meta http-equiv="refresh" content="0;       url=https://localhost:3000/index.php" />';
+                    // echo '<meta http-equiv="refresh" content="0; url=https://localhost:3000/index.php" />';
                 }elseif(strpos($URL,'host:8012')){
-                    header("Location: https://localhost:8012/laravelFolder/     resources/views/learning_php/html_login_template.php");
-                    // echo '<meta http-equiv="refresh" content="0;       url=https://localhost:8012/laravelFolder/resources/views/     learning_php/html_login_template.php" />';
+                    header("Location: https://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php");
+                    // echo '<meta http-equiv="refresh" content="0; url=https://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php" />';
                 }
             }
             echo "<div>$URL</div>";
@@ -100,19 +100,19 @@
               </div>
               ";
             if($user_icon != null){
-                echo '<img withd="80" height ="80" src="data:image/jpeg;      base64,'.base64_encode($user_icon).'"/><br>';
+                echo '<img withd="80" height ="80" src="data:image/jpeg;base64,'.base64_encode($user_icon).'"/><br>';
             }else {
                 echo "<label id='echo3'>默認的頭像</label>";
-                $no_icon = file_get_contents('C:/xampp/htdocs/      laravelFolder/resources/views/learning_php/upload_compress/     no_face.png');
-                echo '<img withd="80" height ="80" src="data:image/jpeg;      base64,'.base64_encode($no_icon).'"/><br>';
+                $no_icon = file_get_contents('C:/xampp/htdocs/laravelFolder/resources/views/learning_php/upload_compress/no_face.png');
+                echo '<img withd="80" height ="80" src="data:image/jpeg;base64,'.base64_encode($no_icon).'"/><br>';
             }
             if($user_phone != null && $user_phone != '00000000000'){
                 // $_SESSION['user_phone']=$user_phone;
-                echo "<div><span id='echo4'>您的電話是 </     span><var>$user_phone</var></div>";
+                echo "<div><span id='echo4'>您的電話是 </span><var>$user_phone</var></div>";
             }else echo "<div id='echo5'>您還未輸入電話</div>";
             if($user_email!= null){
                 // $_SESSION['user_email']=$user_email;
-                echo "<div><span id='echo6'>您的郵箱是 </     span><var>$user_email</var></div>";
+                echo "<div><span id='echo6'>您的郵箱是 </span><var>$user_email</var></div>";
             }else echo "<div id='echo7'>您還未輸入郵箱</div>";
 
             $query ='select product_id from product 
@@ -138,7 +138,7 @@
         <br>
         <br>
         <br>
-        <button id='button2'><h4 id='echo9'>添加新的貨品，輸入貨品基本    信息</h4></button>
+        <button id='button2'><h4 id='echo9'>添加新的貨品，輸入貨品基本信息</h4></button>
         <br>
         <br>
         <br>
@@ -146,7 +146,7 @@
             if(isset($progress2)&&$progress2===true){
                 // var_dump($progress2);
                 // var_dump($_SESSION['user_id']);
-                echo "<button id='button3'><h4 id='echo10'>進入全貨號管理頁     面</h1></button>";
+                echo "<button id='button3'><h4 id='echo10'>進入全貨號管理頁面</h1></button>";
       
             }
         ?>
