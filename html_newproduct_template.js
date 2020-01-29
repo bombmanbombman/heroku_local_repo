@@ -35,7 +35,7 @@ const googleMap = new Vue({
         }).done(function(data){
           console.log(data);
           console.log(typeof(data));
-          $("#google_map").html(data);
+          $("#show_map").html(data);
         }).fail(function(error){
           console.log(error);
         });
@@ -111,7 +111,7 @@ const googleMap = new Vue({
           }).done(function(data){
             console.log(data);
             console.log(typeof(data));
-            $("#google_map").html(data);
+            $("#show_map").html(data);
           }).fail(function(error){
             console.log(error);
           });
