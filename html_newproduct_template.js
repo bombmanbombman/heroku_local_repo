@@ -34,7 +34,8 @@ const googleMap = new Vue({
         // }).fail(function(error){
         //   console.log(error);
         // });
-        if(change_switch){
+        if(change_switch==undefined){change_switch=false;}
+        else if(chnage_switch==true){
           $("#map1").fadeToggle(0);
           $("#map2").fadeToggle(1000);
           change_switch = false;
@@ -81,12 +82,12 @@ const googleMap = new Vue({
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
         change_switch = true;
-        if(click_switch){
-          $('#map2').fadeToggle(0);
-          $('#map1').fadeToggle(1000);
+        if(click_switch==undefined){click_switch=false;}
+        else if(chnage_switch==true){
+          $("#map2").fadeToggle(0);
+          $("#map1").fadeToggle(1000);
           click_switch = false;
         }
-        
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
