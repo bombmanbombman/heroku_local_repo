@@ -98,12 +98,6 @@
                 <var>$user_name</var> 
                 <span id='echo2'>回到本站。</span>
               </div>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
               ";
             if($user_icon != null){
                 echo '<img withd="80" height ="80" src="data:image/jpeg;      base64,'.base64_encode($user_icon).'"/><br>';
