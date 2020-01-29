@@ -71,12 +71,23 @@ const googleMap = new Vue({
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter ());
           });
+          
         }
       })
     },
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
+      $('#search').on('focus',function(e){
+        console.log(e.target);
+        if(click_switch==true){
+          $('#google_map_js').remove('#google_api_js');
+          $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
+        }
+      })
+      $('#google_map_js').remove('#google_api_js');
+          $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
+
       this.map = new google.maps.Map(document.getElementById('map'), {
         center: geo_loc,
         zoom: 16,
@@ -88,8 +99,6 @@ const googleMap = new Vue({
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
         var google_api_js=$('#google_api_js')
-        $('#google_map_js').remove('#google_api_js');
-        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
