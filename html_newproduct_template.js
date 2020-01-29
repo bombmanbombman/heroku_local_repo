@@ -9,7 +9,7 @@ const googleMap = new Vue({
   methods: {
     // init google map
     initMap() {
-      let geo_loc = {
+      geo_loc = {
         lat: 35.059823,
         lng: 135.749073
       };
@@ -28,17 +28,17 @@ const googleMap = new Vue({
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function (position) {
-            var pos = {
+            var geo_loc = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
             this.map = new google.maps.Map(document.getElementById ('map'), {
-              center: pos,
+              center: geo_loc,
               zoom: 16,
               scaleControl:true
             });
             let marker1= new google.maps.Marker({
-              position:pos,
+              position:geo_loc,
               map:this.map
             });
             // infoWindow.setPosition(pos);
