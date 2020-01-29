@@ -77,74 +77,6 @@ const googleMap = new Vue({
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
-
-      initMap() {
-        geo_loc = {
-          lat: 35.059823,
-          lng: 135.749073
-        };
-        this.map = new google.maps.Map(document.getElementById('map'), {
-          center: geo_loc,
-          zoom: 16,
-          scaleControl:true
-        });
-        
-        let marker1= new google.maps.Marker({
-          position:geo_loc,
-          map:this.map
-        });
-        $('#echo8').on('click',function(){
-          this.map = new google.maps.Map(document.getElementById('map'), {
-            center: geo_loc,
-            zoom: 16,
-            scaleControl:true
-          });
-          click_switch = true;
-          // $.ajax({
-          //   url:"html_newproduct_template2.php"
-          // }).done(function(data){
-          //   console.log(data);
-          //   console.log(typeof(data));
-          //   $("#google_map").html(data);
-          // }).fail(function(error){
-          //   console.log(error);
-          // });
-          if(typeof(change_switch)==='undefined'){change_switch=false;}
-          else if(change_switch==true){
-            // location.reload();
-            $("#map1").attr('display','none');
-            $("#map2").removeAttr('display');
-            change_switch = false;
-          }
-          infoWindow = new google.maps.InfoWindow;
-          // Try HTML5 geolocation.
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-              var geo_loc = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-              };
-              this.map = new google.maps.Map(document.getElementById ('map'), {
-                center: geo_loc,
-                zoom: 16,
-                scaleControl:true
-              });
-              let marker1= new google.maps.Marker({
-                position:geo_loc,
-                map:this.map
-              });
-              // infoWindow.setPosition(pos);
-              // infoWindow.setContent('現在地');
-              // infoWindow.open(this.map);
-              // map.setZoom(15);
-              // map.setCenter(pos);
-            }, function() {
-              handleLocationError(true, infoWindow, map.getCenter ());
-            });
-          }
-        })
-      }
-
       this.map = new google.maps.Map(document.getElementById('map'), {
         center: geo_loc,
         zoom: 16,
@@ -155,6 +87,9 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
+        var google_api_js=$('#google_api_js')
+        $('#google_map_js').remove('#google_api_js');
+        $('#google_map_js').getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
@@ -163,7 +98,6 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
-          initMap();
           this.map = new google.maps.Map(document.getElementById('map'), {
             center: geo_loc,
             zoom: 16,
