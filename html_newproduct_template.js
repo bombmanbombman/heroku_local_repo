@@ -100,15 +100,15 @@ const googleMap = new Vue({
             scaleControl:true
           });
           click_switch = true;
-          $.ajax({
-            url:"html_newproduct_template2.php"
-          }).done(function(data){
-            console.log(data);
-            console.log(typeof(data));
-            $("#google_map").html(data);
-          }).fail(function(error){
-            console.log(error);
-          });
+          // $.ajax({
+          //   url:"html_newproduct_template2.php"
+          // }).done(function(data){
+          //   console.log(data);
+          //   console.log(typeof(data));
+          //   $("#google_map").html(data);
+          // }).fail(function(error){
+          //   console.log(error);
+          // });
           if(typeof(change_switch)==='undefined'){change_switch=false;}
           else if(change_switch==true){
             // location.reload();
