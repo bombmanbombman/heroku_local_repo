@@ -24,6 +24,15 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
+        $.ajax({
+          url:"html_newproduct_template2.php"
+        }).done(function(data){
+          console.log(data);
+          console.log(typeof(data));
+          $("#google_map").html(data);
+        }).fail(function(error){
+          console.log(error);
+        });
         infoWindow = new google.maps.InfoWindow;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -65,15 +74,15 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
-        $.ajax({
-          url:"html_newproduct_template2.php"
-        }).done(function(data){
-          console.log(data);
-          console.log(typeof(data));
-          $("#google_map").html(data);
-        }).fail(function(error){
-          console.log(error);
-        });
+        // $.ajax({
+          // url:"html_newproduct_template2.php"
+        // }).done(function(data){
+          // console.log(data);
+          // console.log(typeof(data));
+          // $("#google_map").html(data);
+        // }).fail(function(error){
+          // console.log(error);
+        // });
         this.place = this.autocomplete.getPlace();
         
         if(this.place.geometry) {
