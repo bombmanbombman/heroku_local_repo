@@ -105,15 +105,15 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
-          $.ajax({
-            url:"html_newproduct_template3.php"
-          }).done(function(data){
-            console.log(data);
-            console.log(typeof(data));
-            $("#show_map").html(data);
-          }).fail(function(error){
-            console.log(error);
-          });
+          // $.ajax({
+          //   url:"html_newproduct_template3.php"
+          // }).done(function(data){
+          //   console.log(data);
+          //   console.log(typeof(data));
+          //   $("#show_map").html(data);
+          // }).fail(function(error){
+          //   console.log(error);
+          // });
           this.map = new google.maps.Map(document.getElementById('map'), {
             center: geo_loc,
             zoom: 16,
@@ -123,9 +123,11 @@ const googleMap = new Vue({
             componentRestrictions: { country: 'jp' } // 限制在日本範圍
           };
           this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
+          console.log(this.autocomplete);
+          this.place = this.autocomplete.getPlace();
           // location.reload();
-          $("#map2").attr('display','none');
-          $("#map1").removeAttr('display');
+          // $("#map2").attr('display','none');
+          // $("#map1").removeAttr('display');
           // $("#map2").fadeToggle(0);
           // $("#map1").fadeToggle(1000);
           click_switch = false;
@@ -139,18 +141,42 @@ const googleMap = new Vue({
           componentRestrictions: { country: 'jp' } // 限制在日本範圍
         };
         // $.ajax({
-          // url:"html_newproduct_template2.php"
+        //   url:"html_newproduct_template2.php"
         // }).done(function(data){
-          // console.log(data);
-          // console.log(typeof(data));
-          // $("#google_map").html(data);
+        //   console.log(data);
+        //   console.log(typeof(data));
+        //   $("#google_map").html(data);
         // }).fail(function(error){
-          // console.log(error);
+        //   console.log(error);
         // });
+        console.log(this.autocomplete);
         this.place = this.autocomplete.getPlace();
+        console.log(this.place);
+        console.log(this.place.address_components);
+        console.log(this.place.adr_address);
+        console.log(this.place.formatted_address);
+        console.log(this.place.geometry);
+        console.log(this.place.html_attributions);
+        console.log(this.place.icon);
+        console.log(this.place.id);
+        console.log(this.place.name);
+        console.log(this.place.photos);
+        console.log(this.place.place_id);
+        console.log(this.place.plus_code);
+        console.log(this.place.rateing);
+        console.log(this.place.reference);
+        console.log(this.place.reviews);
+        console.log(this.place.scope);
+        console.log(this.place.opening_hours);
+        console.log(this.place.website);
+        console.log(this.place.type);
+        console.log(this.place.place_id);
         if(this.place.geometry) {
+          console.log(this.place.geometry);
           let searchCenter = this.place.geometry.location;
           console.log(this.place.geometry.location);
+          console.log(this.place.geometry.location.lat());
+          console.log(this.place.geometry.location.lng());
           this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
           
           // 放置標記

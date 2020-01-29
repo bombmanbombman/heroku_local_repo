@@ -37,7 +37,7 @@
         max-width: 320px;
       }
     </style>
-    <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link id='bootstrap' type='text/css' rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="canonical" href="https://letswrite.tw/google-map-api-place-api/">
     <link rel="shortcut icon" href="https://i0.wp.com/letswrite.tw/wp-content/uploads/2019/07/cropped-letswrite512-1.jpg"/>
     <!-- Google Tag Manager-->
@@ -51,9 +51,9 @@
     <script id='jquery' src="jquery-3.4.1.js"></script>
     <!-- ripple effect library -->
     <script src="jquery.ripples.js"></script>
-    <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+    <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
     <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-    <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+    <script id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
     <script id='vue' src="vue.min.js"></script>
   </head>
   <body>
