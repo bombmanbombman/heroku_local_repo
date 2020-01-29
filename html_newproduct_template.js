@@ -41,6 +41,7 @@ const googleMap = new Vue({
         // });
         if(typeof(change_switch)==='undefined'){change_switch=false;}
         else if(change_switch==true){
+          location.reload();
           $("#map1").fadeToggle(0);
           $("#map2").fadeToggle(1000);
           change_switch = false;
@@ -94,6 +95,7 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
+          location.reload();
           $("#map2").fadeToggle(0);
           $("#map1").fadeToggle(1000);
           click_switch = false;
