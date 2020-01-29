@@ -13,7 +13,7 @@ const googleMap = new Vue({
         lat: 35.059823,
         lng: 135.749073
       };
-      this.map = new google.maps.Map(document.getElementById('map'), {
+      this.map = new google.maps.Map(document.getElementById('map1'), {
         center: geo_loc,
         zoom: 16,
         scaleControl:true
@@ -24,15 +24,17 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
-        $.ajax({
-          url:"html_newproduct_template2.php"
-        }).done(function(data){
-          console.log(data);
-          console.log(typeof(data));
-          $("#google_map").html(data);
-        }).fail(function(error){
-          console.log(error);
-        });
+        // $.ajax({
+        //   url:"html_newproduct_template2.php"
+        // }).done(function(data){
+        //   console.log(data);
+        //   console.log(typeof(data));
+        //   $("#google_map").html(data);
+        // }).fail(function(error){
+        //   console.log(error);
+        // });
+        $("#google-map").hide(0);
+        $("#google-map1").show(1000)
         infoWindow = new google.maps.InfoWindow;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -41,7 +43,7 @@ const googleMap = new Vue({
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            this.map = new google.maps.Map(document.getElementById ('map'), {
+            this.map = new google.maps.Map(document.getElementById ('map1'), {
               center: geo_loc,
               zoom: 16,
               scaleControl:true
@@ -59,7 +61,6 @@ const googleMap = new Vue({
             handleLocationError(true, infoWindow, map.getCenter ());
           });
         }
-        siteAuto();
       })
     },
     
@@ -75,6 +76,8 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
+        $('#google-map1').hide(0);
+        $('#google-map').hide(500).show(1000);
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
