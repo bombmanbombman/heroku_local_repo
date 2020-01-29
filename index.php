@@ -9,13 +9,13 @@
         <title>login page</title>
         <!-- google sign in api -->
         <!-- <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script> -->
-        <script id='jquery' src="/jquery-3.4.1.js"></script>
+        <script type="text/javascript" id='jquery' src="/jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
-        <script src="/jquery.ripples.js"></script>
-        <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
-        <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-        <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
-        <script id='vue' src="vue.min.js"></script>
+        <script type="text/javascript" src="/jquery.ripples.js"></script>
+        <script type="text/javascript" id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+        <script type="text/javascript" id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+        <script type="text/javascript" id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+        <script type="text/javascript" id='vue' src="vue.min.js"></script>
         <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <style type="text/css">
             /* body{ */
@@ -143,8 +143,8 @@
                     <input class='btn btn-dark' type='submit' name='jump' value="sign up" required>
                 </form>
             </section>
-            <script id='ref' defer async type='text/javascript' src='html_template_index.js'></script>
-            <script id='js' defer async type=text/javascript src="index.js"></script>
+            <script type="text/javascript" id='ref' defer async type='text/javascript' src='html_template_index.js'></script>
+            <script type="text/javascript" id='js' defer async type=text/javascript src="index.js"></script>
             <noscript>please do not turn off javascript</noscript>
         </section>
     </body>

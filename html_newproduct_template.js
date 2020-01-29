@@ -97,7 +97,6 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
-        var google_api_js=$('#google_api_js')
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
@@ -149,7 +148,6 @@ const googleMap = new Vue({
           // console.log(error);
         // });
         this.place = this.autocomplete.getPlace();
-        
         if(this.place.geometry) {
           let searchCenter = this.place.geometry.location;
           console.log(this.place.geometry.location);
