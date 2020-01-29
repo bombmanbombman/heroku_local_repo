@@ -122,7 +122,7 @@
             }else echo "<div id='echo7'>您還未輸入郵箱</div>";
 
             $query ='select product_id from product 
-                                where user_id ='.$user_id;
+                        where user_id ='.$user_id;
             $stmt=$conn->prepare($query);
             if(!$stmt)echo($conn->error);
             if(!$stmt->execute())die("select product_id failed");
