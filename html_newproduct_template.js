@@ -33,8 +33,8 @@ const googleMap = new Vue({
         // }).fail(function(error){
         //   console.log(error);
         // });
-        $("#google-map").hide(0);
-        $("#google-map1").show(1000)
+        $("#map1").hide(0);
+        $("#map2").show(1000);
         infoWindow = new google.maps.InfoWindow;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -76,8 +76,8 @@ const googleMap = new Vue({
       };
       this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
       this.autocomplete.addListener('place_changed', () => {
-        $('#google-map1').hide(0);
-        $('#google-map').hide(500).show(1000);
+        $('#map2').hide(0);
+        $('#map1').hide(500).show(1000);
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
