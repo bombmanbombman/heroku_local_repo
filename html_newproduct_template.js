@@ -87,9 +87,6 @@ const googleMap = new Vue({
           $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
         }
       })
-      $('#google_map_js').remove('#google_api_js');
-          $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
-
       this.map = new google.maps.Map(document.getElementById('map'), {
         center: geo_loc,
         zoom: 16,
