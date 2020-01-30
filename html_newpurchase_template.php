@@ -308,12 +308,13 @@
             <input type="submit" id='value3'value="回到所有貨號頁面" 
             name="unset_product_id_for_purchase">
         </form>
+
+        <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+        <script id='js' defer async type='text/javascript' src='html_newpurchase_template.js'></script>
         <section id='google_map_js'>
             <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&language=ja&callback=initMap" async defer></script>
         <!-- <script async defer src='google_map.js'></script> -->
         </section>
-        <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
-        <script id='js' defer async type=text/javascript src="html_newpurchase_template.js"></script>
         <noscript>please do not turn off javascript</noscript>
     </body>
 </html>
