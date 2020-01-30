@@ -3,15 +3,15 @@ $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 session_start();
 if(isset($_POST) && $_POST != false){
   var_dump($_POST);
-  // echo "post <br>";
+  echo "post <br>";
 }
 if(isset($_COOKIE) && $_COOKIE != false){
   var_dump($_COOKIE);
-  // echo 'cookie <br>';
+  echo 'cookie <br>';
 }
 if(isset($_SESSION)  && $_SESSION != false){
   var_dump($_SESSION);
-  // echo 'cookie <br>';
+  echo 'session <br>';
 }
 
 # 對應html_newpurchase.php的submit 一共22 line
@@ -46,7 +46,7 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
   $date_purchase = $_POST['date_purchase'];
   $purchase_cost=double_check_input($conn,$_POST['purchase_cost']);
   $purchase_number=double_check_input($conn,$_POST['purchase_number']);
-  $purchase_size=double_check_input($conn,double_check_input($conn,$_POST['purchase_size']));
+  $purchase_size=double_check_input($conn,$_POST['purchase_size']);
   if($purchase_size!='XXXS'||$purchase_size!='XXS'||$purchase_size!='XS'||$purchase_size!='S'||$purchase_size!='M'||$purchase_size!='L'||$purchase_size!='XL'||$purchase_size!='XXL'){
     $purchase_size=null;
   }

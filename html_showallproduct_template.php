@@ -91,7 +91,7 @@
                             <button id="echo9" class="dropbtn">翻頁</button>
                             <div class="dropup-content">';
                             for($i=7;$i<=$total_page_number&&$i>0;$i--){
-                                echo "<a href='html_showallproduct_template.php?page_number=$i'><span id='echo20'>第</span> $i <span id='echo21'>頁</     span></a><br>";
+                                echo "<a href='html_showallproduct_template.php?page_number=$i'><span id='echo20'>第</span> $i <span id='echo21'>頁</span></a><br>";
                             }
                             echo '  </div>
                             </div>';
