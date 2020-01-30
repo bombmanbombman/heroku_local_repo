@@ -9,22 +9,20 @@
         $databasename="auq3vlwpr69eknn1";
         $port=3306;
         // echo 'your are in heroku<br>';
-    }
-    if(strpos($URL,'host:3000')!=false||strpos($URL,'host:5500')!=false){
-        $host="localhost";
-        $username="root";
-        $password="";
-        $databasename="project1";
-        $port=3308;
-        // echo 'your are in mariaDB<br>';
-    }
-    if(strpos($URL,'host/')!=false){
+    }elseif(strpos($URL,':3000')!=false||strpos($URL,':5500')!=false){
         $host="localhost";
         $username="root";
         $password=63079861;
         $databasename="project1";
         $port=3307;
         // echo 'your are in MYSQL5.7<br>';
+    }else{
+        $host="localhost";
+        $username="root";
+        $password="";
+        $databasename="project1";
+        $port=3308;
+        // echo 'your are in mariaDB<br>';
     }
     $conn = new mysqli($host,$username,$password,$databasename,$port);
     //备用的第二个real mysql port3307
@@ -66,7 +64,6 @@
     // $conn->query("SET character_set_client = utf8mb4");
     // $conn->query("SET character_set_connection = utf8mb4");
     // $conn->query("SET character_set_server = utf8mb4");
-  
 
 
     /*用 mysqli中的method  mysqli->real_escape_string (string$input)來過濾 

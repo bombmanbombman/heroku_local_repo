@@ -284,24 +284,24 @@ $(function(){
             }
         }).done(function(data){
             console.log(data);
-            if(data=='這個用戶名，已經被其他人註冊了。'){
+            if(data.search('這個用戶名，已經被其他人註冊了。')!=-1){
                 if($('.actived-language'=='japanese')){
-                    $('#error_message2').text("このユーザー名すでに使用さ   れています");
+                    $('#error_message2').text("このユーザー名すでに使用されています").show(0).hide(5000);
                 }else if($('.actived-language'=='chinese')){
-                    $('#error_message2').text("這個用戶名，已經被其他人註   冊了。");
+                    $('#error_message2').text("這個用戶名，已經被其他人註冊了。").show(0).hide(5000);
                 }else if($('.actived-language'=='english')){
-                    $('#error_message2').text("this username has been taken");
+                    $('#error_message2').text("this username has been taken").show(0).hide(5000);
                 }
-            }else if(data='成功'){
+            }else if(data.search('成功')!=-1){
                 if($('.actived-language'=='japanese')){
-                    $('#error_message2').text("ようこそ");
+                    $('#error_message2').text("ようこそ").show(0).hide(5000);
                 }else if($('.actived-language'=='chinese')){
-                    $('#error_message2').text("歡迎光臨");
+                    $('#error_message2').text("歡迎光臨").show(0).hide(5000);
                 }else if($('.actived-language'=='english')){
-                    $('#error_message2').text("welcome to my humble site");
+                    $('#error_message2').text("welcome to my humble site").show(0).hide(5000);
                 }
+                location.href='html_userdetail_template.php';
             }
         })
-        
     })
 });
