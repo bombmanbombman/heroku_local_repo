@@ -1,14 +1,14 @@
 <?php  //保存為login.php
     //檢測是否是在 localhost 或是 heroku
     $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-    echo $URL.'<br>';
+    // echo $URL.'<br>';
     if(strpos($URL,'herokuapp.com')!=false){
         $host="pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
         $username="htweygmu8eaddu1u";
         $password="cldfpmlakd4l25em";
         $databasename="auq3vlwpr69eknn1";
         $port=3306;
-        echo 'your are in heroku<br>';
+        // echo 'your are in heroku<br>';
     }
     if(strpos($URL,'host:3000')!=false||strpos($URL,'host:5500')!=false){
         $host="localhost";
@@ -16,7 +16,7 @@
         $password="";
         $databasename="project1";
         $port=3308;
-        echo 'your are in mariaDB<br>';
+        // echo 'your are in mariaDB<br>';
     }
     if(strpos($URL,'host/')!=false){
         $host="localhost";
@@ -24,7 +24,7 @@
         $password=63079861;
         $databasename="project1";
         $port=3307;
-        echo 'your are in MYSQL5.7<br>';
+        // echo 'your are in MYSQL5.7<br>';
     }
     $conn = new mysqli($host,$username,$password,$databasename,$port);
     //备用的第二个real mysql port3307

@@ -1,16 +1,28 @@
 <html html>
     <head>
         <title>new purchase page</title>
+        <style>
+            #map {
+                height: 50%;
+                width:50%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-        <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+        <link id='bootstrap' type='text/css' rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <script id='jquery' src="jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
         <script src="jquery.ripples.js"></script>
-        <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+        <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
         <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-        <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+        <script id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
         <script id='vue' src="vue.min.js"></script>
         <!-- firefox date support plugin -->
         <script src='//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js'></script>
@@ -34,7 +46,20 @@
             }
             if(isset($_SESSION)  && $_SESSION != false){
                 var_dump($_SESSION);
-                echo 'cookie <br>';
+                echo 'session <br>';
+            }
+            /**sending js cookie file */
+            require_once("login.php");
+            $user_id=$_SESSION['user_id'];
+            $query='select latitude,longitude from product 
+                where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_purchase'];
+            $stmt=$conn->query($query);
+            if(!$stmt)echo($conn->error);
+            while($row=$stmt->fetch_assoc()){
+                echo $row['latitude']."<br>";
+                echo $row['longitude']."<br>";
+                var_dump(setcookie('latitude',$row['latitude'],time()+120,'/'));
+                var_dump(setcookie('longitude',$row['longitude'],time()+120,'/'));
             }
             require_once("html_navibar_template.php");
             if(!isset($_SESSION['user_id'])){
@@ -43,8 +68,6 @@
                 require_once ('test_header.php');
                 exit();
             }
-            require_once("login.php");
-            $user_id=$_SESSION['user_id'];
             #僅僅對 showallproduct.php頁面 搜索而來的進行filter.
             if(isset($_POST['product_id_for_purchase'])&&$_POST['product_id_for_purchase']!=0){
                 $_SESSION['product_id_for_purchase']=$_POST['product_id_for_purchase'];
@@ -69,7 +92,7 @@
                 require_once ("test_header.php");
             }
             #顯示這個貨品的product table中的內容 一共 15 line
-            $query='select product_id,buy_place,product_info,product_detail from product 
+            $query='select product_id,buy_place,product_info,product_detail,latitude,longitude from product 
                 where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_purchase'];
             $stmt=$conn->query($query);
             if(!$stmt)echo($conn->error);
@@ -100,6 +123,14 @@
                 ";
             }
             echo "</table>";
+            #google map 部分
+            echo"
+            <section id='show_map'>
+                <div id='map'></div>
+                <hr>
+            </section>
+            ";
+
             #尋找product_id_for_purchase是否也存在與purchase table中  一共18行 
             $query ='select product_id from purchase 
                 where user_id ='.$user_id;
@@ -274,6 +305,10 @@
             <input type="submit" id='value3'value="回到所有貨號頁面" 
             name="unset_product_id_for_purchase">
         </form>
+        <section id='google_map_js'>
+            <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&language=ja&callback=initMap" async defer></script>
+        <script async defer src='google_map.js'></script>
+        </section>
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_newpurchase_template.js"></script>
         <noscript>please do not turn off javascript</noscript>
