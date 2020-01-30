@@ -19,7 +19,7 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
   require_once('login.php');
   $query='insert into purchase values(?,?,?,?,?,?,?)';
   $stmt=$conn->prepare($query);
-  if(!$stmt)echo($conn->error);
+  if(!$stmt)echo($conn->error."||new purchase query 有問題");
   $product_id=$_SESSION['product_id_for_purchase'];
   $purchase_id=null;
   // var_dump($_POST['date_purchase']);
@@ -53,7 +53,7 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
   $user_id=$_SESSION['user_id'];
   $stmt->bind_param('iisiisi',$product_id,$purchase_id,$date_purchase,$purchase_cost,$purchase_number,$purchase_size,$user_id);
   if(!$stmt->execute()){
-    echo "插入数据有问题，回到选择画面";
+    echo "bind_param格式有问题，回到选择画面";
     if(strpos($URL,'herokuapp.com')!=false){
       header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php");
     }else{
