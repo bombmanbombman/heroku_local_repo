@@ -32,7 +32,7 @@ if(isset($_POST["user_name"]) && isset($_POST["user_password"])){
   if(!is_bool($stmt))$stmt->close();
   $conn->close();
   $_SESSION['user_id']=$row;
-  echo "歡迎新用戶 "+$_POST['user_name'];
+  echo '成功';
   // header("location:html_newentry_template.php");
 }
 

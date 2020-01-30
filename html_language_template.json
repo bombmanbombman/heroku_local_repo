@@ -5,17 +5,29 @@
 				"japanese":{
 					"echo1":"ユーサー名",
 					"echo2":"パスワード",
-					"echo3":"新しいアカウントを作る"
+					"echo3":"新しいアカウントを作る",
+					"echo4":"アルファベットと数字だけて入力してください",
+					"echo5":"新　ユーザー名",
+					"echo6":"パスワード",
+					"value1":"新しいアカウントを作る"
 				},
 				"chinese":{
 					"echo1":"用戶名",
 					"echo2":"密碼",
-					"echo3":"創建新帳號"
+					"echo3":"創建新帳號",
+					"echo4":"請僅僅輸入數字與英語字母，各種符號會被過濾",
+					"echo5":"新用戶名",
+					"echo6":"註冊密碼",
+					"value1":"創建新帳號"
 				},
 				"english":{
 					"echo1":"username",
 					"echo2":"password",
-					"echo3":"create new account"
+					"echo3":"create new account",
+					"echo4":"please only input the alphabet and decimal number",
+					"echo5":"new username",
+					"echo6":"new password",
+					"value1":"create new account"
 				}
 			}
 		},
@@ -24,17 +36,29 @@
 				"japanese":{
 					"echo1":"ユーサー名",
 					"echo2":"パスワード",
-					"echo3":"新しいアカウントを作る"
+					"echo3":"新しいアカウントを作る",
+					"echo4":"アルファベットと数字だけて入力してください",
+					"echo5":"新　ユーザー名",
+					"echo6":"パスワード",
+					"value1":"新しいアカウントを作る"
 				},
 				"chinese":{
 					"echo1":"用戶名",
-					"echo2":"密__碼",
-					"echo3":"創建新帳號"
+					"echo2":"密碼",
+					"echo3":"創建新帳號",
+					"echo4":"請僅僅輸入數字與英語字母，各種符號會被過濾",
+					"echo5":"新用戶名",
+					"echo6":"註冊密碼",
+					"value1":"創建新帳號"
 				},
 				"english":{
 					"echo1":"username",
 					"echo2":"password",
-					"echo3":"create new account"
+					"echo3":"create new account",
+					"echo4":"please only input the alphabet and decimal number",
+					"echo5":"new username",
+					"echo6":"new password",
+					"value1":"create new account"
 				}
 			}
 		},
@@ -43,17 +67,29 @@
 				"japanese":{
 					"echo1":"ユーサー名",
 					"echo2":"パスワード",
-					"echo3":"新しいアカウントを作る"
+					"echo3":"新しいアカウントを作る",
+					"echo4":"アルファベットと数字だけて入力してください",
+					"echo5":"新　ユーザー名",
+					"echo6":"パスワード",
+					"value1":"新しいアカウントを作る"
 				},
 				"chinese":{
 					"echo1":"用戶名",
-					"echo2":"密__碼",
-					"echo3":"創建新帳號"
+					"echo2":"密碼",
+					"echo3":"創建新帳號",
+					"echo4":"請僅僅輸入數字與英語字母，各種符號會被過濾",
+					"echo5":"新用戶名",
+					"echo6":"註冊密碼",
+					"value1":"創建新帳號"
 				},
 				"english":{
 					"echo1":"username",
 					"echo2":"password",
-					"echo3":"create new account"
+					"echo3":"create new account",
+					"echo4":"please only input the alphabet and decimal number",
+					"echo5":"new username",
+					"echo6":"new password",
+					"value1":"create new account"
 				}
 			}
 		},

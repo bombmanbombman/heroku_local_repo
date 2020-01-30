@@ -153,7 +153,7 @@
                 <div id='async' style='display:none'>
                     <div class="d-flex justify-content-center">
                         <form id='newuser_submit' action="" method="post">
-                            <label id='echo4'>請僅僅輸入數字與英語字母，各種符號會                      被過濾</label><br>
+                            <label id='echo4'>請僅僅輸入數字與英語字母，各種符號會被過濾</label><br>
                             <div class='align' style='width:190px'>
                                 <label id='echo5'>新用戶名</label>
                                 <input id='new_user_name' type="text"                         name="user_name" required><br>

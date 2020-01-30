@@ -284,7 +284,23 @@ $(function(){
             }
         }).done(function(data){
             console.log(data);
-            $('#error_message2').text(data);
+            if(data=='這個用戶名，已經被其他人註冊了。'){
+                if($('.actived-language'=='japanese')){
+                    $('#error_message2').text("このユーザー名すでに使用さ   れています");
+                }else if($('.actived-language'=='chinese')){
+                    $('#error_message2').text("這個用戶名，已經被其他人註   冊了。");
+                }else if($('.actived-language'=='english')){
+                    $('#error_message2').text("this username has been taken");
+                }
+            }else if(data='成功'){
+                if($('.actived-language'=='japanese')){
+                    $('#error_message2').text("ようこそ");
+                }else if($('.actived-language'=='chinese')){
+                    $('#error_message2').text("歡迎光臨");
+                }else if($('.actived-language'=='english')){
+                    $('#error_message2').text("welcome to my humble site");
+                }
+            }
         })
         
     })
