@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<head><title>user login</title></head>
+<body>
 <?php
 if(isset($_SESSION)){
   session_destroy();
@@ -43,23 +46,18 @@ require_once("html_dropup_button_template.php");
 
 
 
+?>
+<div class="d-flex justify-content-center">
+  <form action="$_SERVER[PHP_SELF]" method="post">
+    <label>請僅僅輸入數字與英語字母，各種符號會被過濾</label><br>
+    <input type="text" name="user_name" placeholder="請輸入您的用戶名"><br>
+    <input type="password" maxlength='12' name="user_password" placeholder="請輸入您的密碼,最大12位"><br>
+    <input type="submit" value="提交"><br>
+  </form>
+</div>
 
-echo <<<_HEREDOC
-<html>
-<head><title>user login</title></head>
-<body>
-<form action="$_SERVER[PHP_SELF]" method="post">
-<br><br><br>
-<label>請僅僅輸入數字與英語字母，各種符號會被過濾</label><br>
-<input type="text" name="user_name" placeholder="請輸入您的用戶名"><br>
-<input type="password" maxlength='12' name="user_password" placeholder="請輸入您的密碼,最大12位"><br>
-<input type="submit" value="提交"><br>
-
-</form>
 </body>
 </html>
-_HEREDOC;
-//需要javascript 來做第一層的過濾，之後redirect 到newentry
 
 
 
@@ -74,10 +72,3 @@ _HEREDOC;
 
 
 
-
-
-
-
-
-
-?>

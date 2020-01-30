@@ -16,6 +16,10 @@ $(function(){
     $('#content').css({
         "position":"relative"
     })
+    $('#sign').css({
+        // "text-align":"center",
+        "margin-right":"-76px"
+    })
     if($('a#japanese').hasClass('active')){
         $("#log_in_button").css({
             "margin-right":"-75px"
@@ -245,5 +249,15 @@ $(function(){
         }).fail(function(error){
             console.log(error);
         });
+    })
+    $('#button1').one('click',function(e){
+        console.log(e.target);
+        $.ajax({
+            url:'html_userregister_container.php'
+        }).done(function(data){
+            console.log(data);
+            $('#async').html(data).slideDown(5000);
+        });
+        // location.href="html_userregister_template.php";
     })
 });

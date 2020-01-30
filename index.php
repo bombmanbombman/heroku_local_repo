@@ -139,10 +139,14 @@
                 <div class="d-flex justify-content-center">
                     <div id='error_message'></div>
                 </div>
-                <form class="d-flex justify-content-center" action ='html_userregister_template.php' method = 'post'>
+                <!-- <form class="d-flex justify-content-center" action ='html_userregister_template.php' method = 'post'>
                     <label id='echo3'>新しいユーザーを作る</label>
                     <input class='btn btn-dark' type='submit' name='jump' value="sign up" required>
-                </form>
+                </form> -->
+                <div id='sign' class="d-flex justify-content-center">
+                    <button  id='button1' class='btn btn-dark' style='width:190px'>new user sign up</button>
+                </div>
+                <div id='async'></div>
             </section>
             <script type="text/javascript" id='ref' defer async type='text/javascript' src='html_template_index.js'></script>
             <script type="text/javascript" id='js' defer async type=text/javascript src="index.js"></script>
