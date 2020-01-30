@@ -26,7 +26,12 @@ $cmd='mysqldump -f -u root project1 > c:/xampp/htdocs/laravelFolder/resources/vi
 $result = exec($cmd,$output,$status);
 
 if ($status) {
-  echo "Exec command failed";
+  echo "mariaDB Exec command failed";
+  $cmd='mysqldump -f -u root -p63079861 project1 > c:/xampp/htdocs/vscode_error/mysql_back/';
+  $result = exec($cmd,$output,$status);
+  if($status){
+    echo "mysql 5.7 Exec command failed"
+  }
 } 
 else {
 echo "<pre>";

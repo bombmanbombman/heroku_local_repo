@@ -1,4 +1,4 @@
-<html html>
+<!DOCTYPE html>
     <head>
         <title>new purchase page</title>
         <style>
@@ -315,4 +315,3 @@
         <noscript>please do not turn off javascript</noscript>
     </body>
 </html>
-

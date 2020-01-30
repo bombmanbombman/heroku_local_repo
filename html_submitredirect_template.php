@@ -54,10 +54,10 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
   $stmt->bind_param('iisiisi',$product_id,$purchase_id,$date_purchase,$purchase_cost,$purchase_number,$purchase_size,$user_id);
   if(!$stmt->execute()){
     echo "插入数据有问题，回到选择画面";
-    if(strpos($URL,'herokuapp.com')){
-      header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/html_newentry_template.php");
+    if(strpos($URL,'herokuapp.com')!=false){
+      header("refresh:2;url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php");
     }else{
-      header("refresh:2;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_newentry_template.php");
+      header("refresh:2;url=http://localhost/html_showallproduct_template.php");
     }
     exit();
   }
