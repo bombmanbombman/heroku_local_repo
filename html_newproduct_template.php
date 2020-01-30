@@ -64,60 +64,62 @@ if(strpos($URL,'herokuapp.com')){
 }else{
   echo "<div>$URL</div>";
 }
-session_start();
-if(isset($_POST) && $_POST != false){
-  var_dump($_POST);
-  echo "post <br>";
-}
-if(isset($_COOKIE)){
-  var_dump($_COOKIE);
-  echo 'cookie <br>';
-}
-if(isset($_SESSION)){
-  var_dump($_SESSION);
-  echo 'session <br>';
-}
-require_once("html_navibar_template.php");
-if(!isset($_SESSION['user_id'])){
-  echo "<div id='echo4'>session 傳送失敗</div>";
-  $redirect='html_login_template.php';
-  require_once ('test_header.php');
-  exit();
-}
-if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
-  require_once("login.php");
-  $query = "insert into product values(
-              ?,?,?,?,?,?,?)";
-  $stmt=$conn->prepare($query);
-  $user_id=$_SESSION['user_id'];
-  // var_dump($user_id);
-  $product_id=null;
-  $buy_place=double_check_input($conn,$_POST['buy_place']);
-  $product_info=double_check_input($conn,$_POST['product_info']);
-  $product_detail=double_check_input($conn,$_POST['product_detail']);
-  $latitude=double_check_input($conn,$_POST['latitude']);
-  $longitude=double_check_input($conn,$_POST['longitude']);
-  $stmt->bind_param('iisssss',$user_id,$product_id,$buy_place,$product_info,$product_detail,$latitude,$longitude);
-  if(!$stmt->execute()){
-    echo "<div id='echo7'>添加新貨號失敗， 回到註冊頁面</div>";
-    require_once ('test_header.php');
-    exit();
-  }
-  $query="select product_id from product 
-            where user_id = ? order by product_id desc limit 1"
-            ;
-  $stmt=$conn->prepare($query);
-  if(!$stmt)echo($conn->error);
-  $stmt->bind_param('i',$user_id);
-  if(!$stmt->execute())die('product_id query failed');
-  $result_stmt=$stmt->get_result();
-  // var_dump($result_stmt);
-  $rows=$result_stmt->fetch_array();
-  $_SESSION["product_id"]=$rows[0];
-  // var_dump($_SESSION["product_id"]);
-  header('location:html_showallproduct_template.php');
-  exit();
-}
+/**(1)下面為model 處理 user input*/
+// session_start();
+// if(isset($_POST) && $_POST != false){
+//   var_dump($_POST);
+//   echo "post <br>";
+// }
+// if(isset($_COOKIE)){
+//   var_dump($_COOKIE);
+//   echo 'cookie <br>';
+// }
+// if(isset($_SESSION)){
+//   var_dump($_SESSION);
+//   echo 'session <br>';
+// }
+// require_once("html_navibar_template.php");
+// if(!isset($_SESSION['user_id'])){
+//   echo "<div id='echo4'>session 傳送失敗</div>";
+//   $redirect='html_login_template.php';
+//   require_once ('test_header.php');
+//   exit();
+// }
+// if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
+//   require_once("login.php");
+//   $query = "insert into product values(
+//               ?,?,?,?,?,?,?)";
+//   $stmt=$conn->prepare($query);
+//   $user_id=$_SESSION['user_id'];
+//   // var_dump($user_id);
+//   $product_id=null;
+//   $buy_place=double_check_input($conn,$_POST['buy_place']);
+//   $product_info=double_check_input($conn,$_POST['product_info']);
+//   $product_detail=double_check_input($conn,$_POST['product_detail']);
+//   $latitude=double_check_input($conn,$_POST['latitude']);
+//   $longitude=double_check_input($conn,$_POST['longitude']);
+//   $stmt->bind_param('iisssss',$user_id,$product_id,$buy_place,$product_info,$product_detail,$latitude,$longitude);
+//   if(!$stmt->execute()){
+//     echo "<div id='echo7'>添加新貨號失敗， 回到註冊頁面</div>";
+//     require_once ('test_header.php');
+//     exit();
+//   }
+//   $query="select product_id from product 
+//             where user_id = ? order by product_id desc limit 1"
+//             ;
+//   $stmt=$conn->prepare($query);
+//   if(!$stmt)echo($conn->error);
+//   $stmt->bind_param('i',$user_id);
+//   if(!$stmt->execute())die('product_id query failed');
+//   $result_stmt=$stmt->get_result();
+//   // var_dump($result_stmt);
+//   $rows=$result_stmt->fetch_array();
+//   $_SESSION["product_id"]=$rows[0];
+//   // var_dump($_SESSION["product_id"]);
+//   header('location:html_showallproduct_template.php');
+//   exit();
+// }
+
 ?>
 
   <!-- google map 显示的element -->
@@ -178,7 +180,8 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
       </div>
     </div>
   </section>
-  <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'>
+  <!-- <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'> -->
+  <form method='post' action='html_newproduct_submit.php'>
   <label id='echo1'>請輸入進貨的地點</label><br>
   <input id='place_name' type='text' name='buy_place' size='40'required><br>
   <input id='latitude' type='hidden' name='latitude'>
