@@ -158,8 +158,8 @@ const googleMap = new Vue({
         console.log("order array||"+this.place.photos);
         console.log(this.place.place_id);
         console.log("assoc object||"+this.place.plus_code);
-        console.log("assoc object||"+this.place.plus_code.compound_code);
-        console.log("assoc object||"+this.place.plus_code.global_code);
+        // console.log("assoc object||"+this.place.plus_code.compound_code);
+        // console.log("assoc object||"+this.place.plus_code.global_code);
         console.log(this.place.rateing);
         console.log(this.place.reference);
         console.log("order array||"+this.place.reviews);
@@ -188,11 +188,13 @@ const googleMap = new Vue({
             content: this.place.formatted_address
           });
           infowindow.open(this.map, marker);
+          
           //獲得坐標，名稱
           console.log(this.place.name);
           $('#place_name').val(this.place.name);
           $('#latitude').val(this.place.geometry.location.lat());
-          $('#longitude').val(this.place.geometry.location.lat());
+          $('#longitude').val(this.place.geometry.location.lng());
+          console.log($('*'));
         }
       });
     },

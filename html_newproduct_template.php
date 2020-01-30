@@ -41,13 +41,13 @@
     <link rel="canonical" href="https://letswrite.tw/google-map-api-place-api/">
     <link rel="shortcut icon" href="https://i0.wp.com/letswrite.tw/wp-content/uploads/2019/07/cropped-letswrite512-1.jpg"/>
     <!-- Google Tag Manager-->
-    <script>
+    <!-- <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PGQ9WQT');
-    </script>
+    </script> -->
     <script id='jquery' src="jquery-3.4.1.js"></script>
     <!-- ripple effect library -->
     <script src="jquery.ripples.js"></script>
@@ -86,14 +86,8 @@ if(!isset($_SESSION['user_id'])){
 }
 if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   require_once("login.php");
-  $conn=new mysqli($host,$username,$password,$databasename);
-  if($conn->connect_error){
-    echo "<div><span id='echo5'>無法連接數據庫，</span> $databasename ， <span id='echo6'>回到註冊頁面</span></div>";
-    require_once ('test_header.php');
-    exit();
-  }
   $query = "insert into product values(
-              ?,?,?,?,?)";
+              ?,?,?,?,?,?,?)";
   $stmt=$conn->prepare($query);
   $user_id=$_SESSION['user_id'];
   // var_dump($user_id);
@@ -101,7 +95,9 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
   $buy_place=double_check_input($conn,$_POST['buy_place']);
   $product_info=double_check_input($conn,$_POST['product_info']);
   $product_detail=double_check_input($conn,$_POST['product_detail']);
-  $stmt->bind_param('iisss',$user_id,$product_id,$buy_place,$product_info,$product_detail);
+  $latitude=double_check_input($conn,$_POST['latitude']);
+  $longitude=double_check_input($conn,$_POST['longitude']);
+  $stmt->bind_param('iisssss',$user_id,$product_id,$buy_place,$product_info,$product_detail,$latitude,$longitude);
   if(!$stmt->execute()){
     echo "<div id='echo7'>添加新貨號失敗， 回到註冊頁面</div>";
     require_once ('test_header.php');
@@ -131,12 +127,11 @@ if(isset($_POST['buy_place']) && isset($_POST['product_info'])){
       <div class="row">
         <div class="col google-map">
           <h5>
-            Search：
+            auto complete Search：
             <button id='echo8'>取得現在地</button>
           </h5>
           <div class="form-group">
             <input id='search'type="text" class="form-control" ref="site" v-model="site">
-            
           </div>
         </div>
       </div>

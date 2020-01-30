@@ -147,7 +147,6 @@
                 // var_dump($progress2);
                 // var_dump($_SESSION['user_id']);
                 echo "<button id='button3'><h4 id='echo10'>進入全貨號管理頁面</h1></button>";
-      
             }
         ?>
         <script id='ref' defer async type='text/javascript'  src='html_template.js'></script>
