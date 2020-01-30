@@ -47,7 +47,9 @@ if(isset($_POST['date_purchase'])&&isset($_POST['purchase_cost'])&&isset($_POST[
   $purchase_cost=double_check_input($conn,$_POST['purchase_cost']);
   $purchase_number=double_check_input($conn,$_POST['purchase_number']);
   $purchase_size=double_check_input($conn,$_POST['purchase_size']);
-  if($purchase_size!='XXXS'||$purchase_size!='XXS'||$purchase_size!='XS'||$purchase_size!='S'||$purchase_size!='M'||$purchase_size!='L'||$purchase_size!='XL'||$purchase_size!='XXL'){
+  // $purchase_size=$_POST['purchase_size'];
+  if($purchase_size=='XXXS'||$purchase_size=='XXS'||$purchase_size=='XS'||$purchase_size=='S'||$purchase_size=='M'||$purchase_size=='L'||$purchase_size=='XL'||$purchase_size=='XXL'){
+  }else{
     $purchase_size=null;
   }
   $user_id=$_SESSION['user_id'];
@@ -101,8 +103,9 @@ if(isset($_POST['date_sold'])&&isset($_POST['price'])&&isset($_POST['customer_in
   $customer_info=double_check_input($conn,$_POST['customer_info']);
   $user_id=$_SESSION['user_id'];
   $sold_size=double_check_input($conn,$_POST['sold_size']);
-  if($sold_size!='XXXS'||$sold_size!='XXS'||$sold_size!='XS'||$sold_size!='S'||$sold_size!='M'||$sold_size!='L'||$sold_size!='XL'||$sold_size!='XXL'){
-    $sold_size='';
+  if($sold_size=='XXXS'||$sold_size=='XXS'||$sold_size=='XS'||$sold_size=='S'||$sold_size=='M'||$sold_size=='L'||$sold_size=='XL'||$sold_size=='XXL'){
+  }else{
+    $sold_size=null;
   }
   $stmt->bind_param('iisisis',$product_id,$sale_id,$date_sold,$price,$customer_info,$user_id,$sold_size);
   if(!$stmt->execute()){

@@ -267,8 +267,8 @@
         <br>
         <br>
         <br>
-        <!-- <form method="post" action="html_submitredirect_template.php"> -->
-            <form method="post" action="">
+        <form method="post" action="html_submitredirect_template.php">
+            <!-- <form method="post" action=""> -->
             <label id='echo23'>進貨的具體時間,如果為空，自動載入當前時間</label>
             <br>
             <input id='datetime-local'type="datetime-local" name="date_purchase" size="40" value=''>
