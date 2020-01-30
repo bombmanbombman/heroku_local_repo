@@ -191,7 +191,7 @@ const googleMap = new Vue({
           
           //獲得坐標，名稱
           console.log(this.place.name);
-          $('#place_name').val(this.place.name);
+          $('#place_name').val(this.place.formatted_address);
           $('#latitude').val(this.place.geometry.location.lat());
           $('#longitude').val(this.place.geometry.location.lng());
           console.log($('*'));

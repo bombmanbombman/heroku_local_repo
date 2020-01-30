@@ -202,7 +202,8 @@ if(strpos($URL,'herokuapp.com')){
   <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
   <script id='js' defer async type=text/javascript src='html_newproduct_template.js'></script>
   <section id='google_map_js'>
-    <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap" async defer></script>
+    <!-- <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap" async defer></script> -->
+    <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&language=ja&libraries=places&callback=initMap" async defer></script>
   </section>
   </body>
 </html>
