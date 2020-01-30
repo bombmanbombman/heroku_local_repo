@@ -48,7 +48,11 @@
                 var_dump($_POST);
                 echo "post <br>";
             }
+            /**刪除$_COOKIE所有pair */
             if(isset($_COOKIE) && $_COOKIE != false){
+                foreach($_COOKIE as $key=>$value){
+                    setcookie($key,null,-1,'/');
+                }
                 var_dump($_COOKIE);
                 echo 'cookie <br>';
             }
@@ -146,12 +150,28 @@
                 <div id='sign' class="d-flex justify-content-center">
                     <button  id='button1' class='btn btn-dark' style='width:190px'>new user sign up</button>
                 </div>
-                <div id='async'></div>
+                <div id='async' style='display:none'>
+                    <div class="d-flex justify-content-center">
+                        <form id='newuser_submit' action="" method="post">
+                            <label id='echo4'>請僅僅輸入數字與英語字母，各種符號會                      被過濾</label><br>
+                            <div class='align' style='width:190px'>
+                                <label id='echo5'>新用戶名</label>
+                                <input id='new_user_name' type="text"                         name="user_name" required><br>
+                            </div>
+                            <div class='align' style='width:190px'>
+                                <label id='echo6'>註冊密碼</label>
+                                <input id='new_user_password' type="password"                         maxlength='12' name="user_password" required><br>
+                                <input  class='btn btn-dark'                      id='value1'type="submit" value="提交"><br>
+                            </div>
+                        </form>
+                        <div id='error_message2'></div>
+                    </div>
+                </div>
             </section>
             <script type="text/javascript" id='ref' defer async type='text/javascript' src='html_template_index.js'></script>
             <script type="text/javascript" id='js' defer async type=text/javascript src="index.js"></script>
             <noscript>please do not turn off javascript</noscript>
         </section>
     </body>
-</!DOCTYPE>
+</html>
 

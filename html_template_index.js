@@ -329,7 +329,7 @@ $(function(){
     .then(function(data,textStatus,jqXHR){
       // console.log(data);
       console.log(data.page[current_file].language.japanese);
-      console.log(data.page.current_file.language.japanese);
+      // console.log(data.page.current_file.language.japanese);
       language_object=data.page[current_file].language.japanese;
       // language_object=JSON.stringify(language_object);
       // console.log(textStatus);
