@@ -30,7 +30,7 @@ if ($status) {
   $cmd='mysqldump -f -u root -p63079861 project1 > c:/xampp/htdocs/vscode_error/mysql_back/';
   $result = exec($cmd,$output,$status);
   if($status){
-    echo "mysql 5.7 Exec command failed"
+    echo "mysql 5.7 Exec command failed";
   }
 } 
 else {
