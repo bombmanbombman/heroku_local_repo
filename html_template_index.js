@@ -306,14 +306,14 @@ $(function(){
 
 /**(8) 語言轉換 load html_language_template.json */
 $(function(){
-  let current_file = location.pathname;
-  console.log('文件位置||'+current_file);
-  let suffix = current_file.search('.php');
+  let $current_file = location.pathname;
+  console.log('文件位置||'+$current_file);
+  let suffix = $current_file.search('.php');
   console.log(suffix);
   if(suffix !=-1){
-    current_file=current_file.substr(1,suffix-1);
+    $current_file=$current_file.substr(1,suffix-1);
   }
-  console.log(current_file);
+  // console.log($current_file);
   $("#japanese").on('click',function(e){
     $('a.actived-language').removeClass('active');
     $('a.actived-language').removeClass('actived-language');
@@ -328,16 +328,16 @@ $(function(){
     })
     .then(function(data,textStatus,jqXHR){
       // console.log(data);
-      console.log(data.page[current_file].language.japanese);
-      // console.log(data.page.current_file.language.japanese);
-      language_object=data.page[current_file].language.japanese;
+      console.log(data.page[$current_file].language.japanese);
+      // console.log(data.page.$current_file.language.japanese);
+      language_object=data.page[$current_file].language.japanese;
       // language_object=JSON.stringify(language_object);
       // console.log(textStatus);
       // console.log(jqXHR);
     })
     .then(function(){
       console.log(language_object);
-      console.log(current_file);
+      console.log($current_file);
       idname_collection=Object.getOwnPropertyNames(language_object);
       let jq_object=$();
       idname_collection.forEach(function(value){
@@ -387,14 +387,14 @@ $(function(){
     })
     .then(function(data,textStatus,jqXHR){
       // console.log(data);
-      console.log(data.page[current_file].language.chinese);
-      language_object=data.page[current_file].language.chinese;
+      console.log(data.page[$current_file].language.chinese);
+      language_object=data.page[$current_file].language.chinese;
       // language_object=JSON.stringify(language_object);
       // console.log(textStatus);
       // console.log(jqXHR);
     })
     .then(function(){
-      console.log(current_file);
+      console.log($current_file);
       let prop;
       idname_collection=Object.getOwnPropertyNames(language_object);
       let jq_object=$();
@@ -443,14 +443,14 @@ $(function(){
     })
     .then(function(data,textStatus,jqXHR){
       // console.log(data);
-      console.log(data.page[current_file].language.english);
-      language_object=data.page[current_file].language.english;
+      console.log(data.page[$current_file].language.english);
+      language_object=data.page[$current_file].language.english;
       // language_object=JSON.stringify(language_object);
       // console.log(textStatus);
       // console.log(jqXHR);
     })
     .then(function(){
-      console.log(current_file);
+      console.log($current_file);
       let prop;
       idname_collection=Object.getOwnPropertyNames(language_object);
       let jq_object=$();
