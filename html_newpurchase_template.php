@@ -50,7 +50,9 @@
             }
             /**sending js cookie file */
             require_once("login.php");
-            $_SESSION['product_id_for_purchase']=$_POST['product_id_for_purchase'];
+            if(isset($_POST['product_id_for_purchase'])){
+                $_SESSION['product_id_for_purchase']=$_POST['product_id_for_purchase'];
+            }
             $user_id=$_SESSION['user_id'];
             $query='select latitude,longitude from product 
                 where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_purchase'];
