@@ -25,7 +25,9 @@ $cmd='mysqldump -f -u root project1 > c:/xampp/htdocs/laravelFolder/resources/vi
 // $result = exec(escapeshellcmd($cmd),$output,$status);
 $result = exec($cmd,$output,$status);
 
-if ($status) echo "Exec command failed"; 
+if ($status) {
+  echo "Exec command failed";
+} 
 else {
 echo "<pre>";
 foreach($output as $line) echo htmlspecialchars("$line\n"); 
