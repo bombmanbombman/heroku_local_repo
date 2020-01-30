@@ -20,6 +20,13 @@ $(function(){
         // "text-align":"center",
         "margin-right":"-76px"
     })
+    $('#async').css({
+        // "text-align":"center",
+        "margin-right":"-200px"
+    })
+    $('label').css({
+        "color":"black"
+    })
     if($('a#japanese').hasClass('active')){
         $("#log_in_button").css({
             "margin-right":"-75px"
@@ -256,8 +263,27 @@ $(function(){
             url:'html_userregister_container.php'
         }).done(function(data){
             console.log(data);
-            $('#async').html(data).slideDown(5000);
+            $('#async').html(data).css({
+                "color":"black"
+            });
         });
         // location.href="html_userregister_template.php";
+    })
+    $('#newuser_submit').on('submit',function(e){
+        e.preventDefault();
+        console.log($('#new_user_name').val());
+        console.log($('#new_user_password').val());
+        console.log('e.target');
+        $.ajax({
+            type:'POST',
+            url:'html_userregister_template.php',
+            data:{
+                user_name:$('#new_user_name').val(),
+                user_password:$('#new_user_password').val()
+            }
+        }).done(function(data){
+            console.log(data);
+        })
+        
     })
 });

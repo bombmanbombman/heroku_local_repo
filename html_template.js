@@ -18,9 +18,11 @@ $(function(){
         "width": "100%",
         "position":"absolute",
         "z-index":"-1",
-        "background-repeat":"no-repeat"
+        "background-repeat":"no-repeat",
     });
-
+    $('label').css({
+        "color":"black"
+    })
     //(1)water ripple effect相关
     $('body').ripples({
         // Image Url

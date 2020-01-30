@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <head><title>user login</title></head>
 <body>
 <?php
@@ -34,12 +34,13 @@ if(isset($_POST["user_name"]) && isset($_POST["user_password"])){
   if(!is_bool($stmt))$stmt->close();
   $conn->close();
   $_SESSION['user_id']=$row;
-  header("location:html_newentry_template.php");
+  echo "success";
+  // header("location:html_newentry_template.php");
 }
 
 //插入http template
-require_once("html_navibar_template.php");
-require_once("html_dropup_button_template.php");
+// require_once("html_navibar_template.php");
+// require_once("html_dropup_button_template.php");
 
 
 
