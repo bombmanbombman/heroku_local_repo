@@ -8,7 +8,6 @@ console.log(longitude);
 // console.log(document.cookie);
 var map;
 function initMap() {
-
   geo_loc = {
     lat: latitude,
     lng: longitude
