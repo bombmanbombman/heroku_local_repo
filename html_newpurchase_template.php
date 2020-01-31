@@ -94,7 +94,6 @@
                     $all_product_id_in_product[]=$value;
                 }
             }
-
             // var_dump($all_product_id_in_product);
             if(!in_array($_SESSION['product_id_for_purchase'],$all_product_id_in_product)){
                 echo"<div id='echo2'>商品番号が存在しないため、前のページに戻ります</div>";
