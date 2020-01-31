@@ -53,7 +53,7 @@
             $user_id=$_SESSION['user_id'];
             #先fetch各個 data
             $query='select a.user_email,a.user_phone,b.user_icon from user a 
-            inner join user_icon b on(a.user_id=b.user_icon_id) ３
+            inner join user_icon b on(a.user_id=b.user_icon_id) 
             where a.user_id= '.$user_id;
             $stmt=$conn->query($query);
             if(!$stmt)echo $conn->error.'<br>';
