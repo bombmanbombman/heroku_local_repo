@@ -33,7 +33,7 @@
             require_once("html_navibar_template.php");
             require_once ('login.php');
             if(!isset($_SESSION['user_id'])){
-                echo "<div id='echo1'>session 傳送失敗</div>";
+                echo "<div id='echo1'>セッションの読み込みが失敗しました、ログイン画面に戻ります</div>";
                 $redirect='html_login_template.php';
                 $conn->close();
                 require_once ('test_header.php');
@@ -46,31 +46,31 @@
             $user_id=$_SESSION['user_id'];
             $stmt->bind_param('i',$user_id);
             if(!$stmt->execute()){
-                echo "<div id='echo2'>query 執行錯誤</div>";
+                echo "<div id='echo2'>データベース接続エラー、前のページに戻ります</div>";
                 $redirect='html_showallproduct_template.php';
                 $conn->close();
                 require_once ('test_header.php');
                 exit();
             }
             $result_stmt=$stmt->get_result();
-            echo "<h1 id='echo3'>點擊小圖，可以查看原圖大小</h1>";
+            echo "<h1 id='echo3'>サムネをクリックすると、拡大画像が表示できます</h1>";
             echo "
                 <table class='table table-dark'>
                     <tr>
                         <th>
-                            <span id='echo4'>對應貨號</span>
+                            <span id='echo4'>商品番号</span>
                         </th>
                         <th>
-                            <span id='echo5'>圖片編號</span>
+                            <span id='echo5'>画像番号</span>
                         </th>
                         <th>
-                            <span id='echo6'>上傳時間</span>
+                            <span id='echo6'>アップロード時間</span>
                         </th>
                         <th>
-                            <span id='echo7'>圖片說明</span>
+                            <span id='echo7'>画像説明</span>
                         </th>
                         <th>
-                            <span id='echo8'>圖片類型</span>
+                            <span id='echo8'>画像ファイルタイプ</span>
                         </th>
                     </tr>";
             while($row=$result_stmt->fetch_assoc()){
@@ -88,7 +88,7 @@
             echo "</table>";
             echo "
                 <button id='button1' class='btn btn-warning'>
-                    <span id='echo9'>回到全貨號頁面</span>
+                    <span id='echo9'>商品番号ページに戻ります</span>
                 </button>";
             $conn->close();
         ?>
