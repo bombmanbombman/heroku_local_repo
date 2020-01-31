@@ -173,11 +173,11 @@ $(function(){
                     "color":"#ff4000"
                 });
                 if($('a#chinese').hasClass('active')){
-                    $('#welcome').text('歡迎回來 '+array[1]).fadeToggle().show(0);
+                    $('#welcome').text('歡迎回來 '+array[1]).show(0);
                     }else if($('a#japanese').hasClass('active')){
-                        $('#welcome').text('おかえり、'+array[1]+'さん').fadeToggle().show(0);
+                        $('#welcome').text('おかえり、'+array[1]+'さん').show(0);
                     }else if($('a#english').hasClass('active')){
-                        $('#welcome').text('welcome back '+array[1]).fadeToggle().show(0);
+                        $('#welcome').text('welcome back '+array[1]).show(0);
                     }
                 console.log($.cookie());
                 window.location.href='html_userdetail_template.php';
@@ -236,11 +236,11 @@ $(function(){
                     "color":"#ff4000"
                 });
                 if($('a#chinese').hasClass('active')){
-                    $('#welcome').text('歡迎回來 '+array[1]).fadeToggle().show(0);
+                    $('#welcome').text('歡迎回來 '+array[1]).show(0);
                     }else if($('a#japanese').hasClass('active')){
-                        $('#welcome').text('おかえり、'+array[1]+'さん').fadeToggle().show(0);
+                        $('#welcome').text('おかえり、'+array[1]+'さん').show(0);
                     }else if($('a#english').hasClass('active')){
-                        $('#welcome').text('welcome back '+array[1]).fadeToggle().show(0);
+                        $('#welcome').text('welcome back '+array[1]).show(0);
                     }
                 console.log($.cookie());
                 window.location.href='html_userdetail_template.php';
@@ -297,11 +297,11 @@ $(function(){
                 }
             }else if(data.search('成功')!=-1){
                 if($('.actived-language'=='japanese')){
-                    $('#error_message2').text("ようこそ").show(0).hide(5000);
+                    $('#welcome').text("ようこそ").show(0).hide(5000);
                 }else if($('.actived-language'=='chinese')){
-                    $('#error_message2').text("歡迎光臨").show(0).hide(5000);
+                    $('#welcome').text("歡迎光臨").show(0).hide(5000);
                 }else if($('.actived-language'=='english')){
-                    $('#error_message2').text("welcome to my humble site").show(0).hide(5000);
+                    $('#welcome').text("welcome to my humble site").show(0).hide(5000);
                 }
                 location.href='html_userdetail_template.php';
             }
