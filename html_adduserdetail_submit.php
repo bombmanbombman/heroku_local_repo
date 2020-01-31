@@ -4,7 +4,7 @@
     var_dump($_POST);
     require_once('html_navibar_template.php');
     if(!isset($_SESSION['user_id'])){
-        echo "session 傳送失敗<br>";
+        echo "<div>session 傳送失敗</div>";
         $redirect='index.php';
         require_once ('test_header.php');
         exit();
@@ -34,7 +34,7 @@
                 $stmt=$conn->query($query);
                 if(!$stmt){
                     $_SESSION['post_error_message']=$conn->error."這個電話號碼已經被別人登錄過了，請選擇其他號碼<br>";
-                    echo $_SESSION['post_error_message']."32<br>";
+                    echo "<div>".$_SESSION['post_error_message']."||error1</div>";
                     header('location:html_adduserdetail_template.php');
                     exit();
                 }
@@ -44,7 +44,7 @@
                 $stmt=$conn->query($query);
                 if(!$stmt){
                     $_SESSION['post_error_message']=$conn->error."這個電話號碼已經被別人登錄過了，請選擇其他號碼<br>";
-                    echo $_SESSION['post_error_message']."32<br>";
+                    echo "<div>".$_SESSION['post_error_message']."||error2</div>";
                     header('location:html_adduserdetail_template.php');
                     exit();
                 }
@@ -55,7 +55,7 @@
                 $stmt=$conn->query($query);
                 if(!$stmt){
                     $_SESSION['post_error_message']=$conn->error."這個電話號碼已經被別人登錄過了，請選擇其他號碼<br>";
-                    echo $_SESSION['post_error_message']."44<br>";
+                    echo "<div>".$_SESSION['post_error_message']."||error3</div>";
                     header('location:html_adduserdetail_template.php');
                     exit();
                 }
@@ -68,8 +68,9 @@
                 where user_id = '.$user_id;
             $_SESSION['query']=$query;
             $stmt=$conn->query($query);
-            if(!$stmt){$_SESSION['post_error_message']=$conn->error."這個郵箱地址已經被別人登錄過了，請選擇其他郵箱<br>";
-                echo $_SESSION['post_error_message']."<br>";
+            if(!$stmt){
+                $_SESSION['post_error_message']=$conn->error."這個郵箱地址已經被別人登錄過了，請選擇其他郵箱<br>";
+                echo "<div>".$_SESSION['post_error_message']."||error4</div>";
                 header('location:html_adduserdetail_template.php');
                     exit();
             }
@@ -79,7 +80,7 @@
             if(is_base64($_FILES['user_icon']['tmp_name'])){
                 $_SESSION['post_error_message']='這不是圖片文件，請上傳圖片文件。';
                 $redirect='html_adduserdetail_template.php';
-                echo "74";
+                echo "<div>".$_SESSION['post_error_message']."||error5</div>";
                 require_once('test_header.php');
             }
             #檢驗圖片格式 共62 line
@@ -140,7 +141,7 @@
                 // }
                 if(isset($response['message'])){
                     $_SESSION['post_error_message']=$response['message'];
-                    echo $_SESSION['post_error_message']."128<br>";
+                    echo "<div>".$_SESSION['post_error_message']."error6</div>";
                     header('location:html_adduserdetail_template.php');
                     exit();
                 }
@@ -149,7 +150,7 @@
             $stmt=$conn->query($query);
             if(!$stmt){
                 $_SESSION['post_error_message']=$conn->error;
-                echo $_SESSION['post_error_message'];
+                echo "<div>".$_SESSION['post_error_message']."||error7</div>";
                 require_once('test_header.php');
                 exit();
             }
@@ -175,7 +176,7 @@
             $stmt=$conn->prepare($query);
             if(!$stmt){
                 $_SESSION['post_error_message']=$conn->error."update query failed 回到用戶頁面";
-                echo "172";
+                echo "<div>".$_SESSION['post_error_message']."||error8</div>";
                 require_once('test_header.php');
                 exit();
             }
@@ -184,13 +185,12 @@
             $stmt->send_long_data(2,$user_icon);
             if(!$stmt->execute()){
                 $_SESSION['post_error_message']=$conn->error.'添加頭像失敗，回到用戶頁面';
-                echo $_SESSION['post_error_message']."<br>";
-                echo '182';
+                echo "<div>".$_SESSION['post_error_message']."||error9</div>";
                 require_once ('test_header.php');
                 exit();
             }
         }
-        header('location:html_userdetail_template.php');
+        // header('location:html_userdetail_template.php');
         exit();
     }
 ?>
