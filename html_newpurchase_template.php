@@ -16,9 +16,10 @@
                 padding: 0;
             }
         </style>
+        <title>new purchase page</title>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
-        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <link id='bootstrap' type='text/css' rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <script id='jquery' src="jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
@@ -98,8 +99,10 @@
             if(!in_array($_SESSION['product_id_for_purchase'],$all_product_id_in_product)){
                 echo"<div id='echo2'>商品番号が存在しないため、前のページに戻ります</div>";
                 unset($_SESSION['product_id_for_purchase']);
-                $redirect='html_showallproduct_template.php';
-                require_once ("test_header.php");
+                // $redirect='html_showallproduct_template.php';
+                // require_once ("test_header.php");
+                header("refresh:4;url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php");
+                exit();
             }
             #顯示這個貨品的product table class='table table-dark'中的內容 一共 15 line
             $query='select product_id,buy_place,product_info,product_detail,latitude,longitude from product 
