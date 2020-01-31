@@ -24,12 +24,6 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
-        this.map = new google.maps.Map(document.getElementById('map'), {
-          center: geo_loc,
-          zoom: 16,
-          scaleControl:true
-        });
-        click_switch = true;
         $.ajax({
           url:"html_newproduct_template2.php"
         }).done(function(data){
@@ -39,6 +33,14 @@ const googleMap = new Vue({
         }).fail(function(error){
           console.log(error);
         });
+        this.map = new google.maps.Map(document.getElementById('map'), {
+          center: geo_loc,
+          zoom: 16,
+          scaleControl:true
+        });
+        click_switch = true;
+        $('#show_map').empty()
+
         // if(typeof(change_switch)==='undefined'){change_switch=false;}
         // else if(change_switch==true){
         //   // location.reload();
@@ -66,6 +68,7 @@ const googleMap = new Vue({
             $('#value2').val('現在地||current place');
             $('#latitude').val(position.coords.latitude);
             $('#longitude').val(position.coords.longitude);
+            $('#comment').empty();
             console.log($('*'));
             // infoWindow.setPosition(pos);
             // infoWindow.setContent('現在地');
@@ -109,6 +112,7 @@ const googleMap = new Vue({
         change_switch = true;
         if(typeof(click_switch)==='undefined'){click_switch=false;}
         else if(click_switch==true){
+          // $('#show_map').empty()
           location.reload();
           // $.ajax({
           //   url:"html_newproduct_template3.php"
@@ -130,7 +134,7 @@ const googleMap = new Vue({
           this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
           console.log(this.autocomplete);
           this.place = this.autocomplete.getPlace();
-          location.reload();
+          // location.reload();
           // $("#map2").attr('display','none');
           // $("#map1").removeAttr('display');
           // $("#map2").fadeToggle(0);

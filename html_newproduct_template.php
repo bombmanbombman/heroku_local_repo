@@ -156,7 +156,7 @@ require_once("html_navibar_template.php");
         <hr>
       </section>
       <!-- 放評論摘要的div -->
-      <div class="row" v-if="place != null">
+      <div id='comment' class="row" v-if="place != null">
         <div class="col" v-if="place.reviews != null">
           <h5>評論：</h5>
           <div class="row" v-for="p in place.reviews">
