@@ -26,7 +26,7 @@ $(function(){
     //(1)water ripple effect相关
     $('body').ripples({
         // Image Url
-        imageUrl: '/upload_compress/background_water4.jpg',
+        imageUrl: 'upload_compress/background_water4.jpg',
         // The width and height of the WebGL texture to render to.
         // The larger this value, the smoother the rendering and the slower the ripples wilpropagate.
         resolution: 256,
@@ -98,7 +98,7 @@ $(function(){
                             </div>
                         </div>
                         <div class="carousel-item" data-interval='3000'>
-                            <img id='slide_image3' src="/upload_compress/spinner3.gif" class="d-block w-100"  style='height:300px;' alt="..."> 
+                            <img id='slide_image3' src="upload_compress/spinner3.gif" class="d-block w-100"  style='height:300px;' alt="..."> 
                             <div class="carousel-caption">
                                 <h3>Flowers</h3>
                                 <p>Beatiful flowers in Kolymbari, Crete.</p>

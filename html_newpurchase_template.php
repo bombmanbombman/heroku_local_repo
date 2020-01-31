@@ -75,7 +75,6 @@
             if(isset($_POST['product_id_for_purchase'])&&$_POST['product_id_for_purchase']!=0){
                 $_SESSION['product_id_for_purchase']=$_POST['product_id_for_purchase'];
             }
-            echo "<br><br><br>";
             #尋找product_id_for_purchase是否存在product table class='table table-dark'中 一共15行。
             $query ='select product_id from product where user_id ='.$user_id;
             $result=$conn->query($query);
@@ -103,16 +102,16 @@
                 <table class='table table-dark'>
                     <tr>
                         <th>
-                        <span id='echo3'>貨號</span>
+                            <span id='echo3'>貨號</span>
                         </th>
                         <th>
-                        <span id='echo4'>進貨地點</span>
+                            <span id='echo4'>進貨地點</span>
                         </th>
                         <th>
-                        <span id='echo5'>貨品簡介</span>
+                            <span id='echo5'>貨品簡介</span>
                         </th>
                         <th>
-                        <span id='echo6'>貨品詳細</span>
+                            <span id='echo6'>貨品詳細</span>
                         </th>
                     </tr>";
             while($row=$stmt->fetch_assoc()){
@@ -268,33 +267,39 @@
         <br>
         <form method="post" action="html_submitredirect_template.php">
             <!-- <form method="post" action=""> -->
-            <label id='echo23'>進貨的具體時間,如果為空，自動載入當前時間</label>
-            <br>
-            <input id='datetime-local'type="datetime-local" name="date_purchase" size="40" value=''>
-            <br>
-            <label id='echo24'>一件的入貨價格</label>
-            <br>
-            <input type="number" name="purchase_cost" min='1' max="99999999" size="40" required>
+            <div class='form-group'>
+                <script>
+                    webshims.setOptions("forms-ext", {types: "date"});
+                    webshims.polyfill("forms forms-ext");
+                </script>
+                <label class='form-text text-muted' id='echo23'>進貨的具體時間,如果為空，自動載入當前時間</label>
+                <input class='form-control' id='datetime-local'type="datetime-local" name="date_purchase" size="40" value=''>
+            </div>
+            <div class='form-group'>
+                <label class='form-text text-muted'id='echo24'>一件的入貨價格</label>
+                <input type="number" name="purchase_cost" min='1' max="99999999" size="40" required>
             <span id='echo25'>元/件</span>
-            <br>
-            <label id='echo26'>這個商品入貨了幾件</label>
-            <br>
-            <input type="number" name="purchase_number" min='1' max="99999999" size="40" required>
-            <span id='echo27'>件</span>
-            <br>
-            <input type="hidden" name='product_id_for_purchase' value='0'>
-            <label id='echo28'>尺碼（選填）</label>
-            <select name='purchase_size'>
-                <option id='value1' value=''>新選擇尺碼</option>
-                <option value='XXXS'>XXXS</option>
-                <option value='XXS'>XXS</option>
-                <option value='XS'>XS</option>
-                <option value='S'>S</option>
-                <option value='M'>M</option>
-                <option value='L'>L</option>
-                <option value='XL'>XL</option>
-                <option value='XXL'>XXL</option>
-            </select>
+            </div>
+            <div class='form-group'>
+                <label class='form-text text-muted' id='echo26'>這個商品入貨了幾件</label>
+                <input type="number" name="purchase_number" min='1' max="99999999" size="40"    required>
+                <span id='echo27'>件</span>
+            </div>
+            <div class='form-group'>
+                <input type="hidden" name='product_id_for_purchase' value='0'>
+                <label class='form-text text-muted' id='echo28'>尺碼（選填）</label>
+                <select class='form-control' name='purchase_size'>
+                    <option id='value1' value=''>新選擇尺碼</option>
+                    <option value='XXXS'>XXXS</option>
+                    <option value='XXS'>XXS</option>
+                    <option value='XS'>XS</option>
+                    <option value='S'>S</option>
+                    <option value='M'>M</option>
+                    <option value='L'>L</option>
+                    <option value='XL'>XL</option>
+                    <option value='XXL'>XXL</option>
+                </select>
+            </div>
             <br>
             <br>
             <br>

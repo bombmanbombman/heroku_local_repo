@@ -130,7 +130,7 @@
                 <!-- <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4> -->
             <!-- </a> -->
         <!-- </button> -->
-        <button id='button1'>
+        <button id='button1'class='btn btn-secondary'>
             <h4 id='echo22'>添加新的貨品，輸入貨品基本信息</h4>
         </button>
         <hr>
@@ -139,7 +139,7 @@
                 <h3 id='echo24'>進入圖庫</h3>
             </a>
         </button> -->
-        <button id='button2'>
+        <button id='button2'class='btn btn-secondary'>
             <h3 id='echo24'>進入圖庫</h3>
         </button>
         <br>

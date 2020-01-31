@@ -262,48 +262,46 @@
 
         <form method="post" action="html_submitredirect_template.php">
             <!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>"> -->
-            <label id='echo23'>出售的具體時間,如果為空，自動載入當前時間</label>
-            <br>
-            <!-- firefox date support plugin -->
-            <script>
-                webshims.setOptions("forms-ext", {types: "date"});
-                webshims.polyfill("forms forms-ext");
-            </script>
-            <!-- <input type="datetime-local" name="date_sold" size="40" value=""><br> -->
-            <input id='datetime-local' type="datetime-local" name="date_sold" size="40" value="">
-            <br>
-            <!-- <input type="date" name="date_sold" ><br> -->
-            <label id='echo24'>一件的售出價格</label>
-            <br>
-            <input type="number" name="price" min='1' max="99999999" size="40" required>
-            <span id='echo26'>元/件</span>
-            <br>
-            <input type="hidden" name='product_id_for_sale' value='0'>
-            <label id='echo25'>出售尺碼（選填）</label>
-            <select name='sold_size'>
-                <option id='echo28' value='' >請選擇尺碼</option>
-                <option value='XXXS'>XXXS</option>
-                <option value='XXS'>XXS</option>
-                <option value='XS'>XS</option>
-                <option value='S'>S</option>
-                <option value='M'>M</option>
-                <option value='L'>L</option>
-                <option value='XL'>XL</option>
-                <option value='XXL'>XXL</option>
-            </select>
-            <br>
-            <br>
-            <br>
-            <label id='echo27'>客戶描述（選填）</label>
-            <br>
-            <textarea name='customer_info' maxlength='255' rows='8' cols='50' value=''></textarea>
+            <div class='form-group'>
+                <label class='form-text text-muted' id='echo23'>出售的具體時間,如果為空，自動載入當前時間</label>
+                <!-- firefox date support plugin -->
+                <script>
+                    webshims.setOptions("forms-ext", {types: "date"});
+                    webshims.polyfill("forms forms-ext");
+                </script>
+                <!-- <input type="datetime-local" name="date_sold" size="40" value=""><br> -->
+                <input class='form-control' id='datetime-local' type="datetime-local" name="date_sold" size="40"     value="">
+            </div>
+            <!-- <input class='form-control' type="date" name="date_sold" ><br> -->
+            <div class='form-group'>
+                <label class='form-text text-muted' id='echo24'>一件的售出價格</label>
+                <input type="number" name="price" min='1' max="99999999" size="40" required>
+                <span id='echo26'>元/件</span>
+            </div>
+            <div class='form-group'>
+                <input type="hidden" name='product_id_for_sale' value='0'>
+                <label class='form-text text-muted' id='echo25'>出售尺碼（選填）</label>
+                <select name='sold_size'>
+                    <option id='echo28' value='' >請選擇尺碼</option>
+                    <option value='XXXS'>XXXS</option>
+                    <option value='XXS'>XXS</option>
+                    <option value='XS'>XS</option>
+                    <option value='S'>S</option>
+                    <option value='M'>M</option>
+                    <option value='L'>L</option>
+                    <option value='XL'>XL</option>
+                    <option value='XXL'>XXL</option>
+                </select>
+            </div>
             <br>
             <br>
+            <br>
+            <div class='form-group'>
+            <label class='form-text text-muted' id='echo27'>客戶描述（選填）</label>
+            <textarea class='form-control form-control-sm' name='customer_info' maxlength='255' rows='8' cols='50' value=''></textarea>
+            </div>
             <input type="submit"class='btn btn-success' id='value2' value="記錄這次的出售数据。">
         </form>
-        <br>
-        <br>
-
        <!--用於刪除session 中的 product_id_for_sale-->
         <form action="html_showallproduct_template.php" method="post">
             <input type="submit" class='btn btn-warning' id='value3' value="回到所有貨號頁面" 

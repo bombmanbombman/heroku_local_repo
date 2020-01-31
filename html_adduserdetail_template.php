@@ -9,13 +9,13 @@
                 color: initial;
             }
         </style>
-        <link id='bootstrap' type='text/css' rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+        <link id='bootstrap' type='text/css' rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <script id='jquery' src="jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
         <script src="jquery.ripples.js"></script>
-        <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+        <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
         <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-        <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+        <script id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
         <script id='vue' src="vue.min.js"></script>
     </head>
     <body>
@@ -62,6 +62,7 @@
             $user_phone=$row['user_phone'];
             $user_icon=$row['user_icon'];
         ?>
+        <hr>
         <h6 id='echo1'>電話號碼，郵箱，可以幫助你找回並重設密碼</h6>
         <form method='post' action='html_adduserdetail_submit.php' enctype='multipart/form-data'>
             <label id='echo2'>請輸入您的郵箱，中間必須帶有@的符號。</label>

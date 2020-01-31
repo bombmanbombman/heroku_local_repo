@@ -4,9 +4,9 @@
         <script id='jquery' src="jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
         <script src="jquery.ripples.js"></script>
-        <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/  bootstrap.bundle.min.js'></script> 
+        <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
         <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-        <script id='jquery_cookie' src='jquery-cookie-master/src/  jquery.cookie.js'></script>
+        <script id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
         <script id='vue' src="vue.min.js"></script>
     </head>
     <body>
@@ -53,7 +53,6 @@
                 exit();
             }
             $result_stmt=$stmt->get_result();
-            echo "<br><br><br>";
             echo "<h1 id='echo3'>點擊小圖，可以查看原圖大小</h1>";
             echo "
                 <table class='table table-dark'>
@@ -87,7 +86,10 @@
                 echo "<a target='_blank' rel='noopener noreferrer' href='html_originalimage_template.php?image_id=",urlencode($image_id),     "'><img height='80' width='80 'src='data:image/jpeg;base64,".base64_encode($row["image_data"])."'/></a>";
             }
             echo "</table>";
-            echo "<button id='button1'><span id='echo9'>回到全貨號頁面</span></button>";
+            echo "
+                <button id='button1' class='btn btn-warning'>
+                    <span id='echo9'>回到全貨號頁面</span>
+                </button>";
             $conn->close();
         ?>
         <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>

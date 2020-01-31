@@ -166,6 +166,7 @@
             echo "
                 </form>
                 <span class='clear_float'></span>
+                <hr>
                 <br>
                 <br>
                 <br>

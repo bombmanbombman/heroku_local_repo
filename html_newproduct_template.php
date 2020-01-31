@@ -65,19 +65,19 @@ if(strpos($URL,'herokuapp.com')){
   echo "<div>$URL</div>";
 }
 /**(1)下面為model 處理 user input*/
-// session_start();
-// if(isset($_POST) && $_POST != false){
-//   var_dump($_POST);
-//   echo "post <br>";
-// }
-// if(isset($_COOKIE)){
-//   var_dump($_COOKIE);
-//   echo 'cookie <br>';
-// }
-// if(isset($_SESSION)){
-//   var_dump($_SESSION);
-//   echo 'session <br>';
-// }
+session_start();
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE)){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
+if(isset($_SESSION)){
+  var_dump($_SESSION);
+  echo 'session <br>';
+}
 require_once("html_navibar_template.php");
 // if(!isset($_SESSION['user_id'])){
 //   echo "<div id='echo4'>session 傳送失敗</div>";
@@ -182,16 +182,25 @@ require_once("html_navibar_template.php");
   </section>
   <!-- <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'> -->
   <form method='post' action='html_newproduct_submit.php'>
-  <label id='echo1'>請輸入進貨的地點</label><br>
-  <input id='place_name' type='text' name='buy_place' size='40'required><br>
-  <input id='latitude' type='hidden' name='latitude'>
-  <input id='longitude' type='hidden' name='longitude'>
-  <label id='echo2'>請輸入貨品的簡要信息</label><br>
-  <input type='text' name='product_info' size='40'required><br>
-  <label id='echo3'>請輸入貨品的詳細信息</label><br>
-  <textarea name='product_detail' maxlength='255' rows='4' cols='50'></textarea>
-  <br><br>
-  <input id='value1' class='btn btn-warning' type='submit' value='創建新貨號'>
+    <div class='form-group'>
+      <label class='form-text text-muted' id='echo1'>請輸入進貨的地點</label>
+      <input class='form-control' id='place_name' type='text' name='buy_place' size='40'required>
+    </div>
+    <div class='form-group'>
+      <input id='latitude' type='hidden' name='latitude'>
+      <input id='longitude' type='hidden' name='longitude'>
+      <label class='form-text text-muted' id='echo2'>請輸入貨品的簡要信息</label>
+      <input class='form-control' type='text' name='product_info' size='40'required>
+    </div>
+    <div class='form-group'>
+      <label class='form-text text-muted' id='echo3'>請輸入貨品的詳細信息</label>
+      <textarea class='form-control' name='product_detail' maxlength='255' rows='4' cols='50'></textarea>
+      <input id='value1' class='btn btn-warning' type='submit' value='創建新貨號'>
+    </div>
+  </form>
+  <form action="html_userdetail_template.php" method="post">
+    <input type="submit" class='btn btn-secondary' id='value10'value="回到user page" 
+            name="unset_product_id_for_purchase">
   </form>
   <?php 
   //翻頁button

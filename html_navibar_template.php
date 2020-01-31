@@ -26,42 +26,78 @@ li a:hover {   /* hover時的style */
 }
 </style>
 
-
-<div class="dropdown"> 
-    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" 
-    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> language toggle </button> 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
-      <a id='japanese' class="dropdown-item active actived-language" href="#">日本語</a> 
-      <a id='chinese' class="dropdown-item" href="#">繁體中文</a> 
-      <a id='english' class="dropdown-item" href="#">english</a> 
-    </div> 
-</div> 
 <ul>
-<?php 
-$URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-if(strpos($URL,'herokuapp.com')){
-  echo "<li><a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/html_userdetail_template.php'>user detail page</a></li>";
-  echo "<li><a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/'>sign out</a></li>";
-}else{
-  echo "<li><a class='btn btn-info' href='html_userdetail_template.php'>user detail page</a></li>";
-  echo "<li><a class='btn btn-info' href='index.php'>sign out</a></li>";
-}
-?>
-  <!-- <li><a class='navi' href="">sign out</a></li> -->
-  <li><a class='btn btn-info' href='20200113.php'>map</a></li>
-  <li id='time_table'></li>
-  <!--float:right 取消display block，成為一條線 且擠在右邊-->
-  <?php
-    if($_SESSION['user_id']===1){
+  <div class='row'>
+    <div class='col'>
+      <div class="dropdown"> 
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">language toggle</button> 
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
+          <a id='japanese' class="dropdown-item active actived-language" href="#">日本語</a> 
+          <a id='chinese' class="dropdown-item" href="#">繁體中文</a> 
+          <a id='english' class="dropdown-item" href="#">english</a> 
+        </div> 
+      </div> 
+    </div>
+    <?php 
+    $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+    if(strpos($URL,'herokuapp.com')){
+      
       echo "
-        <li id='admin' style='float:right'>
+      <div class='col-1'></div>
+      <div class='col'>
+        <li>
+          <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/   html_userdetail_template.php'>user detail page</a>
+        </li>
+      </div>
+      ";
+      echo "
+      <div class='col'>
+        <li>
+          <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/'>sign out</a>
+        </li>
+      </div>
       ";
     }else{
       echo "
-      <li id='admin' style='display:none'>
+      <div class='col'></div>
+      <div class='col'>
+        <li>
+          <a class='btn btn-info' href='html_userdetail_template.php'>user detail page</a>
+        </li>
+      </div>
+      ";
+      echo "
+      <div class='col'>
+        <li>
+          <a class='btn btn-info' href='index.php'>sign out</a>
+        </li>
+      </div>
       ";
     }
-  ?>
+    ?>
+    <!-- <li><a class='navi' href="">sign out</a></li> -->
+    <div class='col'>
+      <li>
+        <a class='btn btn-info' href='20200113.php'>map</a>
+      </li>
+    </div>
+    <div class='col-4'>
+      <li id='time_table'></li>
+    </div>
+  </div>
+    <!--float:right 取消display block，成為一條線 且擠在右邊-->
+    <?php
+      if(isset($_SESSION['user_id'])&&$_SESSION['user_id']===1){
+        echo "
+          <li id='admin' style='float:right'>
+        ";
+      }else{
+        echo "
+        <li id='admin' style='display:none'>
+        ";
+      }
+    ?>
     <select name='forma' onchange="location = this.value">
       <option value="select">select page</option>
       <option value ="backup_sql_exec.php">備份database</option>
@@ -79,3 +115,4 @@ if(strpos($URL,'herokuapp.com')){
 </ul>
 <br>
 <br>
+<hr>
