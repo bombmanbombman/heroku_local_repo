@@ -90,7 +90,7 @@
             $stmt=$conn->query($query);
             if(!$stmt)echo($conn->error);
             echo "
-            <table>
+            <table class='table table-striped'>
                 <tr>
                     <th>
                         <span id='echo3'>貨號</span>
@@ -115,7 +115,7 @@
                 </tr>
                 ";
             }
-            echo "</table>";
+            echo "</table class='table table-striped'>";
             #尋找product_id_for_sale是否也存在與purchase table中  一共18行 
             $query ='select product_id from purchase 
                                 where user_id ='.$user_id;
@@ -173,7 +173,7 @@
                 if(!$stmt)echo($conn->error);
                 echo "<br>
                 <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
-                <table>
+                <table class='table table-striped'>
                     <tr>
                         <th>
                             <span id='echo12'>進貨編號</span>
@@ -203,7 +203,7 @@
                     ";
                 }
                 #如果已經出售過，顯示最近10筆交易記錄   27 line
-                echo "</table>";
+                echo "</table class='table table-striped'>";
                 if(isset($progress2)&&$progress2===true){
                     $query = 'select b.sale_id,
                     b.date_sold,b.price,b.customer_info,b.sold_size 
@@ -218,7 +218,7 @@
                         <br>
                         <label id='echo17'>出售記錄，僅僅顯示最近的10筆</label>
                         <br>
-                        <table>
+                        <table class='table table-striped'>
                             <tr>
                                 <th>
                                     <span id='echo18'>出售編號</span>
@@ -248,7 +248,7 @@
                             </tr>
                         ";
                     }
-                    echo "</table>";
+                    echo "</table class='table table-striped'>";
                 }
             }
 

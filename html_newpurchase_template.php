@@ -76,7 +76,7 @@
                 $_SESSION['product_id_for_purchase']=$_POST['product_id_for_purchase'];
             }
             echo "<br><br><br>";
-            #尋找product_id_for_purchase是否存在product table中 一共15行。
+            #尋找product_id_for_purchase是否存在product table class='table table-striped'中 一共15行。
             $query ='select product_id from product where user_id ='.$user_id;
             $result=$conn->query($query);
             $rows=$result->fetch_all(MYSQLI_NUM);
@@ -94,13 +94,13 @@
                 $redirect='html_showallproduct_template.php';
                 require_once ("test_header.php");
             }
-            #顯示這個貨品的product table中的內容 一共 15 line
+            #顯示這個貨品的product table class='table table-striped'中的內容 一共 15 line
             $query='select product_id,buy_place,product_info,product_detail,latitude,longitude from product 
                 where user_id = '.$user_id.' and product_id = '.$_SESSION['product_id_for_purchase'];
             $stmt=$conn->query($query);
             if(!$stmt)echo($conn->error);
             echo "
-                <table>
+                <table class='table table-striped'>
                     <tr>
                         <th>
                         <span id='echo3'>貨號</span>
@@ -125,7 +125,7 @@
                 </tr>
                 ";
             }
-            echo "</table>";
+            echo "</table class='table table-striped'>";
             #google map 部分
             echo"
             <section id='show_map'>
@@ -134,7 +134,7 @@
             </section>
             ";
 
-            #尋找product_id_for_purchase是否也存在與purchase table中  一共18行 
+            #尋找product_id_for_purchase是否也存在與purchase table class='table table-striped'中  一共18行 
             $query ='select product_id from purchase 
                 where user_id ='.$user_id;
             $stmt=$conn->query($query);
@@ -153,7 +153,7 @@
             }else{
                 echo "<div id='echo8'>還沒有對這個貨號進過貨</div>";
             }
-            #尋找product_id_for_purchase是否也存在與sale table中  一共18行 
+            #尋找product_id_for_purchase是否也存在與sale table class='table table-striped'中  一共18行 
             $query ='select product_id from sale 
                 where user_id ='.$user_id;
             $stmt=$conn->query($query);
@@ -187,7 +187,7 @@
                 if(!$stmt)echo($conn->error);
                 echo "<br>
                 <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
-                <table>
+                <table class='table table-striped'>
                     <tr>
                         <th>
                             <span id='echo12'>進貨編號</span>
@@ -217,7 +217,7 @@
                     ";
                 }
                 #如果已經出售過，顯示最近10筆交易記錄   27 line
-                echo "</table>";
+                echo "</table class='table table-striped'>";
                 if(isset($progress2)&&$progress2===true){
                     $query = 'select b.sale_id,
                     b.date_sold,b.price,b.customer_info,b.sold_size 
@@ -230,7 +230,7 @@
                     if(!$stmt)echo($conn->error);
                     echo "<br>
                     <label id='echo17'>出售記錄，僅僅顯示最近的10筆</label><br>
-                    <table>
+                    <table class='table table-striped'>
                         <tr>
                             <th>
                                 <span id='echo18'>出售編號</span>
@@ -259,7 +259,7 @@
                         </tr>
                         ";
                     }
-                    echo "</table>";
+                    echo "</table class='table table-striped'>";
                 }
             }
         ?>

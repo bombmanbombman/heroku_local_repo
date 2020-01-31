@@ -185,15 +185,37 @@
         // $all_product_id[$row['product_id']]=$row;
         $product_table[]=$row;
         }
-        echo "<table><tr><th><span id='echo106'>貨號</span></ th><th><span id='echo107'>購買地址</span></th><th><span  id='echo108'>貨品簡介</span></th><th><span id='echo109'>貨品 詳細</span></th></tr>";
+        echo "
+            <table>
+                <tr>
+                    <th>
+                        <span id='echo106'>貨號</span>
+                    </ th>
+                    <th>
+                        <span id='echo107'>購買地址</span>
+                    </th>
+                    <th>
+                        <span  id='echo108'>貨品簡介</span>
+                    </th>
+                    <th>
+                        <span id='echo109'>貨品 詳細</span>
+                    </th>
+                </tr>
+            ";
         foreach($product_table as $key0 => $subarray1){
-            echo "<tr>";
+            echo "
+                <tr>
+            ";
             foreach($subarray1 as $key1 => $value1){
                 echo "<th>".$value1."</th>";
             }
-            echo "</tr>";
+            echo "
+                </tr>
+            ";
         }
-        echo "</table>";
+        echo "
+            </table>
+        ";
     }
     #fetch product pruchase 中 需要顯示的部分，用inner join 
     function fetch_product_purchase_table($conn,$user_id){
@@ -212,16 +234,45 @@
         while($rows=$result_stmt->fetch_assoc()){
             $product_purchase_table[]=$rows;
         }
-        echo "<table><tr><th><span id='echo110'>貨號</span></ th><th><span id='echo111'>購買地址</span></th><th><span  id='echo112'>貨品簡介</span></th>
-        <th><span id='echo113'>進貨日期</span></th><th><span  id='echo114'>進貨價格（元）</span></th><th><span   id='echo115'>進貨件數</span></th><th><span id='echo116'>商品  尺寸</span></th><th></tr>";
+        echo "
+            <table>
+                <tr>
+                    <th>
+                        <span id='echo110'>貨號</span>
+                    </ th>
+                    <th>
+                        <span id='echo111'>購買地址</span>
+                    </th>
+                    <th>
+                        <span id='echo112'>貨品簡介</span>
+                    </th>
+                    <th>
+                        <span id='echo113'>進貨日期</span>
+                    </th>
+                    <th>
+                        <span id='echo114'>進貨價格（元）</span>
+                    </th>
+                    <th>
+                        <span id='echo115'>進貨件數</span>
+                    </th>
+                    <th>
+                        <span id='echo116'>商品尺寸</span>
+                    </th>
+                </tr>";
         foreach($product_purchase_table as $key0 => $subarray1){
-            echo "<tr>";
+            echo "
+                <tr>
+            ";
             foreach($subarray1 as $key1 => $value1){
                 echo "<th>".$value1."</th>";
             }
-            echo "</tr>";
+            echo "
+                </tr>
+            ";
         }
-        echo "</table>";
+        echo "
+            </table>
+        ";
     }
 
     # mysqli 的 error report
