@@ -195,11 +195,11 @@ $(function(){
         });
     })
 
-    $('#admin').on('click',function(e){
+    $('#tester').on('click',function(e){
         e.preventDefault();
-        let user_name='admin';
+        let user_name='tester';
         console.log(user_name);
-        let user_password='63079861';
+        let user_password='tester';
         console.log(user_password);
         $.ajax({
             type: "POST",
