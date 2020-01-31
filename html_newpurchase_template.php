@@ -256,7 +256,6 @@
                             <th>$row[price]</th>
                             <th>$row[customer_info]</th>
                             <th>$row[sold_size]</th>
-                            <th>$row[sold_size]</th>
                         </tr>
                         ";
                     }
