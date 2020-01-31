@@ -2,8 +2,8 @@
     session_start();
     // var_dump($_SESSION);
     var_dump($_POST);
-    echo"<div>post</div>"
-    // require_once('html_navibar_template.php');
+    echo"<div>post</div>";
+    require_once('html_navibar_template.php');
     if(!isset($_SESSION['user_id'])){
         echo "<div>session 傳送失敗</div>";
         $redirect='index.php';
@@ -25,7 +25,9 @@
         $old_user_phone=$row['user_phone'];
         $user_icon=$row['user_icon'];
         var_dump($old_user_email);
+        echo"<div>line28</div>";
         var_dump($old_user_phone);
+        echo"<div>line30</div>";
         #更新电话 部分  18 line
         if(isset($_POST['user_phone'])){
             $new_user_phone=$_POST['user_phone'];
