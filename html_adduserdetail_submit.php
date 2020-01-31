@@ -1,8 +1,19 @@
 <?php
     session_start();
-    // var_dump($_SESSION);
-    var_dump($_POST);
-    echo"<div>post</div>";
+    $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+    session_start();
+    if(isset($_POST) && $_POST != false){
+      var_dump($_POST);
+      echo "post <br>";
+    }
+    if(isset($_COOKIE) && $_COOKIE != false){
+      var_dump($_COOKIE);
+      echo 'cookie <br>';
+    }
+    if(isset($_SESSION)  && $_SESSION != false){
+      var_dump($_SESSION);
+      echo 'session <br>';
+    }
     require_once('html_navibar_template.php');
     if(!isset($_SESSION['user_id'])){
         echo "<div>session 傳送失敗</div>";
@@ -80,7 +91,7 @@
         }
         #這裡開始 是插入圖片部分檢驗 共 69 line
         if(file_exists($_FILES['user_icon']['tmp_name'])&&$_FILES['user_icon'] != null){
-            if(is_base64($_FILES['user_icon']['tmp_name'])){
+            if(!is_base64($_FILES['user_icon']['tmp_name'])){
                 $_SESSION['post_error_message']='這不是圖片文件，請上傳圖片文件。';
                 $redirect='html_adduserdetail_template.php';
                 echo "<div>".$_SESSION['post_error_message']."||error5</div>";
