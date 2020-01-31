@@ -42,7 +42,7 @@
         }
         $conn = new mysqli($host,$username,$password,$databasename,$port);
         if($conn->connect_error){
-            echo "<div><span id='echo101'>無法連接數據庫3306||3308||3307，</span>$databasename<span id='echo102'></span></div>";
+            echo "<div><span id='echo101'>データベース：3306||3308||3307，</span>$databasename<span id='echo102'>に接続が失敗しました、ログイン画面に戻ります</span></div>";
             $redirect='html_login_template.php';
             require_once ('test_header.php');
             exit();
@@ -126,7 +126,7 @@
         // var_dump($num_rows===0);
         // echo '<br>';
         if($num_rows===0){
-            echo "<br><br><div id='echo103'>您還沒有輸入任何的貨品數  據，10秒後自動回到用戶頁面。</div>";
+            echo "<br><br><div id='echo103'>仕入れ記録がありません、はじめの仕入れ記録を作成してください</div>";
             $wait_time=10;
             require_once ('test_header.php');
             $conn->close();
@@ -145,7 +145,7 @@
         // var_dump($num_rows===0);
         // echo '<br>';
         if($num_rows===0){
-            echo "<br><br><div id='echo104'>您還沒有輸入任何的貨品數  據，10秒後自動回到用戶頁面。</div>";
+            echo "<br><br><div id='echo104'>仕入れ記録がありません、はじめの仕入れ記録を作成してください</div>";
             $wait_time=10;
             require_once ('test_header.php');
             $conn->close();
@@ -161,7 +161,7 @@
             <table class='table table-dark'>
                 <tr>
                     <th scope='col'>
-                        <span id='echo105'>貨號</span>
+                        <span id='echo105'>商品番号</span>
                     </th>
                 </tr>";
         foreach($all_product_id as $key0 => $subarray1){
@@ -201,16 +201,16 @@
             <table class='table table-dark'>
                 <tr>
                     <th scope='col'>
-                        <span id='echo106'>貨號</span>
+                        <span id='echo106'>商品番号</span>
                     </ th>
                     <th scope='col'>
-                        <span id='echo107'>購買地址</span>
+                        <span id='echo107'>仕入れ場所</span>
                     </th>
                     <th scope='col'>
-                        <span  id='echo108'>貨品簡介</span>
+                        <span  id='echo108'>商品名</span>
                     </th>
                     <th scope='col'>
-                        <span id='echo109'>貨品 詳細</span>
+                        <span id='echo109'>詳細情報</span>
                     </th>
                 </tr>
             ";
@@ -250,25 +250,25 @@
             <table class='table table-dark'>
                 <tr>
                     <th scope='col'>
-                        <span id='echo110'>貨號</span>
+                        <span id='echo110'>商品番号</span>
                     </ th>
                     <th scope='col'>
-                        <span id='echo111'>購買地址</span>
+                        <span id='echo111'>仕入れ場所</span>
                     </th>
                     <th scope='col'>
-                        <span id='echo112'>貨品簡介</span>
+                        <span id='echo112'>商品名</span>
                     </th>
                     <th scope='col'>
-                        <span id='echo113'>進貨日期</span>
+                        <span id='echo113'>仕入れ時間</span>
                     </th>
                     <th scope='col'>
-                        <span id='echo114'>進貨價格（元）</span>
+                        <span id='echo114'>仕入れ価格 円</span>
                     </th>
                     <th scope='col'>
-                        <span id='echo115'>進貨件數</span>
+                        <span id='echo115'>仕入れ数</span>
                     </th>
                     <th scope='col'>
-                        <span id='echo116'>商品尺寸</span>
+                        <span id='echo116'>仕入れサイズ</span>
                     </th>
                 </tr>";
         foreach($product_purchase_table as $key0 => $subarray1){
