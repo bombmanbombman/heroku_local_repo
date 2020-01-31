@@ -101,6 +101,7 @@
                 unset($_SESSION['product_id_for_purchase']);
                 // $redirect='html_showallproduct_template.php';
                 // require_once ("test_header.php");
+                sleep(4);
                 if(strpos($URL,'herokuapp.com')!=false){
                     echo"
                         <meta http-equiv='refresh' content='0; url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php' />
