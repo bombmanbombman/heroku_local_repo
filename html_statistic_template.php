@@ -25,11 +25,21 @@ if(strpos($URL,'herokuapp.com')){
   echo "<div>$URL</div>";
 }
 session_start();
-var_dump($_SESSION);
-echo '<br>';
+if(isset($_POST) && $_POST != false){
+  var_dump($_POST);
+  echo "post <br>";
+}
+if(isset($_COOKIE) && $_COOKIE != false){
+  var_dump($_COOKIE);
+  echo 'cookie <br>';
+}
+if(isset($_SESSION)  && $_SESSION != false){
+  var_dump($_SESSION);
+  echo 'session <br>';
+}
 require_once("html_navibar_template.php");
 if(!isset($_SESSION['user_id'])){
-  echo "session 傳送失敗<br>";
+  echo "<div id='echo1'>session 傳送失敗</div>";
   $redirect='html_login_template.php';
   require_once ('test_header.php');
   exit();
@@ -52,7 +62,7 @@ foreach($rows as $key0 => $subarray1){
 // var_dump($product_id_array);
 $num_rows=count($product_id_array);
 if($num_rows==0){
-  echo '您還沒有添加任何的貨號，請先回到用戶頁面添加新的貨號';
+  echo "<div id='echo2' >您還沒有添加任何的貨號，請先回到用戶頁面添加新的貨號<div>";
   $conn->close();
 }
 
@@ -193,13 +203,13 @@ foreach($product_id_array as $value){
 echo "
   <table class='table table-dark'>
     <tr>
-      <th scope='col'><span>貨號</span></th>
-      <th scope='col'><span>貨品簡介</span></th>
-      <th scope='col'><span>最後進貨時間</span></th>
-      <th scope='col'><span>進價(元)</span></th>
-      <th scope='col'><span>最後出售時間</span></th>
-      <th scope='col'><span>售價(元)</span></th>
-      <th scope='col'><span>庫存</span></th>
+      <th scope='col'><span id='echo3'>貨號</span></th>
+      <th scope='col'><span id='ech4'>貨品簡介</span></th>
+      <th scope='col'><span id='echo5'>最後進貨時間</span></th>
+      <th scope='col'><span id='echo6'>進價(元)</span></th>
+      <th scope='col'><span id='echo7'>最後出售時間</span></th>
+      <th scope='col'><span id='echo8'>售價(元)</span></th>
+      <th scope='col'><span id='echo9'>庫存</span></th>
     </tr>";
 foreach($product_id_array as $value){
   // var_dump($user_id);
@@ -218,22 +228,22 @@ foreach($product_id_array as $value){
     echo "<td scope='row'>$row[product_id]</td>";
     echo "<td scope='row'>$row[product_info]</td>";
     if($date_purchase_array[$value]==null){
-      echo "<td scope='row'><span>未入货</span></td>";
+      echo "<td scope='row'><span id='echo10'>未入货</span></td>";
     }else{
       echo "<td scope='row'>$date_purchase_array[$value]</td>";
     }
     if($purchase_cost_array[$value]==null){
-      echo "<td scope='row'><span>未入货</span></td>";
+      echo "<td scope='row'><span id='echo11'>未入货</span></td>";
     }else{
       echo "<td scope='row'>$purchase_cost_array[$value]</td>";
     }    
     if($date_sold_array[$value]==null){
-      echo "<td scope='row'><span>未售出</span></td>";
+      echo "<td scope='row'><span id='echo12'>未售出</span></td>";
     }else{
       echo "<td scope='row'>$date_sold_array[$value]</td>";
     }   
     if($price_array[$value]==null){
-      echo "<td scope='row'><span>未售出</span></td>";
+      echo "<td scope='row'><span id='echo13'>未售出</span></td>";
     }else{
       echo "<td scope='row'>$price_array[$value]</td>";
     }    
@@ -249,12 +259,13 @@ foreach($product_id_array as $value){
   echo "</table>";
 ?>
        <!--用於刪除session 中的 product_id_for_sale-->
-       <form action="html_showallproduct_template.php" method="post">
+       <!-- <form action="html_showallproduct_template.php" method="post">
         <input type="hidden" id='value4' value="來自statistics page" name="unset_product_id_for_purchase">
         <input type="hidden" id='value5' value="來自statistics page" name="unset_product_id_for_image">
-        <input type="hidden" id='value6' value="來自statistics page" name="unset_product_id_for_sale">
-        <input class='btn btn-warning'type="submit" id='value3' value="回到所有貨號頁面" >
-        </form>
+        <input type="hidden" id='value6' value="來自statistics page" name="unset_product_id_for_sale"> -->
+        <!-- <input class='btn btn-warning'type="submit" id='value3' value="回到所有貨號頁面" > -->
+        <a class='btn btn-warning' href='html_showallproduct_template.php' id='value3'>回到所有貨號頁面</a>
+        <!-- </form> -->
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_newsale_template.js"></script>
     </body>

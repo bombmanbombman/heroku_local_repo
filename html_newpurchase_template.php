@@ -299,9 +299,6 @@
                     <option value='XXL'>XXL</option>
                 </select>
             </div>
-            <br>
-            <br>
-            <br>
             <input type="submit" class='btn btn-info' id='value2'value="記錄這次的進貨数据。">
         </form>
         <br>

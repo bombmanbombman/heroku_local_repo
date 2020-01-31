@@ -762,7 +762,59 @@
 					"value25":"delete"
 				}
 			}
-		}
+		},
+		"html_statistic_template":{
+			"language":{
+				"japanese":{
+					"echo1":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
+					"echo2":"まだ仕入れしていませんので、前のページに戻ってください",
+					"echo3":"商品番号",
+					"echo4":"商品名",
+					"echo5":"最新の仕入れ",
+					"echo6":"仕入れ価格",
+					"echo7":"最新の販売",
+					"echo8":"販売価格",
+					"echo9":"在庫数",
+					"echo10":"なし",
+					"echo11":"なし",
+					"echo12":"なし",
+					"echo13":"なし",
+					"value3":"商品番号ページに戻ります"
+				},
+				"chinese":{
+					"echo1":"session 傳送失敗",
+					"echo2":"您還沒有添加任何的貨號，請先回到用戶頁面添加新的貨號",
+					"echo3":"貨號",
+					"echo4":"貨品簡介",
+					"echo5":"最後進貨時間",
+					"echo6":"進價(元)",
+					"echo7":"最後出售時間",
+					"echo8":"售價(元)",
+					"echo9":"庫存",
+					"echo10":"未入货",
+					"echo11":"未入货",
+					"echo12":"未售出",
+					"echo13":"未售出",
+					"value3":"回到所有貨號頁面"
+				},
+				"english":{
+					"echo1":"session retrieving failed, back to login page",
+					"echo2":"you have not create any itemID,please create first item",
+					"echo3":"itemID",
+					"echo4":"item name",
+					"echo5":"last purchase time",
+					"echo6":"purchase cost",
+					"echo7":"last sold time",
+					"echo8":"selling price",
+					"echo9":"stocking remain",
+					"echo10":"no record",
+					"echo11":"no record",
+					"echo12":"no record",
+					"echo13":"no record",
+					"value3":"back to previous page"
+				}
+			}
+		},
 	}
 }
 
