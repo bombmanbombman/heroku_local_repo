@@ -92,7 +92,7 @@ if(isset($_FILES['image_data'])){
 echo <<<_HEREDOC
 <form method='post' action='' enctype='multipart/form-data'>
 <input type='file' name='image_data'>
-<input type="submit" value='提交'>
+<input class='btn btn-warning' type="submit" value='提交'>
 _HEREDOC;
 
 

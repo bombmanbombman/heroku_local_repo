@@ -201,7 +201,7 @@ echo "
       <th scope='col'><span>進價(元)</span></th>
       <th scope='col'><span>最後出售時間</span></th>
       <th scope='col'><span>售價(元)</span></th>
-      <th scope='col'><span>庫存</span></th>\
+      <th scope='col'><span>庫存</span></th>
     </tr>";
 foreach($product_id_array as $value){
   // var_dump($user_id);
@@ -252,10 +252,10 @@ foreach($product_id_array as $value){
 ?>
        <!--用於刪除session 中的 product_id_for_sale-->
        <form action="html_showallproduct_template.php" method="post">
-        <input type="hidden" id='value4' value="回到所有貨號頁面" name="unset_product_id_for_purchase">
-        <input type="hidden" id='value5' value="回到所有貨號頁面" name="unset_product_id_for_image">
-        <input type="hidden" id='value6' value="回到所有貨號頁面" name="unset_product_id_for_sale">
-        <input type="submit" id='value3' value="回到所有貨號頁面" >
+        <input type="hidden" id='value4' value="來自statistics page" name="unset_product_id_for_purchase">
+        <input type="hidden" id='value5' value="來自statistics page" name="unset_product_id_for_image">
+        <input type="hidden" id='value6' value="來自statistics page" name="unset_product_id_for_sale">
+        <input class='btn btn-warning'type="submit" id='value3' value="回到所有貨號頁面" >
         </form>
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_newsale_template.js"></script>

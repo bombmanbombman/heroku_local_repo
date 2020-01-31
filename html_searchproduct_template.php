@@ -43,7 +43,7 @@ echo <<<_HEREDOC
 <form method = 'post' action=''>
 <label>請輸入要顯示詳情的貨號，進入進貨，賣出編輯頁面</label><br>
 <input type='number' min='1' max='9999999999' name='product_id'>
-<input type='submit' value='搜索'>
+<input type='submit' class='btn btn-warning' value='搜索'>
 </form>
 
 _HEREDOC;

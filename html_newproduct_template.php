@@ -191,7 +191,7 @@ require_once("html_navibar_template.php");
   <label id='echo3'>請輸入貨品的詳細信息</label><br>
   <textarea name='product_detail' maxlength='255' rows='4' cols='50'></textarea>
   <br><br>
-  <input id='value1' type='submit' value='創建新貨號'>
+  <input id='value1' class='btn btn-warning' type='submit' value='創建新貨號'>
   </form>
   <?php 
   //翻頁button

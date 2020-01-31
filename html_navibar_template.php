@@ -40,15 +40,15 @@ li a:hover {   /* hover時的style */
 <?php 
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
-  echo '<li><a class="navi" href="https://bombmanbombman-project1.herokuapp.com/html_userdetail_template.php">user detail page</a></li>';
-  echo '<li><a class="navi" href="https://bombmanbombman-project1.herokuapp.com/">sign out</a></li>';
+  echo "<li><a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/html_userdetail_template.php'>user detail page</a></li>";
+  echo "<li><a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/'>sign out</a></li>";
 }else{
-  echo '<li><a class="navi" href="html_userdetail_template.php">user detail page</a></li>';
-  echo '<li><a class="navi" href="index.php">sign out</a></li>';
+  echo "<li><a class='btn btn-info' href='html_userdetail_template.php'>user detail page</a></li>";
+  echo "<li><a class='btn btn-info' href='index.php'>sign out</a></li>";
 }
 ?>
   <!-- <li><a class='navi' href="">sign out</a></li> -->
-  <li><a class='navi' href="20200113.php">map</a></li>
+  <li><a class='btn btn-info' href='20200113.php'>map</a></li>
   <li id='time_table'></li>
   <!--float:right 取消display block，成為一條線 且擠在右邊-->
   <?php

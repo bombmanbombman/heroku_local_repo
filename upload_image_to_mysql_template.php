@@ -72,7 +72,7 @@ echo <<<_END
     <form method='post' action='$_SERVER[PHP_SELF]' 
     enctype='multipart/form-data'> 
 Select File:<input type='file' name='upload_file' size='10485760'><br> 
-            <input type='submit' value='Upload'> </form>
+            <input type='submit' class='btn btn-warning' value='Upload'> </form>
 _END;
 
 echo "</body></html>"; 

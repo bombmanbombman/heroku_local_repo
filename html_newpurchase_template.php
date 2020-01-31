@@ -298,13 +298,13 @@
             <br>
             <br>
             <br>
-            <input type="submit" id='value2'value="記錄這次的進貨数据。">
+            <input type="submit" class='btn btn-info' id='value2'value="記錄這次的進貨数据。">
         </form>
         <br>
         <br>
         <!--用於刪除session 中的 product_id_for_purchase-->
         <form action="html_showallproduct_template.php" method="post">
-            <input type="submit" id='value3'value="回到所有貨號頁面" 
+            <input type="submit" class='btn btn-warning' id='value3'value="回到所有貨號頁面" 
             name="unset_product_id_for_purchase">
         </form>
         <!-- <script id='google_api_js'src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&language=ja&callback=initMap" async defer></script> -->

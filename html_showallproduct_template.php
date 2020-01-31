@@ -150,7 +150,7 @@
         <form method="post" action='html_newpurchase_template.php'>
             <label id="echo25">為這個貨號添加進貨記錄</label><br>
             <input type='number' min='1' max='9999999999' name='product_id_for_purchase' required>
-            <input type='submit' id='value1' value='添加進貨記錄'>
+            <input type='submit' class='btn btn-secondary' id='value1' value='添加進貨記錄'>
         </form>
         <br>
         <hr>
@@ -158,14 +158,14 @@
             <label id="echo26">為這個貨號添加出售記錄</label>
             <br>
             <input type='number' min='1' max='9999999999' name='product_id_for_sale' required>
-            <input type='submit' id='value2' value='添加出售記錄'>
+            <input type='submit' class='btn btn-secondary' id='value2' value='添加出售記錄'>
         </form>
         <br>
         <hr>
         <label id="echo27">為這個貨號添加圖片或刪除圖片</label><br>
         <form method="post" action='html_marketimage_template.php'>
             <input type='number' min='1' max='9999999999' name='product_id_for_image' required>
-            <input type='submit' id='value3' value='添加圖片或刪除圖片'>
+            <input type='submit' class='btn btn-secondary' id='value3' value='添加圖片或刪除圖片'>
         </form>
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_showallproduct_template.js"></script>

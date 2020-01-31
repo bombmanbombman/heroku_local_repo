@@ -299,14 +299,14 @@
             <textarea name='customer_info' maxlength='255' rows='8' cols='50' value=''></textarea>
             <br>
             <br>
-            <input type="submit" id='value2' value="記錄這次的出售数据。">
+            <input type="submit"class='btn btn-success' id='value2' value="記錄這次的出售数据。">
         </form>
         <br>
         <br>
 
        <!--用於刪除session 中的 product_id_for_sale-->
         <form action="html_showallproduct_template.php" method="post">
-            <input type="submit" id='value3' value="回到所有貨號頁面" 
+            <input type="submit" class='btn btn-warning' id='value3' value="回到所有貨號頁面" 
             name="unset_product_id_for_sale">
         </form>
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>

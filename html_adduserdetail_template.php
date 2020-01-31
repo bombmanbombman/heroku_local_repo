@@ -83,7 +83,7 @@
             <input type='file' name='user_icon'>
             <br>
             <br>
-            <input id='value1' type='submit' value='決定'>
+            <input id='value1' class='btn btn-warning' type='submit' value='決定'>
         </form>
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src='html_adduserdetail_template.js'></script>

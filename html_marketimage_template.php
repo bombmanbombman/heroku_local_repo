@@ -157,7 +157,7 @@
                         </tr>
                         <tr class='$class'>
                             <td>
-                                <input type='submit' id='$value' class='delete ".$class."' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
+                                <input class='btn btn-danger'type='submit' id='$value' class='delete ".$class."' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
                             </td>
                         </tr>
                     </table>
@@ -191,14 +191,14 @@
                         </h4>
                         <textarea name='image_info' maxlength='255' rows='4' cols='40' value=''></textarea>
                         <br>
-                        <input type='submit' id='value2' name='image_data' value='上傳這張圖片。'>
+                        <input type='submit' class='btn btn-success' id='value2' name='image_data' value='上傳這張圖片。'>
                     </form>
                 ";
             }
             echo "
                 <!--用於刪除session 中的 product_id_for_image-->
                 <form action='html_showallproduct_template.php' method='post'>
-                    <input type='submit' id='value3' value='回到所有貨號頁面' name='unset_product_id_for_image'>
+                    <input type='submit' class='btn btn-warning' id='value3' value='回到所有貨號頁面' name='unset_product_id_for_image'>
                 </form>
             ";
         ?>
