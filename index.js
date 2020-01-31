@@ -20,6 +20,9 @@ $(function(){
         // "text-align":"center",
         "margin-right":"-76px"
     })
+    $("#tester").css({
+        "margin-right":"-45px"
+    })
     $('#async').css({
         // "text-align":"center",
         "margin-right":"-200px"
