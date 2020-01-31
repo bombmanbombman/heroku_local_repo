@@ -201,9 +201,11 @@
                 <!-- <form action='html_showallproduct_template.php' method='post'>
                     <input type='submit' class='btn btn-warning' id='value3' value='回到所有貨號頁面' name='unset_product_id_for_image'>
                 </form> -->
-                <a class='btn btn-warning' id='echo80' href='html_showallproduct_template.php'>
-                    商品番号ページに戻ります
-                </a>
+                <div>
+                    <a class='btn btn-warning' id='echo80' href='html_showallproduct_template.php'>
+                        商品番号ページに戻ります
+                    </a>
+                </div>
 
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_marketimage_template.js"></script>
