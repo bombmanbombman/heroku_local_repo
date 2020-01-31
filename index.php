@@ -21,7 +21,7 @@
             /* body{ */
                 /* width:100%; */
                 /* height:100%; */
-                /* background: url("/upload_compress/       background_rainbow1.png"); */
+                /* background: url("/upload_compress/background_rainbow1.png"); */
                 /* -webkit-background-size: 100%; */
                 /* -moz-background-size: 100%; */
                 /* -o-background-size: 100%; */
@@ -29,7 +29,7 @@
                 /* background-repeat:no-repeat; */
             /* } */
             /* #background{
-                background :url("/upload_compress/        background_water5.jpg");
+                background :url("/upload_compress/background_water5.jpg");
                 width:100%;
                 height:auto;
             } */

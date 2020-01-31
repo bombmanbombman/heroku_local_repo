@@ -162,6 +162,7 @@
 					"echo2":"あなたのメールボックスを入力してください、＠のマークは必ずつけてください。",
 					"echo3":"あなたの電話番号を入力してください、ハイフンは入れないでください。",
 					"echo4":"アバター画像をアップロード、または更新する。",
+					"echo5":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
 					"value1":"アップロードする"
 				},
 				"chinese":{
@@ -169,6 +170,7 @@
 					"echo2":"請輸入您的郵箱，中間必須帶有@的符號",
 					"echo3":"請輸入數字，不要自己添加‘-’來隔開",
 					"echo4":"創建或修改頭像",
+					"echo5":"session傳送失敗",
 					"value1":"上傳"
 				},
 				"english":{
@@ -176,6 +178,7 @@
 					"echo2":"please input you mail-box address,there need be @ mark in the middle of address",
 					"echo3":"please input your phone number,there is no need to add hiphen in the middle of number",
 					"echo4":"upload your first avatar image,or change current avatar image",
+					"echo5":"session retrieve failed,back to login page",
 					"value1":"submit"
 				}
 			}
