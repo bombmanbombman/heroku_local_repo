@@ -40,7 +40,7 @@
             }
             require_once("html_navibar_template.php");
             if(!isset($_SESSION['user_id'])){
-                echo "<div id='echo1'>session 傳送失敗</div>";
+                echo "<div id='echo1'>セッションの読み込みが失敗しました、ログイン画面に戻ります</div>";
                 $redirect='html_login_template.php';
                 require_once ('test_header.php');
                 exit();
@@ -87,12 +87,12 @@
             }
             // var_dump($COLID);
             if(!in_array($_SESSION['product_id_for_image'],$COLID)){
-                echo"<div id='echo2'>這個貨號不存在，請輸入有效的貨號</div>";
+                echo"<div id='echo2'>商品番号が存在しないため、前のページに戻ります</div>";
                 $redirect='html_showallproduct_template.php';
                 require_once ("test_header.php");
             }
             if($conn->connect_error){
-                echo "<div><span id='echo3'>無法連接數據庫，</span>$databasename <span id='echo4'>， 回到login畫面</span></div>";
+                echo "<div><span id='echo3'>データベース：</span>$databasename <span id='echo4'>， 接続エラー、ログイン画面に戻ります</span></div>";
                 require_once ('test_header.php');
                 exit();
             }
@@ -104,7 +104,7 @@
             $product_id=$_SESSION['product_id_for_image'];
             $stmt->bind_param('ii',$user_id,$product_id);
             if(!$stmt->execute()){
-                echo "<div id='echo5'>尋找對應用戶號失敗， 回到选择頁面</div>";
+                echo "<div id='echo5'>ユーザーIDの取得が失敗しました、前のページに戻ります</div>";
                 $redirect='html_showallproduct_template.php';
                 require_once('test_header.php');
                 exit();
@@ -115,16 +115,16 @@
                     <table class='table table-dark'>
                         <tr>
                             <th scope='col' >
-                                <span id='echo6'>貨號</span>
+                                <span id='echo6'>商品番号</span>
                             </th>
                             <th scope='col' >
-                                <span id='echo7'>進貨地點</span>
+                                <span id='echo7'>仕入先</span>
                             </th>
                             <th scope='col' >
-                                <span id='echo8'>貨品簡介</span>
+                                <span id='echo8'>商品名</span>
                             </th>
                             <th scope='col' >
-                                <span id='echo9'>貨品詳細</span>
+                                <span id='echo9'>商品詳細</span>
                             </th>
                         </tr>
                         <tr>
@@ -147,7 +147,7 @@
                     <table class='float_left ".$class."'>
                         <tr class='$class'>
                             <th class='thead-dark' scope='col' >
-                                <span id='$echo'>圖片編號</span> $all_image_id_of_this_product[$i]
+                                <span id='$echo'>画像番号</span> $all_image_id_of_this_product[$i]
                             </th>
                         </tr>
                         <tr class='$class'>
@@ -157,7 +157,7 @@
                         </tr>
                         <tr class='$class'>
                             <td>
-                                <button class='btn btn-danger' id='$class' class='.$class.' name='$all_image_id_of_this_product[$i]'>刪除圖片</button>
+                                <button class='btn btn-danger' id='$class' class='.$class.' name='$all_image_id_of_this_product[$i]'>削除</button>
                             </td>
                         </tr>
                     </table>
@@ -176,23 +176,23 @@
                 <div id='error_message'></div>
             ";
 
-            echo "<div id='echo11'>最左邊的圖片會作為縮略圖在 市場中顯示。</div>";
+            echo "<div id='echo11'>一番左端の画像はこの商品番号のカバーサムネとして使われています</div>";
             if($image_number_of_this_product>=6){
-                echo "<h3 id='echo12'>已經到達上傳圖片的數量限制，請刪除一些圖片</h3>";
+                echo "<h3 id='echo12'>この商品番号のアップロード画像数の上限に達するため、画像を削除してから、アップロードしましょう</h3>";
             }elseif($image_number_of_this_product<6){
                 echo "
                     <form method='post' action='html_submitredirect_template.php' enctype='multipart/form-data'>
-                        <label id='echo15'>請選擇上傳圖片，格式為jpg或png，每張20mb以下，解析度小於3000*3000</label>
+                        <label id='echo15'ファイルタイプはJPEG、またはPNG、一枚は２０ｍｂ以下、解像度は3000*3000以下です</label>
                         <br>
                         <input type='hidden' name='date_image'  value='' >
                         <input type='hidden' name='product_id_for_image' value=$product_id>
                         <input type='file' name='image_data' required><br>
                         <h4>
-                            <label id='echo16'>照片描述（選填）在market上顯示</label>
+                            <label id='echo16'>写真の説明を入力してください（オプション）</label>
                         </h4>
                         <textarea name='image_info' maxlength='255' rows='4' cols='40' value=''></textarea>
                         <br>
-                        <input type='submit' class='btn btn-success' id='value2' name='image_data' value='上傳這張圖片。'>
+                        <input type='submit' class='btn btn-success' id='value2' name='image_data' value='写真をアップロードする'>
                     </form>
                 ";
             }
@@ -202,7 +202,7 @@
                     <input type='submit' class='btn btn-warning' id='value3' value='回到所有貨號頁面' name='unset_product_id_for_image'>
                 </form> -->
                 <a class='btn btn-warning' id='echo80' href='html_showallproduct_template.php'>
-                    回到所有貨號頁面
+                    商品番号ページに戻ります
                 </a>
 
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
