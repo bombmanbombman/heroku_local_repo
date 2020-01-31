@@ -34,7 +34,7 @@
     <body>
         <?php
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-            if(strpos($URL,'herokuapp.com')){
+            if(strpos($URL,'herokuapp.com')!=false){
                 // echo "<div>$URL</div>";
             }else{
                 // echo "<div>$URL</div>";
@@ -101,7 +101,16 @@
                 unset($_SESSION['product_id_for_purchase']);
                 // $redirect='html_showallproduct_template.php';
                 // require_once ("test_header.php");
-                header("refresh:4;url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php");
+                if(strpos($URL,'herokuapp.com')!=false){
+                    echo"
+                        <meta http-equiv='refresh' content='0; url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php' />
+                    ";
+
+                }else{
+                    echo"
+                        <meta http-equiv='refresh' content='0; url=https://localhost/html_showallproduct_template.php' />
+                    ";
+                }
                 exit();
             }
             #顯示這個貨品的product table class='table table-dark'中的內容 一共 15 line
