@@ -5,10 +5,10 @@ $(function(){
         if($('.active').attr('id')=='japanese'){
             if(confirm('この写真を削除しますか？')){
                 console.log(e.target);
-                // console.log(e.target.parentElement);
-                // console.log(e.target.parentElement.parentElement);
-                // console.log(e.target.parentElement.parentElement.parentElement);
-                // console.log(e.target.parentElement.parentElement.parentElement.parentElement);
+                console.log(e.target.parentElement);
+                console.log(e.target.parentElement.parentElement);
+                console.log(e.target.parentElement.parentElement.parentElement);
+                console.log(e.target.parentElement.parentElement.parentElement.parentElement);
                 let $this=$(e.target.parentElement.parentElement.parentElement.parentElement);
                 let image_id =e.target.name;
                 let product_id = $('#product_id').html();
@@ -59,6 +59,8 @@ $(function(){
                             $('#error_message').text('sth wrong with database').show(0).hide(8000);
                         }
                     }
+                }).then(function(){
+                    if
                 }).fail(function(error){
                     console.log(error);
                 });
