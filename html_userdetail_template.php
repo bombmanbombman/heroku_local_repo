@@ -67,7 +67,7 @@
             require_once("html_navibar_template.php");
 
             if(!isset($_SESSION['user_id'])){
-                echo "session 傳送失敗<br>";
+                echo "<div id='echo11'>セッションの読み込みが失敗しました、ログイン画面に戻ります</div>";
                 $redirect='html_login_template.php';
                 require_once ('test_header.php');
                 exit();
@@ -94,26 +94,26 @@
             $user_icon=$row['user_icon'];
             echo "
                 <div>
-                    <span id='echo1'>歡迎用戶</span>
+                    <span id='echo1'>ユーザー名：</span>
                     <var>$user_name</var> 
-                    <span id='echo2'>回到本站。</span>
+                    <span id='echo2'>、本サイトへようこそ。</span>
                 </div>
                 ";
             if($user_icon != null){
                 echo '<img withd="80" height ="80" src="data:image/jpeg;base64,'.base64_encode($user_icon).'"/><br>';
             }else {
-                echo "<label id='echo3'>默認的頭像</label>";
+                echo "<label id='echo3'>デフォルトのアイコン</label>";
                 $no_icon = file_get_contents('upload_compress/no_face.png');
                 echo '<img withd="80" height ="80" src="data:image/jpeg;base64,'.base64_encode($no_icon).'"/><br>';
             }
             if($user_phone != null && $user_phone != '00000000000'){
                 // $_SESSION['user_phone']=$user_phone;
-                echo "<div><span id='echo4'>您的電話是 </span><var>$user_phone</var></div>";
-            }else echo "<div id='echo5'>您還未輸入電話</div>";
+                echo "<div><span id='echo4'>あなたの電話番号は：</span><var>$user_phone</var></div>";
+            }else echo "<div id='echo5'>まだ電話番号を入力していません</div>";
             if($user_email!= null){
                 // $_SESSION['user_email']=$user_email;
-                echo "<div><span id='echo6'>您的郵箱是 </span><var>$user_email</var></div>";
-            }else echo "<div id='echo7'>您還未輸入郵箱</div>";
+                echo "<div><span id='echo6'>あなたのメールボックスは：</span><var>$user_email</var></div>";
+            }else echo "<div id='echo7'>まだメールボックスを入力していません</div>";
 
             $query ='select product_id from product 
                         where user_id ='.$user_id;
@@ -134,11 +134,11 @@
             // if(isset($progress1)&&$progress1===true){
         ?>
 
-        <button id='button1'><h4 id='echo8'>補充修改用戶詳細信息</h4></button>
+        <button id='button1'><h4 id='echo8'>ユーザーの詳細情報を記入する</h4></button>
         <br>
         <br>
         <br>
-        <button id='button2'><h4 id='echo9'>添加新的貨品，輸入貨品基本信息</h4></button>
+        <button id='button2'><h4 id='echo9'>新しい仕入れ商品と仕入先を作成する</h4></button>
         <br>
         <br>
         <br>
@@ -146,7 +146,7 @@
             if(isset($progress2)&&$progress2===true){
                 // var_dump($progress2);
                 // var_dump($_SESSION['user_id']);
-                echo "<button id='button3'><h4 id='echo10'>進入全貨號管理頁面</h1></button>";
+                echo "<button id='button3'><h4 id='echo10'>今まで仕入れた商品の統計管理ページ</h1></button>";
             }
         ?>
         <script id='ref' defer async type='text/javascript'  src='html_template.js'></script>

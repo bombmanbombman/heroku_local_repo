@@ -124,7 +124,8 @@
 					"echo7":"まだメールボックスを入力していません",
 					"echo8":"ユーザーの詳細情報を記入する",
 					"echo9":"新しい仕入れ商品と仕入先を作成する",
-					"echo10":"今まで仕入れた商品の統計管理ページ"
+					"echo10":"今まで仕入れた商品の統計管理ページ",
+					"echo11":"セッションの読み込みが失敗しました、ログイン画面に戻ります"
 				},
 				"chinese":{
 					"echo1":"歡迎用戶",
@@ -136,7 +137,8 @@
 					"echo7":"您還未輸入郵箱",
 					"echo8":"補充修改用戶的詳細信息",
 					"echo9":"添加新的貨品，輸入貨品的名稱，購買地點，貨品描述",
-					"echo10":"進入全貨號管理頁面"
+					"echo10":"進入全貨號管理頁面",
+					"echo11":"session傳送失敗"
 				},
 				"english":{
 					"echo1":"welcome ",
@@ -148,7 +150,8 @@
 					"echo7":"you have not input mail-box address",
 					"echo8":"Adding individual detail information",
 					"echo9":"Adding new purchased item name,purchased location,and description",
-					"echo10":"all purchased items statistic page"
+					"echo10":"all purchased items statistic page",
+					"echo11":"session retrieve failed,back to login page"
 				}
 			}
 		},
