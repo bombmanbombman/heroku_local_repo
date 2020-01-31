@@ -5,6 +5,8 @@ $(function(){
         if($('.active').attr('id')=='japanese'){
             if(confirm('この写真を削除しますか？')){
                 console.log(e.target);
+                jqtarget=$(e.target);
+                console.log(jqtarget.attr('id'));
                 console.log(e.target.parentElement);
                 console.log(e.target.parentElement.parentElement);
                 console.log(e.target.parentElement.parentElement.parentElement);
@@ -60,7 +62,7 @@ $(function(){
                         }
                     }
                 }).then(function(){
-                    
+                    // if(jqtarget.attr('id'))
                 }).fail(function(error){
                     console.log(error);
                 });
