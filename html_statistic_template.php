@@ -191,8 +191,18 @@ foreach($product_id_array as $value){
 
 #試驗 使用 $product_id_array ，$date_purchase_array,$purchase_cost_array,$date_sold_array,$price_array,$remain_product_number 一共 48 line
 // var_dump($product_id_array);
-echo "<br><table><tr><th>貨號</th><th>貨品簡介</th><th>最後進貨時間</th>
-<th>進價(元)</th><th>最後出售時間</th><th>售價(元)</th><th>庫存</th></tr>";
+echo "
+  <br>
+  <table>
+    <tr>
+      <th><span>貨號</span></th>
+      <th><span>貨品簡介</span></th>
+      <th><span>最後進貨時間</span></th>
+      <th><span>進價(元)</span></th>
+      <th><span>最後出售時間</span></th>
+      <th><span>售價(元)</span></th>
+      <th><span>庫存</span></th>\
+    </tr>";
 foreach($product_id_array as $value){
   // var_dump($user_id);
   // var_dump($value);
@@ -210,22 +220,22 @@ foreach($product_id_array as $value){
     echo "<td>$row[product_id]</td>";
     echo "<td>$row[product_info]</td>";
     if($date_purchase_array[$value]==null){
-      echo "<td>未入货</td>";
+      echo "<td><span>未入货</span></td>";
     }else{
       echo "<td>$date_purchase_array[$value]</td>";
     }
     if($purchase_cost_array[$value]==null){
-      echo "<td>未入货</td>";
+      echo "<td><span>未入货</span></td>";
     }else{
       echo "<td>$purchase_cost_array[$value]</td>";
     }    
     if($date_sold_array[$value]==null){
-      echo "<td>未售出</td>";
+      echo "<td><span>未售出</span></td>";
     }else{
       echo "<td>$date_sold_array[$value]</td>";
     }   
     if($price_array[$value]==null){
-      echo "<td>未售出</td>";
+      echo "<td><span>未售出</span></td>";
     }else{
       echo "<td>$price_array[$value]</td>";
     }    
@@ -239,9 +249,6 @@ foreach($product_id_array as $value){
     echo "</tr>";
 }
   echo "</table>";
-
-
-
 ?>
        <!--用於刪除session 中的 product_id_for_sale-->
        <form action="html_showallproduct_template.php" method="post">
