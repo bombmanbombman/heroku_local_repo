@@ -244,6 +244,7 @@
 					"echo25":"特定の商品番号を入力して、その商品をもう一度仕入れする",
 					"echo26":"特定の商品番号を入力して、その商品の出荷記録を作る",
 					"echo27":"特定の商品番号を入力して、その商品の画像ファイルを添付する、又は削除する",
+					"echo28":"在庫数管理",
 					"value1":"決定",
 					"value2":"決定",
 					"value3":"決定",
@@ -260,7 +261,7 @@
 					"echo111":"仕入れ場所",
 					"echo112":"商品名",
 					"echo113":"仕入れ時間",
-					"echo114":"仕入れ価格",
+					"echo114":"仕入れ価格 円",
 					"echo115":"仕入れ数",
 					"echo116":"仕入れサイズ"
 				},
@@ -292,6 +293,7 @@
 					"echo25":"添加進貨記錄",
 					"echo26":"添加出售記錄",
 					"echo27":"添加商品圖像",
+					"echo28":"在庫管理",
 					"value1":"決定",
 					"value2":"決定",
 					"value3":"決定",
@@ -340,6 +342,7 @@
 					"echo25":"input purchasing ID to repeat purchasing the same item again",
 					"echo26":"input purchasing ID to adding selling record for specific item",
 					"echo27":"input purchasing ID to adding or delete picture for specific item",
+					"echo28":"stock number",
 					"value1":"ENTER",
 					"value2":"ENTER",
 					"value3":"ENTER",
@@ -553,7 +556,8 @@
 					"echo28":"サイズ　オプション",
 					"value1":"サイズを選択してください",
 					"value2":"仕入れ記録を作成",
-					"value3":"商品番号ページに戻ります"
+					"value3":"商品番号ページに戻ります",
+					"echo80":"商品番号ページに戻ります"
 				},
 				"chinese":{
 					"echo1":"session傳送失敗",
@@ -586,7 +590,8 @@
 					"echo28":"尺碼（選填）",
 					"value1":"請選擇尺碼",
 					"value2":"記錄進貨數據",
-					"value3":"回到已有貨號頁面"
+					"value3":"回到已有貨號頁面",
+					"echo80":"回到已有貨號頁面"
 				},
 				"english":{
 					"echo1":"seesion retrieve error,back to login page",
@@ -619,7 +624,8 @@
 					"echo28":"size (option)",
 					"value1":"please select purchased item size",
 					"value2":"save purchase recoard",
-					"value3":"back to itemID page"
+					"value3":"back to itemID page",
+					"echo80":"back to itemID page"
 				}
 			}
 		},
