@@ -109,11 +109,14 @@ const googleMap = new Vue({
           zoom: 16,
           scaleControl:true
         });
-        change_switch = true;
-        if(typeof(click_switch)==='undefined'){click_switch=false;}
-        else if(click_switch==true){
-          // $('#show_map').empty()
-          location.reload();
+        $('#search').on('focus',function(e){
+          change_switch = true;
+          if(typeof(click_switch)==='undefined'){click_switch=false;}
+          else if(click_switch==true){
+            // $('#show_map').empty()
+            location.reload();
+        })
+        
           // $.ajax({
           //   url:"html_newproduct_template3.php"
           // }).done(function(data){
