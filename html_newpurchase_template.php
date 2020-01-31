@@ -106,7 +106,6 @@
                     echo"
                         <meta http-equiv='refresh' content='0; url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php' />
                     ";
-
                 }else{
                     echo"
                         <meta http-equiv='refresh' content='0; url=https://localhost/html_showallproduct_template.php' />
