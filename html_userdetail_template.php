@@ -103,7 +103,7 @@
                 echo '<img withd="80" height ="80" src="data:image/jpeg;base64,'.base64_encode($user_icon).'"/><br>';
             }else {
                 echo "<label id='echo3'>默認的頭像</label>";
-                $no_icon = file_get_contents('C:/xampp/htdocs/laravelFolder/resources/views/learning_php/upload_compress/no_face.png');
+                $no_icon = file_get_contents('upload_compress/no_face.png');
                 echo '<img withd="80" height ="80" src="data:image/jpeg;base64,'.base64_encode($no_icon).'"/><br>';
             }
             if($user_phone != null && $user_phone != '00000000000'){
