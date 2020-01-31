@@ -133,10 +133,10 @@ require_once("html_navibar_template.php");
         <div class="col google-map">
           <h5>
             auto complete Search：
-            <button class='btn btn-danger' id='echo8'>取得現在地</button>
+            <button class='btn btn-danger' id='echo8'>現在地を取得</button>
           </h5>
           <div class="form-group">
-            <input id='search'type="text" class="form-control" ref="site" v-model="site">
+            <input id='value3'type="text" class="form-control" ref="site" v-model="site" value='場所を入力'>
           </div>
         </div>
       </div>
@@ -145,14 +145,14 @@ require_once("html_navibar_template.php");
         <!-- 用於change event -->
         <div id="map1"class="row">
           <div class="col google-map">
-              <h5>Google Map：</h5>
+              <h5 id='echo9'>日本地図限定</h5>
             <div id="map" class="embed-responsive embed-responsive-16by9"></div>
           </div>
         </div>
         <!-- 用於click event -->
         <div id="map2"class="row" style="display:none">
           <div class="col google-map">
-              <h5>Google Map：</h5>
+              <h5 id='echo11'>日本地図限定</h5>
             <div id="map" class="embed-responsive embed-responsive-16by9"></div>
           </div>
         </div>
@@ -161,7 +161,7 @@ require_once("html_navibar_template.php");
       <!-- 放評論摘要的div -->
       <div id='comment' class="row" v-if="place != null">
         <div class="col" v-if="place.reviews != null">
-          <h5>評論：</h5>
+          <h5 id='echo10'>コメント部分</h5>
           <div class="row" v-for="p in place.reviews">
             <div class="col">
               <ul class="list-unstyled">
@@ -185,23 +185,23 @@ require_once("html_navibar_template.php");
   <!-- <form method='post' action='<?php echo $_SERVER["PHP_SELF"];?>'> -->
   <form method='post' action='html_newproduct_submit.php'>
     <div class='form-group'>
-      <label class='form-text text-muted' id='echo1'>請輸入進貨的地點</label>
-      <input class='form-control' id='value2' type='text' name='buy_place' size='40'required>
+      <label class='form-text text-muted' id='echo1'>仕入れ場所を入力してください</label>
+      <input class='form-control' id='value4' type='text' name='buy_place' size='40'required>
     </div>
     <div class='form-group'>
       <input id='latitude' type='hidden' name='latitude'>
       <input id='longitude' type='hidden' name='longitude'>
-      <label class='form-text text-muted' id='echo2'>請輸入貨品的簡要信息</label>
+      <label class='form-text text-muted' id='echo2'>仕入れ商品名を入力してください</label>
       <input class='form-control' type='text' name='product_info' size='40'required>
     </div>
     <div class='form-group'>
-      <label class='form-text text-muted' id='echo3'>請輸入貨品的詳細信息</label>
+      <label class='form-text text-muted' id='echo3'>仕入れ商品詳細を入力してください</label>
       <textarea class='form-control' name='product_detail' maxlength='255' rows='4' cols='50'></textarea>
-      <input id='value1' class='btn btn-warning' type='submit' value='創建新貨號'>
+      <input id='value1' class='btn btn-warning' type='submit' value='新しい商品番号を作成する'>
     </div>
   </form>
   <form action="html_userdetail_template.php" method="post">
-    <input type="submit" class='btn btn-secondary' id='value10'value="回到user page" 
+    <input type="submit" class='btn btn-secondary' id='value2'value="ユーザーページに戻ります" 
             name="unset_product_id_for_purchase">
   </form>
   <?php 

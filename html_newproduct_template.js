@@ -85,7 +85,7 @@ const googleMap = new Vue({
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
-      $('#search').on('click',function(e){
+      $('#value1').on('click',function(e){
         console.log(e.target);
         window.initMap;
         if(typeof(click_switch)==='undefined'){

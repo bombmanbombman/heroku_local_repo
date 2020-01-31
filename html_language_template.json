@@ -181,36 +181,51 @@
 			"language":{
 				"japanese":{
 					"echo1":"仕入れ場所を入力してください",
-					"echo2":"仕入れ商品の簡略情報を入力してください",
-					"echo3":"仕入れ商品の詳細情報を入力してください",
-					"value1":"新しい商品番号を作成する",
+					"echo2":"仕入れ商品名を入力してください",
+					"echo3":"仕入れ商品詳細を入力してください",
 					"echo4":"セッションの読み込みが失敗しました、ログイン画面に戻ります",
 					"echo5":"データベース：",
 					"echo6":"に接続が失敗しました、ログイン画面に戻ります",
 					"echo7":"商品番号の作成が失敗しました、ログイン画面に戻ります",
-					"echo8":"現在地"
+					"echo8":"現在地を取得",
+					"echo9":"日本地図限定",
+					"echo10":"コメント部分",
+					"echo11":"日本地図限定",
+					"value1":"新しい商品番号を作成する",
+					"value2":"ユーザーページに戻ります",
+					"value3":"場所を入力"
 				},
 				"chinese":{
 					"echo1":"請輸入進貨的地點",
 					"echo2":"請輸入貨品的簡要信息",
 					"echo3":"請輸入貨品的詳細信息",
-					"value1":"創建新貨號",
 					"echo4":"session傳送失敗",
 					"echo5":"無法連接數據庫：",
 					"echo6":"回到註冊頁面",
 					"echo7":"添加新貨號失敗，回到註冊頁面",
-					"echo8":"取得現在地"
+					"echo8":"取得現在地",
+					"echo9":"日本地圖",
+					"echo10":"評論部分",
+					"echo11":"日本地圖",
+					"value1":"創建新貨號",
+					"value2":"回到用戶頁面",
+					"value3":"請輸入地址名"
 				},
 				"english":{
 					"echo1":"please input purchasing address for this item",
 					"echo2":"please input brief info for this item",
 					"echo3":"please input detail info for this item",
-					"value1":"creating new purchase ID",
 					"echo4":"seesion retrieve error",
 					"echo5":"unable to access database:",
 					"echo6":",back to login page.",
 					"echo7":"unable to create new purchase ID,back to login page.",
-					"echo8":"current place"
+					"echo8":"current place",
+					"echo9":"japanese Map",
+					"echo10":"comment section",
+					"echo11":"japanese Map",
+					"value1":"create new itemID"
+					"value2":"back to user page"
+					"value3":"please input location"
 				}
 			}
 		},
