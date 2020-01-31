@@ -25,22 +25,22 @@
         <?php
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             if(strpos($URL,'herokuapp.com')){
-                // echo "<div>$URL</div>";
+                echo "<div>$URL</div>";
             }else{
-                // echo "<div>$URL</div>";
+                echo "<div>$URL</div>";
             }
             session_start();
             if(isset($_POST) && $_POST != false){
-                // var_dump($_POST);
-                // echo "post <br>";
+                var_dump($_POST);
+                echo "post <br>";
             }
             if(isset($_COOKIE)){
-                // var_dump($_COOKIE);
-                // echo 'cookie <br>';
+                var_dump($_COOKIE);
+                echo 'cookie <br>';
             }
             if(isset($_SESSION)){
-                // var_dump($_SESSION);
-                // echo 'session <br>';
+                var_dump($_SESSION);
+                echo 'session <br>';
             }
             require_once('html_navibar_template.php');
             if(!isset($_SESSION['user_id'])){
@@ -63,13 +63,13 @@
             $user_icon=$row['user_icon'];
         ?>
         <hr>
-        <h6 id='echo1'>電話號碼，郵箱，可以幫助你找回並重設密碼</h6>
+        <h6 id='echo1'>電話番号とメールボックスはパスワードが忘れたとき、パスワードをリセットすることに使います。</h6>
         <form method='post' action='html_adduserdetail_submit.php' enctype='multipart/form-data'>
-            <label id='echo2'>請輸入您的郵箱，中間必須帶有@的符號。</label>
+            <label id='echo2'>あなたのメールボックスを入力してください、＠のマークは必ずつけてください。</label>
             <br>
             <input type='eamil' style='width:300px;' value='<?php echo $user_email?>' name='user_email'>
             <br>
-            <label id='echo3'>請輸入數字，不要自己添加'-'來隔開</label>
+            <label id='echo3'>あなたの電話番号を入力してください、ハイフンは入れないでください</label>
             <br>
             <input type='tel' value='<?php echo $user_phone?>' pattern="^\d{11}$" 
         maxlength ='11' name='user_phone' >
@@ -79,7 +79,7 @@
                     echo $_SESSION['post_error_message']."<br>";
                 }else {echo "<br><br>";}
             ?>
-            <label id='echo4'>創建或修改頭像</label>
+            <label id='echo4'>アバター画像をアップロード、または更新する</label>
             <br>
             <input type='file' name='user_icon'>
             <br>
@@ -89,7 +89,7 @@
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src='html_adduserdetail_template.js'></script>
     </body>
-</!DOCTYPE>
+</html>
 
 
 
