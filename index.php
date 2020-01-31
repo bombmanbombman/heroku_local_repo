@@ -118,7 +118,7 @@
                     <a id='english' class="dropdown-item"   href="#">english</a> 
                 </div> 
             </div>
-            <div id='welcome' class='display1 warning'></div>
+            <div id='welcome' class='display-1 text-warning'></div>
             <!-- <div id='background'></div> -->
             <!-- google signin api content -->
             <section id='flex_container' class='d-flex flex-column'style="color:white;font:bold;font-size:15px;">
