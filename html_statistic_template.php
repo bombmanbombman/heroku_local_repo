@@ -193,15 +193,15 @@ foreach($product_id_array as $value){
 // var_dump($product_id_array);
 echo "
   <br>
-  <table>
+  <table class='table table-dark'>
     <tr>
-      <th><span>貨號</span></th>
-      <th><span>貨品簡介</span></th>
-      <th><span>最後進貨時間</span></th>
-      <th><span>進價(元)</span></th>
-      <th><span>最後出售時間</span></th>
-      <th><span>售價(元)</span></th>
-      <th><span>庫存</span></th>\
+      <th scope='col'><span>貨號</span></th>
+      <th scope='col'><span>貨品簡介</span></th>
+      <th scope='col'><span>最後進貨時間</span></th>
+      <th scope='col'><span>進價(元)</span></th>
+      <th scope='col'><span>最後出售時間</span></th>
+      <th scope='col'><span>售價(元)</span></th>
+      <th scope='col'><span>庫存</span></th>\
     </tr>";
 foreach($product_id_array as $value){
   // var_dump($user_id);
@@ -217,33 +217,33 @@ foreach($product_id_array as $value){
   if(!$stmt)echo($conn->error);
   while($row=$stmt->fetch_assoc()){
     echo "<tr>";
-    echo "<td>$row[product_id]</td>";
-    echo "<td>$row[product_info]</td>";
+    echo "<td scope='row'>$row[product_id]</td>";
+    echo "<td scope='row'>$row[product_info]</td>";
     if($date_purchase_array[$value]==null){
-      echo "<td><span>未入货</span></td>";
+      echo "<td scope='row'><span>未入货</span></td>";
     }else{
-      echo "<td>$date_purchase_array[$value]</td>";
+      echo "<td scope='row'>$date_purchase_array[$value]</td>";
     }
     if($purchase_cost_array[$value]==null){
-      echo "<td><span>未入货</span></td>";
+      echo "<td scope='row'><span>未入货</span></td>";
     }else{
-      echo "<td>$purchase_cost_array[$value]</td>";
+      echo "<td scope='row'>$purchase_cost_array[$value]</td>";
     }    
     if($date_sold_array[$value]==null){
-      echo "<td><span>未售出</span></td>";
+      echo "<td scope='row'><span>未售出</span></td>";
     }else{
-      echo "<td>$date_sold_array[$value]</td>";
+      echo "<td scope='row'>$date_sold_array[$value]</td>";
     }   
     if($price_array[$value]==null){
-      echo "<td><span>未售出</span></td>";
+      echo "<td scope='row'><span>未售出</span></td>";
     }else{
-      echo "<td>$price_array[$value]</td>";
+      echo "<td scope='row'>$price_array[$value]</td>";
     }    
     if($remain_product_number[$value]!=null){
-      echo "<td>$remain_product_number[$value]</td>";
+      echo "<td scope='row'>$remain_product_number[$value]</td>";
     }
     if($remain_product_number[$value]==null&&$remain_product_number[$value]==0){
-      echo "<td>0</td>";
+      echo "<td scope='row'>0</td>";
     }
   }
     echo "</tr>";
