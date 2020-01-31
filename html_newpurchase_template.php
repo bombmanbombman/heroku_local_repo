@@ -75,7 +75,7 @@
                 <div id='map' ></div>
             ";
             if(!isset($_SESSION['user_id'])){
-                echo "<div id='echo1'>session 傳送失敗</div>";
+                echo "<div id='echo1'>セッションの読み込みが失敗しました、ログイン画面に戻ります</div>";
                 $redirect='html_login_template.php';
                 require_once ('test_header.php');
                 exit();
@@ -97,7 +97,7 @@
 
             // var_dump($all_product_id_in_product);
             if(!in_array($_SESSION['product_id_for_purchase'],$all_product_id_in_product)){
-                echo"<div id='echo2'>這個貨號不存在，請輸入有效的貨號</div>";
+                echo"<div id='echo2'>商品番号が存在しないため、前のページに戻ります</div>";
                 unset($_SESSION['product_id_for_purchase']);
                 $redirect='html_showallproduct_template.php';
                 require_once ("test_header.php");
@@ -111,16 +111,16 @@
                 <table class='table table-dark'>
                     <tr>
                         <th>
-                            <span id='echo3'>貨號</span>
+                            <span id='echo3'>商品番号</span>
                         </th>
                         <th>
-                            <span id='echo4'>進貨地點</span>
+                            <span id='echo4'>仕入れ場所</span>
                         </th>
                         <th>
-                            <span id='echo5'>貨品簡介</span>
+                            <span id='echo5'>商品名</span>
                         </th>
                         <th>
-                            <span id='echo6'>貨品詳細</span>
+                            <span id='echo6'>詳細情報</span>
                         </th>
                     </tr>";
             while($row=$stmt->fetch_assoc()){
@@ -148,10 +148,10 @@
             }
             // var_dump($all_product_id_in_purchase);
             if(in_array($_SESSION['product_id_for_purchase'],$all_product_id_in_purchase)){
-                echo"<div id='echo7'>已經對這個貨號進過貨。</div>";
+                echo"<div id='echo7'>仕入れ記録があり</div>";
                 $progress1=true;
             }else{
-                echo "<div id='echo8'>還沒有對這個貨號進過貨</div>";
+                echo "<div id='echo8'>仕入れ記録がありません、はじめの仕入れ記録を作成してください</div>";
             }
             #尋找product_id_for_purchase是否也存在與sale table class='table table-dark'中  一共18行 
             $query ='select product_id from sale 
@@ -167,10 +167,10 @@
             }
             // var_dump($all_product_id_in_sale);
             if(in_array($_SESSION['product_id_for_purchase'],$all_product_id_in_sale)){
-                echo"<div id='echo9'>這個貨號有出售記錄。</div>";
+                echo"<div id='echo9'>出荷記録があり</div>";
                 $progress2=true;
             }else{
-                echo "<div id='echo10'>這個貨號還沒有成交過。</div>";
+                echo "<div id='echo10'>出荷記録がありません</div>";
             }
 
             #如果已經進過貨，那麼顯示更詳細的內容 顯示最近期的10筆購入記錄  26 line
@@ -186,23 +186,23 @@
                 $stmt=$conn->query($query);
                 if(!$stmt)echo($conn->error);
                 echo "<br>
-                <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
+                <label id='echo11'>最近10件仕入れ記録</label><br>
                 <table class='table table-dark'>
                     <tr>
                         <th>
-                            <span id='echo12'>進貨編號</span>
+                            <span id='echo12'>仕入れ番号</span>
                         </th>
                         <th>
-                            <span id='echo13'>進貨日期</span>
+                            <span id='echo13'>仕入れ時間</span>
                         </th>
                         <th>
-                            <span id='echo14'>進貨價格</>
+                            <span id='echo14'>仕入れ価格</>
                         </th>
                         <th>
-                            <span id='echo15'>進貨數量</span>
+                            <span id='echo15'>仕入れ数</span>
                         </th>
                         <th>
-                            <span id='echo16'>進貨尺碼</span>
+                            <span id='echo16'>仕入れサイズ</span>
                         </th>
                     </tr>";
                 while($row=$stmt->fetch_assoc()){
@@ -229,23 +229,23 @@
                     $stmt=$conn->query($query);
                     if(!$stmt)echo($conn->error);
                     echo "<br>
-                    <label id='echo17'>出售記錄，僅僅顯示最近的10筆</label><br>
+                    <label id='echo17'>最近10件出荷記録</label><br>
                     <table class='table table-dark'>
                         <tr>
                             <th scope='col'>
-                                <span id='echo18'>出售編號</span>
+                                <span id='echo18'>出荷番号</span>
                             </th>
                             <th scope='col'>
-                                <span id='echo19'>出售日期</span>
+                                <span id='echo19'>出荷時間</span>
                             </th>
                             <th scope='col'>
-                                <span id='echo20'>出售價格</span>
+                                <span id='echo20'>出荷価格</span>
                             </th>
                             <th scope='col'>
-                                <span id='echo21'>客戶描述</span>
+                                <span id='echo21'>客の情報</span>
                             </th>
                             <th scope='col'>
-                                <span id='echo22'>售出尺碼</span>
+                                <span id='echo22'>売れたサイズ</span>
                             </th>
                         </tr>";
                     while($row=$stmt->fetch_assoc()){
@@ -273,24 +273,24 @@
                     // webshims.setOptions("forms-ext", {types: "date"});
                     // webshims.polyfill("forms forms-ext");
                 </script>
-                <label class='form-text text-muted' id='echo23'>進貨的具體時間,如果為空，自動載入當前時間</label>
+                <label class='form-text text-muted' id='echo23'>仕入れ時間の入力、未入力まだは一部記入の場合は現在時刻が上書きされる</label>
                 <input class='form-control' id='datetime-local'type="datetime-local" name="date_purchase" size="40" value=''>
             </div>
             <div class='form-group'>
-                <label class='form-text text-muted'id='echo24'>一件的入貨價格</label>
+                <label class='form-text text-muted'id='echo24'>一着あたりの仕入れ価格</label>
                 <input type="number" name="purchase_cost" min='1' max="99999999" size="40" required>
-            <span id='echo25'>元/件</span>
+            <span id='echo25'>円/一着</span>
             </div>
             <div class='form-group'>
-                <label class='form-text text-muted' id='echo26'>這個商品入貨了幾件</label>
+                <label class='form-text text-muted' id='echo26'>今回の仕入れ数</label>
                 <input type="number" name="purchase_number" min='1' max="99999999" size="40"    required>
-                <span id='echo27'>件</span>
+                <span id='echo27'>着</span>
             </div>
             <div class='form-group'>
                 <input type="hidden" name='product_id_for_purchase' value='0'>
-                <label class='form-text text-muted' id='echo28'>尺碼（選填）</label>
+                <label class='form-text text-muted' id='echo28'>サイズ　オプション</label>
                 <select class='form-control' name='purchase_size'>
-                    <option id='value1' value=''>新選擇尺碼</option>
+                    <option id='value1' value=''>サイズを選択してください</option>
                     <option value='XXXS'>XXXS</option>
                     <option value='XXS'>XXS</option>
                     <option value='XS'>XS</option>
@@ -301,7 +301,7 @@
                     <option value='XXL'>XXL</option>
                 </select>
             </div>
-            <input type="submit" class='btn btn-info' id='value2'value="記錄這次的進貨数据。">
+            <input type="submit" class='btn btn-info' id='value2'value="仕入れ記録を作成">
         </form>
         <br>
         <br>
@@ -311,7 +311,7 @@
             name="unset_product_id_for_purchase">
         </form> -->
         <a class='btn btn-warning' id='echo80' href='html_showallproduct_template.php'>
-            回到所有貨號頁面
+            商品番号ページに戻ります
         </a>
         <!-- <script id='google_api_js'src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&language=ja&callback=initMap" async defer></script> -->
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
