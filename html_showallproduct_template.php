@@ -168,14 +168,14 @@
         <hr>
         <label id='echo23'>輸入上面顯示的貨號，添加進貨記錄，出售記錄，圖片</label>
         <br>
-        <form method="post" action='html_newpurchase_template.php'>
+        <form method="post" action='html_newpurchase_template.php' >
             <label id="echo25">為這個貨號添加進貨記錄</label><br>
             <input type='number' min='1' max='9999999999' name='product_id_for_purchase' required>
             <input type='submit' class='btn btn-secondary' id='value1' value='添加進貨記錄'>
         </form>
         <br>
         <hr>
-        <form method="post" action='html_newsale_template.php'>
+        <form method="post" action='html_newsale_template.php' >
             <label id="echo26">為這個貨號添加出售記錄</label>
             <br>
             <input type='number' min='1' max='9999999999' name='product_id_for_sale' required>
@@ -184,7 +184,7 @@
         <br>
         <hr>
         <label id="echo27">為這個貨號添加圖片或刪除圖片</label><br>
-        <form method="post" action='html_marketimage_template.php'>
+        <form method="post" action='html_marketimage_template.php' >
             <input type='number' min='1' max='9999999999' name='product_id_for_image' required>
             <input type='submit' class='btn btn-secondary' id='value3' value='添加圖片或刪除圖片'>
         </form>

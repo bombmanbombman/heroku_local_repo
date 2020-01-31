@@ -136,9 +136,9 @@
                     </table>
                 ";
             }
-            echo "
-                <form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>
-                ";
+            // echo "
+                // <form id='form_for_delete' action ='html_deleteimage_template.php' method = 'post'>
+                // ";
             for($i=0;$i<$image_number_of_this_product;$i++){
                 $echo = "echo".($i+20);
                 $value = "value".($i+20);
@@ -157,14 +157,14 @@
                         </tr>
                         <tr class='$class'>
                             <td>
-                                <input class='btn btn-danger'type='submit' id='$value' class='delete ".$class."' name='$all_image_id_of_this_product[$i]' value='刪除圖片'>
+                                <button class='btn btn-danger' id='$class' class='.$class.' name='$all_image_id_of_this_product[$i]'>刪除圖片</button>
                             </td>
                         </tr>
                     </table>
                 ";
             }
+            // echo "</form>";
             echo "
-                </form>
                 <span class='clear_float'></span>
                 <hr>
                 <br>

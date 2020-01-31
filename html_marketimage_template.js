@@ -1,6 +1,6 @@
 $(function(){
-    $('input.delete').on('click',function(e){
-        e.preventDefault();
+    $("[id^=class]").on('click',function(e){
+        // e.preventDefault();
         console.log($('.active').attr('id'));
         if($('.active').attr('id')=='japanese'){
             if(confirm('この写真を削除しますか？')){
