@@ -1,3 +1,22 @@
+<html>
+    <head>
+        <meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+        <meta content='utf-8' http-equiv='encoding'>
+        <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+        <title>new sale page</title>
+        <link id='bootstrap' type='text/css' rel='stylesheet' href='bootstrap-4.4.1-dist/css/bootstrap.min.css'>
+        <script id='jquery' src='jquery-3.4.1.js'></script>
+        <!-- ripple effect library -->
+        <script src='jquery.ripples.js'></script>
+        <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script> 
+        <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
+        <script id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
+        <script id='vue' src='vue.min.js'></script>
+        <!-- firefox date support plugin -->
+        <script id='polyfiller'src='polyfiller.js'></script>
+    </head>
+    <body>
+
 <?php
 $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 if(strpos($URL,'herokuapp.com')){
@@ -224,5 +243,16 @@ foreach($product_id_array as $value){
 
 
 ?>
+       <!--用於刪除session 中的 product_id_for_sale-->
+       <form action="html_showallproduct_template.php" method="post">
+        <input type="hidden" id='value4' value="回到所有貨號頁面" name="unset_product_id_for_purchase">
+        <input type="hidden" id='value5' value="回到所有貨號頁面" name="unset_product_id_for_image">
+        <input type="hidden" id='value6' value="回到所有貨號頁面" name="unset_product_id_for_sale">
+        <input type="submit" id='value3' value="回到所有貨號頁面" >
+        </form>
+        <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
+        <script id='js' defer async type=text/javascript src="html_newsale_template.js"></script>
+    </body>
+</html> 
 
 

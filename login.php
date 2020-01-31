@@ -157,13 +157,25 @@
             $all_product_id[]=$row;
             // var_dump($row);
         }
-        echo "<table><tr><th><span id='echo105'>貨號</span></th></  tr>";
+        echo "
+            <table class='table table-dark'>
+                <tr>
+                    <th scope='col'>
+                        <span id='echo105'>貨號</span>
+                    </th>
+                </tr>";
         foreach($all_product_id as $key0 => $subarray1){
-            echo "<tr><th>";
+            echo "
+                <tr>
+                    <td scope='row'>
+            ";
             foreach($subarray1 as $key1 => $value1){
                 echo "$value1";
             }
-            echo "</th></tr>";
+            echo "
+                </td>
+                    </tr>
+            ";
         }
         echo "</table>";
     }
@@ -186,18 +198,18 @@
         $product_table[]=$row;
         }
         echo "
-            <table>
+            <table class='table table-dark'>
                 <tr>
-                    <th>
+                    <th scope='col'>
                         <span id='echo106'>貨號</span>
                     </ th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo107'>購買地址</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span  id='echo108'>貨品簡介</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo109'>貨品 詳細</span>
                     </th>
                 </tr>
@@ -207,7 +219,7 @@
                 <tr>
             ";
             foreach($subarray1 as $key1 => $value1){
-                echo "<th>".$value1."</th>";
+                echo "<td scope='row'>".$value1."</td>";
             }
             echo "
                 </tr>
@@ -235,27 +247,27 @@
             $product_purchase_table[]=$rows;
         }
         echo "
-            <table>
+            <table class='table table-dark'>
                 <tr>
-                    <th>
+                    <th scope='col'>
                         <span id='echo110'>貨號</span>
                     </ th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo111'>購買地址</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo112'>貨品簡介</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo113'>進貨日期</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo114'>進貨價格（元）</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo115'>進貨件數</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo116'>商品尺寸</span>
                     </th>
                 </tr>";
@@ -264,7 +276,7 @@
                 <tr>
             ";
             foreach($subarray1 as $key1 => $value1){
-                echo "<th>".$value1."</th>";
+                echo "<td scope='row'>".$value1."</td>";
             }
             echo "
                 </tr>

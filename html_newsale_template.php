@@ -90,32 +90,32 @@
             $stmt=$conn->query($query);
             if(!$stmt)echo($conn->error);
             echo "
-            <table class='table table-striped'>
+            <table class='table table-dark'>
                 <tr>
-                    <th>
+                    <th scope='col'>
                         <span id='echo3'>貨號</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo4'>進貨地點</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo5'>貨品簡介</span>
                     </th>
-                    <th>
+                    <th scope='col'>
                         <span id='echo6'>貨品詳細</span>
                     </th>
                 </tr>";
             while($row=$stmt->fetch_assoc()){
                 echo"
                 <tr>
-                    <td>$row[product_id]</td>
-                    <td>$row[buy_place]</td>
-                    <td>$row[product_info]</td>
-                    <td>$row[product_detail]</td>
+                    <td scope='row'>$row[product_id]</td>
+                    <td scope='row'>$row[buy_place]</td>
+                    <td scope='row'>$row[product_info]</td>
+                    <td scope='row'>$row[product_detail]</td>
                 </tr>
                 ";
             }
-            echo "</table class='table table-striped'>";
+            echo "</table class='table table-dark'>";
             #尋找product_id_for_sale是否也存在與purchase table中  一共18行 
             $query ='select product_id from purchase 
                                 where user_id ='.$user_id;
@@ -173,37 +173,37 @@
                 if(!$stmt)echo($conn->error);
                 echo "<br>
                 <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
-                <table class='table table-striped'>
+                <table class='table table-dark'>
                     <tr>
-                        <th>
+                        <th scope='col'>
                             <span id='echo12'>進貨編號</span>
                         </th>
-                        <th>
+                        <th scope='col'>
                             <span id='echo13'>進貨日期</span>
                         </th>
-                        <th>
+                        <th scope='col'>
                             <span id='echo14'>進貨價格</span>
                         </th>
-                        <th>
+                        <th scope='col'>
                             <span id='echo15'>進貨數量</span>
                         </th>
-                        <th>
+                        <th scope='col'>
                             <span id='echo16'>進貨尺碼</span>
                         </th>
                     </tr>";
                 while($row=$stmt->fetch_assoc()){
                     echo "
                         <tr>
-                            <th>$row[purchase_id]</th>
-                            <th>$row[date_purchase]</th>
-                            <th>$row[purchase_cost]</th>
-                            <th>$row[purchase_number]</th>
-                            <th>$row[purchase_size]</th>
+                            <td scope='row'>$row[purchase_id]</td>
+                            <td scope='row'>$row[date_purchase]</td>
+                            <td scope='row'>$row[purchase_cost]</td>
+                            <td scope='row'>$row[purchase_number]</td>
+                            <td scope='row'>$row[purchase_size]</td>
                         </tr>
                     ";
                 }
                 #如果已經出售過，顯示最近10筆交易記錄   27 line
-                echo "</table class='table table-striped'>";
+                echo "</table class='table table-dark'>";
                 if(isset($progress2)&&$progress2===true){
                     $query = 'select b.sale_id,
                     b.date_sold,b.price,b.customer_info,b.sold_size 
@@ -218,21 +218,21 @@
                         <br>
                         <label id='echo17'>出售記錄，僅僅顯示最近的10筆</label>
                         <br>
-                        <table class='table table-striped'>
+                        <table class='table table-dark'>
                             <tr>
-                                <th>
+                                <th scope='col'>
                                     <span id='echo18'>出售編號</span>
                                 </th>
-                                <th>
+                                <th scope='col'>
                                     <span id='echo19'>出售日期</span>
                                 </th>
-                                <th>
+                                <th scope='col'>
                                     <span id='echo20'>出售價格</span>
                                 </th>
-                                <th>
+                                <th scope='col'>
                                     <span id='echo21'>客戶描述</span>
                                 </th>
-                                <th>
+                                <th scope='col'>
                                     <span id='echo22'>售出尺碼</span>
                                 </th>
                             </tr>
@@ -240,15 +240,15 @@
                     while($row=$stmt->fetch_assoc()){
                         echo"
                             <tr>
-                                <th>$row[sale_id]</th>
-                                <th>$row[date_sold]</th>
-                                <th>$row[price]</th>
-                                <th>$row[customer_info]</th>
-                                <th>$row[sold_size]</th>
+                                <td scope='row'>$row[sale_id]</td>
+                                <td scope='row'>$row[date_sold]</td>
+                                <td scope='row'>$row[price]</td>
+                                <td scope='row'>$row[customer_info]</td>
+                                <td scope='row'>$row[sold_size]</td>
                             </tr>
                         ";
                     }
-                    echo "</table class='table table-striped'>";
+                    echo "</table class='table table-dark'>";
                 }
             }
 
@@ -304,7 +304,7 @@
         <br>
         <br>
 
-        <!--用於刪除session 中的 product_id_for_sale-->
+       <!--用於刪除session 中的 product_id_for_sale-->
         <form action="html_showallproduct_template.php" method="post">
             <input type="submit" id='value3' value="回到所有貨號頁面" 
             name="unset_product_id_for_sale">
@@ -312,5 +312,5 @@
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_newsale_template.js"></script>
     </body>
-</html>
+</html> 
 

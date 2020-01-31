@@ -42,20 +42,26 @@
             }
             #處理從 html_newpurchase 點擊來這個頁面的重複session問題。 一共 3 line
             if(isset($_POST['unset_product_id_for_purchase'])){
+                unset($_POST['unset_product_id_for_purchase']);
                 unset($_SESSION['product_id_for_purchase']);
             }
             #處理從 html_newsale 點擊來這個頁面的重複session問題。 一共 3 line
             if(isset($_POST['unset_product_id_for_sale'])){
+                unset($_POST['unset_product_id_for_sale']);
                 unset($_SESSION['product_id_for_sale']);
             }
             #處理從 html_marketimage 點擊來這個頁面的重複session問題。 一共 3 line
             if(isset($_POST['unset_product_id_for_image'])){
+                unset($_POST['unset_product_id_for_image']);
                 unset($_SESSION['product_id_for_image']);
             }
             // var_dump($_GET);
             require_once("html_navibar_template.php");
             require_once('css_dropupbutton_template.php');
-
+            if(isset($_SESSION)){
+                var_dump($_SESSION);
+                echo 'session <br>';
+            }
             if(!isset($_SESSION['user_id'])){
                 echo "<div id='echo17'>session 傳送失敗</div>";
                 $redirect='html_login_template.php';

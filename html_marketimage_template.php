@@ -8,13 +8,13 @@
                 clear:both;
             }
         </style>
-        <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
+        <link id='bootstrap' type='text/css' rel='stylesheet' href='bootstrap-4.4.1-dist/css/bootstrap.min.css'>
         <script id='jquery' src='jquery-3.4.1.js'></script>
         <!-- ripple effect library -->
         <script src='jquery.ripples.js'></script>
-        <script id='bootstrap_js' src='/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
+        <script id='bootstrap_js' src='bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js'></script>
         <script id='jquery_ui' src='jquery-ui-1.12.min.js'></script>
-        <script id='jquery_cookie' src='/jquery-cookie-master/src/jquery.cookie.js'></script>
+        <script id='jquery_cookie' src='jquery-cookie-master/src/jquery.cookie.js'></script>
         <script id='vue' src='vue.min.js'></script>
     </head>
     <body> 
@@ -112,26 +112,26 @@
             $result_stmt=$stmt->get_result();
             while($row=$result_stmt->fetch_assoc()){
                 echo "
-                    <table>
+                    <table class='table table-dark'>
                         <tr>
-                            <th>
+                            <th scope='col' >
                                 <span id='echo6'>貨號</span>
                             </th>
-                            <th>
+                            <th scope='col' >
                                 <span id='echo7'>進貨地點</span>
                             </th>
-                            <th>
+                            <th scope='col' >
                                 <span id='echo8'>貨品簡介</span>
                             </th>
-                            <th>
+                            <th scope='col' >
                                 <span id='echo9'>貨品詳細</span>
                             </th>
                         </tr>
                         <tr>
-                            <th id='product_id'>$row[product_id]</th>
-                            <th>$row[buy_place]</th>
-                            <th>$row[product_info]</th>
-                            <th>$row[product_detail]</th>
+                            <td scope='row' id='product_id'>$row[product_id]</td>
+                            <td scope='row'>$row[buy_place]</td>
+                            <td scope='row'>$row[product_info]</td>
+                            <td scope='row'>$row[product_detail]</td>
                         </tr>
                     </table>
                 ";
@@ -146,12 +146,12 @@
                 echo "
                     <table class='float_left ".$class."'>
                         <tr class='$class'>
-                            <th>
+                            <th class='thead-dark' scope='col' >
                                 <span id='$echo'>圖片編號</span> $all_image_id_of_this_product[$i]
                             </th>
                         </tr>
                         <tr class='$class'>
-                            <td>
+                            <td scope='row'>
                                 <img height='80' width='80 'src='data:image/jpeg;base64,".base64_encode($all_image_data_of_this_product[$i])."'/>
                             </td>
                         </tr>

@@ -51,7 +51,17 @@ if(strpos($URL,'herokuapp.com')){
   <li><a class='navi' href="20200113.php">map</a></li>
   <li id='time_table'></li>
   <!--float:right 取消display block，成為一條線 且擠在右邊-->
-  <li style="float:right">
+  <?php
+    if($_SESSION['user_id']===1){
+      echo "
+        <li id='admin' style='float:right'>
+      ";
+    }else{
+      echo "
+      <li id='admin' style='display:none'>
+      ";
+    }
+  ?>
     <select name='forma' onchange="location = this.value">
       <option value="select">select page</option>
       <option value ="backup_sql_exec.php">備份database</option>
