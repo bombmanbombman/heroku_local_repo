@@ -3,8 +3,11 @@
         <title>new purchase page</title>
         <style>
             #map {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
                 height: 50%;
-                width:50%;
+                width: 80%;
             }
             /* Optional: Makes the sample page fill the window. */
             html, body {
@@ -65,6 +68,10 @@
                 var_dump(setcookie('longitude',$row['longitude'],time()+120,'/'));
             }
             require_once("html_navibar_template.php");
+            #google map 部分
+            echo"
+                <div id='map' ></div>
+            ";
             if(!isset($_SESSION['user_id'])){
                 echo "<div id='echo1'>session 傳送失敗</div>";
                 $redirect='html_login_template.php';
@@ -125,14 +132,6 @@
                 ";
             }
             echo "</table class='table table-dark'>";
-            #google map 部分
-            echo"
-            <section id='show_map'>
-                <div id='map'></div>
-                <hr>
-            </section>
-            ";
-
             #尋找product_id_for_purchase是否也存在與purchase table class='table table-dark'中  一共18行 
             $query ='select product_id from purchase 
                 where user_id ='.$user_id;
@@ -268,9 +267,9 @@
         <form method="post" action="html_submitredirect_template.php">
             <!-- <form method="post" action=""> -->
             <div class='form-group'>
-                <script>
-                    webshims.setOptions("forms-ext", {types: "date"});
-                    webshims.polyfill("forms forms-ext");
+                <script id='webshims'>
+                    // webshims.setOptions("forms-ext", {types: "date"});
+                    // webshims.polyfill("forms forms-ext");
                 </script>
                 <label class='form-text text-muted' id='echo23'>進貨的具體時間,如果為空，自動載入當前時間</label>
                 <input class='form-control' id='datetime-local'type="datetime-local" name="date_purchase" size="40" value=''>
@@ -316,7 +315,7 @@
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type='text/javascript' src='html_newpurchase_template.js'></script>
         <section id='google_map_js'>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap" async defer></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&region=JP&language=ja&callback=initMap"" async defer></script>
             <!-- <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&language=ja&callback=initMap" async defer></script> -->
         <!-- <script async defer src='google_map.js'></script> -->
         </section>
