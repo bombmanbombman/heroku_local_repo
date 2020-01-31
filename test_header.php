@@ -12,7 +12,7 @@
     //檢查 URL中是否有herokuapp.com
   // echo $URL;
   // echo strpos($URL,'localhost:3000');
-  if(strpos($URL,'herokuapp.com')){
+  if(strpos($URL,'herokuapp.com')!=false){
     //heroku用
     switch($redirect){
       case 'root_directory':
@@ -51,7 +51,7 @@
       default:
       header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
     }
-  }else if(strpos($URL,'host:8012')){
+  }else if(strpos($URL,'host/')!=false){
     //xampp 用
     switch($redirect){
       case 'root_directory':
@@ -90,7 +90,7 @@
       header("refresh:$wait_time;url=http://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php");
     }
   }
-  else if(strpos($URL,'host:3000')){
+  else if(strpos($URL,'host:3000')!=false||strpos($URL,'host:5500')!=false){
     //localhost:3000 用
     switch($redirect){
       case 'root_directory':
