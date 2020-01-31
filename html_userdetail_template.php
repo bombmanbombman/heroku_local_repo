@@ -90,9 +90,6 @@
             $row=$stmt1->fetch_assoc();
             $user_icon=$row['user_icon'];
             echo "
-                <br>
-                <br>
-                <br>
                 <div>
                     <span id='echo1'>歡迎用戶</span>
                     <var>$user_name</var> 

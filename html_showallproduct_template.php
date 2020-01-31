@@ -70,7 +70,6 @@
             }else{
                 require_once('login.php');
                 $user_id=$_SESSION['user_id'];
-                echo "<br><br><br>";
                 $query ='select product_id from product where user_id ='.$user_id;
                 $result=$conn->query($query);
                 $product_rows=$result->num_rows;
@@ -93,14 +92,25 @@
                     }
                     if($total_product_id>20){
                         if(isset($total_page_number)&&$total_page_number!=1){
-                            echo '<div class="dropup">
-                            <button id="echo9" class="dropbtn">翻頁</button>
-                            <div class="dropup-content">';
+                            echo '
+                                <div class="dropup">
+                                    <button id="echo9" class="dropbtn">翻頁</button>
+                                    <div class="dropup-content">
+                            ';
                             for($i=7;$i<=$total_page_number&&$i>0;$i--){
-                                echo "<a href='html_showallproduct_template.php?page_number=$i'><span id='echo20'>第</span> $i <span id='echo21'>頁</span></a><br>";
+                                echo "
+                                    <a href='html_showallproduct_template.php?page_number=$i'>
+                                        <span id='echo20'>第</span>
+                                         $i 
+                                        <span id='echo21'>頁</span>
+                                    </a>
+                                    <br>
+                                ";
                             }
-                            echo '  </div>
-                            </div>';
+                            echo '
+                                    </div>
+                                </div>
+                            ';
                             // var_dump($_GET['page_number']);
                         }
                         if(!isset($_GET['page_number'])){
@@ -147,7 +157,6 @@
             <h3 id='echo28'>進入庫存統計</h3>
         </button>
         <hr>
-        <br>
         <label id='echo23'>輸入上面顯示的貨號，添加進貨記錄，出售記錄，圖片</label>
         <br>
         <form method="post" action='html_newpurchase_template.php'>

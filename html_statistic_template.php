@@ -50,7 +50,6 @@ foreach($rows as $key0 => $subarray1){
   }
 }
 // var_dump($product_id_array);
-echo "<br><br>";
 $num_rows=count($product_id_array);
 if($num_rows==0){
   echo '您還沒有添加任何的貨號，請先回到用戶頁面添加新的貨號';
@@ -192,7 +191,6 @@ foreach($product_id_array as $value){
 #試驗 使用 $product_id_array ，$date_purchase_array,$purchase_cost_array,$date_sold_array,$price_array,$remain_product_number 一共 48 line
 // var_dump($product_id_array);
 echo "
-  <br>
   <table class='table table-dark'>
     <tr>
       <th scope='col'><span>貨號</span></th>
