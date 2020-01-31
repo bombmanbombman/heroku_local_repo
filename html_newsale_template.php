@@ -66,7 +66,6 @@
             if(isset($_POST['product_id_for_sale'])&&$_POST['product_id_for_sale']!=0){
                 $_SESSION['product_id_for_sale']=$_POST['product_id_for_sale'];
             }
-            echo "<br><br><br>";
             #尋找product_id_for_sale是否存在product table中 一共15行。
             $query ='select product_id from product where user_id ='.$user_id;
             $result=$conn->query($query);
@@ -171,26 +170,27 @@
                 limit 10';
                 $stmt=$conn->query($query);
                 if(!$stmt)echo($conn->error);
-                echo "<br>
-                <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
-                <table class='table table-dark'>
-                    <tr>
-                        <th scope='col'>
-                            <span id='echo12'>進貨編號</span>
-                        </th>
-                        <th scope='col'>
-                            <span id='echo13'>進貨日期</span>
-                        </th>
-                        <th scope='col'>
-                            <span id='echo14'>進貨價格</span>
-                        </th>
-                        <th scope='col'>
-                            <span id='echo15'>進貨數量</span>
-                        </th>
-                        <th scope='col'>
-                            <span id='echo16'>進貨尺碼</span>
-                        </th>
-                    </tr>";
+                echo "
+                    <hr>
+                    <label id='echo11'>進貨記錄，僅僅顯示最近的10筆</label><br>
+                    <table class='table table-dark'>
+                        <tr>
+                            <th scope='col'>
+                                <span id='echo12'>進貨編號</span>
+                            </th>
+                            <th scope='col'>
+                                <span id='echo13'>進貨日期</span>
+                            </th>
+                            <th scope='col'>
+                                <span id='echo14'>進貨價格</span>
+                            </th>
+                            <th scope='col'>
+                                <span id='echo15'>進貨數量</span>
+                            </th>
+                            <th scope='col'>
+                                <span id='echo16'>進貨尺碼</span>
+                            </th>
+                        </tr>";
                 while($row=$stmt->fetch_assoc()){
                     echo "
                         <tr>
@@ -215,7 +215,7 @@
                     $stmt=$conn->query($query);
                     if(!$stmt)echo($conn->error);
                     echo "
-                        <br>
+                        <hr>
                         <label id='echo17'>出售記錄，僅僅顯示最近的10筆</label>
                         <br>
                         <table class='table table-dark'>
@@ -281,7 +281,7 @@
             <div class='form-group'>
                 <input type="hidden" name='product_id_for_sale' value='0'>
                 <label class='form-text text-muted' id='echo25'>出售尺碼（選填）</label>
-                <select name='sold_size'>
+                <select class='form-control' name='sold_size'>
                     <option id='echo28' value='' >請選擇尺碼</option>
                     <option value='XXXS'>XXXS</option>
                     <option value='XXS'>XXS</option>
@@ -293,9 +293,6 @@
                     <option value='XXL'>XXL</option>
                 </select>
             </div>
-            <br>
-            <br>
-            <br>
             <div class='form-group'>
             <label class='form-text text-muted' id='echo27'>客戶描述（選填）</label>
             <textarea class='form-control form-control-sm' name='customer_info' maxlength='255' rows='8' cols='50' value=''></textarea>
