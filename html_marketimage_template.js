@@ -60,7 +60,7 @@ $(function(){
                         }
                     }
                 }).then(function(){
-                    if
+                    
                 }).fail(function(error){
                     console.log(error);
                 });
