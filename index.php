@@ -118,7 +118,7 @@
                     <a id='english' class="dropdown-item"   href="#">english</a> 
                 </div> 
             </div>
-            <div id='welcome' class='display-1 text-warning'></div>
+            <div><span  id='welcome' class='display-1 text-warning'></span></div>
             <!-- <div id='background'></div> -->
             <!-- google signin api content -->
             <section id='flex_container' class='d-flex flex-column'style="color:white;font:bold;font-size:15px;">
@@ -132,7 +132,7 @@
                 <form id='index_submit' action ='index_submit.php' method = 'post'>
                     <div class="d-flex justify-content-center">
                         <label id='echo1'>ユーザー名</label>
-                        <input id='user_name'type='text' name='user_name'   required >
+                        <input id='user_name'type='text' name ='user_name'   required >
                     </div>
                     <div class="d-flex justify-content-center">
                         <label id='echo2'>パスワード</label>
@@ -158,12 +158,12 @@
                             <label id='echo4'>アルファベットと数字だけて入力してください</label><br>
                             <div class='align' style='width:190px'>
                                 <label id='echo5'>新　ユーザー名</label>
-                                <input id='new_user_name' type="text"                         name="user_name" required><br>
+                                <input id='new_user_name' type="text" name="user_name" required><br>
                             </div>
                             <div class='align' style='width:190px'>
                                 <label id='echo6'>パスワード</label>
-                                <input id='new_user_password' type="password"                         maxlength='12' name="user_password" required><br>
-                                <input  class='btn btn-dark'                      id='value1'type="submit" value="提交"><br>
+                                <input id='new_user_password' type="password" maxlength='12' name="user_password" required><br>
+                                <input  class='btn btn-dark' id='value1'type="submit" value="提交"><br>
                             </div>
                         </form>
                         <div id='error_message2'></div>
