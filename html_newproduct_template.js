@@ -63,6 +63,10 @@ const googleMap = new Vue({
               position:geo_loc,
               map:this.map
             });
+            $('#value2').val('現在地||current place');
+            $('#latitude').val(position.coords.latitude);
+            $('#longitude').val(position.coords.longitude);
+            console.log($('*'));
             // infoWindow.setPosition(pos);
             // infoWindow.setContent('現在地');
             // infoWindow.open(this.map);
@@ -191,7 +195,7 @@ const googleMap = new Vue({
           
           //獲得坐標，名稱
           console.log(this.place.name);
-          $('#place_name').val(this.place.formatted_address);
+          $('#value2').val(this.place.formatted_address);
           $('#latitude').val(this.place.geometry.location.lat());
           $('#longitude').val(this.place.geometry.location.lng());
           console.log($('*'));

@@ -130,7 +130,7 @@ require_once("html_navibar_template.php");
         <div class="col google-map">
           <h5>
             auto complete Search：
-            <button id='echo8'>取得現在地</button>
+            <button class='btn btn-danger' id='echo8'>取得現在地</button>
           </h5>
           <div class="form-group">
             <input id='search'type="text" class="form-control" ref="site" v-model="site">
@@ -146,7 +146,6 @@ require_once("html_navibar_template.php");
             <div id="map" class="embed-responsive embed-responsive-16by9"></div>
           </div>
         </div>
-        <hr>
         <!-- 用於click event -->
         <div id="map2"class="row" style="display:none">
           <div class="col google-map">
@@ -184,7 +183,7 @@ require_once("html_navibar_template.php");
   <form method='post' action='html_newproduct_submit.php'>
     <div class='form-group'>
       <label class='form-text text-muted' id='echo1'>請輸入進貨的地點</label>
-      <input class='form-control' id='place_name' type='text' name='buy_place' size='40'required>
+      <input class='form-control' id='value2' type='text' name='buy_place' size='40'required>
     </div>
     <div class='form-group'>
       <input id='latitude' type='hidden' name='latitude'>
