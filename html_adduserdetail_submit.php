@@ -49,7 +49,7 @@
                 if(!$stmt){
                     $_SESSION['post_error_message']=$conn->error."這個電話號碼已經被別人登錄過了，請選擇其他號碼<br>";
                     echo "<div>".$_SESSION['post_error_message']."||error1</div>";
-                    // header('location:html_adduserdetail_template.php');
+                    header('location:html_adduserdetail_template.php');
                     exit();
                 }
                 $query = "update user set user_phone=lpad( user_phone ,11,'0') 
@@ -59,7 +59,7 @@
                 if(!$stmt){
                     $_SESSION['post_error_message']=$conn->error."這個電話號碼已經被別人登錄過了，請選擇其他號碼<br>";
                     echo "<div>".$_SESSION['post_error_message']."||error2</div>";
-                    // header('location:html_adduserdetail_template.php');
+                    header('location:html_adduserdetail_template.php');
                     exit();
                 }
             }
@@ -70,7 +70,7 @@
                 if(!$stmt){
                     $_SESSION['post_error_message']=$conn->error."這個電話號碼已經被別人登錄過了，請選擇其他號碼<br>";
                     echo "<div>".$_SESSION['post_error_message']."||error3</div>";
-                    // header('location:html_adduserdetail_template.php');
+                    header('location:html_adduserdetail_template.php');
                     exit();
                 }
             }
@@ -85,7 +85,7 @@
             if(!$stmt){
                 $_SESSION['post_error_message']=$conn->error."這個郵箱地址已經被別人登錄過了，請選擇其他郵箱<br>";
                 echo "<div>".$_SESSION['post_error_message']."||error4</div>";
-                // header('location:html_adduserdetail_template.php');
+                header('location:html_adduserdetail_template.php');
                     exit();
             }
         }
@@ -95,7 +95,7 @@
                 $_SESSION['post_error_message']='這不是圖片文件，請上傳圖片文件。';
                 $redirect='html_adduserdetail_template.php';
                 echo "<div>".$_SESSION['post_error_message']."||error5</div>";
-                // require_once('test_header.php');
+                require_once('test_header.php');
             }
             #檢驗圖片格式 共62 line
             if(isset($_FILES['user_icon'])){
@@ -156,7 +156,7 @@
                 if(isset($response['message'])){
                     $_SESSION['post_error_message']=$response['message'];
                     echo "<div>".$_SESSION['post_error_message']."error6</div>";
-                    // header('location:html_adduserdetail_template.php');
+                    header('location:html_adduserdetail_template.php');
                     exit();
                 }
             }
@@ -165,7 +165,7 @@
             if(!$stmt){
                 $_SESSION['post_error_message']=$conn->error;
                 echo "<div>".$_SESSION['post_error_message']."||error7</div>";
-                // require_once('test_header.php');
+                require_once('test_header.php');
                 exit();
             }
 
@@ -191,7 +191,7 @@
             if(!$stmt){
                 $_SESSION['post_error_message']=$conn->error."update query failed 回到用戶頁面";
                 echo "<div>".$_SESSION['post_error_message']."||error8</div>";
-                // require_once('test_header.php');
+                require_once('test_header.php');
                 exit();
             }
             $user_icon_id= $user_id;
@@ -200,11 +200,11 @@
             if(!$stmt->execute()){
                 $_SESSION['post_error_message']=$conn->error.'添加頭像失敗，回到用戶頁面';
                 echo "<div>".$_SESSION['post_error_message']."||error9</div>";
-                // require_once ('test_header.php');
+                require_once ('test_header.php');
                 exit();
             }
         }
-        // header('location:html_userdetail_template.php');
+        header('location:html_userdetail_template.php');
         exit();
     }
 ?>
