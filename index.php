@@ -124,7 +124,7 @@
                 <div class="d-flex justify-content-center">
                     <div id='google_sign_in' class="g-signin2 " data-onsuccess="onSignIn" data-theme="dark"></div>
                     <br>
-                    <button id='admin' class="align-items-start">login as admin</button>
+                    <button id='tester' class="btn btn-success align-items-start">login as tester</button>
                 </div class="d-flex justify-content-center">
                 <!-- <form  action ='index.php' method = 'post'> -->
                 <form id='index_submit' action ='index_submit.php' method = 'post'>
