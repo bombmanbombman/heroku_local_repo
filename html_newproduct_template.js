@@ -24,6 +24,7 @@ const googleMap = new Vue({
         map:this.map
       });
       $('#echo8').on('click',function(){
+        click_switch = true;
         $.ajax({
           url:"html_newproduct_template2.php"
         }).done(function(data){
@@ -38,7 +39,6 @@ const googleMap = new Vue({
           zoom: 16,
           scaleControl:true
         });
-        click_switch = true;
         $('#show_map').empty()
 
         // if(typeof(change_switch)==='undefined'){change_switch=false;}
@@ -85,13 +85,14 @@ const googleMap = new Vue({
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
-      $('#search').on('focus',function(e){
+      $('#search').on('click',function(e){
         console.log(e.target);
+        window.initMap;
         if(typeof(click_switch)==='undefined'){
           click_switch=false;
-        }else if(click_switch==true){
-          $('#google_map_js').remove('#google_api_js');
-          $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&libraries=places&callback=initMap");
+        }
+        if(click_switch==true){
+          location.reload;
         }
       })
       this.map = new google.maps.Map(document.getElementById('map'), {
@@ -109,41 +110,7 @@ const googleMap = new Vue({
           zoom: 16,
           scaleControl:true
         });
-        $('#search').on('focus',function(e){
-          change_switch = true;
-          if(typeof(click_switch)==='undefined'){click_switch=false;}
-          else if(click_switch==true){
-            // $('#show_map').empty()
-            location.reload();
-        })
-        
-          // $.ajax({
-          //   url:"html_newproduct_template3.php"
-          // }).done(function(data){
-          //   console.log(data);
-          //   console.log(typeof(data));
-          //   $("#show_map").html(data);
-          // }).fail(function(error){
-          //   console.log(error);
-          // });
-          this.map = new google.maps.Map(document.getElementById('map'), {
-            center: geo_loc,
-            zoom: 16,
-            scaleControl:true
-          });
-          let options = {
-            componentRestrictions: { country: 'jp' } // 限制在日本範圍
-          };
-          this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
-          console.log(this.autocomplete);
-          this.place = this.autocomplete.getPlace();
-          // location.reload();
-          // $("#map2").attr('display','none');
-          // $("#map1").removeAttr('display');
-          // $("#map2").fadeToggle(0);
-          // $("#map1").fadeToggle(1000);
-          click_switch = false;
-        }
+        change_switch = true;
         this.map = new google.maps.Map(document.getElementById('map'), {
           center: geo_loc,
           zoom: 16,
