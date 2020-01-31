@@ -19,17 +19,17 @@
         <?php
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             if(strpos($URL,'herokuapp.com')){
-                echo "<div>$URL</div>";
+                // echo "<div>$URL</div>";
             }else{
-                echo "<div>$URL</div>";
+                // echo "<div>$URL</div>";
             }
             if(isset($_POST) && $_POST != false){
-                var_dump($_POST);
+                // var_dump($_POST);
                 if(isset($_POST['date_sold'])&&$_POST['date_sold']==null){
                     date_default_timezone_set('Asia/Shanghai');
                     $current_time=date('Y-m-d H:i:s');
                     $_POST['date_sold']=$current_time;
-                    echo "<div>var_dump($_POST[date_sold]) null</div>";
+                    // echo "<div>var_dump($_POST[date_sold]) null</div>";
                 }else{
                     if(isset($_POST['time_sold'])&&$_POST['time_sold']!=null){
                         $_POST['date_sold']=$_POST['date_sold']." ".$_POST['time_sold'].":00";
@@ -37,21 +37,21 @@
                         date_default_timezone_set('Asia/Shanghai');
                         $current_time=date('Y-m-d H:i:s');
                         $_POST['date_sold']=$current_time;
-                        echo "<div>var_dump($_POST[date_sold]) notnull</div>";
+                        // echo "<div>var_dump($_POST[date_sold]) notnull</div>";
                     }
-                    echo "<div>$_POST[date_sold]</div>";
-                    echo var_dump($_POST['date_sold']);
+                    // echo "<div>$_POST[date_sold]</div>";
+                    // echo var_dump($_POST['date_sold']);
                 }
-                echo "post <br>";
+                // echo "post <br>";
             }
             if(isset($_COOKIE)){
-                var_dump($_COOKIE);
-                echo 'cookie <br>';
+                // var_dump($_COOKIE);
+                // echo 'cookie <br>';
             }
             session_start();
             if(isset($_SESSION)){
-                var_dump($_SESSION);
-                echo 'session <br>';
+                // var_dump($_SESSION);
+                // echo 'session <br>';
             }
             require_once("html_navibar_template.php");
             if(!isset($_SESSION['user_id'])){
@@ -299,7 +299,7 @@
             </div>
             <input type="submit"class='btn btn-success' id='value2' value="記錄這次的出售数据。">
         </form>
-       <!--用於刪除session 中的 product_id_for_sale-->
+        <!--用於刪除session 中的 product_id_for_sale-->
         <form action="html_showallproduct_template.php" method="post">
             <input type="submit" class='btn btn-warning' id='value3' value="回到所有貨號頁面" 
             name="unset_product_id_for_sale">

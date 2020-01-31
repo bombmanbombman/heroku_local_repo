@@ -34,22 +34,22 @@
         <?php
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             if(strpos($URL,'herokuapp.com')){
-                echo "<div>$URL</div>";
+                // echo "<div>$URL</div>";
             }else{
-                echo "<div>$URL</div>";
+                // echo "<div>$URL</div>";
             }
             session_start();
             if(isset($_POST) && $_POST != false){
-                var_dump($_POST);
-                echo "post <br>";
+                // var_dump($_POST);
+                // echo "post <br>";
             }
             if(isset($_COOKIE) && $_COOKIE != false){
-                var_dump($_COOKIE);
-                echo 'cookie <br>';
+                // var_dump($_COOKIE);
+                // echo 'cookie <br>';
             }
             if(isset($_SESSION)  && $_SESSION != false){
-                var_dump($_SESSION);
-                echo 'session <br>';
+                // var_dump($_SESSION);
+                // echo 'session <br>';
             }
             /**sending js cookie file */
             require_once("login.php");
@@ -62,10 +62,12 @@
             $stmt=$conn->query($query);
             if(!$stmt)echo($conn->error);
             while($row=$stmt->fetch_assoc()){
-                echo $row['latitude']."<br>";
-                echo $row['longitude']."<br>";
-                var_dump(setcookie('latitude',$row['latitude'],time()+120,'/'));
-                var_dump(setcookie('longitude',$row['longitude'],time()+120,'/'));
+                // echo $row['latitude']."<br>";
+                // echo $row['longitude']."<br>";
+                // var_dump(setcookie('latitude',$row['latitude'],time()+120,'/'));
+                setcookie('latitude',$row['latitude'],time()+120,'/');
+                // var_dump(setcookie('longitude',$row['longitude'],time()+120,'/'));
+                setcookie('longitude',$row['longitude'],time()+120,'/');
             }
             require_once("html_navibar_template.php");
             #google map 部分

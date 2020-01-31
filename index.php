@@ -37,16 +37,16 @@
     </head>
     <body >
         <?php
-            echo $_SERVER["DOCUMENT_ROOT"];
+            // echo $_SERVER["DOCUMENT_ROOT"];
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-            if(strpos($URL,'herokuapp.com')){
-                echo "<div>$URL</div>";
-            }else{
-                echo "<div>$URL</div>";
-            }
+            // if(strpos($URL,'herokuapp.com')){
+            //     echo "<div>$URL</div>";
+            // }else{
+            //     echo "<div>$URL</div>";
+            // }
             if(isset($_POST) && $_POST != false){
-                var_dump($_POST);
-                echo "post <br>";
+                // var_dump($_POST);
+                // echo "post <br>";
             }
             /**刪除$_COOKIE所有pair */
             if(isset($_COOKIE) && $_COOKIE != false){
@@ -54,7 +54,7 @@
                     setcookie($key,null,-1,'/');
                 }
                 var_dump($_COOKIE);
-                echo 'cookie <br>';
+                // echo 'cookie <br>';
             }
             if(isset($_SESSION['user_id'])){
                 unset($_SESSION['user_id']);
@@ -69,12 +69,12 @@
                 unset($_SESSION['accident_disconnect']);
             }
             if(isset($_SESSION)&&$_SESSION!=null){
-                var_dump($_SESSION);
-                echo 'session<br>';
+                // var_dump($_SESSION);
+                // echo 'session<br>';
                 session_destroy();
                 session_regenerate_id(true);
             }
-            echo "<br>";
+            // echo "<br>";
     
             // if(isset($_POST['user_name']) && isset($_POST      ['user_password'])){
                 // session_start();

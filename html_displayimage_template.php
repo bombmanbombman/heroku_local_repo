@@ -13,22 +13,22 @@
         <?php
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             if(strpos($URL,'herokuapp.com')){
-                echo "<div>$URL</div>";
+                // echo "<div>$URL</div>";
             }else{
-                echo "<div>$URL</div>";
+                // echo "<div>$URL</div>";
             }
             if(isset($_POST) && $_POST != false){
-                var_dump($_POST);
-                echo "post <br>";
+                // var_dump($_POST);
+                // echo "post <br>";
             }
             if(isset($_COOKIE) && $_COOKIE != false){
-                var_dump($_COOKIE);
-                echo 'cookie <br>';
+                // var_dump($_COOKIE);
+                // echo 'cookie <br>';
             }
             session_start();
             if(isset($_SESSION)){
-                var_dump($_SESSION);
-                echo 'session <br>';
+                // var_dump($_SESSION);
+                // echo 'session <br>';
             }
             require_once("html_navibar_template.php");
             require_once ('login.php');

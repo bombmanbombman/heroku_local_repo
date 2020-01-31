@@ -20,6 +20,9 @@
         <script id='vue' src="vue.min.js"></script>
     </head>
     <body>
+        <br>
+        <br>
+        <br>
         <?php
             $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             // echo "<div>$URL</div>";
@@ -46,19 +49,19 @@
                     // echo '<meta http-equiv="refresh" content="0; url=https://localhost:8012/laravelFolder/resources/views/learning_php/html_login_template.php" />';
                 }
             }
-            echo "<div>$URL</div>";
+            // echo "<div>$URL</div>";
             session_start();
             if(isset($_POST) && $_POST != false){
-                var_dump($_POST);
-                echo "post <br>";
+                // var_dump($_POST);
+                // echo "post <br>";
             }
             if(isset($_COOKIE)){
-                var_dump($_COOKIE);
-                echo 'cookie <br>';
+                // var_dump($_COOKIE);
+                // echo 'cookie <br>';
             }
             if(isset($_SESSION)){
-                var_dump($_SESSION);
-                echo 'session <br>';
+                // var_dump($_SESSION);
+                // echo 'session <br>';
             }
 
             require_once("html_navibar_template.php");

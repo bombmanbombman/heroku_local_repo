@@ -18,7 +18,7 @@ $(function(){
         "width": "100%",
         "position":"absolute",
         "z-index":"-1",
-        "background-repeat":"no-repeat",
+        "background-repeat":"repeat",
     });
     $('label').css({
         "color":"black"
