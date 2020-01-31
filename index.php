@@ -53,7 +53,7 @@
                 foreach($_COOKIE as $key=>$value){
                     setcookie($key,null,-1,'/');
                 }
-                var_dump($_COOKIE);
+                // var_dump($_COOKIE);
                 // echo 'cookie <br>';
             }
             if(isset($_SESSION['user_id'])){

@@ -264,7 +264,7 @@ foreach($product_id_array as $value){
         <input type="hidden" id='value5' value="來自statistics page" name="unset_product_id_for_image">
         <input type="hidden" id='value6' value="來自statistics page" name="unset_product_id_for_sale"> -->
         <!-- <input class='btn btn-warning'type="submit" id='value3' value="回到所有貨號頁面" > -->
-        <a class='btn btn-warning' href='html_showallproduct_template.php' id='value3'>回到所有貨號頁面</a>
+        <a class='btn btn-warning' href='html_showallproduct_template.php' id='echo80'>回到所有貨號頁面</a>
         <!-- </form> -->
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type=text/javascript src="html_newsale_template.js"></script>

@@ -306,10 +306,13 @@
         <br>
         <br>
         <!--用於刪除session 中的 product_id_for_purchase-->
-        <form action="html_showallproduct_template.php" method="post">
+        <!-- <form action="html_showallproduct_template.php" method="post">
             <input type="submit" class='btn btn-warning' id='value3'value="回到所有貨號頁面" 
             name="unset_product_id_for_purchase">
-        </form>
+        </form> -->
+        <a class='btn btn-warning' id='echo80' href='html_showallproduct_template.php'>
+            回到所有貨號頁面
+        </a>
         <!-- <script id='google_api_js'src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehEZQIPxSSrInvV-wg9MZperouR5Ya5c&language=ja&callback=initMap" async defer></script> -->
         <script id='ref' defer async type='text/javascript' src='html_template.js'></script>
         <script id='js' defer async type='text/javascript' src='html_newpurchase_template.js'></script>
