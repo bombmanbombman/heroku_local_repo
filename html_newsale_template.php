@@ -4,7 +4,7 @@
         <meta content='utf-8' http-equiv='encoding'>
         <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
         <title>new sale page</title>
-        <link id='bootstrap' type='text/css' rel='stylesheet' href='/bootstrap-4.4.1-dist/css/bootstrap.min.css'>
+        <link id='bootstrap' type='text/css' rel='stylesheet' href='bootstrap-4.4.1-dist/css/bootstrap.min.css'>
         <script id='jquery' src='jquery-3.4.1.js'></script>
         <!-- ripple effect library -->
         <script src='jquery.ripples.js'></script>
