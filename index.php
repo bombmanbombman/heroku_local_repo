@@ -123,6 +123,7 @@
             <!-- google signin api content -->
             <section id='flex_container' class='d-flex flex-column'style="color:white;font:bold;font-size:15px;">
                 <div class="d-flex justify-content-center">
+                    <div id='welcome' class='display1 warning'></div>
                     <div id='google_sign_in' class="g-signin2 " data-onsuccess="onSignIn" data-theme="dark"></div>
                     <br>
                     <button id='tester' class="btn btn-success align-items-start">login as tester</button>
