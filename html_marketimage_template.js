@@ -62,7 +62,7 @@ $(function(){
                         }
                     }
                 }).then(function(){
-                    if(jqtarget.attr('id')=='class25'){
+                    if($('#class25').length){
                         location.reload();
                     }
                 }).fail(function(error){
