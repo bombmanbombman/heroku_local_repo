@@ -15,7 +15,7 @@
         </style>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
         <link id='bootstrap' type='text/css' rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
         <script id='jquery' src="jquery-3.4.1.js"></script>
         <!-- ripple effect library -->
@@ -313,6 +313,7 @@
         <script id='js' defer async type='text/javascript' src='html_newpurchase_template.js'></script>
         <section id='google_map_js'>
             <script id='google_api_js'src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&language=ja&callback=initMap" async defer></script>
+            <!-- <script id='google_api_js' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lki3Wn7GU8gZllmCyWc9VgkVDrH-_OA&language=ja&callback=initMap" async defer></script> -->
         <!-- <script async defer src='google_map.js'></script> -->
         </section>
         <noscript>please do not turn off javascript</noscript>
