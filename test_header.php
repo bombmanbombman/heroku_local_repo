@@ -42,6 +42,11 @@
         break;
       case 'html_showallproduct_template.php':
         header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php");
+        /**html 類似 header的 redirect方法  sleep(int$second)::int 停止所有code arg1 秒*/
+        // sleep(4);   
+        // echo"
+        //     <meta http-equiv='refresh' content='0; url=https://bombmanbombman-project1.herokuapp.com/html_showallproduct_template.php' />
+        // ";
         exit();
         break;
       case 'html_marketimage_template.php':

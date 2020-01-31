@@ -134,11 +134,11 @@
             // if(isset($progress1)&&$progress1===true){
         ?>
 
-        <button id='button1'><h4 id='echo8'>ユーザーの詳細情報を記入する</h4></button>
+        <button id='button1' class='btn btn-dark'><h4 id='echo8'>ユーザーの詳細情報を記入する</h4></button>
         <br>
         <br>
         <br>
-        <button id='button2'><h4 id='echo9'>新しい仕入れ商品と仕入先を作成する</h4></button>
+        <button id='button2' class='btn btn-dark'><h4 id='echo9'>新しい仕入れ商品と仕入先を作成する</h4></button>
         <br>
         <br>
         <br>
@@ -146,7 +146,7 @@
             if(isset($progress2)&&$progress2===true){
                 // var_dump($progress2);
                 // var_dump($_SESSION['user_id']);
-                echo "<button id='button3'><h4 id='echo10'>今まで仕入れた商品の統計管理ページ</h1></button>";
+                echo "<button id='button3' class='btn btn-dark'><h4 id='echo10'>今まで仕入れた商品の統計管理ページ</h1></button>";
             }
         ?>
         <script id='ref' defer async type='text/javascript'  src='html_template.js'></script>
