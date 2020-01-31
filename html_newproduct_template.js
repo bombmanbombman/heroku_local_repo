@@ -65,7 +65,7 @@ const googleMap = new Vue({
               position:geo_loc,
               map:this.map
             });
-            $('#value2').val('現在地||current place');
+            $('#value4').val('現在地||current place');
             $('#latitude').val(position.coords.latitude);
             $('#longitude').val(position.coords.longitude);
             $('#comment').empty();
@@ -85,7 +85,7 @@ const googleMap = new Vue({
     
     // 地址自動完成 + 地圖的中心移到輸入結果的地址上
     siteAuto() {
-      $('#value1').on('click',function(e){
+      $('#value3').on('click',function(e){
         console.log(e.target);
         window.initMap;
         if(typeof(click_switch)==='undefined'){
@@ -169,7 +169,7 @@ const googleMap = new Vue({
           
           //獲得坐標，名稱
           console.log(this.place.name);
-          $('#value2').val(this.place.formatted_address);
+          $('#value4').val(this.place.formatted_address);
           $('#latitude').val(this.place.geometry.location.lat());
           $('#longitude').val(this.place.geometry.location.lng());
           console.log($('*'));
