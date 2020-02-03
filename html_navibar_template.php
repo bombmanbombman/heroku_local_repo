@@ -46,7 +46,7 @@ li a:hover {   /* hover時的style */
       <div class='col-1'></div>
       <div class='col'>
         <li>
-          <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/  html_userdetail_template.php'>user profile page</a>
+          <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/html_userdetail_template.php'>user profile page</a>
         </li>
       </div>
       <div class='col'>
@@ -60,7 +60,7 @@ li a:hover {   /* hover時的style */
       <div class='col-1'></div>
       <div class='col'>
         <li>
-          <a class='btn btn-info' href='https://bombmanbombman-update.herokuapp.com/  html_userdetail_template.php'>user profile page</a>
+          <a class='btn btn-info' href='https://bombmanbombman-update.herokuapp.com/html_userdetail_template.php'>user profile page</a>
         </li>
       </div>
       <div class='col'>
