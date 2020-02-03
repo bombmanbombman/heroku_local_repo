@@ -2,11 +2,18 @@
     //檢測是否是在 localhost 或是 heroku
     $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
     // echo $URL.'<br>';
-    if(strpos($URL,'herokuapp.com')!=false){
+    if(strpos($URL,'project1.herokuapp.com')!=false){
         $host="pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
         $username="htweygmu8eaddu1u";
         $password="cldfpmlakd4l25em";
         $databasename="auq3vlwpr69eknn1";
+        $port=3306;
+        // echo 'your are in heroku<br>';
+    }elseif(strpos($URL,'update.herokuapp.com')!=false){
+        $host="k9xdebw4k3zynl4u.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+        $username="djskck00go00ka1n";
+        $password="mqzi4tkw68nds5bq";
+        $databasename="t3tht0mowt3krx2j";
         $port=3306;
         // echo 'your are in heroku<br>';
     }elseif(strpos($URL,':3000')!=false||strpos($URL,':5500')!=false||strpos($URL,'host/')!=false){

@@ -41,20 +41,31 @@ li a:hover {   /* hover時的style */
     </div>
     <?php 
     $URL =$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
-    if(strpos($URL,'herokuapp.com')){
-      
+    if(strpos($URL,'project1.herokuapp')){
       echo "
       <div class='col-1'></div>
       <div class='col'>
         <li>
-          <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/html_userdetail_template.php'>user detail page</a>
+          <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/  html_userdetail_template.php'>user profile page</a>
         </li>
       </div>
-      ";
-      echo "
       <div class='col'>
         <li>
           <a class='btn btn-info' href='https://bombmanbombman-project1.herokuapp.com/'>sign out</a>
+        </li>
+      </div>
+      ";
+    }elseif(strpos($URL,'update.herokuapp')!=false){
+      echo "
+      <div class='col-1'></div>
+      <div class='col'>
+        <li>
+          <a class='btn btn-info' href='https://bombmanbombman-update.herokuapp.com/  html_userdetail_template.php'>user profile page</a>
+        </li>
+      </div>
+      <div class='col'>
+        <li>
+          <a class='btn btn-info' href='https://bombmanbombman-update.herokuapp.com/'>sign out</a>
         </li>
       </div>
       ";
@@ -63,7 +74,7 @@ li a:hover {   /* hover時的style */
       <div class='col'></div>
       <div class='col'>
         <li>
-          <a class='btn btn-info' href='html_userdetail_template.php'>user detail page</a>
+          <a class='btn btn-info' href='html_userdetail_template.php'>user profile page</a>
         </li>
       </div>
       ";
@@ -79,7 +90,7 @@ li a:hover {   /* hover時的style */
     <!-- <li><a class='navi' href="">sign out</a></li> -->
     <div class='col'>
       <li>
-        <a class='btn btn-info' href='20200113.php'>map</a>
+        <a class='btn btn-info' href='html_resume_template.php'>about me 履歴書</a>
       </li>
     </div>
     <div class='col-4'>

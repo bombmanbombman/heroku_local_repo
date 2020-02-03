@@ -197,7 +197,12 @@ $(function(){
             console.log(error);
         });
     })
-
+    $('#reset').on('mouseover',function(e){
+        $('#message').html('データベースの容量は５ｍｂしかないため、もし画像のアップロードが失敗した場合は、別の画像を削除してから、アップロードしてください、なお、毎日データベースはリセットされます、ご了承ください。').fadeIn();
+    })
+    $('#reset').on('mouseout',function(e){
+        $('#message').html('データベースの容量は５ｍｂしかないため、もし画像のアップロードが失敗した場合は、別の画像を削除してから、アップロードしてください、なお、毎日データベースはリセットされます、ご了承ください。').fadeOut().hide();
+    })
     $('#tester').on('click',function(e){
         e.preventDefault();
         let user_name='tester';

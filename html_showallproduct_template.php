@@ -110,7 +110,7 @@
                                 echo "
                                     <a href='html_showallproduct_template.php?page_number=$i'>
                                         <span id='echo20'>第</span>
-                                         $i 
+                                            $i 
                                         <span id='echo21'>ページ</span>
                                     </a>
                                     <br>
@@ -161,6 +161,9 @@
         <button id='button2' class='btn btn-secondary'>
             <h3 id='echo24'>すべての仕入れた商品の画像集合、ギャラリー</h3>
         </button>
+        <!-- <button id='button4' class='btn btn-secondary'>
+            <h3 id='echo29'>photo viewer</h3>
+        </button> -->
         <hr>
         <button id='button3' class='btn btn-secondary'>
             <h3 id='echo28'>在庫数管理</h3>

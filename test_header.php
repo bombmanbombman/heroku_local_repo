@@ -12,8 +12,8 @@
     //檢查 URL中是否有herokuapp.com
   // echo $URL;
   // echo strpos($URL,'localhost:3000');
-  if(strpos($URL,'herokuapp.com')!=false){
-    //heroku用
+  if(strpos($URL,'project1.herokuapp.com')!=false){
+    //heroku project1用
     switch($redirect){
       case 'root_directory':
         header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
@@ -56,6 +56,50 @@
       default:
       header("refresh:$wait_time;url=https://bombmanbombman-project1.herokuapp.com");
     }
+  }elseif(strpos($URL,'update.herokuapp')!=false){
+        //heroku update用
+        switch($redirect){
+          case 'root_directory':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com");
+            exit();
+            break;
+          case 'html_userdetail_template.php':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/html_userdetail_template.php");
+            exit();
+            break;
+          case 'html_databasemanagement_template.php':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/html_databasemanagement_template.php");
+            exit();
+            break;
+          case 'html_login_template.php':
+            echo 'back to login page';
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/");
+            exit();
+            break;
+          case 'html_searchproduct_template.php':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/html_searchproduct.php");
+            exit();
+            break;
+          case 'html_userregister_template.php':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/html_userregister_template.php");
+            exit();
+            break;
+          case 'html_showallproduct_template.php':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/html_showallproduct_template.php");
+            /**html 類似 header的 redirect方法  sleep(int$second)::int 停止所有code arg1 秒*/
+            // sleep(4);   
+            // echo"
+            //     <meta http-equiv='refresh' content='0; url=https://bombmanbombman-update.herokuapp.com/html_showallproduct_template.php' />
+            // ";
+            exit();
+            break;
+          case 'html_marketimage_template.php':
+            header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com/html_marketimage_template.php");
+            exit();
+            break;
+          default:
+          header("refresh:$wait_time;url=https://bombmanbombman-update.herokuapp.com");
+        }
   }else if(strpos($URL,'host/')!=false){
     //xampp 用
     switch($redirect){

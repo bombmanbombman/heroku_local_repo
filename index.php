@@ -33,6 +33,11 @@
                 width:100%;
                 height:auto;
             } */
+            #reset{
+                position:absolute;
+                right: 0px;
+                top: 0px;
+            }
         </style>
     </head>
     <body >
@@ -107,9 +112,9 @@
         ?>
 
         <div id='background'></div>
-        <!-- <div>test live server ne</div> -->
         <section id='content'>
             <div class="dropdown"> 
+                <button id='reset' class='btn btn-danger'>reset database</button>
                 <button class="btn btn-primary dropdown-toggle"   type="button" id="dropdownMenuButton" 
                 data-toggle="dropdown" aria-haspopup="true"   aria-expanded="false"> language toggle </button> 
                 <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton"> 
@@ -118,9 +123,11 @@
                     <a id='english' class="dropdown-item"   href="#">english</a> 
                 </div> 
             </div>
+
             <div><h1  id='welcome' class='display-1 text-warning'></h1></div>
             <!-- <div id='background'></div> -->
             <!-- google signin api content -->
+            <h2 id='message' style='color:red'></h2>
             <section id='flex_container' class='d-flex flex-column'style="color:white;font:bold;font-size:15px;">
                 <div class="d-flex justify-content-center">
                     <div id='welcome' class='display1 warning'></div>
