@@ -178,12 +178,14 @@
 
             echo "<div id='echo11'>一番左端の画像はこの商品番号のカバーサムネとして使われています</div>";
             if($image_number_of_this_product>=6){
-                echo "<h3 id='echo12'>この商品番号のアップロード画像数の上限に達するため、画像を削除してから、アップロードしましょう</h3>";
-            }elseif($image_number_of_this_product<6){
                 echo "
+                <h3 id='echo12'>この商品番号のアップロード画像数の上限に達するため、画像を削除してから、アップロードしましょう</h3>
+                ";
+            }elseif($image_number_of_this_product<6){
+                echo"
                     <form method='post' action='html_submitredirect_template.php' enctype='multipart/form-data'>
-                        <label id='echo15'ファイルタイプはJPEG、またはPNG、一枚は２０ｍｂ以下、解像度は3000*3000以下です</label>
-                        <br>
+                        <label id='echo15'ファイルタイプはJPEG、またはPNG、一枚は２０ｍｂ以下、解像度は3000*3000以下です></label>
+                        <hr>
                         <input type='hidden' name='date_image'  value='' >
                         <input type='hidden' name='product_id_for_image' value=$product_id>
                         <input type='file' name='image_data' required><br>
@@ -195,8 +197,8 @@
                         <input type='submit' class='btn btn-success' id='value2' name='image_data' value='写真をアップロードする'>
                     </form>
                 ";
-            }
-        ?>
+            } 
+            ?>
                 <!--用於刪除session 中的 product_id_for_image-->
                 <!-- <form action='html_showallproduct_template.php' method='post'>
                     <input type='submit' class='btn btn-warning' id='value3' value='回到所有貨號頁面' name='unset_product_id_for_image'>

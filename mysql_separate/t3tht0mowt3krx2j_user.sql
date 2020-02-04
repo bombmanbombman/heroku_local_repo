@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com    Database: auq3vlwpr69eknn1
+-- Host: k9xdebw4k3zynl4u.cbetxkdyhwsb.us-east-1.rds.amazonaws.com    Database: t3tht0mowt3krx2j
 -- ------------------------------------------------------
 -- Server version	5.7.23-log
 
@@ -24,27 +24,35 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
--- Table structure for table `photo`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `photo`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `photo` (
-  `photo_id` int(11) NOT NULL AUTO_INCREMENT,
-  `imagetype` varchar(32) CHARACTER SET latin1 NOT NULL,
-  `imagedata` longblob NOT NULL,
-  PRIMARY KEY (`photo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(32) NOT NULL,
+  `user_email` varchar(32) CHARACTER SET latin1 DEFAULT NULL,
+  `user_password` varchar(12) CHARACTER SET latin1 NOT NULL,
+  `user_phone` varchar(11) CHARACTER SET latin1 DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_name` (`user_name`),
+  UNIQUE KEY `email` (`user_email`),
+  UNIQUE KEY `email_2` (`user_email`),
+  UNIQUE KEY `user_phone` (`user_phone`),
+  UNIQUE KEY `user_phone_2` (`user_phone`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `photo`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `photo` WRITE;
-/*!40000 ALTER TABLE `photo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `photo` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'admin','bombmanbombmanwork@gmail.com','63079861','08044996800'),(2,'tester','tester@yahoo.co.jp','tester','12345678910');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +65,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-04  9:37:06
+-- Dump completed on 2020-02-04  9:45:00

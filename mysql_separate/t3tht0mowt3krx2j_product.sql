@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: pwcspfbyl73eccbn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com    Database: auq3vlwpr69eknn1
+-- Host: k9xdebw4k3zynl4u.cbetxkdyhwsb.us-east-1.rds.amazonaws.com    Database: t3tht0mowt3krx2j
 -- ------------------------------------------------------
 -- Server version	5.7.23-log
 
@@ -24,35 +24,34 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 
 --
--- Table structure for table `user`
+-- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(32) NOT NULL,
-  `user_email` varchar(32) CHARACTER SET latin1 DEFAULT NULL,
-  `user_password` varchar(12) CHARACTER SET latin1 NOT NULL,
-  `user_phone` varchar(11) CHARACTER SET latin1 DEFAULT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_name` (`user_name`),
-  UNIQUE KEY `email` (`user_email`),
-  UNIQUE KEY `email_2` (`user_email`),
-  UNIQUE KEY `user_phone` (`user_phone`),
-  UNIQUE KEY `user_phone_2` (`user_phone`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `product` (
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `buy_place` varchar(255) NOT NULL,
+  `product_info` varchar(255) NOT NULL,
+  `product_detail` varchar(255) DEFAULT NULL,
+  `latitude` varchar(20) DEFAULT NULL,
+  `longitude` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`product_id`),
+  KEY `FK_index` (`user_id`),
+  CONSTRAINT `FK_index` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `product`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','bombmanbombmanwork@gmail.com','63079861','08044996800'),(2,'tester','tester@yahoo.co.jp','tester','12345678910');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,1,'日本、〒606-8205 京都府京都市左京区田中上柳町３２&minus;１','T-シャツ','','35.0304996','135.7732283'),(2,2,'日本、〒556-0005 大阪府大阪市浪速区日本橋４丁目１２','中古のプレステ１','コンディション　悪い','34.6592536','135.5058156'),(2,3,'日本、〒542-0071 大阪府大阪市中央区道頓堀１丁目９','アーガマ','エウーゴの戦艦','34.6687315','135.5012911');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -65,4 +64,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-04  9:37:39
+-- Dump completed on 2020-02-04  9:44:24
